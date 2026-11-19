@@ -6,7 +6,7 @@
     {
       "day": 1,
       "date": "2026-12-01",
-      "location": "",
+      "location": "Satul de basm",
       "type": "bonus",
       "amount": {
         "percent": 73,
@@ -52,7 +52,7 @@
     {
       "day": 2,
       "date": "2026-12-02",
-      "location": "",
+      "location": "Turnul Luminii Lunii",
       "type": "fs",
       "amount": {
         "freeSpins": 83,
@@ -98,7 +98,7 @@
     {
       "day": 3,
       "date": "2026-12-03",
-      "location": "",
+      "location": "Casa Elfilor",
       "type": "fs",
       "amount": {
         "freeSpins": 60,
@@ -144,7 +144,7 @@
     {
       "day": 4,
       "date": "2026-12-04",
-      "location": "",
+      "location": "Podul de Aur",
       "type": "bonus",
       "amount": {
         "percent": 55,
@@ -190,7 +190,7 @@
     {
       "day": 5,
       "date": "2026-12-05",
-      "location": "",
+      "location": "Poșta Zăpezii",
       "type": "fs",
       "amount": {
         "freeSpins": 90,
@@ -236,7 +236,7 @@
     {
       "day": 6,
       "date": "2026-12-06",
-      "location": "",
+      "location": "Strada de Turtă Dulce",
       "type": "fs",
       "amount": {
         "freeSpins": 70,
@@ -282,7 +282,7 @@
     {
       "day": 7,
       "date": "2026-12-07",
-      "location": "",
+      "location": "Podul de Gheață",
       "type": "fs",
       "amount": {
         "freeSpins": 88,
@@ -328,7 +328,7 @@
     {
       "day": 8,
       "date": "2026-12-08",
-      "location": "",
+      "location": "Farul de Iarnă",
       "type": "bonus",
       "amount": {
         "percent": 65,
@@ -374,7 +374,7 @@
     {
       "day": 9,
       "date": "2026-12-09",
-      "location": "",
+      "location": "Labirintul Oglinzilor",
       "type": "fs",
       "amount": {
         "freeSpins": 74,
@@ -420,7 +420,7 @@
     {
       "day": 10,
       "date": "2026-12-10",
-      "location": "",
+      "location": "Tunelul Luminos",
       "type": "fs",
       "amount": {
         "freeSpins": 54,
@@ -466,7 +466,7 @@
     {
       "day": 11,
       "date": "2026-12-11",
-      "location": "",
+      "location": "Căsuța Piticilor",
       "type": "bonus",
       "amount": {
         "percent": 45,
@@ -512,11 +512,11 @@
     {
       "day": 12,
       "date": "2026-12-12",
-      "location": "",
+      "location": "Insula de Caramel",
       "type": "fs",
       "amount": {
-        "freeSpins": 75,
-        "text": "75 ROTIRI GRATUITE"
+        "freeSpins": 78,
+        "text": "78 ROTIRI GRATUITE"
       },
       "game": "Sweet Bonanza Xmas",
       "minDeposit": {
@@ -530,7 +530,7 @@
         "active": [
           "ZIUA 12 · 12 DEC.",
           "ROTIRI GRATUITE DE CRĂCIUN",
-          "75 ROTIRI GRATUITE",
+          "78 ROTIRI GRATUITE",
           "în Sweet Bonanza Xmas",
           "Depunere minimă: 350 MDL",
           "DEPUNE ȘI REVENDICĂ",
@@ -539,7 +539,7 @@
         "expired": [
           "ZIUA 12 · 12 DEC.",
           "ROTIRI GRATUITE DE CRĂCIUN",
-          "75 ROTIRI GRATUITE",
+          "78 ROTIRI GRATUITE",
           "în Sweet Bonanza Xmas",
           "Depunere minimă: 350 MDL",
           "Cadou expirat",
@@ -558,7 +558,7 @@
     {
       "day": 13,
       "date": "2026-12-13",
-      "location": "",
+      "location": "Turnul cu Ceas",
       "type": "fs",
       "amount": {
         "freeSpins": 91,
@@ -604,7 +604,7 @@
     {
       "day": 14,
       "date": "2026-12-14",
-      "location": "",
+      "location": "Trenul de Turtă Dulce",
       "type": "fs",
       "amount": {
         "freeSpins": 86,
@@ -650,7 +650,7 @@
     {
       "day": 15,
       "date": "2026-12-15",
-      "location": "",
+      "location": "Biblioteca de Basm",
       "type": "bonus",
       "amount": {
         "percent": 60,
@@ -696,7 +696,7 @@
     {
       "day": 16,
       "date": "2026-12-16",
-      "location": "",
+      "location": "Labirintul Subteran",
       "type": "fs",
       "amount": {
         "freeSpins": 72,
@@ -742,7 +742,7 @@
     {
       "day": 17,
       "date": "2026-12-17",
-      "location": "",
+      "location": "Brutăria lui Moș Crăciun",
       "type": "fs",
       "amount": {
         "freeSpins": 96,
@@ -788,7 +788,7 @@
     {
       "day": 18,
       "date": "2026-12-18",
-      "location": "",
+      "location": "Castelul din Nori",
       "type": "bonus",
       "amount": {
         "percent": 63,
@@ -834,7 +834,7 @@
     {
       "day": 19,
       "date": "2026-12-19",
-      "location": "",
+      "location": "Valea Florilor",
       "type": "fs",
       "amount": {
         "freeSpins": 83,
@@ -880,7 +880,7 @@
     {
       "day": 20,
       "date": "2026-12-20",
-      "location": "",
+      "location": "Stația Săniilor Zburătoare",
       "type": "fs",
       "amount": {
         "freeSpins": 57,
@@ -926,7 +926,7 @@
     {
       "day": 21,
       "date": "2026-12-21",
-      "location": "",
+      "location": "Debarcaderul de Iarnă",
       "type": "fs",
       "amount": {
         "freeSpins": 81,
@@ -972,7 +972,7 @@
     {
       "day": 22,
       "date": "2026-12-22",
-      "location": "",
+      "location": "Turnul Melodiilor de Crăciun",
       "type": "bonus",
       "amount": {
         "percent": 70,
@@ -1018,7 +1018,7 @@
     {
       "day": 23,
       "date": "2026-12-23",
-      "location": "",
+      "location": "Teatrul de Iarnă",
       "type": "fs",
       "amount": {
         "freeSpins": 99,
@@ -1064,7 +1064,7 @@
     {
       "day": 24,
       "date": "2026-12-24",
-      "location": "",
+      "location": "Palatul Bomboanelor",
       "type": "fs",
       "amount": {
         "freeSpins": 84,
@@ -1110,7 +1110,7 @@
     {
       "day": 25,
       "date": "2026-12-25",
-      "location": "",
+      "location": "Poarta Stelelor",
       "type": "fs",
       "amount": {
         "freeSpins": 101,
@@ -1156,7 +1156,7 @@
     {
       "day": 26,
       "date": "2026-12-26",
-      "location": "",
+      "location": "Palatul lui Moș Crăciun",
       "type": "bonus",
       "amount": {
         "percent": 53,

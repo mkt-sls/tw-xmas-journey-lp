@@ -16,12 +16,42 @@ const tabs = JSON.parse(fs.readFileSync(path.join(dataDir, 'source', 'sheet.json
 const DAYS = 26;
 
 // Market -> sheet tab, UI language file, currency. (markets.json and browser-map.json are kept by hand.)
+// uiCol = column of the language in the UI ELEMENT UI block (A1:D19); locCol = column in the LOCATION table (rows 27-52):
+// that table is ordered day | RU | RO | EN | DE | NL (RU is not used).
 const MARKETS = [
-  { id: 'DE', tab: 'DE', uiLang: 'DE', currency: 'EUR', uiCol: 1 },
-  { id: 'NL', tab: 'NL', uiLang: 'NL', currency: 'EUR', uiCol: 2 },
-  { id: 'EN_GBP', tab: 'EN', uiLang: 'EN', currency: 'GBP', uiCol: 0 },
-  { id: 'RO_MDL', tab: 'RO', uiLang: 'RO_MD', currency: 'MDL', uiCol: 3 },
+  { id: 'DE', tab: 'DE', uiLang: 'DE', currency: 'EUR', uiCol: 1, locCol: 4 },
+  { id: 'NL', tab: 'NL', uiLang: 'NL', currency: 'EUR', uiCol: 2, locCol: 5 },
+  { id: 'EN_GBP', tab: 'EN', uiLang: 'EN', currency: 'GBP', uiCol: 0, locCol: 3 },
+  { id: 'RO_MDL', tab: 'RO', uiLang: 'RO_MD', currency: 'MDL', uiCol: 3, locCol: 2 },
 ];
+
+// ---- explicit overrides of the sheets (owner decisions 2026-11-19). Each one is also listed in data/ISSUES.md. ------------
+// Free-spin counts: numbers follow the links sheet (tab TW EUROPE).
+// Day 12 says 75 FS in all four text tabs, the links sheet says 78. Shown 78 provisionally; ask the client: 75 or 78?
+const FS_OVERRIDES = { 12: { from: 75, to: 78 } };
+// "How it works" step 1 says "1-25 December" in every language; the campaign runs 1-26 December. Only the number changes.
+const STEP1_OVERRIDES = {
+  EN: ['1–25 December', '1–26 December'],
+  DE: ['1. bis 25. Dezember', '1. bis 26. Dezember'],
+  NL: ['1 t/m 25 december', '1 t/m 26 december'],
+  RO_MD: ['între 1 și 25 decembrie', 'între 1 și 26 decembrie'],
+};
+// Day 21 RO has no minimum-deposit line anywhere: see MDL_FOR_EUR below (22 -> 300 MDL).
+
+// Place names: UI ELEMENT, LOCATION title in A24, header in row 26, days 1-26 in rows 27-52.
+function readLocations(market) {
+  const ui = tabs['UI ELEMENT'];
+  if (!/LOCATION/i.test(ui[23]?.[0] ?? '')) throw new Error('UI ELEMENT A24 is not the LOCATION title');
+  const out = {};
+  for (let d = 1; d <= DAYS; d++) {
+    const row = ui[25 + d];
+    if (Number(row?.[0]) !== d) throw new Error(`UI ELEMENT row ${26 + d}: expected day ${d}, got "${row?.[0]}"`);
+    const name = String(row[market.locCol] ?? '').trim();
+    if (!name) throw new Error(`UI ELEMENT row ${26 + d}: empty place name for ${market.uiLang}`);
+    out[String(d)] = name;
+  }
+  return out;
+}
 
 const issues = []; // sheet findings for the client, plain English
 const selfTranslated = []; // { lang, key, value }
@@ -133,11 +163,27 @@ const MDL_FOR_EUR = { 22: 300, 25: 350, 28: 400, 30: 450, 35: 500 };
 function buildCards(market) {
   const rows = tabs[market.tab];
   if (!rows || rows.length < DAYS + 1) throw new Error(`Tab ${market.tab}: expected ${DAYS + 1} rows, got ${rows?.length}`);
+  const locations = readLocations(market);
   const days = [];
   let minLinePrefix = null;
   for (let d = 1; d <= DAYS; d++) {
     const row = rows[d];
     const [active, credited, expired, locked] = [0, 1, 2, 3].map((i) => lines(row[i]));
+    // Override: free-spin count follows the links sheet (see FS_OVERRIDES). The amount is line 3 (index 2) of every card state.
+    const fsFix = FS_OVERRIDES[d];
+    if (fsFix) {
+      for (const l of [active, credited, expired]) {
+        if (l[2].startsWith(`${fsFix.to} `)) continue; // the sheet was already corrected
+        if (!l[2].startsWith(`${fsFix.from} `)) throw new Error(`${market.tab} day ${d}: expected ${fsFix.from} free spins, got "${l[2]}"`);
+        l[2] = l[2].replace(String(fsFix.from), String(fsFix.to));
+      }
+      if (market.id === 'DE') {
+        issues.push(
+          `Day ${d}: the texts sheet says ${fsFix.from} free spins in all four languages, the links sheet says ${fsFix.to}. ` +
+            `The page shows ${fsFix.to} for now (numbers follow the links sheet). Ask client: ${fsFix.from} or ${fsFix.to}?`,
+        );
+      }
+    }
     // The first line of every state carries the same "DAY n · date" label.
     for (const [name, l] of [['credited', credited], ['expired', expired], ['locked', locked]]) {
       if (l[0] !== active[0]) issues.push(`${market.tab} day ${d}: the "${name}" text starts with a different day label than the "deposit & claim" text.`);
@@ -177,7 +223,7 @@ function buildCards(market) {
     days.push({
       day: d,
       date: `2026-12-${String(d).padStart(2, '0')}`,
-      location: '', // client sends place names later
+      location: locations[String(d)], // UI ELEMENT, LOCATION table
       type: kind,
       amount,
       game,
@@ -208,10 +254,14 @@ function buildUi(market, cards) {
   };
   for (const [k, v] of Object.entries(sheetUi)) if (!v) throw new Error(`UI ELEMENT: missing ${k} for ${lang}`);
 
-  // Step 1 body in the sheet says "1–25 December"; the campaign runs 1–26. Fix the number (the sheet is wrong here).
-  const fixed = sheetUi.step1_body.replace(/\b25\b/, '26');
-  if (fixed === sheetUi.step1_body) throw new Error(`UI ELEMENT step1_body for ${lang} has no "25" to fix: ${sheetUi.step1_body}`);
-  sheetUi.step1_body = fixed;
+  // Step 1 body in the sheet says "1–25 December"; the campaign runs 1–26 (see STEP1_OVERRIDES). Everything else stays as in the sheet.
+  const [from, to] = STEP1_OVERRIDES[lang];
+  if (!sheetUi.step1_body.includes(to)) {
+    if (!sheetUi.step1_body.includes(from)) throw new Error(`UI ELEMENT step1_body for ${lang} has neither "${from}" nor "${to}": ${sheetUi.step1_body}`);
+    sheetUi.step1_body = sheetUi.step1_body.replace(from, to);
+  }
+  // No other "25" day range may be left in the UI texts.
+  for (const [k, v] of Object.entries(sheetUi)) if (/\b25\b/.test(v)) throw new Error(`UI ELEMENT ${k} for ${lang} still has a "25": ${v}`);
 
   // Card-state words come from the card texts themselves, so page and card always agree.
   const d1 = cards.days[0].raw;
@@ -241,7 +291,7 @@ function buildUi(market, cards) {
     cta_terms: sheetUi.terms_conditions,
     ...pick(OWN_EXTRAS, lang),
   };
-  const locations = Object.fromEntries(Array.from({ length: DAYS }, (_, i) => [String(i + 1), '']));
+  const locations = readLocations(market);
   return { lang, strings, extras, locations };
 }
 

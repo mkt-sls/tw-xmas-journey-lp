@@ -12,7 +12,7 @@ describe('card data', () => {
       cards.days.forEach((d, i) => {
         expect(d.day).toBe(i + 1);
         expect(d.date).toBe(`2026-12-${String(i + 1).padStart(2, '0')}`);
-        expect(d.location).toBe('');
+        expect(d.location.trim(), `${m.id} day ${d.day} location`).not.toBe('');
         expect(d.wagering).toBe('');
         expect(d.validUntil).toBe('');
         expect(d.minDeposit.currency).toBe(m.currency);
@@ -37,6 +37,43 @@ describe('card data', () => {
         expect(d.game).toBe(base[i].game);
       });
     }
+  });
+});
+
+describe('sheet overrides', () => {
+  it('day 12 is 78 free spins in every market (numbers follow the links sheet)', () => {
+    for (const m of markets) {
+      const d = cardFiles[`../data/cards/${m.id}.json`].days[11];
+      expect(d.amount.freeSpins, m.id).toBe(78);
+      for (const state of ['active', 'expired']) {
+        expect(d.raw[state][2], `${m.id} ${state}`).toMatch(/^78 /);
+        expect(d.raw[state].join('\n'), `${m.id} ${state}`).not.toMatch(/\b75\b/);
+      }
+    }
+  });
+  it('place names are filled in the cards and in the ui locations, and agree', () => {
+    for (const m of markets) {
+      const ui = uiFiles[`../data/ui/${m.uiLang}.json`];
+      cardFiles[`../data/cards/${m.id}.json`].days.forEach((d) => {
+        expect(ui.locations[String(d.day)], `${m.uiLang} day ${d.day}`).toBe(d.location);
+      });
+    }
+    expect(cardFiles['../data/cards/EN_GBP.json'].days[0].location).toBe('Fairytale Village');
+  });
+  it('no "25 December" campaign range is left in any UI text', () => {
+    for (const m of markets) {
+      const ui = uiFiles[`../data/ui/${m.uiLang}.json`];
+      for (const [k, v] of Object.entries(ui.strings)) {
+        expect(v, `${m.uiLang}.${k}`).not.toMatch(/1\s*(–|-|bis|t\/m|și)\s*25|25\.?\s*(December|Dezember|december|decembrie|DECEMBER|DEZEMBER|DECEMBRIE)|25 (gifts|Geschenke|cadeaus|cadouri)/i);
+      }
+    }
+    expect(uiFiles['../data/ui/EN.json'].strings.step1_body).toBe('A new location unlocks each day, 1–26 December.');
+    expect(uiFiles['../data/ui/DE.json'].strings.step1_body).toBe('Vom 1. bis 26. Dezember wird jeden Tag ein neuer Ort freigeschaltet.');
+    expect(uiFiles['../data/ui/NL.json'].strings.step1_body).toBe('Van 1 t/m 26 december wordt elke dag een nieuwe locatie ontgrendeld.');
+    expect(uiFiles['../data/ui/RO_MD.json'].strings.step1_body).toBe('În fiecare zi, între 1 și 26 decembrie, se deblochează o nouă locație.');
+  });
+  it('day 21 RO minimum deposit is 300 MDL', () => {
+    expect(cardFiles['../data/cards/RO_MDL.json'].days[20].minDeposit.value).toBe(300);
   });
 });
 

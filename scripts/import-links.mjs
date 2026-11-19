@@ -164,16 +164,12 @@ item(
   'The cards show only the minimum deposit. We did not invent values. The rows are hidden until the client sends the corrected texts sheet with wagering and valid-until.',
 );
 item(
-  'No place names',
-  'The page shows only the day label ("DAY 5 · 5 DEC") because the client has not sent location names yet. The `location` field of every day is empty.',
-);
-item(
   'Locked card always says "Come back tomorrow"',
   'Also for gifts that are days away (day 20 seen on 1 December still says "Come back tomorrow to unlock this gift"). Suggest a text like "Opens on 20 December" for far-away days, or confirm it stays.',
 );
 item(
   'Texts sheet, step 1 of "How it works" says "1-25 December"',
-  'The campaign runs 1-26 December. We show "1-26" in all three languages (the number was changed from the sheet text).',
+  'The campaign runs 1-26 December. We show "1-26" in all four languages (only the number was changed from the sheet text). Please correct the sheet.',
 );
 item(
   'Texts sheet, step 3 of "How it works" says "The gift turns green when the bonus is credited"',
