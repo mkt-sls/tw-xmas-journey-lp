@@ -135,18 +135,6 @@
   clip: rect(0 0 0 0);
 }
 
-.intro__ended {
-  display: inline-block;
-  margin-top: 4px;
-  padding: 10px 18px;
-  border: 1px solid var(--accent);
-  border-radius: var(--r-pill);
-  background: rgba(13, 26, 58, 0.9);
-  color: var(--accent);
-  font-size: 13px;
-  font-weight: 700;
-}
-
 .route-wrap {
   position: relative;
   height: calc(var(--stage-h) + var(--stage-pad, 0px) + var(--stage-pad-b, 0px));
@@ -362,11 +350,6 @@
   margin-top: 0;
   font-size: 16px;
   line-height: 1.2;
-}
-
-.page[data-layout='desktop'] .intro__ended {
-  pointer-events: auto;
-  font-size: 14px;
 }
 
 /* the 735px stage holds the 564px landscape at stage y 171: pull it up so the landscape starts 57px below the intro (Figma y 306) */

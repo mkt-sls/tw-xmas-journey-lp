@@ -11,7 +11,7 @@ export const CAMPAIGN = {
 };
 
 // Link names that all point to the deposit link of the current campaign day:
-// LOG IN, REGISTER, "Full terms & conditions" on the card, "Full campaign terms apply" in the legal line.
+// LOG IN, REGISTER, "Full terms & conditions" on the card.
 const TODAY_LINKS = ['login', 'register', 'terms', 'campaignTerms'];
 
 export const links = {

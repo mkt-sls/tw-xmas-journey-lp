@@ -57,16 +57,16 @@ const issues = []; // sheet findings for the client, plain English
 const selfTranslated = []; // { lang, key, value }
 
 // ---- self-translated / skeleton UI strings -------------------------------------------------
-// Keys the texts sheet does not carry. English = skeleton wording; DE/NL/RO are OUR translation (listed in ISSUES.md).
+// Keys the texts sheet does not carry. English = text from Figma file s2CqwGqe0O0FcALhBNlTRe (canvas 58:332, nodes 58:511 / 58:808 / 58:875 / 58:672); DE/NL/RO are OUR translation (listed in ISSUES.md).
 const OWN = {
   brand: { EN: 'Top Win', DE: 'Top Win', NL: 'Top Win', RO_MD: 'Top Win' },
   login: { EN: 'Log in', DE: 'Anmelden', NL: 'Inloggen', RO_MD: 'Autentificare' },
   register: { EN: 'Register', DE: 'Registrieren', NL: 'Registreren', RO_MD: 'Înregistrare' },
   campaign_dates: {
-    EN: '1–26 DECEMBER · 26 GIFTS',
-    DE: '1.–26. DEZEMBER · 26 GESCHENKE',
-    NL: '1–26 DECEMBER · 26 CADEAUS',
-    RO_MD: '1–26 DECEMBRIE · 26 CADOURI',
+    EN: '1–26 December · 26 gifts',
+    DE: '1.–26. Dezember · 26 Geschenke',
+    NL: '1–26 december · 26 cadeaus',
+    RO_MD: '1–26 decembrie · 26 cadouri',
   },
   campaign_title: { EN: 'Christmas Journey', DE: 'Weihnachtsreise', NL: 'Kerstreis', RO_MD: 'Călătoria de Crăciun' },
   subtitle: {
@@ -76,7 +76,6 @@ const OWN = {
     RO_MD: 'Urmează-l pe Moș Crăciun printr-un sat englezesc acoperit de zăpadă. În fiecare zi se deblochează un cadou nou – deschide-l și revendică-ți bonusul.',
   },
   today: { EN: 'TODAY', DE: 'HEUTE', NL: 'VANDAAG', RO_MD: 'AZI' },
-  '26 DAYS': { EN: '26 DAYS', DE: '26 TAGE', NL: '26 DAGEN', RO_MD: '26 ZILE' },
   yesterday: { EN: 'YESTERDAY · {date}', DE: 'GESTERN · {date}', NL: 'GISTEREN · {date}', RO_MD: 'IERI · {date}' },
   todays_stop: {
     EN: 'TODAY’S STOP · {date}',
@@ -94,47 +93,14 @@ const OWN = {
     NL: 'Wordt ontgrendeld over {time}',
     RO_MD: 'Se deblochează în {time}',
   },
-  // Sheet step 3 body says "the gift turns green when the bonus is credited"; there is no credited state, so we keep this.
-  step3_body: {
-    EN: 'Deposit before 23:59 to claim the day’s bonus.',
-    DE: 'Zahle vor 23:59 Uhr ein, um den Tagesbonus zu sichern.',
-    NL: 'Stort vóór 23:59 om de bonus van de dag te claimen.',
-    RO_MD: 'Depune înainte de 23:59 pentru a revendica bonusul zilei.',
-  },
   responsible: {
     EN: '18+ · Play responsibly',
     DE: '18+ · Verantwortungsvoll spielen',
     NL: '18+ · Speel verantwoord',
     RO_MD: '18+ · Joacă responsabil',
   },
-  be_gamble_aware: { EN: '', DE: '', NL: '', RO_MD: '' },
-  campaign_terms: {
-    EN: 'Full campaign terms apply',
-    DE: 'Es gelten die vollständigen Aktionsbedingungen',
-    NL: 'Volledige actievoorwaarden zijn van toepassing',
-    RO_MD: 'Se aplică termenii complecți ai campaniei',
-  },
-  day_of: { EN: 'Day 7 of 26', DE: 'Tag 7 von 26', NL: 'Dag 7 van 26', RO_MD: 'Ziua 7 din 26' },
-  gifts_collected: {
-    EN: '4 gifts collected',
-    DE: '4 Geschenke gesammelt',
-    NL: '4 cadeaus verzameld',
-    RO_MD: '4 cadouri colectate',
-  },
-  next_gift: { EN: 'Next gift in', DE: 'Nächstes Geschenk in', NL: 'Volgend cadeau over', RO_MD: 'Următorul cadou în' },
-  gift_timer: { EN: '{time}', DE: '{time}', NL: '{time}', RO_MD: '{time}' },
-  campaign_ended: {
-    EN: 'The Christmas Journey has ended. Thank you for travelling with us!',
-    DE: 'Die Weihnachtsreise ist zu Ende. Danke, dass du mitgereist bist!',
-    NL: 'De Kerstreis is afgelopen. Bedankt dat je met ons meereisde!',
-    RO_MD: 'Călătoria de Crăciun s-a încheiat. Îți mulțumim că ai călătorit cu noi!',
-  },
-};
-const OWN_EXTRAS = {
-  day_7: { EN: 'Day 7', DE: 'Tag 7', NL: 'Dag 7', RO_MD: 'Ziua 7' },
-  of_26: { EN: 'of 26', DE: 'von 26', NL: 'van 26', RO_MD: 'din 26' },
-  gifts_collected_4: OWN.gifts_collected,
-  next_gift_in: OWN.next_gift,
+  legend_available: { EN: 'Available today', DE: 'Heute verfügbar', NL: 'Vandaag beschikbaar', RO_MD: 'Disponibil azi' },
+  legend_missed: { EN: 'Missed', DE: 'Verpasst', NL: 'Gemist', RO_MD: 'Pierdut' },
 };
 
 // ---- helpers -------------------------------------------------------------------------------
@@ -265,34 +231,27 @@ function buildUi(market, cards) {
 
   // Card-state words come from the card texts themselves, so page and card always agree.
   const d1 = cards.days[0].raw;
-  const row = tabs[market.tab][1];
-  const credited = lines(row[1]);
   const locked = d1.locked;
   const strings = {
     ...pick(OWN, lang),
     ...sheetUi,
-    bonus_credited: credited[credited.length - 2],
     gift_expired: d1.expired[d1.expired.length - 2],
     locked: locked[4].split(' · ')[0],
     full_terms: d1.active.at(-1),
     surprise_gift: locked[1],
     opens_dec8: locked[2].replace(/:.*$/, '') + ' {date}',
     come_back_tomorrow: locked[3],
+    legend_locked: locked[4].split(' · ')[0],
   };
-  strings.step3_body = OWN.step3_body[lang];
+  // No tracking system exists (owner 2026-11-19): step 3 of "How it works" has only its title (no step3_body key); the sheet's body
+  // ("the gift turns green when the bonus is credited") is dropped on purpose.
   // Everything from OWN is our wording (English = skeleton text, other languages = our translation): list it for the client.
   for (const k of Object.keys(OWN)) {
-    if (!['brand', 'be_gamble_aware', 'gift_timer'].includes(k)) selfTranslated.push({ lang, key: k, value: OWN[k][lang] });
+    if (k !== 'brand') selfTranslated.push({ lang, key: k, value: OWN[k][lang] });
   }
 
-  const extras = {
-    cta_primary: sheetUi.cta_primary,
-    cta_processing: sheetUi.processing,
-    cta_terms: sheetUi.terms_conditions,
-    ...pick(OWN_EXTRAS, lang),
-  };
   const locations = readLocations(market);
-  return { lang, strings, extras, locations };
+  return { lang, strings, locations };
 }
 
 function pick(table, lang) {

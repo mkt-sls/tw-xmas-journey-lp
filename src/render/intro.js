@@ -15,12 +15,11 @@ function title(text) {
   return `<span class="intro__title-a">${esc(words.join(' '))}</span><span class="intro__title-b">${esc(last)}</span>`;
 }
 
-export function renderIntro({ ui, over }) {
+export function renderIntro({ ui }) {
   return `
   <div class="intro">
     <p class="intro__eyebrow">${eyebrow(ui.campaign_dates)}</p>
     <h1 class="intro__title" aria-label="${esc(ui.campaign_title)}">${title(ui.campaign_title)}</h1>
     <p class="intro__sub">${escNb(ui.subtitle)}</p>
-    ${over ? `<p class="intro__ended" role="status">${esc(ui.campaign_ended)}</p>` : ''}
   </div>`;
 }

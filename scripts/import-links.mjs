@@ -173,26 +173,26 @@ item(
 );
 item(
   'Texts sheet, step 3 of "How it works" says "The gift turns green when the bonus is credited"',
-  'There is no credited state on this page (same as the Jackpot page), so we did not use that sentence. We show "Deposit before 23:59 to claim the day\'s bonus." instead (our wording, see the list below).',
+  'There is no tracking system, so there is no credited state. We dropped the body text of step 3; the step shows only its title "Deposit & claim".',
 );
 item(
   'LOG IN, REGISTER and "Full terms & conditions" links',
-  `All three use the deposit link of the current campaign day. Before 1 December they use the day 1 link, after 26 December the day 26 link (the campaign-ended message is shown then). Please confirm.`,
+  `All three use the deposit link of the current campaign day. Before 1 December they use the day 1 link, after 26 December the day 26 link. Please confirm.`,
 );
 item(
-  'Wording we wrote ourselves (not in the texts sheet)',
-  'English is the Jackpot skeleton wording, German / Dutch / Romanian are our own translation, please review. Languages x strings: ' +
-    [...new Set(findings.selfTranslated.map((s) => s.key))].join(', ') +
-    '.',
+  'Translated by us — please check',
+  'Strings the texts sheet does not have. English is the text from the Figma design; German / Dutch / Romanian are our own translation. The table is below.',
 );
-out.push('### Our wording per language');
+out.push('### Translated by us — please check');
 out.push('');
-for (const lang of ['EN', 'DE', 'NL', 'RO_MD']) {
-  out.push(`**${lang}**`);
-  out.push('');
-  for (const s of findings.selfTranslated.filter((x) => x.lang === lang)) out.push(`- \`${s.key}\`: ${s.value}`);
-  out.push('');
+out.push('| key | EN (Figma) | DE | NL | RO |');
+out.push('| --- | --- | --- | --- | --- |');
+const cell = (x) => String(x ?? '').replace(/\|/g, '\\|');
+for (const key of [...new Set(findings.selfTranslated.map((x) => x.key))]) {
+  const v = (lang) => findings.selfTranslated.find((x) => x.lang === lang && x.key === key)?.value;
+  out.push(`| \`${key}\` | ${cell(v('EN'))} | ${cell(v('DE'))} | ${cell(v('NL'))} | ${cell(v('RO_MD'))} |`);
 }
+out.push('');
 fs.writeFileSync(path.join(dataDir, 'ISSUES.md'), out.join('\n'), 'utf8');
 
 console.log(`Wrote data/links.json (${links.length} days), data/source/links-diff.md (${diffs.length} differences, ${known.length} known gaps, ${checks.length} values compared), data/ISSUES.md (${n} items)`);

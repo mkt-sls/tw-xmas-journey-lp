@@ -87,7 +87,6 @@ function render() {
   const l = layout();
   const n = now();
   state.today = campaignDay(n);
-  const over = state.today > CAMPAIGN.days;
   const ctx = {
     layout: l,
     ui: state.ui,
@@ -97,7 +96,6 @@ function render() {
     cards: state.cards,
     today: state.today,
     now: n,
-    over,
   };
   app.innerHTML = `
   <div class="page" data-layout="${l}">
