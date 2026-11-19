@@ -1,0 +1,427 @@
+{
+  "issues": [
+    "RO day 21: the texts sheet has no \"minimum deposit\" line (the MDL cell in the links sheet is empty too). The page shows \"Depunere minimă: 300 MDL\" (the links sheet side table says 22 EUR/GBP -> 300 MDL). Please confirm."
+  ],
+  "selfTranslated": [
+    {
+      "lang": "DE",
+      "key": "login",
+      "value": "Anmelden"
+    },
+    {
+      "lang": "DE",
+      "key": "register",
+      "value": "Registrieren"
+    },
+    {
+      "lang": "DE",
+      "key": "campaign_dates",
+      "value": "1.–26. DEZEMBER · 26 GESCHENKE"
+    },
+    {
+      "lang": "DE",
+      "key": "campaign_title",
+      "value": "Weihnachtsreise"
+    },
+    {
+      "lang": "DE",
+      "key": "subtitle",
+      "value": "Folge dem Weihnachtsmann durch ein verschneites englisches Dorf. Jeden Tag wird ein neues Geschenk freigeschaltet – öffne es und sichere dir deinen Bonus."
+    },
+    {
+      "lang": "DE",
+      "key": "today",
+      "value": "HEUTE"
+    },
+    {
+      "lang": "DE",
+      "key": "26 DAYS",
+      "value": "26 TAGE"
+    },
+    {
+      "lang": "DE",
+      "key": "yesterday",
+      "value": "GESTERN · {date}"
+    },
+    {
+      "lang": "DE",
+      "key": "todays_stop",
+      "value": "HEUTIGER HALT · {date}"
+    },
+    {
+      "lang": "DE",
+      "key": "tomorrow",
+      "value": "MORGEN · {date}"
+    },
+    {
+      "lang": "DE",
+      "key": "in_two_days",
+      "value": "IN 2 TAGEN · {date}"
+    },
+    {
+      "lang": "DE",
+      "key": "missed",
+      "value": "VERPASST · {date}"
+    },
+    {
+      "lang": "DE",
+      "key": "open_gift",
+      "value": "GESCHENK ÖFFNEN"
+    },
+    {
+      "lang": "DE",
+      "key": "unlocks_in",
+      "value": "Wird freigeschaltet in {time}"
+    },
+    {
+      "lang": "DE",
+      "key": "step3_body",
+      "value": "Zahle vor 23:59 Uhr ein, um den Tagesbonus zu sichern."
+    },
+    {
+      "lang": "DE",
+      "key": "responsible",
+      "value": "18+ · Verantwortungsvoll spielen"
+    },
+    {
+      "lang": "DE",
+      "key": "campaign_terms",
+      "value": "Es gelten die vollständigen Aktionsbedingungen"
+    },
+    {
+      "lang": "DE",
+      "key": "day_of",
+      "value": "Tag 7 von 26"
+    },
+    {
+      "lang": "DE",
+      "key": "gifts_collected",
+      "value": "4 Geschenke gesammelt"
+    },
+    {
+      "lang": "DE",
+      "key": "next_gift",
+      "value": "Nächstes Geschenk in"
+    },
+    {
+      "lang": "DE",
+      "key": "campaign_ended",
+      "value": "Die Weihnachtsreise ist zu Ende. Danke, dass du mitgereist bist!"
+    },
+    {
+      "lang": "NL",
+      "key": "login",
+      "value": "Inloggen"
+    },
+    {
+      "lang": "NL",
+      "key": "register",
+      "value": "Registreren"
+    },
+    {
+      "lang": "NL",
+      "key": "campaign_dates",
+      "value": "1–26 DECEMBER · 26 CADEAUS"
+    },
+    {
+      "lang": "NL",
+      "key": "campaign_title",
+      "value": "Kerstreis"
+    },
+    {
+      "lang": "NL",
+      "key": "subtitle",
+      "value": "Volg de Kerstman door een besneeuwd Engels dorp. Elke dag wordt een nieuw cadeau ontgrendeld – open het en claim je bonus."
+    },
+    {
+      "lang": "NL",
+      "key": "today",
+      "value": "VANDAAG"
+    },
+    {
+      "lang": "NL",
+      "key": "26 DAYS",
+      "value": "26 DAGEN"
+    },
+    {
+      "lang": "NL",
+      "key": "yesterday",
+      "value": "GISTEREN · {date}"
+    },
+    {
+      "lang": "NL",
+      "key": "todays_stop",
+      "value": "STOP VAN VANDAAG · {date}"
+    },
+    {
+      "lang": "NL",
+      "key": "tomorrow",
+      "value": "MORGEN · {date}"
+    },
+    {
+      "lang": "NL",
+      "key": "in_two_days",
+      "value": "OVER 2 DAGEN · {date}"
+    },
+    {
+      "lang": "NL",
+      "key": "missed",
+      "value": "GEMIST · {date}"
+    },
+    {
+      "lang": "NL",
+      "key": "open_gift",
+      "value": "CADEAU OPENEN"
+    },
+    {
+      "lang": "NL",
+      "key": "unlocks_in",
+      "value": "Wordt ontgrendeld over {time}"
+    },
+    {
+      "lang": "NL",
+      "key": "step3_body",
+      "value": "Stort vóór 23:59 om de bonus van de dag te claimen."
+    },
+    {
+      "lang": "NL",
+      "key": "responsible",
+      "value": "18+ · Speel verantwoord"
+    },
+    {
+      "lang": "NL",
+      "key": "campaign_terms",
+      "value": "Volledige actievoorwaarden zijn van toepassing"
+    },
+    {
+      "lang": "NL",
+      "key": "day_of",
+      "value": "Dag 7 van 26"
+    },
+    {
+      "lang": "NL",
+      "key": "gifts_collected",
+      "value": "4 cadeaus verzameld"
+    },
+    {
+      "lang": "NL",
+      "key": "next_gift",
+      "value": "Volgend cadeau over"
+    },
+    {
+      "lang": "NL",
+      "key": "campaign_ended",
+      "value": "De Kerstreis is afgelopen. Bedankt dat je met ons meereisde!"
+    },
+    {
+      "lang": "EN",
+      "key": "login",
+      "value": "Log in"
+    },
+    {
+      "lang": "EN",
+      "key": "register",
+      "value": "Register"
+    },
+    {
+      "lang": "EN",
+      "key": "campaign_dates",
+      "value": "1–26 DECEMBER · 26 GIFTS"
+    },
+    {
+      "lang": "EN",
+      "key": "campaign_title",
+      "value": "Christmas Journey"
+    },
+    {
+      "lang": "EN",
+      "key": "subtitle",
+      "value": "Follow Father Christmas through a snowy English village. A new gift unlocks every day — open it, claim your bonus."
+    },
+    {
+      "lang": "EN",
+      "key": "today",
+      "value": "TODAY"
+    },
+    {
+      "lang": "EN",
+      "key": "26 DAYS",
+      "value": "26 DAYS"
+    },
+    {
+      "lang": "EN",
+      "key": "yesterday",
+      "value": "YESTERDAY · {date}"
+    },
+    {
+      "lang": "EN",
+      "key": "todays_stop",
+      "value": "TODAY’S STOP · {date}"
+    },
+    {
+      "lang": "EN",
+      "key": "tomorrow",
+      "value": "TOMORROW · {date}"
+    },
+    {
+      "lang": "EN",
+      "key": "in_two_days",
+      "value": "IN 2 DAYS · {date}"
+    },
+    {
+      "lang": "EN",
+      "key": "missed",
+      "value": "MISSED · {date}"
+    },
+    {
+      "lang": "EN",
+      "key": "open_gift",
+      "value": "OPEN GIFT"
+    },
+    {
+      "lang": "EN",
+      "key": "unlocks_in",
+      "value": "Unlocks in {time}"
+    },
+    {
+      "lang": "EN",
+      "key": "step3_body",
+      "value": "Deposit before 23:59 to claim the day’s bonus."
+    },
+    {
+      "lang": "EN",
+      "key": "responsible",
+      "value": "18+ · Play responsibly"
+    },
+    {
+      "lang": "EN",
+      "key": "campaign_terms",
+      "value": "Full campaign terms apply"
+    },
+    {
+      "lang": "EN",
+      "key": "day_of",
+      "value": "Day 7 of 26"
+    },
+    {
+      "lang": "EN",
+      "key": "gifts_collected",
+      "value": "4 gifts collected"
+    },
+    {
+      "lang": "EN",
+      "key": "next_gift",
+      "value": "Next gift in"
+    },
+    {
+      "lang": "EN",
+      "key": "campaign_ended",
+      "value": "The Christmas Journey has ended. Thank you for travelling with us!"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "login",
+      "value": "Autentificare"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "register",
+      "value": "Înregistrare"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "campaign_dates",
+      "value": "1–26 DECEMBRIE · 26 CADOURI"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "campaign_title",
+      "value": "Călătoria de Crăciun"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "subtitle",
+      "value": "Urmează-l pe Moș Crăciun printr-un sat englezesc acoperit de zăpadă. În fiecare zi se deblochează un cadou nou – deschide-l și revendică-ți bonusul."
+    },
+    {
+      "lang": "RO_MD",
+      "key": "today",
+      "value": "AZI"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "26 DAYS",
+      "value": "26 ZILE"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "yesterday",
+      "value": "IERI · {date}"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "todays_stop",
+      "value": "OPRIREA DE AZI · {date}"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "tomorrow",
+      "value": "MÂINE · {date}"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "in_two_days",
+      "value": "PESTE 2 ZILE · {date}"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "missed",
+      "value": "PIERDUT · {date}"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "open_gift",
+      "value": "DESCHIDE CADOUL"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "unlocks_in",
+      "value": "Se deblochează în {time}"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "step3_body",
+      "value": "Depune înainte de 23:59 pentru a revendica bonusul zilei."
+    },
+    {
+      "lang": "RO_MD",
+      "key": "responsible",
+      "value": "18+ · Joacă responsabil"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "campaign_terms",
+      "value": "Se aplică termenii complecți ai campaniei"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "day_of",
+      "value": "Ziua 7 din 26"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "gifts_collected",
+      "value": "4 cadouri colectate"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "next_gift",
+      "value": "Următorul cadou în"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "campaign_ended",
+      "value": "Călătoria de Crăciun s-a încheiat. Îți mulțumim că ai călătorit cu noi!"
+    }
+  ]
+}

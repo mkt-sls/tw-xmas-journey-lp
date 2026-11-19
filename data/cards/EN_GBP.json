@@ -6,1456 +6,1196 @@
     {
       "day": 1,
       "date": "2026-12-01",
-      "location": "TBD",
+      "location": "",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 73,
+        "max": 450,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "73% UP TO 450 GBP"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 35,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 35 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 1 · 1 DEC",
+          "CHRISTMAS BONUS",
+          "73% UP TO 450 GBP",
+          "Min. deposit: 35 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 1 · 1 DEC",
+          "CHRISTMAS BONUS",
+          "73% UP TO 450 GBP",
+          "Min. deposit: 35 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 1 · 1 DEC",
+          "SURPRISE GIFT",
+          "Opens: 1 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 1 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 2,
       "date": "2026-12-02",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 83,
+        "text": "83 FREE SPINS"
       },
-      "game": null,
+      "game": "Thunder Coins: Hold and Win",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 25 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 2 · 2 DEC",
+          "CHRISTMAS FREE SPINS",
+          "83 FREE SPINS",
+          "on Thunder Coins: Hold and Win",
+          "Min. deposit: 25 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 2 · 2 DEC",
+          "CHRISTMAS FREE SPINS",
+          "83 FREE SPINS",
+          "on Thunder Coins: Hold and Win",
+          "Min. deposit: 25 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 2 · 2 DEC",
+          "SURPRISE GIFT",
+          "Opens: 2 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 2 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 3,
       "date": "2026-12-03",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 60,
+        "text": "60 FREE SPINS"
       },
-      "game": null,
+      "game": "Gemhalla",
       "minDeposit": {
-        "value": 0,
+        "value": 28,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 28 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 3 · 3 DEC",
+          "CHRISTMAS FREE SPINS",
+          "60 FREE SPINS",
+          "on Gemhalla",
+          "Min. deposit: 28 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 3 · 3 DEC",
+          "CHRISTMAS FREE SPINS",
+          "60 FREE SPINS",
+          "on Gemhalla",
+          "Min. deposit: 28 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 3 · 3 DEC",
+          "SURPRISE GIFT",
+          "Opens: 3 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 3 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 4,
       "date": "2026-12-04",
-      "location": "TBD",
+      "location": "",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 55,
+        "max": 550,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "55% UP TO 550 GBP"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 30 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 4 · 4 DEC",
+          "CHRISTMAS BONUS",
+          "55% UP TO 550 GBP",
+          "Min. deposit: 30 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 4 · 4 DEC",
+          "CHRISTMAS BONUS",
+          "55% UP TO 550 GBP",
+          "Min. deposit: 30 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 4 · 4 DEC",
+          "SURPRISE GIFT",
+          "Opens: 4 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 4 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 5,
       "date": "2026-12-05",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 90,
+        "text": "90 FREE SPINS"
       },
-      "game": null,
+      "game": "Big Bass Splash",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 25 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 5 · 5 DEC",
+          "CHRISTMAS FREE SPINS",
+          "90 FREE SPINS",
+          "on Big Bass Splash",
+          "Min. deposit: 25 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 5 · 5 DEC",
+          "CHRISTMAS FREE SPINS",
+          "90 FREE SPINS",
+          "on Big Bass Splash",
+          "Min. deposit: 25 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 5 · 5 DEC",
+          "SURPRISE GIFT",
+          "Opens: 5 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 5 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 6,
       "date": "2026-12-06",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 70,
+        "text": "70 FREE SPINS"
       },
-      "game": null,
+      "game": "Bonanza Billion",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 30 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 6 · 6 DEC",
+          "CHRISTMAS FREE SPINS",
+          "70 FREE SPINS",
+          "on Bonanza Billion",
+          "Min. deposit: 30 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 6 · 6 DEC",
+          "CHRISTMAS FREE SPINS",
+          "70 FREE SPINS",
+          "on Bonanza Billion",
+          "Min. deposit: 30 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 6 · 6 DEC",
+          "SURPRISE GIFT",
+          "Opens: 6 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 6 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 7,
       "date": "2026-12-07",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 88,
+        "text": "88 FREE SPINS"
       },
-      "game": null,
+      "game": "Thunder Coins: Hold and Win",
       "minDeposit": {
-        "value": 0,
+        "value": 22,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 22 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 7 · 7 DEC",
+          "CHRISTMAS FREE SPINS",
+          "88 FREE SPINS",
+          "on Thunder Coins: Hold and Win",
+          "Min. deposit: 22 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 7 · 7 DEC",
+          "CHRISTMAS FREE SPINS",
+          "88 FREE SPINS",
+          "on Thunder Coins: Hold and Win",
+          "Min. deposit: 22 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 7 · 7 DEC",
+          "SURPRISE GIFT",
+          "Opens: 7 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 7 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 8,
       "date": "2026-12-08",
-      "location": "TBD",
+      "location": "",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 65,
+        "max": 650,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "65% UP TO 650 GBP"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 35,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 35 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 8 · 8 DEC",
+          "CHRISTMAS BONUS",
+          "65% UP TO 650 GBP",
+          "Min. deposit: 35 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 8 · 8 DEC",
+          "CHRISTMAS BONUS",
+          "65% UP TO 650 GBP",
+          "Min. deposit: 35 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 8 · 8 DEC",
+          "SURPRISE GIFT",
+          "Opens: 8 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 8 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 9,
       "date": "2026-12-09",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 74,
+        "text": "74 FREE SPINS"
       },
-      "game": null,
+      "game": "John Hunter and the Book of Tut",
       "minDeposit": {
-        "value": 0,
+        "value": 22,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 22 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 9 · 9 DEC",
+          "CHRISTMAS FREE SPINS",
+          "74 FREE SPINS",
+          "on John Hunter and the Book of Tut",
+          "Min. deposit: 22 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 9 · 9 DEC",
+          "CHRISTMAS FREE SPINS",
+          "74 FREE SPINS",
+          "on John Hunter and the Book of Tut",
+          "Min. deposit: 22 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 9 · 9 DEC",
+          "SURPRISE GIFT",
+          "Opens: 9 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 9 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 10,
       "date": "2026-12-10",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 54,
+        "text": "54 FREE SPINS"
       },
-      "game": null,
+      "game": "Bonanza Billion",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 25 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 10 · 10 DEC",
+          "CHRISTMAS FREE SPINS",
+          "54 FREE SPINS",
+          "on Bonanza Billion",
+          "Min. deposit: 25 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 10 · 10 DEC",
+          "CHRISTMAS FREE SPINS",
+          "54 FREE SPINS",
+          "on Bonanza Billion",
+          "Min. deposit: 25 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 10 · 10 DEC",
+          "SURPRISE GIFT",
+          "Opens: 10 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 10 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 11,
       "date": "2026-12-11",
-      "location": "TBD",
+      "location": "",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 45,
+        "max": 450,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "45% UP TO 450 GBP"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 22,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 22 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 11 · 11 DEC",
+          "CHRISTMAS BONUS",
+          "45% UP TO 450 GBP",
+          "Min. deposit: 22 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 11 · 11 DEC",
+          "CHRISTMAS BONUS",
+          "45% UP TO 450 GBP",
+          "Min. deposit: 22 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 11 · 11 DEC",
+          "SURPRISE GIFT",
+          "Opens: 11 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 11 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 12,
       "date": "2026-12-12",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 75,
+        "text": "75 FREE SPINS"
       },
-      "game": null,
+      "game": "Sweet Bonanza Xmas",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 25 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 12 · 12 DEC",
+          "CHRISTMAS FREE SPINS",
+          "75 FREE SPINS",
+          "on Sweet Bonanza Xmas",
+          "Min. deposit: 25 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 12 · 12 DEC",
+          "CHRISTMAS FREE SPINS",
+          "75 FREE SPINS",
+          "on Sweet Bonanza Xmas",
+          "Min. deposit: 25 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 12 · 12 DEC",
+          "SURPRISE GIFT",
+          "Opens: 12 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 12 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 13,
       "date": "2026-12-13",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 91,
+        "text": "91 FREE SPINS"
       },
-      "game": null,
+      "game": "Big Bass Splash",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 25 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 13 · 13 DEC",
+          "CHRISTMAS FREE SPINS",
+          "91 FREE SPINS",
+          "on Big Bass Splash",
+          "Min. deposit: 25 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 13 · 13 DEC",
+          "CHRISTMAS FREE SPINS",
+          "91 FREE SPINS",
+          "on Big Bass Splash",
+          "Min. deposit: 25 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 13 · 13 DEC",
+          "SURPRISE GIFT",
+          "Opens: 13 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 13 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 14,
       "date": "2026-12-14",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 86,
+        "text": "86 FREE SPINS"
       },
-      "game": null,
+      "game": "Christmas Carol Megaways",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 30 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 14 · 14 DEC",
+          "CHRISTMAS FREE SPINS",
+          "86 FREE SPINS",
+          "on Christmas Carol Megaways",
+          "Min. deposit: 30 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 14 · 14 DEC",
+          "CHRISTMAS FREE SPINS",
+          "86 FREE SPINS",
+          "on Christmas Carol Megaways",
+          "Min. deposit: 30 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 14 · 14 DEC",
+          "SURPRISE GIFT",
+          "Opens: 14 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 14 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 15,
       "date": "2026-12-15",
-      "location": "TBD",
+      "location": "",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 60,
+        "max": 600,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "60% UP TO 600 GBP"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 25 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 15 · 15 DEC",
+          "CHRISTMAS BONUS",
+          "60% UP TO 600 GBP",
+          "Min. deposit: 25 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 15 · 15 DEC",
+          "CHRISTMAS BONUS",
+          "60% UP TO 600 GBP",
+          "Min. deposit: 25 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 15 · 15 DEC",
+          "SURPRISE GIFT",
+          "Opens: 15 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 15 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 16,
       "date": "2026-12-16",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 72,
+        "text": "72 FREE SPINS"
       },
-      "game": null,
+      "game": "Gemhalla",
       "minDeposit": {
-        "value": 0,
+        "value": 28,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 28 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 16 · 16 DEC",
+          "CHRISTMAS FREE SPINS",
+          "72 FREE SPINS",
+          "on Gemhalla",
+          "Min. deposit: 28 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 16 · 16 DEC",
+          "CHRISTMAS FREE SPINS",
+          "72 FREE SPINS",
+          "on Gemhalla",
+          "Min. deposit: 28 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 16 · 16 DEC",
+          "SURPRISE GIFT",
+          "Opens: 16 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 16 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 17,
       "date": "2026-12-17",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 96,
+        "text": "96 FREE SPINS"
       },
-      "game": null,
+      "game": "25 Cookies: Hit the Bonus",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 30 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 17 · 17 DEC",
+          "CHRISTMAS FREE SPINS",
+          "96 FREE SPINS",
+          "on 25 Cookies: Hit the Bonus",
+          "Min. deposit: 30 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 17 · 17 DEC",
+          "CHRISTMAS FREE SPINS",
+          "96 FREE SPINS",
+          "on 25 Cookies: Hit the Bonus",
+          "Min. deposit: 30 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 17 · 17 DEC",
+          "SURPRISE GIFT",
+          "Opens: 17 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 17 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 18,
       "date": "2026-12-18",
-      "location": "TBD",
+      "location": "",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 63,
+        "max": 650,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "63% UP TO 650 GBP"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 25 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 18 · 18 DEC",
+          "CHRISTMAS BONUS",
+          "63% UP TO 650 GBP",
+          "Min. deposit: 25 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 18 · 18 DEC",
+          "CHRISTMAS BONUS",
+          "63% UP TO 650 GBP",
+          "Min. deposit: 25 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 18 · 18 DEC",
+          "SURPRISE GIFT",
+          "Opens: 18 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 18 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 19,
       "date": "2026-12-19",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 83,
+        "text": "83 FREE SPINS"
       },
-      "game": null,
+      "game": "Yeti Quest",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 30 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 19 · 19 DEC",
+          "CHRISTMAS FREE SPINS",
+          "83 FREE SPINS",
+          "on Yeti Quest",
+          "Min. deposit: 30 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 19 · 19 DEC",
+          "CHRISTMAS FREE SPINS",
+          "83 FREE SPINS",
+          "on Yeti Quest",
+          "Min. deposit: 30 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 19 · 19 DEC",
+          "SURPRISE GIFT",
+          "Opens: 19 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 19 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 20,
       "date": "2026-12-20",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 57,
+        "text": "57 FREE SPINS"
       },
-      "game": null,
+      "game": "Sweet Bonanza Xmas",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 25 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 20 · 20 DEC",
+          "CHRISTMAS FREE SPINS",
+          "57 FREE SPINS",
+          "on Sweet Bonanza Xmas",
+          "Min. deposit: 25 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 20 · 20 DEC",
+          "CHRISTMAS FREE SPINS",
+          "57 FREE SPINS",
+          "on Sweet Bonanza Xmas",
+          "Min. deposit: 25 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 20 · 20 DEC",
+          "SURPRISE GIFT",
+          "Opens: 20 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 20 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 21,
       "date": "2026-12-21",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 81,
+        "text": "81 FREE SPINS"
       },
-      "game": null,
+      "game": "25 Cookies: Hit the Bonus",
       "minDeposit": {
-        "value": 0,
+        "value": 22,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 22 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 21 · 21 DEC",
+          "CHRISTMAS FREE SPINS",
+          "81 FREE SPINS",
+          "on 25 Cookies: Hit the Bonus",
+          "Min. deposit: 22 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 21 · 21 DEC",
+          "CHRISTMAS FREE SPINS",
+          "81 FREE SPINS",
+          "on 25 Cookies: Hit the Bonus",
+          "Min. deposit: 22 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 21 · 21 DEC",
+          "SURPRISE GIFT",
+          "Opens: 21 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 21 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 22,
       "date": "2026-12-22",
-      "location": "TBD",
+      "location": "",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 70,
+        "max": 700,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "70% UP TO 700 GBP"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 30 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 22 · 22 DEC",
+          "CHRISTMAS BONUS",
+          "70% UP TO 700 GBP",
+          "Min. deposit: 30 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 22 · 22 DEC",
+          "CHRISTMAS BONUS",
+          "70% UP TO 700 GBP",
+          "Min. deposit: 30 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 22 · 22 DEC",
+          "SURPRISE GIFT",
+          "Opens: 22 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 22 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 23,
       "date": "2026-12-23",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 99,
+        "text": "99 FREE SPINS"
       },
-      "game": null,
+      "game": "Big Bass Christmas - Frozen Lake",
       "minDeposit": {
-        "value": 0,
+        "value": 35,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 35 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 23 · 23 DEC",
+          "CHRISTMAS FREE SPINS",
+          "99 FREE SPINS",
+          "on Big Bass Christmas - Frozen Lake",
+          "Min. deposit: 35 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 23 · 23 DEC",
+          "CHRISTMAS FREE SPINS",
+          "99 FREE SPINS",
+          "on Big Bass Christmas - Frozen Lake",
+          "Min. deposit: 35 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 23 · 23 DEC",
+          "SURPRISE GIFT",
+          "Opens: 23 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 23 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 24,
       "date": "2026-12-24",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 84,
+        "text": "84 FREE SPINS"
       },
-      "game": null,
+      "game": "Yeti Quest",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 30 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 24 · 24 DEC",
+          "CHRISTMAS FREE SPINS",
+          "84 FREE SPINS",
+          "on Yeti Quest",
+          "Min. deposit: 30 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 24 · 24 DEC",
+          "CHRISTMAS FREE SPINS",
+          "84 FREE SPINS",
+          "on Yeti Quest",
+          "Min. deposit: 30 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 24 · 24 DEC",
+          "SURPRISE GIFT",
+          "Opens: 24 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 24 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 25,
       "date": "2026-12-25",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "GBP",
-        "text": "TBD"
+        "freeSpins": 101,
+        "text": "101 FREE SPINS"
       },
-      "game": null,
+      "game": "Christmas Carol Megaways",
       "minDeposit": {
-        "value": 0,
+        "value": 35,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 35 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 25 · 25 DEC",
+          "CHRISTMAS FREE SPINS",
+          "101 FREE SPINS",
+          "on Christmas Carol Megaways",
+          "Min. deposit: 35 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 25 · 25 DEC",
+          "CHRISTMAS FREE SPINS",
+          "101 FREE SPINS",
+          "on Christmas Carol Megaways",
+          "Min. deposit: 35 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 25 · 25 DEC",
+          "SURPRISE GIFT",
+          "Opens: 25 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 25 DEC",
+          "Full terms & conditions"
         ]
       }
     },
     {
       "day": 26,
       "date": "2026-12-26",
-      "location": "TBD",
+      "location": "",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 53,
+        "max": 500,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "53% UP TO 500 GBP"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "GBP",
-        "text": "TBD"
+        "text": "Min. deposit: 25 GBP"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 26 · 26 DEC",
+          "CHRISTMAS BONUS",
+          "53% UP TO 500 GBP",
+          "Min. deposit: 25 GBP",
+          "DEPOSIT & CLAIM",
+          "Full terms & conditions"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 26 · 26 DEC",
+          "CHRISTMAS BONUS",
+          "53% UP TO 500 GBP",
+          "Min. deposit: 25 GBP",
+          "Gift expired",
+          "Full terms & conditions"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAY 26 · 26 DEC",
+          "SURPRISE GIFT",
+          "Opens: 26 DEC",
+          "Come back tomorrow to unlock this gift",
+          "Locked · 26 DEC",
+          "Full terms & conditions"
         ]
       }
     }

@@ -1,25 +1,48 @@
 import { describe, expect, it } from 'vitest';
 import links from '../data/links.json';
-import { depositLinkFor } from './config.js';
+import markets from '../data/markets.json';
+import { CAMPAIGN, depositLinkFor, linkDay, linkFor } from './config.js';
 
 describe('per-day deposit links', () => {
-  it('has 26 days', () => {
+  it('has 26 days in order with December 2026 dates', () => {
     expect(links).toHaveLength(26);
     expect(links.map((l) => l.day)).toEqual(Array.from({ length: 26 }, (_, i) => i + 1));
+    links.forEach((l) => expect(l.date).toBe(`2026-12-${String(l.day).padStart(2, '0')}`));
   });
-  it('each link ends with promocode=<that day promo code>, no whitespace', () => {
+  it('every link is on tw-de.icu and its promocode param equals the day promo code', () => {
     for (const l of links) {
+      const u = new URL(l.deposit);
+      expect(u.hostname, `day ${l.day}`).toBe('tw-de.icu');
+      expect(u.pathname).toBe('/casino');
+      expect(u.searchParams.get('modal')).toBe('deposit');
+      expect(u.searchParams.get('promocode'), `day ${l.day}`).toBe(l.promo);
       expect(l.promo).toMatch(/^[A-Z0-9]+$/);
-      expect(l.deposit.endsWith('promocode=' + l.promo), `day ${l.day}`).toBe(true);
       expect(l.deposit).not.toMatch(/\s/);
-      expect(l.deposit.startsWith('https://tw-de.icu/casino?modal=deposit&promocode=')).toBe(true);
     }
   });
-  it('promo codes are unique and depositLinkFor returns the day link for every market', () => {
-    // step 2 replaces the TBD placeholders with unique day codes
-    if (links.some((l) => l.promo !== 'TBD')) expect(new Set(links.map((l) => l.promo)).size).toBe(26);
-    expect(depositLinkFor(1, 'DE')).toBe(links[0].deposit);
-    expect(depositLinkFor(1, 'RO_MDL')).toBe(depositLinkFor(1, 'EN_GBP'));
-    expect(depositLinkFor(1, 'DE').endsWith('promocode=TBD')).toBe(true);
+  it('promo codes and links are unique, no placeholder left', () => {
+    expect(new Set(links.map((l) => l.promo)).size).toBe(26);
+    expect(new Set(links.map((l) => l.deposit)).size).toBe(26);
+    expect(links.some((l) => l.promo === 'TBD')).toBe(false);
+  });
+  it('depositLinkFor returns the same day link for every market', () => {
+    for (const l of links) for (const m of markets) expect(depositLinkFor(l.day, m.id)).toBe(l.deposit);
+  });
+});
+
+describe('login / register / terms use the current day link', () => {
+  const at = (iso) => linkDay(new Date(iso));
+  it('clamps the day: before day 1 -> 1, after day 26 -> 26', () => {
+    expect(at('2026-11-19T12:00:00')).toBe(1);
+    expect(at('2026-12-01T00:00:01')).toBe(1);
+    expect(at('2026-12-07T12:00:00')).toBe(7);
+    expect(at('2026-12-26T23:59:59')).toBe(26);
+    expect(at('2027-01-05T12:00:00')).toBe(CAMPAIGN.days);
+  });
+  it('linkFor maps all four names to that day link', () => {
+    for (const name of ['login', 'register', 'terms', 'campaignTerms', 'deposit']) {
+      expect(linkFor(name, 'DE', 7)).toBe(links[6].deposit);
+      expect(linkFor(name, 'RO_MDL', 26)).toBe(links[25].deposit);
+    }
   });
 });

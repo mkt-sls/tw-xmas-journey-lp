@@ -53,7 +53,8 @@ export function renderCard({ card, day, today, ui, marketId }) {
       ${termsLink}`;
   } else {
     const hasGame = Boolean(card.game);
-    const rows = lines.slice(n - 5, n - 2).map(splitTerm);
+    // Term rows sit between the amount (+ game line) and the CTA line. Top Win cards have only "Min. deposit".
+    const rows = lines.slice(hasGame ? 4 : 3, n - 2).map(splitTerm);
     body = `
       <p class="card__type">${escNb(lines[1])}</p>
       <div class="card__offer">

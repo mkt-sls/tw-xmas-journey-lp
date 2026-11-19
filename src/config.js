@@ -1,30 +1,38 @@
 import dayLinks from '../data/links.json';
+import { campaignDay, parseNow } from './date.js';
 
 // Campaign settings and every outgoing link in one place.
-// Replace the "#" placeholders before launch. Per-market overrides go in linksByMarket
-// (market id from data/markets.json, e.g. DE, EN_GBP).
+// Links come from data/links.json (client links sheet, tab "TW EUROPE"): one deposit link per day, same for every market.
+// Per-market overrides go in linksByMarket (market id from data/markets.json, e.g. DE, EN_GBP).
 export const CAMPAIGN = {
   year: 2026,
   month: 12, // December
   days: 26, // 1-26 December
 };
 
+// Link names that all point to the deposit link of the current campaign day:
+// LOG IN, REGISTER, "Full terms & conditions" on the card, "Full campaign terms apply" in the legal line.
+const TODAY_LINKS = ['login', 'register', 'terms', 'campaignTerms'];
+
 export const links = {
-  login: '#',
-  deposit: '#',
-  terms: '#', // "Full terms & conditions" on the card
-  campaignTerms: '#', // "Full campaign terms apply" in the legal line
+  deposit: '#', // last-resort fallback only
 };
 
 // Optional per-market overrides, e.g. { DE: { deposit: 'https://...', terms: 'https://...' } }
 export const linksByMarket = {};
 
-export function linkFor(name, marketId) {
-  return linksByMarket[marketId]?.[name] ?? links[name] ?? '#';
+/** Campaign day used for today's link: before day 1 -> 1, after day 26 -> 26. Honours ?date= like the page does. */
+export function linkDay(now = parseNow(typeof window === 'undefined' ? '' : window.location.search)) {
+  return Math.min(Math.max(campaignDay(now), 1), CAMPAIGN.days);
 }
 
-// Deposit link of one campaign day (data/links.json, imported from the client links sheet). Same link for every market;
-// a per-market override in linksByMarket wins, '#' placeholder is the last fallback.
+// Deposit link of one campaign day. A per-market override in linksByMarket wins, '#' is the last fallback.
 export function depositLinkFor(day, marketId) {
   return linksByMarket[marketId]?.deposit ?? dayLinks.find((l) => l.day === day)?.deposit ?? links.deposit;
+}
+
+export function linkFor(name, marketId, day = linkDay()) {
+  if (linksByMarket[marketId]?.[name]) return linksByMarket[marketId][name];
+  if (name === 'deposit' || TODAY_LINKS.includes(name)) return depositLinkFor(day, marketId);
+  return links[name] ?? '#';
 }
