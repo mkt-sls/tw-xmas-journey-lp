@@ -114,10 +114,12 @@ export function bindMarketMenu(root, onSelect) {
 /**
  * Mobile header fit. The Figma sizes (level 0: 16px side padding, 6px gap, 12px text, 12px button padding, 110px logo) are kept
  * whenever they fit; a longer translation ("Registrieren", "Înregistrare") steps down through the levels in layout.css until
- * logo, language switcher, LOG IN and REGISTER sit on one row inside the side padding. Text never goes below 11px; buttons stay 36px high.
- * Desktop always uses level 0. If even the last level does not fit (RO at 320), the header keeps the last level: scripts/check-header.mjs reports it.
+ * logo, language switcher, LOG IN and REGISTER sit on one row inside the side padding with >= 8px between logo and controls.
+ * Levels 1-3 keep text >= 11px / 36px buttons; levels 4-5 shrink the LOG IN / REGISTER buttons (text 10px / 9px, 32px high) only where nothing else fits.
+ * Desktop always uses level 0. If even the last level does not fit, the header keeps the last level: scripts/check-header.mjs reports it.
  */
-export const HEADER_LEVELS = 4;
+export const HEADER_LEVELS = 6;
+const HEADER_MIN_GAP = 8; // logo / controls: never closer than this, so the spacing logic is the same at every width
 export function fitHeader(root, layout) {
   const header = root.querySelector('.header');
   if (!header) return;
@@ -129,7 +131,7 @@ export function fitHeader(root, layout) {
     const l = logo.getBoundingClientRect();
     const i = inner.getBoundingClientRect();
     const pad = Number.parseFloat(getComputedStyle(inner).paddingRight) * (i.width / inner.offsetWidth || 1);
-    return a.right <= i.right - pad + 0.5 && a.left >= l.right + 4 * (i.width / inner.offsetWidth || 1) - 0.5;
+    return a.right <= i.right - pad + 0.5 && a.left >= l.right + HEADER_MIN_GAP * (i.width / inner.offsetWidth || 1) - 0.5;
   };
   let level = 0;
   header.dataset.fit = '0';

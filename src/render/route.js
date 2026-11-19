@@ -404,6 +404,68 @@ export function drawGarlands(root) {
   });
 }
 
+/** Pulls one label back inside the viewport margin with the independent `translate` property. Returns the viewport-space box incl. garland / holly / breathing. */
+function nudgeLabel(el, margin, vw) {
+  el.style.translate = '';
+  const box = el.getBoundingClientRect();
+  const k = box.width / el.offsetWidth || 1; // stage scale
+  // what must stay on screen is the label plus its garland and holly (they stick out of the box), and the active label
+  // breathes up to 3.5% bigger about its centre (anim.css): the margin is kept at the biggest size
+  let left = box.left;
+  let right = box.right;
+  el.querySelectorAll('.garland svg, .label__holly, .label__cap').forEach((part) => {
+    const p = part.getBoundingClientRect();
+    left = Math.min(left, p.left);
+    right = Math.max(right, p.right);
+  });
+  const grow = el.classList.contains('label--active') ? (box.width * 0.035) / 2 : 0;
+  left -= grow;
+  right += grow;
+  let dx = 0;
+  if (left < margin) dx = margin - left;
+  else if (right > vw - margin) dx = vw - margin - right;
+  if (dx) el.style.translate = `${r(dx / k)}px 0`;
+  return { left: left + dx, right: right + dx, box: { left: box.left + dx - grow, right: box.right + dx + grow, top: box.top, bottom: box.bottom } };
+}
+
+/**
+ * Mobile: today's "open gift" text ("GESCHENK ÖFFNEN", "DESCHIDE CADOUL") on ONE line where it fits. The label widens (and, if needed, the text steps
+ * 15 -> 14 -> 13 -> 12px) as long as the label stays >= margin from both screen edges and does not cover the gift (middle 60% of its image box) or the TODAY pill;
+ * otherwise it stays on the two-line layout of the CSS. Run before the general nudge pass in fitLabels.
+ */
+function fitTodayButton(root, margin, vw) {
+  const lab = root.querySelector('.label--active');
+  const btn = lab?.querySelector('.open-btn');
+  if (!btn || !lab.closest('[data-layout="mobile"]')) return;
+  lab.classList.remove('label--oneline');
+  lab.style.removeProperty('--open-fs');
+  const id = lab.dataset.open;
+  const gift = root.querySelector(`.gift[data-open="${id}"] .gift__img`);
+  const pill = root.querySelector(`.gift[data-open="${id}"] .today-pill`);
+  const hit = (a, b, tol) => a.left < b.right - tol && b.left < a.right - tol && a.top < b.bottom - tol && b.top < a.bottom - tol;
+  for (const fs of [15, 14, 13, 12]) {
+    lab.classList.add('label--oneline');
+    lab.style.setProperty('--open-fs', `${fs}px`);
+    const n = nudgeLabel(lab, margin, vw);
+    let ok = n.left >= margin - 0.01 && n.right <= vw - margin + 0.01;
+    if (ok && gift) {
+      const g = gift.getBoundingClientRect();
+      const sh = g.width * 0.2;
+      ok = !hit(n.box, { left: g.left + sh, right: g.right - sh, top: g.top, bottom: g.bottom }, 2);
+    }
+    if (ok && pill) ok = !hit(n.box, pill.getBoundingClientRect(), 0.5);
+    // text really on one line (the 2-line CSS is the fallback)
+    if (ok) {
+      const rng = document.createRange();
+      rng.selectNodeContents(btn.querySelector('span'));
+      ok = rng.getClientRects().length === 1;
+    }
+    if (ok) return;
+  }
+  lab.classList.remove('label--oneline');
+  lab.style.removeProperty('--open-fs');
+}
+
 /**
  * Keeps every label inside the viewport: a label that sticks out (long German/Russian names, narrow phones)
  * is nudged back with the independent `translate` property (transform and scale stay free for the animations).
@@ -414,26 +476,8 @@ export function fitLabels(root, margin = 8) {
   labels.forEach((el) => {
     el.style.translate = '';
   });
-  labels.forEach((el) => {
-    const box = el.getBoundingClientRect();
-    const k = box.width / el.offsetWidth || 1; // stage scale
-    // what must stay on screen is the label plus its garland and holly (they stick out of the box), and the active label
-    // breathes up to 3.5% bigger about its centre (anim.css): the margin is kept at the biggest size
-    let left = box.left;
-    let right = box.right;
-    el.querySelectorAll('.garland svg, .label__holly, .label__cap').forEach((part) => {
-      const p = part.getBoundingClientRect();
-      left = Math.min(left, p.left);
-      right = Math.max(right, p.right);
-    });
-    const grow = el.classList.contains('label--active') ? (box.width * 0.035) / 2 : 0;
-    left -= grow;
-    right += grow;
-    let dx = 0;
-    if (left < margin) dx = margin - left;
-    else if (right > vw - margin) dx = vw - margin - right;
-    if (dx) el.style.translate = `${r(dx / k)}px 0`;
-  });
+  fitTodayButton(root, margin, vw);
+  labels.forEach((el) => nudgeLabel(el, margin, vw));
   // neighbours pushed into each other (a wide active label nudged away from the edge): move the right one on
   const sorted = [...labels].sort((p, q) => p.getBoundingClientRect().left - q.getBoundingClientRect().left);
   for (let i = 1; i < sorted.length; i++) {

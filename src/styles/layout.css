@@ -52,7 +52,9 @@
 }
 
 /* Mobile header fit levels (fitHeader in render/header.js picks the first that fits; level 0 = Figma 58:987).
-   Text never below 11px, buttons stay 36px high, the flag button 36px wide at the tightest levels. */
+   Logo always left, controls always right, at least 8px between them at every width. Levels 1-3 keep text >= 11px and 36px buttons;
+   levels 4-5 (only where a long translation does not fit otherwise, e.g. RO "Autentificare" + "Înregistrare" at 320) make the
+   LOG IN / REGISTER buttons smaller: text 10px / 9px, 32px high. The flag button stays 36px wide. */
 .header__logo { flex: none; }
 .header__logo img { display: block; }
 .header[data-fit='1'] .header__inner { padding: 0 12px; }
@@ -74,6 +76,20 @@
 .header[data-fit='3'] .btn-register { padding: 0 6px; font-size: 11px; letter-spacing: 0.01em; }
 .header[data-fit='3'] .header__logo img { width: 80px; }
 .page[data-layout='mobile'] .header[data-fit='3'] .market__btn { min-width: 36px; min-height: 36px; }
+
+.header[data-fit='4'] .header__inner { padding: 0 8px; }
+.header[data-fit='4'] .header__actions { gap: 3px; }
+.header[data-fit='4'] .btn-outline,
+.header[data-fit='4'] .btn-register { height: 32px; padding: 0 5px; font-size: 10px; letter-spacing: 0; }
+.header[data-fit='4'] .header__logo img { width: 76px; }
+.page[data-layout='mobile'] .header[data-fit='4'] .market__btn { min-width: 36px; min-height: 36px; }
+
+.header[data-fit='5'] .header__inner { padding: 0 8px; }
+.header[data-fit='5'] .header__actions { gap: 3px; }
+.header[data-fit='5'] .btn-outline,
+.header[data-fit='5'] .btn-register { height: 32px; padding: 0 4px; font-size: 9px; letter-spacing: 0; }
+.header[data-fit='5'] .header__logo img { width: 72px; }
+.page[data-layout='mobile'] .header[data-fit='5'] .market__btn { min-width: 36px; min-height: 36px; }
 
 /* ---- hero: intro + route ---- */
 .hero {
@@ -123,6 +139,30 @@
 }
 .intro__title span + span {
   margin-top: calc(-4px - 0.2em); /* the 0.2em is the paint-box padding of the gradient part (title-b), see below */
+}
+/* Step 7: the mobile intro (date pill, title, "26 GIFTS") sat directly on the busy landscape (snowflakes, branches, the dotted route).
+   A dark scrim (BG #0B1530) behind it, strongest at the top and fading out into the landscape: no box edge, the lower landscape and the route stay visible.
+   It is a pseudo element behind the intro (z-index -1 inside the hero), so it adds no markup and takes no space. */
+.page[data-layout='mobile'] .intro {
+  position: relative;
+}
+.page[data-layout='mobile'] .intro::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -18px;
+  bottom: -64px;
+  left: -24px;
+  right: -24px;
+  background:
+    radial-gradient(ellipse 62% 70% at 50% 42%, rgba(11, 21, 48, 0.55), rgba(11, 21, 48, 0) 100%),
+    linear-gradient(180deg, rgba(11, 21, 48, 0.94) 0%, rgba(11, 21, 48, 0.86) 40%, rgba(11, 21, 48, 0.5) 72%, rgba(11, 21, 48, 0) 100%);
+  pointer-events: none;
+}
+
+/* accents (RO "CRĂCIUN": the breve over the Ă reaches up) need more air than the tight Figma spacing between the two lines; plain EN / NL / DE keep it */
+.page[data-layout='mobile'] .intro__title[data-accent] span + span {
+  margin-top: calc(-4px - 0.2em + 0.19em);
 }
 .intro__title-a {
   color: #fff;
@@ -188,7 +228,7 @@
   color: var(--text-soft);
   font-size: 12px;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.4; /* 2-line legend entries ("Vandaag / beschikbaar"): >= 3px between the ink of the lines */
 }
 .legend__dot {
   flex: none;
@@ -378,7 +418,7 @@
   max-width: min(980px, calc(100% - 48px));
   margin-top: 0;
   font-size: 16px;
-  line-height: 1.2;
+  line-height: 1.27; /* Figma 1.2; +1px so that an accent on line 2 (ö, â, ă) keeps >= 3px clear of line 1 (scripts/check-line-ink.mjs) */
 }
 
 /* the 735px stage holds the 564px landscape at stage y 171: pull it up so the landscape starts 57px below the intro (Figma y 306) */

@@ -324,6 +324,12 @@
 /* mobile route svg is 181x630 at Figma (80, -60) in the route-map frame = stage (80, -31) */
 [data-layout='mobile'] .route--base { left: 80px; top: -31px; width: 181px; height: 630px; }
 [data-layout='mobile'] .route--gold { left: 80px; top: -31px; width: 181px; overflow: hidden; }
+/* Step 7: the dotted route starts at the top of the stage, right under the title: fade its first stretch out so it does not run through the title text */
+[data-layout='mobile'] .route--base,
+[data-layout='mobile'] .route--gold {
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, transparent 24px, #000 80px);
+  mask-image: linear-gradient(180deg, transparent 0, transparent 24px, #000 80px);
+}
 [data-layout='mobile'] .route--gold img { width: 181px; height: 630px; max-width: none; filter: drop-shadow(0 0 4px rgba(255, 209, 77, 0.7)); }
 
 /* Santa: left/top are his centre */
@@ -925,6 +931,8 @@
 
 /* long location names wrap instead of widening the label and colliding with the next one */
 .label__name {
+  /* place names wrap to two lines ("Brutăria lui Moș / Crăciun", "Vliegende- / Sleeënstation"): accents + descenders need >= 3px between the lines */
+  line-height: 1.52;
   white-space: normal;
   text-align: center;
   overflow-wrap: break-word;
@@ -941,9 +949,15 @@
 /* today's label: narrower, so that with the 8px screen margin (plus garland) it does not cover the podium; the button grows vertically */
 [data-layout='mobile'] .label--active { max-width: 176px; }
 /* long translations ("DESCHIDE CADOUL", "GESCHENK ÖFFNEN") wrap onto two centred lines and the button grows taller instead of sticking out of the label or shrinking the text */
-[data-layout='mobile'] .open-btn { gap: 4px; padding: 6px 8px; letter-spacing: 0.02em; line-height: 1.1; }
+[data-layout='mobile'] .open-btn { gap: 4px; padding: 6px 8px; letter-spacing: 0.02em; line-height: 1.36; /* two lines: the Ö of "ÖFFNEN" must not touch "GESCHENK" */ }
 [data-layout='mobile'] .open-btn span { min-width: 0; text-align: center; text-wrap: balance; }
 [data-layout='mobile'] .open-btn svg { flex: none; }
+/* Step 7: fitTodayButton (render/route.js) puts today's "open gift" text on ONE line where the label can grow without covering the gift,
+   the TODAY pill or the screen margin (first at 15px, then 14 / 13 / 12px, with slightly tighter padding); where it cannot, the two-line layout above stays. */
+[data-layout='mobile'] .label--oneline { max-width: none; }
+[data-layout='mobile'] .label--oneline { padding-inline: 8px; }
+[data-layout='mobile'] .label--oneline .open-btn { padding-inline: 7px; font-size: var(--open-fs, 15px); }
+[data-layout='mobile'] .label--oneline .open-btn span { white-space: nowrap; }
 [data-layout='mobile'] .label--locked .label__name,
 [data-layout='mobile'] .label--locked .label__tag { text-align: left; }
 .route-group > * {

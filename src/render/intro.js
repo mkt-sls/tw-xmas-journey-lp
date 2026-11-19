@@ -1,4 +1,4 @@
-import { esc, escNb } from './util.js';
+import { esc, escNb, hasMarks } from './util.js';
 
 // "1–26 DECEMBER · 26 GIFTS" -> date pill + gold "26 GIFTS" (Figma "Eyebrow v2"). Without a " · " the whole text is the pill.
 function eyebrow(text) {
@@ -24,7 +24,7 @@ export function renderIntro({ ui }) {
   return `
   <div class="intro">
     <p class="intro__eyebrow">${eyebrow(ui.campaign_dates)}</p>
-    <h1 class="intro__title"${ui.title_join ? ' data-join' : ''} aria-label="${esc(ui.campaign_title)}">${title(ui)}</h1>
+    <h1 class="intro__title"${ui.title_join ? ' data-join' : ''}${hasMarks(`${ui.title_a ?? ''}${ui.title_b ?? ''}${ui.campaign_title ?? ''}`) ? ' data-accent' : ''} aria-label="${esc(ui.campaign_title)}">${title(ui)}</h1>
     <p class="intro__sub">${escNb(ui.subtitle)}</p>
   </div>`;
 }

@@ -45,8 +45,9 @@ const LABELS = args.includes('--labels');
 const TITLE = args.includes('--title');
 const SHOTS = args.includes('--shots') ? args[args.indexOf('--shots') + 1] : null;
 const EDGE = 8;
-const MIN_FONT = 11;
-const MIN_H = 36;
+const MIN_FONT = 9; // step 7: below 11px only for the LOG IN / REGISTER buttons where nothing else fits (levels 4-5)
+const MIN_H = 32;
+const MIN_LOGO_GAP = 8;
 
 /** In the page: boxes and text facts of the header. */
 function measureHeader() {
@@ -93,7 +94,7 @@ function headerProblems(m) {
   for (let i = 1; i < order.length; i++) {
     const a = it[order[i - 1]];
     const b = it[order[i]];
-    if (b.left < a.right + 2 - 0.01) p.push(`${order[i - 1]} / ${order[i]} gap ${(b.left - a.right).toFixed(1)}px (< 2)`);
+    { const need = i === 1 ? MIN_LOGO_GAP : 2; if (b.left < a.right + need - 0.01) p.push(`${order[i - 1]} / ${order[i]} gap ${(b.left - a.right).toFixed(1)}px (< ${need})`); }
   }
   for (const k of ['login', 'register']) {
     if (it[k].clipped) p.push(`${k} "${it[k].text}" text clipped`);
@@ -170,12 +171,13 @@ function labelProblems(m) {
 }
 
 async function main() {
-  const server = await createServer({ root: ROOT, logLevel: 'error', server: { port: 5198, strictPort: false } });
+  const server = await createServer({ root: ROOT, logLevel: 'error', server: { port: 5198, strictPort: false, fs: { strict: false } } });
   await server.listen();
   const base = server.resolvedUrls.local[0].replace(/\/$/, '');
   const browser = await chromium.launch({ executablePath: CHROME });
   let fails = 0;
   let rows = 0;
+  const wraps = new Map(); // "MARKET width" -> day numbers whose today button wraps to 2+ lines (info, not a failure)
   try {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
     const page = await ctx.newPage();
@@ -251,6 +253,8 @@ async function main() {
             const m = await page.evaluate(measureLabels);
             const p = labelProblems(m);
             rows++;
+            const act = m.labels.find((l) => l.cls.includes('label--active'));
+            if (act?.btn && act.btn.lines > 1) { const k = `${market} ${w}`; wraps.set(k, [...(wraps.get(k) || []), day]); }
             if (p.length) {
               fails++;
               console.log(`FAIL label ${market} day ${day} ${w}: ${[...new Set(p)].join('; ')}`);
@@ -293,6 +297,7 @@ async function main() {
     await browser.close();
     await server.close();
   }
+  if (LABELS) console.log(wraps.size ? `TODAY BUTTON still on 2 lines (days): ${[...wraps].map(([k, v]) => `${k}: day ${v.join("/")}`).join(', ')}` : 'TODAY BUTTON on ONE line everywhere');
   console.log(fails ? `\n${fails} FAILED of ${rows}` : `\nALL PASS (${rows} rows)`);
   process.exit(fails ? 1 : 0);
 }

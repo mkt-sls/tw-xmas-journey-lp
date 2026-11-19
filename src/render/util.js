@@ -18,6 +18,13 @@ export const nb = (v) =>
 /** esc() + nb(): for every visible string that can contain an amount, date or time. */
 export const escNb = (v) => esc(nb(v));
 
+/**
+ * True when the text has letters with a mark above or below the base letter (Ă Â Î Ä Ö Ü É Ș Ț Ç ...). In tight uppercase line spacing
+ * such a mark reaches into the line above / below, so the headline gets a little more line gap (data-accent, see layout.css).
+ * Plain A-Z text (EN, NL) keeps the Figma spacing.
+ */
+export const hasMarks = (v) => /\p{M}/u.test(String(v ?? '').normalize('NFD'));
+
 /** URL of a file in public/assets (works with the relative Vite base). */
 export const asset = (name) => `${import.meta.env.BASE_URL}assets/${name}`;
 
