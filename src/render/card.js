@@ -4,10 +4,6 @@ import { depositLinkFor, linkFor } from '../config.js';
 import { dayState } from '../date.js';
 import { CLOSE_SVG, asset, esc, escNb } from './util.js';
 
-const STARS = [
-  [92, 67, 14], [324, 57, 11], [291, 137, 9], [125, 143, 8], [358, 105, 7], [50, 114, 6],
-];
-
 /** "Min. deposit: 35 GBP" -> ["Min. deposit", "35 GBP"]; also handles French "Dépôt min. : 35 CAD". */
 function splitTerm(line) {
   const m = String(line).match(/^(.*?)\s*:\s+(.*)$/);
@@ -15,13 +11,12 @@ function splitTerm(line) {
 }
 
 function art(kind, chip) {
-  const stars = STARS.map(([x, y, s]) => `<i class="star" style="left:${x}px;top:${y}px;width:${s}px;height:${s}px"></i>`).join('');
   let body;
   if (kind === 'active') {
-    body = `<span class="card__rays"></span>${stars}<img class="card__illu" src="${asset('card-illustration@2x.webp')}" alt="">`;
+    body = `<img class="card__illu" src="${asset('card-illustration@2x.webp')}" alt="">`;
   } else {
-    const img = kind === 'expired' ? 'gift-expired@2x.webp' : 'gift-locked@2x.webp';
-    body = `<img class="card__silhouette" src="${asset(img)}" alt="">`;
+    const img = kind === 'expired' ? 'card-gift-expired.svg' : 'card-gift-locked.svg';
+    body = `<span class="card__hatch"></span><img class="card__silhouette" src="${asset(img)}" alt="">`;
   }
   return `
   <div class="card__art">
@@ -53,16 +48,21 @@ export function renderCard({ card, day, today, ui, marketId }) {
       ${termsLink}`;
   } else {
     const hasGame = Boolean(card.game);
-    const rows = lines.slice(n - 5, n - 2).map(splitTerm);
+    // a row without a value (Wagering / Valid until, until the client sends them) is not drawn
+    const rows = lines.slice(n - 5, n - 2).map(splitTerm).filter(([k, v]) => k.trim() && v.trim());
     body = `
       <p class="card__type">${escNb(lines[1])}</p>
       <div class="card__offer">
         <h2 class="card__amount" id="card-title"><span class="card__amount-text">${escNb(lines[2])}</span></h2>
         ${hasGame ? `<p class="card__game">${escNb(lines[3])}</p>` : ''}
       </div>
-      <dl class="card__terms-list">
+      ${
+        rows.length
+          ? `<dl class="card__terms-list">
         ${rows.map(([k, v]) => `<div class="term"><dt>${escNb(k)}</dt><dd>${escNb(v)}</dd></div>`).join('')}
-      </dl>
+      </dl>`
+          : ''
+      }
       ${
         kind === 'active'
           ? `<a class="btn-primary" href="${esc(depositLinkFor(day, marketId))}" data-track="deposit_click" data-day="${day}">${escNb(lines[n - 2])}</a>`
@@ -75,7 +75,7 @@ export function renderCard({ card, day, today, ui, marketId }) {
   <div class="card card--${kind}" role="dialog" aria-modal="true" aria-labelledby="card-title">
     ${art(kind, lines[0])}
     <div class="card__body">${body}</div>
-    ${kind === 'active' ? `<img class="card__cap" src="${asset('snow-cap.svg')}" alt=""><img class="card__holly" src="${asset('holly.svg')}" alt="">` : ''}
+    ${kind === 'active' ? `<img class="card__cap" src="${asset('card-snow-cap.svg')}" alt=""><img class="card__holly" src="${asset('card-holly.svg')}" alt=""><i class="card__accent"></i>` : ''}
   </div>`;
   return { html, kind };
 }
