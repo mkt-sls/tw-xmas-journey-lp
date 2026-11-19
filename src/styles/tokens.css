@@ -1,0 +1,33 @@
+/* Design tokens from the Figma UI kit (node 156:1956). Font: Inter, self-hosted via @fontsource-variable/inter. */
+:root {
+  --bg: #0f121d;
+  --surface: #151624;
+  --surface-2: #151f32;
+  --primary: #007aff;
+  --primary-hi: #2b8cff;
+  --cyan: #36bcff;
+  --gold: #ffcc29;
+  --gold-2: #f6b532;
+  --gold-soft: #ffd66b;
+  --gold-pale: #fff1b8;
+  --muted: #839cbf;
+  --text: #f8fafc;
+  --text-soft: #c9d3e8;
+  --text-dim: #8a93a8; /* Figma #5b6275 is only ~3:1 on the page background; lifted to pass AA for the legal line */
+  --success: #22c55e;
+  --danger: #ef4444;
+
+  --line: rgba(255, 255, 255, 0.08);
+  --line-2: rgba(255, 255, 255, 0.12);
+
+  --r-card: 15px;
+  --r-modal: 24px;
+  --r-pill: 100px;
+
+  --font: 'Inter Variable', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --bulb-red: #ff4d5e;
+  --bulb-gold: #ffd66b;
+  --bulb-green: #4ade80;
+  --bulb-blue: #5ec4ff;
+}

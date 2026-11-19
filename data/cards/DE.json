@@ -1,0 +1,1463 @@
+{
+  "market": "DE",
+  "uiLang": "DE",
+  "currency": "EUR",
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-12-01",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 2,
+      "date": "2026-12-02",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 3,
+      "date": "2026-12-03",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 4,
+      "date": "2026-12-04",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 5,
+      "date": "2026-12-05",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 6,
+      "date": "2026-12-06",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 7,
+      "date": "2026-12-07",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 8,
+      "date": "2026-12-08",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 9,
+      "date": "2026-12-09",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 10,
+      "date": "2026-12-10",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 11,
+      "date": "2026-12-11",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 12,
+      "date": "2026-12-12",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 13,
+      "date": "2026-12-13",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 14,
+      "date": "2026-12-14",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 15,
+      "date": "2026-12-15",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 16,
+      "date": "2026-12-16",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 17,
+      "date": "2026-12-17",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 18,
+      "date": "2026-12-18",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 19,
+      "date": "2026-12-19",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 20,
+      "date": "2026-12-20",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 21,
+      "date": "2026-12-21",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 22,
+      "date": "2026-12-22",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 23,
+      "date": "2026-12-23",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 24,
+      "date": "2026-12-24",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 25,
+      "date": "2026-12-25",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    },
+    {
+      "day": 26,
+      "date": "2026-12-26",
+      "location": "TBD",
+      "type": "bonus",
+      "amount": {
+        "percent": 0,
+        "max": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "game": null,
+      "minDeposit": {
+        "value": 0,
+        "currency": "EUR",
+        "text": "TBD"
+      },
+      "wagering": {
+        "multiplier": 0,
+        "text": "TBD"
+      },
+      "validUntil": {
+        "time": "23:59",
+        "text": "TBD"
+      },
+      "raw": {
+        "active": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "expired": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ],
+        "locked": [
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD",
+          "TBD"
+        ]
+      }
+    }
+  ]
+}

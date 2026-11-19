@@ -1,0 +1,182 @@
+/* Motion. Only transform / opacity (plus clip-path in the unlock reveal). Timings follow the Figma Animations table (156:2381).
+   prefers-reduced-motion: fades only, no particles, no parallax, no travel (see the block at the bottom). */
+
+/* ---------- ambient ---------- */
+.snow {
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.landscape {
+  will-change: transform;
+}
+
+/* garland bulbs twinkle: 6s linear loop, each bulb a little out of phase */
+.bulb {
+  animation: twinkle 6s linear infinite;
+  animation-delay: calc(var(--i, 0) * -0.23s);
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  8% { opacity: 0.35; }
+  16% { opacity: 1; }
+  58% { opacity: 1; }
+  66% { opacity: 0.5; }
+  74% { opacity: 1; }
+}
+
+/* ---------- available (today) idle: pulse ring + label breathing, 1.6s ease-in-out ---------- */
+.gift--active::before {
+  content: '';
+  position: absolute;
+  /* starts exactly on the thin yellow ellipse drawn on the podium's top face inside gift-today@2x.webp.
+     Measured from the image pixels (629x659, ellipse fitted to the brightest line of the ring, front arc and the parts of the
+     back arc visible beside the gift): centre (314.6, 391.4), rx 133.8, ry 68.6;
+     the image sits in the gift box at left -20.83% / top -31.75% / width 141.67% / height 141.27% (see .gift--active .gift__img),
+     which gives centre 50% / 52.15% of the box, width 60.28%, height 29.4%. The box grows by the border width (1px each
+     side) so the middle of the 2px stroke lies on the ellipse line. It scales about its own centre, so it grows
+     concentrically from that ellipse. The wide static ring the Figma export had baked into the image around the podium
+     base (layer 156:2036) was removed from gift-today@2x.webp: it is this animated ring now.
+     scripts/check-pulse.mjs measures both on screen. */
+  box-sizing: border-box;
+  left: calc(19.88% - 1px);
+  top: calc(37.45% - 1px);
+  width: calc(60.28% + 2px);
+  height: calc(29.4% + 2px);
+  border: 2px solid rgba(255, 214, 107, 0.9);
+  border-radius: 50%;
+  pointer-events: none;
+  /* above the art (the podium is opaque: under it the ring was never seen), below the present copy (.gift__front) */
+  z-index: 1;
+  animation: pulse-ring 1.6s ease-in-out infinite;
+}
+@keyframes pulse-ring {
+  from { opacity: 0.6; scale: 1; }
+  to { opacity: 0; scale: 1.15; }
+}
+
+.label--active {
+  animation: breathe 1.6s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { scale: 1; }
+  50% { scale: 1.035; }
+}
+
+/* ---------- tap -> opening ---------- */
+.gift.is-opening {
+  z-index: 6;
+}
+.burst {
+  position: fixed;
+  z-index: 90;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.burst__flash {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 244, 190, 0.95), rgba(255, 204, 41, 0.55) 38%, rgba(255, 204, 41, 0) 70%);
+  opacity: 0;
+}
+.burst__spark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background: #fff6d6;
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  opacity: 0;
+}
+
+/* ---------- new day unlock: the lock sits on today's gift and dissolves ---------- */
+.gift__lock {
+  position: absolute;
+  z-index: 4; /* over the pulse ring and the present copy */
+  max-width: none;
+  left: -5.83%;
+  top: -3.17%;
+  width: 111.67%;
+  height: 108.73%;
+  pointer-events: none;
+}
+
+/* ---------- expired: desaturated, dashed outline, 300ms fade-in ---------- */
+.gift--missed .gift__img {
+  filter: saturate(0.6);
+}
+.label--missed {
+  border-style: dashed;
+  animation: fade-in-missed 300ms ease-out backwards;
+}
+.gift--missed {
+  animation: fade-in 300ms ease-out backwards;
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+@keyframes fade-in-missed {
+  from { opacity: 0; }
+}
+
+/* ---------- card in: 300ms ease-out. Desktop scale 0.92 -> 1 + fade; mobile sheet slides up ---------- */
+.overlay__backdrop,
+.overlay__glow {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+.overlay.is-open .overlay__backdrop,
+.overlay.is-open .overlay__glow {
+  opacity: 1;
+}
+
+.overlay--desktop .card {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+.overlay--mobile .card {
+  opacity: 0;
+  transform: translateY(calc(100% + 24px));
+  transition: opacity 300ms ease-out, transform 320ms ease-out;
+}
+.overlay--mobile .overlay__grabber {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+.overlay--desktop.is-open .card,
+.overlay--mobile.is-open .card,
+.overlay--mobile.is-open .overlay__grabber {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .bulb,
+  .label--active,
+  .gift--active::before,
+  .label--missed,
+  .gift--missed {
+    animation: none;
+  }
+  .gift--active::before {
+    display: none;
+  }
+  .snow {
+    display: none;
+  }
+  .overlay--desktop .card,
+  .overlay--mobile .card {
+    transform: none;
+    transition: opacity 200ms linear;
+  }
+}

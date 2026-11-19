@@ -1,0 +1,11 @@
+{
+  "note": "Match the full tag first (case-insensitive), then the primary language, then fallback.",
+  "exact": {},
+  "language": {
+    "en": "EN_GBP",
+    "de": "DE",
+    "nl": "NL",
+    "ro": "RO_MDL"
+  },
+  "fallback": "EN_GBP"
+}

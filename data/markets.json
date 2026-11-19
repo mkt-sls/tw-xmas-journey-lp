@@ -1,0 +1,38 @@
+[
+  {
+    "id": "DE",
+    "uiLang": "DE",
+    "currency": "EUR",
+    "flag": "de",
+    "flagEmoji": "🇩🇪",
+    "label": "Deutsch",
+    "cardsFile": "data/cards/DE.json"
+  },
+  {
+    "id": "NL",
+    "uiLang": "NL",
+    "currency": "EUR",
+    "flag": "nl",
+    "flagEmoji": "🇳🇱",
+    "label": "Nederlands",
+    "cardsFile": "data/cards/NL.json"
+  },
+  {
+    "id": "EN_GBP",
+    "uiLang": "EN",
+    "currency": "GBP",
+    "flag": "gb",
+    "flagEmoji": "🇬🇧",
+    "label": "English (UK)",
+    "cardsFile": "data/cards/EN_GBP.json"
+  },
+  {
+    "id": "RO_MDL",
+    "uiLang": "RO_MD",
+    "currency": "MDL",
+    "flag": "md",
+    "flagEmoji": "🇲🇩",
+    "label": "Română (Moldova)",
+    "cardsFile": "data/cards/RO_MDL.json"
+  }
+]
