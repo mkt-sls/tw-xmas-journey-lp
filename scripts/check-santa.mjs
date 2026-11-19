@@ -303,7 +303,9 @@ function evaluate(m, date) {
   const bboxOk = boxHits.length === 0;
   // Dec 1: he rides the lead-in BEFORE the first stop
   const santaCx = (sb.l + sb.r) / 2;
-  const dec1Ok = date !== '2026-12-01' || santaCx < m.stop.x;
+  // desktop: left of the first stop. Mobile (Top Win Figma): the lead-in comes down from the upper right, so the test is
+  // "on the line BEFORE the first stop" (his board is earlier along the route than the stop)
+  const dec1Ok = date !== '2026-12-01' || (m.W < 1024 ? mid.s < nearest(m.line, m.stop, false).s : santaCx < m.stop.x);
   const pass = maxDist <= MAX_DIST && diff <= MAX_ANGLE && facingOk && overlapOk && dec1Ok;
   return { maxDist, diff, facingOk, overlapOk, hits: [...new Set(hits)], bboxOk, boxHits: [...new Set(boxHits)], dec1Ok, santaCx, stopX: m.stop.x, pass };
 }

@@ -1,3 +1,5 @@
+import { fitCard } from './fitText.js';
+
 // Modal (desktop) / bottom sheet (mobile) host: overlay, burst glow, focus trap, Esc, outside click, focus return.
 const FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
@@ -28,6 +30,7 @@ export function openOverlay({ html, layout, returnFocus = document.activeElement
   app.inert = true;
 
   const panel = el.querySelector('.card');
+  fitCard(panel); // headline <= 2 balanced lines, before the first paint of the card
   const focusables = () => [...panel.querySelectorAll(FOCUSABLE)];
 
   const onKey = (e) => {

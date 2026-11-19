@@ -31,25 +31,21 @@
 .gift--active::before {
   content: '';
   position: absolute;
-  /* starts exactly on the thin yellow ellipse drawn on the podium's top face inside gift-today@2x.webp.
-     Measured from the image pixels (629x659, ellipse fitted to the brightest line of the ring, front arc and the parts of the
-     back arc visible beside the gift): centre (314.6, 391.4), rx 133.8, ry 68.6;
-     the image sits in the gift box at left -20.83% / top -31.75% / width 141.67% / height 141.27% (see .gift--active .gift__img),
-     which gives centre 50% / 52.15% of the box, width 60.28%, height 29.4%. The box grows by the border width (1px each
-     side) so the middle of the 2px stroke lies on the ellipse line. It scales about its own centre, so it grows
-     concentrically from that ellipse. The wide static ring the Figma export had baked into the image around the podium
-     base (layer 156:2036) was removed from gift-today@2x.webp: it is this animated ring now.
-     scripts/check-pulse.mjs measures both on screen. */
+  /* The Figma "Pulse ring" (58:1227): an ellipse 150x70 at (-15, 53) in the 120x126 gift symbol, a 2px #FFC870 stroke, drawn
+     BEHIND the podium. The static ring is not in gift-today@2x.webp: this animated ring starts exactly on it (left -12.5%,
+     top 42.06%, width 125%, height 55.56% of the gift box) and grows concentrically about its own centre.
+     scripts/check-pulse.mjs measures it on screen. */
   box-sizing: border-box;
-  left: calc(19.88% - 1px);
-  top: calc(37.45% - 1px);
-  width: calc(60.28% + 2px);
-  height: calc(29.4% + 2px);
-  border: 2px solid rgba(255, 214, 107, 0.9);
+  left: -12.5%;
+  top: 42.06%;
+  width: 125%;
+  height: 55.56%;
+  border: 2px solid rgba(255, 200, 112, 0.9);
   border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 200, 112, 0.35);
   pointer-events: none;
-  /* above the art (the podium is opaque: under it the ring was never seen), below the present copy (.gift__front) */
-  z-index: 1;
+  /* behind the art: the podium covers the middle of the ring, only the outer band shows (as in Figma) */
+  z-index: -1;
   animation: pulse-ring 1.6s ease-in-out infinite;
 }
 @keyframes pulse-ring {
@@ -109,12 +105,8 @@
   pointer-events: none;
 }
 
-/* ---------- expired: desaturated, dashed outline, 300ms fade-in ---------- */
-.gift--missed .gift__img {
-  filter: saturate(0.6);
-}
+/* ---------- expired: 300ms fade-in ---------- */
 .label--missed {
-  border-style: dashed;
   animation: fade-in-missed 300ms ease-out backwards;
 }
 .gift--missed {

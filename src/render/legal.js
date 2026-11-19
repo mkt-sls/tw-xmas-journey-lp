@@ -1,9 +1,9 @@
-import { linkFor } from '../config.js';
 import { esc } from './util.js';
 
-export function renderLegal({ ui, market }) {
+// Footer: "18+ · Play responsibly" only (owner decision: no BeGambleAware, no campaign-terms link here)
+export function renderLegal({ ui }) {
   return `
   <footer class="legal">
-    <p>${esc(ui.responsible)} · <a href="${esc(linkFor('campaignTerms', market.id))}" data-track="campaign_terms">${esc(ui.campaign_terms)}</a></p>
+    <p>${esc(ui.responsible)}</p>
   </footer>`;
 }

@@ -1,4 +1,5 @@
 import '@fontsource-variable/inter';
+import '@fontsource-variable/outfit';
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/layout.css';
@@ -13,6 +14,7 @@ import { renderCard } from './render/card.js';
 import { bindMarketMenu, renderHeader } from './render/header.js';
 import { renderHowItWorks } from './render/howItWorks.js';
 import { renderIntro } from './render/intro.js';
+import { renderLegend } from './render/legend.js';
 import { renderLegal } from './render/legal.js';
 import { closeOverlay, openOverlay } from './render/overlay.js';
 import { deskZoom, desktopSantaFit, drawGarlands, fitLabels, mobileZoom, renderRoute, santaAngle, stageSpec, tickCountdown } from './render/route.js';
@@ -74,7 +76,7 @@ function fitStage() {
   page.style.setProperty('--stage-pad', l === 'mobile' && page.querySelector('[data-santa-first]') ? `${MOBILE_FIRST_PAD * s}px` : '0px');
   page.style.setProperty('--stage-pad-b', l === 'mobile' && page.querySelector('[data-santa-end]') ? `${MOBILE_END_PAD * s}px` : '0px');
   page.style.setProperty('--stage-h', `${spec.height * s}px`);
-  if (l === 'desktop' && santa) santa.style.setProperty('--sc', sc < 0.615 ? sc.toFixed(3) : '');
+  if (l === 'desktop' && santa) santa.style.setProperty('--sc', sc < 0.995 ? sc.toFixed(3) : '');
   page.style.setProperty('--dx', `${dx}px`);
   // the desktop route line is squeezed by f, so Santa's board angle follows the squeezed line
   if (santa) santa.style.setProperty('--rot', `${santaAngle(l, Number(santa.dataset.santaSlot), santa.dataset.santaMode, f)}deg`);
@@ -105,6 +107,7 @@ function render() {
         ${renderIntro(ctx)}
         ${renderRoute(ctx)}
       </div>
+      ${renderLegend(ctx)}
       ${renderHowItWorks(ctx)}
     </main>
     ${renderLegal(ctx)}

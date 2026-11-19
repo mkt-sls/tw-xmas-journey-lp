@@ -20,20 +20,22 @@ const MOBILE = {
   size: 3,
   width: 390,
   height: 559,
-  x: [90.2, 250, 100.2],
+  x: [90.2, 262, 100.2],
   py: [108.6, 294, 462.6],
   kActive: 1.05,
   kOther: 0.72,
   // label anchors per slot: [left edge, top offset from pedestal centre, grow to the left?]
   label: [
     { dx: 39, dy: -44.6, left: false },
-    { dx: -69, dy: -67, left: true },
+    { dx: -84, dy: -67, left: true },
     { dx: 39, dy: -57.6, left: false },
   ],
 };
 
 export const stageSpec = (layout) => (layout === 'desktop' ? DESKTOP : MOBILE);
 
+// Top Win: Santa is shown at SANTA_SC (0.8 of the Figma hero size) and stands at t=0.44 of the segment before today's stop (0.48 for slot 4);
+// larger sizes failed scripts/check-santa.mjs (board off the line / silhouette over a gift). ART = silhouette reach incl. board tilt, measured on screen.
 // Santa's snowboard must always touch the dotted route, and he must never cover today's gift or its TODAY pill.
 // The route is a cubic-bezier path (the same "d" as public/assets/route-*.svg, moved to stage coordinates). BOARD is where the
 // board sits relative to the Santa centre. Every position below is a POINT OF THAT PATH (board centre), chosen so that his
@@ -61,14 +63,14 @@ function bezierSegments(d, dx, dy) {
 }
 const PATH = {
   desktop: bezierSegments('M15 125C165 125 165 95 315 95C500 95 500 15 685 15C870 15 870 75 1055 75C1240 75 1240 15 1425 15C1610 15 1610 95 1795 95C1945 95 1945 125 2095 125', -95, 346),
-  mobile: bezierSegments('M4 7.5C50 15 118 50 90 130.5C90 220.5 250 220.5 250 310.5C250 397.5 100 397.5 100 484.5C100 552 230 552 230 619.5', 0, -31.5),
+  mobile: bezierSegments('M120.5 10.5C120.5 70.5 10.5 70.5 10.5 130.5C10.5 220.5 170.5 220.5 170.5 310.5C170.5 397.5 20.5 397.5 20.5 484.5C20.5 552 150.5 552 150.5 619.5', 80, -31),
 };
 
 // Where on the line he stands: always BETWEEN two stops (yesterday's and today's), his board on the line.
 // [segment, t] of PATH. Slot s (today) uses the segment that ends at its stop (segment s; for slot 0 that is the lead-in
 // before day 1). 'before' = lead-in before day 1; 'end' = segment after the last stop of the window.
 const SANTA_SPOT = {
-  desktop: { before: [0, 0.28], end: [5, 0.42], today: [[0, 0.28], [1, 0.37], [2, 0.37], [3, 0.37], [4, 0.37]] },
+  desktop: { before: [0, 0.28], end: [5, 0.42], today: [[0, 0.28], [1, 0.44], [2, 0.44], [3, 0.44], [4, 0.48]] },
   mobile: { before: [0, 0.34], end: [3, 0.62], today: [[0, 0.34], [1, 0.53], [2, 0.53]] },
 };
 
@@ -150,8 +152,8 @@ const mid = DESKTOP.width / 2;
 
 // Santa's opaque art around his board point at the full desktop size (--sc 0.62), in stage units, measured with
 // scripts/check-santa.mjs: it reaches ART.left to the left of the board point and ART.right to the right of it.
-const SANTA_SC = 0.62;
-const ART = { left: 104, right: 56 };
+const SANTA_SC = 0.8;
+const ART = { left: 168 * SANTA_SC, right: 90 * SANTA_SC };
 const LABEL_HALF = 115; // half the width of a far (locked / missed) label, stage units
 const EDGE = 8; // gap to the viewport edge
 
@@ -161,7 +163,7 @@ const EDGE = 8; // gap to the viewport edge
  */
 const SQUEEZE_FULL = 0.97;
 export function santaScale(f) {
-  return f >= SQUEEZE_FULL ? SANTA_SC : SANTA_SC * Math.max(0.55, 1 - (SQUEEZE_FULL - f) * 2.4);
+  return f >= SQUEEZE_FULL ? SANTA_SC : SANTA_SC * Math.max(0.55, 1 - (SQUEEZE_FULL - f) * 3);
 }
 
 /**
@@ -255,7 +257,9 @@ function stopHtml({ layout, spec, slot, day, today, ui, uiLang, card, chipDay, c
     pos = `left:calc(${mid}px + var(--f) * ${cx - mid}px + var(--dx, 0px));top:${r(py + dy)}px;transform:translateX(-50%);transform-origin:0 50%`;
   } else {
     const a = MOBILE.label[slot];
-    pos = `left:${r(cx + a.dx)}px;top:${r(py + a.dy)}px;${a.left ? 'transform:translateX(-100%);transform-origin:-50% 50%' : ''}`;
+    // today's label is wider than the others: when it sits right of the gift (Dec 1, Dec 26) it moves 16px further out so it does not cover the podium
+    const dx = a.dx + (state === 'active' && !a.left ? 16 : 0);
+    pos = `left:${r(cx + dx)}px;top:${r(py + a.dy)}px;${a.left ? 'transform:translateX(-100%);transform-origin:-50% 50%' : ''}`;
   }
   const near = layout === 'desktop' ? Math.abs(slot - 2) === 1 : true;
   const name = esc(card.location);
@@ -272,7 +276,7 @@ function stopHtml({ layout, spec, slot, day, today, ui, uiLang, card, chipDay, c
     inner = `
       <span class="label__tag">${escNb(tag)}</span>
       <span class="label__name">${name}</span>
-      <img class="label__cap" src="${asset('snow-cap.svg')}" alt="" aria-hidden="true">
+      <img class="label__cap" src="${asset('snow-cap-sm.svg')}" alt="" aria-hidden="true">
       <img class="label__holly" src="${asset('holly.svg')}" alt="" aria-hidden="true">`;
   } else {
     inner = `
@@ -302,7 +306,7 @@ export function renderRoute(ctx) {
   // gold (travelled) part of the route ends at the Santa slot; nothing before the campaign
   let travelled = 0;
   if (today >= 1) travelled = today > CAMPAIGN.days ? 1 : 0.5;
-  const goldEnd = layout === 'desktop' ? spec.x[santaSlot] + 95 : spec.py[santaSlot] + 31.5;
+  const goldEnd = layout === 'desktop' ? spec.x[santaSlot] + 95 : spec.py[santaSlot] + 31;
   const goldSize = travelled === 0 ? 0 : today > CAMPAIGN.days ? 99999 : goldEnd;
 
   const stops = days
@@ -325,7 +329,8 @@ export function renderRoute(ctx) {
       </div>
       <div class="santa" data-santa-slot="${santaSlot}" data-santa-mode="${santaMode}" style="left:${sxCss};top:${sy}px;--rot:${santaAngle('desktop', santaSlot, santaMode)}deg">
         <span class="santa__glow"></span>
-        <img src="${asset('hero-santa-desktop@2x.webp')}" alt="" aria-hidden="true">
+        <img class="santa__art" src="${asset('hero-santa-desktop@2x.webp')}" alt="" aria-hidden="true">
+        <img class="santa__sparkles" src="${asset('hero-sparkles-desktop.svg')}" alt="" aria-hidden="true">
       </div>`;
   } else {
     const { x: sx, y: sy } = santaPos('mobile', santaSlot, santaMode);
@@ -334,7 +339,8 @@ export function renderRoute(ctx) {
       <div class="route route--gold" style="height:${goldSize}px"><img src="${asset('route-mobile-gold.svg')}" alt="" aria-hidden="true"></div>
       <div class="santa" data-santa-slot="${santaSlot}" data-santa-mode="${santaMode}"${santaFlipped('mobile', santaSlot, santaMode) ? ' data-flip="1"' : ''} style="left:${r(sx)}px;top:${r(sy)}px;--rot:${santaAngle('mobile', santaSlot, santaMode)}deg">
         <span class="santa__glow"></span>
-        <img src="${asset('hero-santa-mobile@2x.webp')}" alt="" aria-hidden="true">
+        <img class="santa__art" src="${asset('hero-santa-mobile@2x.webp')}" alt="" aria-hidden="true">
+        <img class="santa__sparkles" src="${asset('hero-sparkles-mobile.svg')}" alt="" aria-hidden="true">
       </div>`;
   }
 
@@ -358,11 +364,12 @@ export function tickCountdown(root, ui, now) {
 
 const BULBS = ['#FF4D5E', '#FFD66B', '#4ADE80', '#5EC4FF'];
 
-/** Draws the light garland (26 bulbs, red-gold-green-blue) round today's label card. */
+/** Draws the light garland (red-gold-green-blue bulbs, one every ~18px on desktop / ~12.5px on mobile) round today's label card. */
 export function drawGarlands(root) {
   root.querySelectorAll('[data-garland]').forEach((el) => {
     const card = el.parentElement;
-    const pad = card.classList.contains('label--active') ? (card.closest('[data-layout=mobile]') ? 5 : 7) : 7;
+    const mobile = Boolean(card.closest('[data-layout=mobile]'));
+    const pad = mobile ? 4 : 5;
     const w = card.offsetWidth + pad * 2;
     const h = card.offsetHeight + pad * 2;
     const rad = 20;
@@ -378,12 +385,13 @@ export function drawGarlands(root) {
     path.setAttribute('stroke-width', '1.5');
     svg.appendChild(path);
     const len = path.getTotalLength();
-    for (let i = 0; i < 26; i++) {
-      const p = path.getPointAtLength((len / 26) * i);
+    const count = Math.round(len / (mobile ? 12.5 : 18));
+    for (let i = 0; i < count; i++) {
+      const p = path.getPointAtLength((len / count) * i);
       const c = document.createElementNS(ns, 'circle');
       c.setAttribute('cx', p.x);
       c.setAttribute('cy', p.y);
-      c.setAttribute('r', 4.5);
+      c.setAttribute('r', mobile ? 2.6 : 3.2);
       c.setAttribute('fill', BULBS[i % 4]);
       c.setAttribute('stroke', 'rgba(255,255,255,0.6)');
       c.setAttribute('stroke-width', '1');

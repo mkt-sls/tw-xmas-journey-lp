@@ -7,7 +7,7 @@ export function renderHeader({ ui, market }) {
   return `
   <header class="header">
     <div class="header__inner">
-      <a class="header__logo" href="./" aria-label="${esc(ui.brand)}"><span class="header__brand">TOP WIN</span></a>
+      <a class="header__logo" href="./" aria-label="${esc(ui.brand)}"><img src="${asset('logo-topwin.svg')}" alt="" width="151" height="30"></a>
       <div class="header__actions">
         <div class="market" data-market-root>
           <button type="button" class="market__btn" id="market-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="market-list" aria-label="${esc(market.label)} · ${esc(market.currency)}">
@@ -27,6 +27,7 @@ export function renderHeader({ ui, market }) {
           </ul>
         </div>
         <a class="btn-outline" href="${esc(linkFor('login', market.id))}" data-track="login">${esc(ui.login)}</a>
+        <a class="btn-register" href="${esc(linkFor('register', market.id))}" data-track="register">${esc(ui.register ?? 'Register')}</a>
       </div>
     </div>
   </header>`;
