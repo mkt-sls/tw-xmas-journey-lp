@@ -48,13 +48,9 @@ export function renderCard({ card, day, today, ui, marketId }) {
       ${termsLink}`;
   } else {
     const hasGame = Boolean(card.game);
-<<<<<<< HEAD
     // Term rows sit between the amount (+ game line) and the CTA line. Top Win cards have only "Min. deposit".
-    const rows = lines.slice(hasGame ? 4 : 3, n - 2).map(splitTerm);
-=======
-    // a row without a value (Wagering / Valid until, until the client sends them) is not drawn
-    const rows = lines.slice(n - 5, n - 2).map(splitTerm).filter(([k, v]) => k.trim() && v.trim());
->>>>>>> origin/design-mkt-1/tw-step3-design
+    // A row without a value is not drawn.
+    const rows = lines.slice(hasGame ? 4 : 3, n - 2).map(splitTerm).filter(([k, v]) => k.trim() && v.trim());
     body = `
       <p class="card__type">${escNb(lines[1])}</p>
       <div class="card__offer">
