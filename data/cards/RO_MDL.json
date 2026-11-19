@@ -6,1456 +6,1196 @@
     {
       "day": 1,
       "date": "2026-12-01",
-      "location": "TBD",
+      "location": "Satul de basm",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 73,
+        "max": 8500,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "73% PÂNĂ LA 8.500 MDL"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 500,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 500 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 1 · 1 DEC.",
+          "BONUS DE CRĂCIUN",
+          "73% PÂNĂ LA 8.500 MDL",
+          "Depunere minimă: 500 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 1 · 1 DEC.",
+          "BONUS DE CRĂCIUN",
+          "73% PÂNĂ LA 8.500 MDL",
+          "Depunere minimă: 500 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 1 · 1 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 1 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 1 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 2,
       "date": "2026-12-02",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Turnul Luminii Lunii",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 83,
+        "text": "83 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Thunder Coins: Hold and Win",
       "minDeposit": {
-        "value": 0,
+        "value": 350,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 350 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 2 · 2 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "83 ROTIRI GRATUITE",
+          "în Thunder Coins: Hold and Win",
+          "Depunere minimă: 350 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 2 · 2 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "83 ROTIRI GRATUITE",
+          "în Thunder Coins: Hold and Win",
+          "Depunere minimă: 350 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 2 · 2 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 2 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 2 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 3,
       "date": "2026-12-03",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Casa Elfilor",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 60,
+        "text": "60 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Gemhalla",
       "minDeposit": {
-        "value": 0,
+        "value": 400,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 400 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 3 · 3 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "60 ROTIRI GRATUITE",
+          "în Gemhalla",
+          "Depunere minimă: 400 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 3 · 3 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "60 ROTIRI GRATUITE",
+          "în Gemhalla",
+          "Depunere minimă: 400 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 3 · 3 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 3 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 3 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 4,
       "date": "2026-12-04",
-      "location": "TBD",
+      "location": "Podul de Aur",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 55,
+        "max": 10000,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "55% PÂNĂ LA 10.000 MDL"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 450,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 450 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 4 · 4 DEC.",
+          "BONUS DE CRĂCIUN",
+          "55% PÂNĂ LA 10.000 MDL",
+          "Depunere minimă: 450 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 4 · 4 DEC.",
+          "BONUS DE CRĂCIUN",
+          "55% PÂNĂ LA 10.000 MDL",
+          "Depunere minimă: 450 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 4 · 4 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 4 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 4 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 5,
       "date": "2026-12-05",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Poșta Zăpezii",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 90,
+        "text": "90 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Big Bass Splash",
       "minDeposit": {
-        "value": 0,
+        "value": 350,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 350 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 5 · 5 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "90 ROTIRI GRATUITE",
+          "în Big Bass Splash",
+          "Depunere minimă: 350 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 5 · 5 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "90 ROTIRI GRATUITE",
+          "în Big Bass Splash",
+          "Depunere minimă: 350 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 5 · 5 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 5 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 5 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 6,
       "date": "2026-12-06",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Strada de Turtă Dulce",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 70,
+        "text": "70 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Bonanza Billion",
       "minDeposit": {
-        "value": 0,
+        "value": 450,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 450 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 6 · 6 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "70 ROTIRI GRATUITE",
+          "în Bonanza Billion",
+          "Depunere minimă: 450 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 6 · 6 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "70 ROTIRI GRATUITE",
+          "în Bonanza Billion",
+          "Depunere minimă: 450 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 6 · 6 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 6 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 6 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 7,
       "date": "2026-12-07",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Podul de Gheață",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 88,
+        "text": "88 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Thunder Coins: Hold and Win",
       "minDeposit": {
-        "value": 0,
+        "value": 300,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 300 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 7 · 7 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "88 ROTIRI GRATUITE",
+          "în Thunder Coins: Hold and Win",
+          "Depunere minimă: 300 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 7 · 7 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "88 ROTIRI GRATUITE",
+          "în Thunder Coins: Hold and Win",
+          "Depunere minimă: 300 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 7 · 7 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 7 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 7 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 8,
       "date": "2026-12-08",
-      "location": "TBD",
+      "location": "Farul de Iarnă",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 65,
+        "max": 12000,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "65% PÂNĂ LA 12.000 MDL"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 500,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 500 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 8 · 8 DEC.",
+          "BONUS DE CRĂCIUN",
+          "65% PÂNĂ LA 12.000 MDL",
+          "Depunere minimă: 500 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 8 · 8 DEC.",
+          "BONUS DE CRĂCIUN",
+          "65% PÂNĂ LA 12.000 MDL",
+          "Depunere minimă: 500 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 8 · 8 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 8 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 8 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 9,
       "date": "2026-12-09",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Labirintul Oglinzilor",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 74,
+        "text": "74 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "John Hunter and the Book of Tut",
       "minDeposit": {
-        "value": 0,
+        "value": 300,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 300 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 9 · 9 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "74 ROTIRI GRATUITE",
+          "în John Hunter and the Book of Tut",
+          "Depunere minimă: 300 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 9 · 9 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "74 ROTIRI GRATUITE",
+          "în John Hunter and the Book of Tut",
+          "Depunere minimă: 300 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 9 · 9 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 9 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 9 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 10,
       "date": "2026-12-10",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Tunelul Luminos",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 54,
+        "text": "54 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Bonanza Billion",
       "minDeposit": {
-        "value": 0,
+        "value": 350,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 350 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 10 · 10 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "54 ROTIRI GRATUITE",
+          "în Bonanza Billion",
+          "Depunere minimă: 350 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 10 · 10 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "54 ROTIRI GRATUITE",
+          "în Bonanza Billion",
+          "Depunere minimă: 350 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 10 · 10 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 10 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 10 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 11,
       "date": "2026-12-11",
-      "location": "TBD",
+      "location": "Căsuța Piticilor",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 45,
+        "max": 8500,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "45% PÂNĂ LA 8.500 MDL"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 300,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 300 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 11 · 11 DEC.",
+          "BONUS DE CRĂCIUN",
+          "45% PÂNĂ LA 8.500 MDL",
+          "Depunere minimă: 300 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 11 · 11 DEC.",
+          "BONUS DE CRĂCIUN",
+          "45% PÂNĂ LA 8.500 MDL",
+          "Depunere minimă: 300 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 11 · 11 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 11 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 11 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 12,
       "date": "2026-12-12",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Insula de Caramel",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 78,
+        "text": "78 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Sweet Bonanza Xmas",
       "minDeposit": {
-        "value": 0,
+        "value": 350,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 350 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 12 · 12 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "78 ROTIRI GRATUITE",
+          "în Sweet Bonanza Xmas",
+          "Depunere minimă: 350 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 12 · 12 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "78 ROTIRI GRATUITE",
+          "în Sweet Bonanza Xmas",
+          "Depunere minimă: 350 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 12 · 12 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 12 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 12 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 13,
       "date": "2026-12-13",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Turnul cu Ceas",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 91,
+        "text": "91 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Big Bass Splash",
       "minDeposit": {
-        "value": 0,
+        "value": 350,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 350 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 13 · 13 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "91 ROTIRI GRATUITE",
+          "în Big Bass Splash",
+          "Depunere minimă: 350 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 13 · 13 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "91 ROTIRI GRATUITE",
+          "în Big Bass Splash",
+          "Depunere minimă: 350 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 13 · 13 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 13 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 13 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 14,
       "date": "2026-12-14",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Trenul de Turtă Dulce",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 86,
+        "text": "86 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Christmas Carol Megaways",
       "minDeposit": {
-        "value": 0,
+        "value": 450,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 450 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 14 · 14 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "86 ROTIRI GRATUITE",
+          "în Christmas Carol Megaways",
+          "Depunere minimă: 450 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 14 · 14 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "86 ROTIRI GRATUITE",
+          "în Christmas Carol Megaways",
+          "Depunere minimă: 450 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 14 · 14 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 14 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 14 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 15,
       "date": "2026-12-15",
-      "location": "TBD",
+      "location": "Biblioteca de Basm",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 60,
+        "max": 11000,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "60% PÂNĂ LA 11.000 MDL"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 350,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 350 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 15 · 15 DEC.",
+          "BONUS DE CRĂCIUN",
+          "60% PÂNĂ LA 11.000 MDL",
+          "Depunere minimă: 350 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 15 · 15 DEC.",
+          "BONUS DE CRĂCIUN",
+          "60% PÂNĂ LA 11.000 MDL",
+          "Depunere minimă: 350 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 15 · 15 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 15 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 15 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 16,
       "date": "2026-12-16",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Labirintul Subteran",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 72,
+        "text": "72 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Gemhalla",
       "minDeposit": {
-        "value": 0,
+        "value": 400,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 400 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 16 · 16 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "72 ROTIRI GRATUITE",
+          "în Gemhalla",
+          "Depunere minimă: 400 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 16 · 16 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "72 ROTIRI GRATUITE",
+          "în Gemhalla",
+          "Depunere minimă: 400 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 16 · 16 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 16 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 16 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 17,
       "date": "2026-12-17",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Brutăria lui Moș Crăciun",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 96,
+        "text": "96 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "25 Cookies: Hit the Bonus",
       "minDeposit": {
-        "value": 0,
+        "value": 450,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 450 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 17 · 17 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "96 ROTIRI GRATUITE",
+          "în 25 Cookies: Hit the Bonus",
+          "Depunere minimă: 450 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 17 · 17 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "96 ROTIRI GRATUITE",
+          "în 25 Cookies: Hit the Bonus",
+          "Depunere minimă: 450 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 17 · 17 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 17 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 17 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 18,
       "date": "2026-12-18",
-      "location": "TBD",
+      "location": "Castelul din Nori",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 63,
+        "max": 12000,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "63% PÂNĂ LA 12.000 MDL"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 350,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 350 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 18 · 18 DEC.",
+          "BONUS DE CRĂCIUN",
+          "63% PÂNĂ LA 12.000 MDL",
+          "Depunere minimă: 350 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 18 · 18 DEC.",
+          "BONUS DE CRĂCIUN",
+          "63% PÂNĂ LA 12.000 MDL",
+          "Depunere minimă: 350 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 18 · 18 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 18 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 18 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 19,
       "date": "2026-12-19",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Valea Florilor",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 83,
+        "text": "83 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Yeti Quest",
       "minDeposit": {
-        "value": 0,
+        "value": 450,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 450 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 19 · 19 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "83 ROTIRI GRATUITE",
+          "în Yeti Quest",
+          "Depunere minimă: 450 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 19 · 19 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "83 ROTIRI GRATUITE",
+          "în Yeti Quest",
+          "Depunere minimă: 450 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 19 · 19 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 19 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 19 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 20,
       "date": "2026-12-20",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Stația Săniilor Zburătoare",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 57,
+        "text": "57 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Sweet Bonanza Xmas",
       "minDeposit": {
-        "value": 0,
+        "value": 350,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 350 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 20 · 20 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "57 ROTIRI GRATUITE",
+          "în Sweet Bonanza Xmas",
+          "Depunere minimă: 350 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 20 · 20 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "57 ROTIRI GRATUITE",
+          "în Sweet Bonanza Xmas",
+          "Depunere minimă: 350 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 20 · 20 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 20 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 20 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 21,
       "date": "2026-12-21",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Debarcaderul de Iarnă",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 81,
+        "text": "81 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "25 Cookies: Hit the Bonus",
       "minDeposit": {
-        "value": 0,
+        "value": 300,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 300 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 21 · 21 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "81 ROTIRI GRATUITE",
+          "în 25 Cookies: Hit the Bonus",
+          "Depunere minimă: 300 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 21 · 21 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "81 ROTIRI GRATUITE",
+          "în 25 Cookies: Hit the Bonus",
+          "Depunere minimă: 300 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 21 · 21 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 21 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 21 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 22,
       "date": "2026-12-22",
-      "location": "TBD",
+      "location": "Turnul Melodiilor de Crăciun",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 70,
+        "max": 13000,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "70% PÂNĂ LA 13.000 MDL"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 450,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 450 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 22 · 22 DEC.",
+          "BONUS DE CRĂCIUN",
+          "70% PÂNĂ LA 13.000 MDL",
+          "Depunere minimă: 450 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 22 · 22 DEC.",
+          "BONUS DE CRĂCIUN",
+          "70% PÂNĂ LA 13.000 MDL",
+          "Depunere minimă: 450 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 22 · 22 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 22 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 22 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 23,
       "date": "2026-12-23",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Teatrul de Iarnă",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 99,
+        "text": "99 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Big Bass Christmas - Frozen Lake",
       "minDeposit": {
-        "value": 0,
+        "value": 500,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 500 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 23 · 23 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "99 ROTIRI GRATUITE",
+          "în Big Bass Christmas - Frozen Lake",
+          "Depunere minimă: 500 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 23 · 23 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "99 ROTIRI GRATUITE",
+          "în Big Bass Christmas - Frozen Lake",
+          "Depunere minimă: 500 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 23 · 23 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 23 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 23 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 24,
       "date": "2026-12-24",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Palatul Bomboanelor",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 84,
+        "text": "84 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Yeti Quest",
       "minDeposit": {
-        "value": 0,
+        "value": 450,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 450 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 24 · 24 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "84 ROTIRI GRATUITE",
+          "în Yeti Quest",
+          "Depunere minimă: 450 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 24 · 24 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "84 ROTIRI GRATUITE",
+          "în Yeti Quest",
+          "Depunere minimă: 450 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 24 · 24 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 24 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 24 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 25,
       "date": "2026-12-25",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Poarta Stelelor",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "MDL",
-        "text": "TBD"
+        "freeSpins": 101,
+        "text": "101 ROTIRI GRATUITE"
       },
-      "game": null,
+      "game": "Christmas Carol Megaways",
       "minDeposit": {
-        "value": 0,
+        "value": 500,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 500 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 25 · 25 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "101 ROTIRI GRATUITE",
+          "în Christmas Carol Megaways",
+          "Depunere minimă: 500 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 25 · 25 DEC.",
+          "ROTIRI GRATUITE DE CRĂCIUN",
+          "101 ROTIRI GRATUITE",
+          "în Christmas Carol Megaways",
+          "Depunere minimă: 500 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 25 · 25 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 25 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 25 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     },
     {
       "day": 26,
       "date": "2026-12-26",
-      "location": "TBD",
+      "location": "Palatul lui Moș Crăciun",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 53,
+        "max": 9500,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "53% PÂNĂ LA 9.500 MDL"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 350,
         "currency": "MDL",
-        "text": "TBD"
+        "text": "Depunere minimă: 350 MDL"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 26 · 26 DEC.",
+          "BONUS DE CRĂCIUN",
+          "53% PÂNĂ LA 9.500 MDL",
+          "Depunere minimă: 350 MDL",
+          "DEPUNE ȘI REVENDICĂ",
+          "Termeni și condiții complete"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 26 · 26 DEC.",
+          "BONUS DE CRĂCIUN",
+          "53% PÂNĂ LA 9.500 MDL",
+          "Depunere minimă: 350 MDL",
+          "Cadou expirat",
+          "Termeni și condiții complete"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "ZIUA 26 · 26 DEC.",
+          "CADOU SURPRIZĂ",
+          "Disponibil din: 26 DEC.",
+          "Revino mâine pentru a debloca acest cadou",
+          "Blocat · 26 DEC.",
+          "Termeni și condiții complete"
         ]
       }
     }

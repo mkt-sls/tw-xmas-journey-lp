@@ -1,0 +1,965 @@
+{
+ "tabs": {
+  "DE": [
+   [
+    "FULL CARD TEXT · DEPOSIT & CLAIM",
+    "FULL CARD TEXT · BONUS CREDITED",
+    "FULL CARD TEXT · GIFT EXPIRED",
+    "FULL CARD TEXT · LOCKED"
+   ],
+   [
+    "TAG 1 · 1 DEZ.\nWEIHNACHTSBONUS\n73% BIS ZU 450 EUR\nMindesteinzahlung: 35 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 1 · 1 DEZ.\nWEIHNACHTSBONUS\n73% BIS ZU 450 EUR\nMindesteinzahlung: 35 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 1 · 1 DEZ.\nWEIHNACHTSBONUS\n73% BIS ZU 450 EUR\nMindesteinzahlung: 35 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 1 · 1 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 1 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 1 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 2 · 2 DEZ.\nWEIHNACHTS-FREISPIELE\n83 FREISPIELE\nin Thunder Coins: Hold and Win\nMindesteinzahlung: 25 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 2 · 2 DEZ.\nWEIHNACHTS-FREISPIELE\n83 FREISPIELE\nin Thunder Coins: Hold and Win\nMindesteinzahlung: 25 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 2 · 2 DEZ.\nWEIHNACHTS-FREISPIELE\n83 FREISPIELE\nin Thunder Coins: Hold and Win\nMindesteinzahlung: 25 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 2 · 2 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 2 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 2 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 3 · 3 DEZ.\nWEIHNACHTS-FREISPIELE\n60 FREISPIELE\nin Gemhalla\nMindesteinzahlung: 28 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 3 · 3 DEZ.\nWEIHNACHTS-FREISPIELE\n60 FREISPIELE\nin Gemhalla\nMindesteinzahlung: 28 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 3 · 3 DEZ.\nWEIHNACHTS-FREISPIELE\n60 FREISPIELE\nin Gemhalla\nMindesteinzahlung: 28 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 3 · 3 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 3 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 3 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 4 · 4 DEZ.\nWEIHNACHTSBONUS\n55% BIS ZU 550 EUR\nMindesteinzahlung: 30 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 4 · 4 DEZ.\nWEIHNACHTSBONUS\n55% BIS ZU 550 EUR\nMindesteinzahlung: 30 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 4 · 4 DEZ.\nWEIHNACHTSBONUS\n55% BIS ZU 550 EUR\nMindesteinzahlung: 30 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 4 · 4 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 4 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 4 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 5 · 5 DEZ.\nWEIHNACHTS-FREISPIELE\n90 FREISPIELE\nin Big Bass Splash\nMindesteinzahlung: 25 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 5 · 5 DEZ.\nWEIHNACHTS-FREISPIELE\n90 FREISPIELE\nin Big Bass Splash\nMindesteinzahlung: 25 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 5 · 5 DEZ.\nWEIHNACHTS-FREISPIELE\n90 FREISPIELE\nin Big Bass Splash\nMindesteinzahlung: 25 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 5 · 5 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 5 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 5 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 6 · 6 DEZ.\nWEIHNACHTS-FREISPIELE\n70 FREISPIELE\nin Bonanza Billion\nMindesteinzahlung: 30 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 6 · 6 DEZ.\nWEIHNACHTS-FREISPIELE\n70 FREISPIELE\nin Bonanza Billion\nMindesteinzahlung: 30 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 6 · 6 DEZ.\nWEIHNACHTS-FREISPIELE\n70 FREISPIELE\nin Bonanza Billion\nMindesteinzahlung: 30 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 6 · 6 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 6 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 6 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 7 · 7 DEZ.\nWEIHNACHTS-FREISPIELE\n88 FREISPIELE\nin Thunder Coins: Hold and Win\nMindesteinzahlung: 22 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 7 · 7 DEZ.\nWEIHNACHTS-FREISPIELE\n88 FREISPIELE\nin Thunder Coins: Hold and Win\nMindesteinzahlung: 22 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 7 · 7 DEZ.\nWEIHNACHTS-FREISPIELE\n88 FREISPIELE\nin Thunder Coins: Hold and Win\nMindesteinzahlung: 22 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 7 · 7 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 7 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 7 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 8 · 8 DEZ.\nWEIHNACHTSBONUS\n65% BIS ZU 650 EUR\nMindesteinzahlung: 35 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 8 · 8 DEZ.\nWEIHNACHTSBONUS\n65% BIS ZU 650 EUR\nMindesteinzahlung: 35 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 8 · 8 DEZ.\nWEIHNACHTSBONUS\n65% BIS ZU 650 EUR\nMindesteinzahlung: 35 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 8 · 8 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 8 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 8 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 9 · 9 DEZ.\nWEIHNACHTS-FREISPIELE\n74 FREISPIELE\nin John Hunter and the Book of Tut\nMindesteinzahlung: 22 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 9 · 9 DEZ.\nWEIHNACHTS-FREISPIELE\n74 FREISPIELE\nin John Hunter and the Book of Tut\nMindesteinzahlung: 22 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 9 · 9 DEZ.\nWEIHNACHTS-FREISPIELE\n74 FREISPIELE\nin John Hunter and the Book of Tut\nMindesteinzahlung: 22 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 9 · 9 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 9 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 9 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 10 · 10 DEZ.\nWEIHNACHTS-FREISPIELE\n54 FREISPIELE\nin Bonanza Billion\nMindesteinzahlung: 25 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 10 · 10 DEZ.\nWEIHNACHTS-FREISPIELE\n54 FREISPIELE\nin Bonanza Billion\nMindesteinzahlung: 25 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 10 · 10 DEZ.\nWEIHNACHTS-FREISPIELE\n54 FREISPIELE\nin Bonanza Billion\nMindesteinzahlung: 25 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 10 · 10 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 10 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 10 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 11 · 11 DEZ.\nWEIHNACHTSBONUS\n45% BIS ZU 450 EUR\nMindesteinzahlung: 22 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 11 · 11 DEZ.\nWEIHNACHTSBONUS\n45% BIS ZU 450 EUR\nMindesteinzahlung: 22 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 11 · 11 DEZ.\nWEIHNACHTSBONUS\n45% BIS ZU 450 EUR\nMindesteinzahlung: 22 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 11 · 11 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 11 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 11 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 12 · 12 DEZ.\nWEIHNACHTS-FREISPIELE\n75 FREISPIELE\nin Sweet Bonanza Xmas\nMindesteinzahlung: 25 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 12 · 12 DEZ.\nWEIHNACHTS-FREISPIELE\n75 FREISPIELE\nin Sweet Bonanza Xmas\nMindesteinzahlung: 25 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 12 · 12 DEZ.\nWEIHNACHTS-FREISPIELE\n75 FREISPIELE\nin Sweet Bonanza Xmas\nMindesteinzahlung: 25 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 12 · 12 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 12 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 12 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 13 · 13 DEZ.\nWEIHNACHTS-FREISPIELE\n91 FREISPIELE\nin Big Bass Splash\nMindesteinzahlung: 25 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 13 · 13 DEZ.\nWEIHNACHTS-FREISPIELE\n91 FREISPIELE\nin Big Bass Splash\nMindesteinzahlung: 25 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 13 · 13 DEZ.\nWEIHNACHTS-FREISPIELE\n91 FREISPIELE\nin Big Bass Splash\nMindesteinzahlung: 25 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 13 · 13 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 13 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 13 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 14 · 14 DEZ.\nWEIHNACHTS-FREISPIELE\n86 FREISPIELE\nin Christmas Carol Megaways\nMindesteinzahlung: 30 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 14 · 14 DEZ.\nWEIHNACHTS-FREISPIELE\n86 FREISPIELE\nin Christmas Carol Megaways\nMindesteinzahlung: 30 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 14 · 14 DEZ.\nWEIHNACHTS-FREISPIELE\n86 FREISPIELE\nin Christmas Carol Megaways\nMindesteinzahlung: 30 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 14 · 14 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 14 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 14 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 15 · 15 DEZ.\nWEIHNACHTSBONUS\n60% BIS ZU 600 EUR\nMindesteinzahlung: 25 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 15 · 15 DEZ.\nWEIHNACHTSBONUS\n60% BIS ZU 600 EUR\nMindesteinzahlung: 25 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 15 · 15 DEZ.\nWEIHNACHTSBONUS\n60% BIS ZU 600 EUR\nMindesteinzahlung: 25 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 15 · 15 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 15 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 15 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 16 · 16 DEZ.\nWEIHNACHTS-FREISPIELE\n72 FREISPIELE\nin Gemhalla\nMindesteinzahlung: 28 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 16 · 16 DEZ.\nWEIHNACHTS-FREISPIELE\n72 FREISPIELE\nin Gemhalla\nMindesteinzahlung: 28 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 16 · 16 DEZ.\nWEIHNACHTS-FREISPIELE\n72 FREISPIELE\nin Gemhalla\nMindesteinzahlung: 28 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 16 · 16 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 16 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 16 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 17 · 17 DEZ.\nWEIHNACHTS-FREISPIELE\n96 FREISPIELE\nin 25 Cookies: Hit the Bonus\nMindesteinzahlung: 30 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 17 · 17 DEZ.\nWEIHNACHTS-FREISPIELE\n96 FREISPIELE\nin 25 Cookies: Hit the Bonus\nMindesteinzahlung: 30 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 17 · 17 DEZ.\nWEIHNACHTS-FREISPIELE\n96 FREISPIELE\nin 25 Cookies: Hit the Bonus\nMindesteinzahlung: 30 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 17 · 17 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 17 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 17 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 18 · 18 DEZ.\nWEIHNACHTSBONUS\n63% BIS ZU 650 EUR\nMindesteinzahlung: 25 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 18 · 18 DEZ.\nWEIHNACHTSBONUS\n63% BIS ZU 650 EUR\nMindesteinzahlung: 25 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 18 · 18 DEZ.\nWEIHNACHTSBONUS\n63% BIS ZU 650 EUR\nMindesteinzahlung: 25 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 18 · 18 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 18 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 18 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 19 · 19 DEZ.\nWEIHNACHTS-FREISPIELE\n83 FREISPIELE\nin Yeti Quest\nMindesteinzahlung: 30 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 19 · 19 DEZ.\nWEIHNACHTS-FREISPIELE\n83 FREISPIELE\nin Yeti Quest\nMindesteinzahlung: 30 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 19 · 19 DEZ.\nWEIHNACHTS-FREISPIELE\n83 FREISPIELE\nin Yeti Quest\nMindesteinzahlung: 30 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 19 · 19 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 19 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 19 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 20 · 20 DEZ.\nWEIHNACHTS-FREISPIELE\n57 FREISPIELE\nin Sweet Bonanza Xmas\nMindesteinzahlung: 25 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 20 · 20 DEZ.\nWEIHNACHTS-FREISPIELE\n57 FREISPIELE\nin Sweet Bonanza Xmas\nMindesteinzahlung: 25 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 20 · 20 DEZ.\nWEIHNACHTS-FREISPIELE\n57 FREISPIELE\nin Sweet Bonanza Xmas\nMindesteinzahlung: 25 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 20 · 20 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 20 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 20 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 21 · 21 DEZ.\nWEIHNACHTS-FREISPIELE\n81 FREISPIELE\nin 25 Cookies: Hit the Bonus\nMindesteinzahlung: 22 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 21 · 21 DEZ.\nWEIHNACHTS-FREISPIELE\n81 FREISPIELE\nin 25 Cookies: Hit the Bonus\nMindesteinzahlung: 22 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 21 · 21 DEZ.\nWEIHNACHTS-FREISPIELE\n81 FREISPIELE\nin 25 Cookies: Hit the Bonus\nMindesteinzahlung: 22 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 21 · 21 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 21 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 21 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 22 · 22 DEZ.\nWEIHNACHTSBONUS\n70% BIS ZU 700 EUR\nMindesteinzahlung: 30 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 22 · 22 DEZ.\nWEIHNACHTSBONUS\n70% BIS ZU 700 EUR\nMindesteinzahlung: 30 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 22 · 22 DEZ.\nWEIHNACHTSBONUS\n70% BIS ZU 700 EUR\nMindesteinzahlung: 30 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 22 · 22 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 22 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 22 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 23 · 23 DEZ.\nWEIHNACHTS-FREISPIELE\n99 FREISPIELE\nin Big Bass Christmas - Frozen Lake\nMindesteinzahlung: 35 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 23 · 23 DEZ.\nWEIHNACHTS-FREISPIELE\n99 FREISPIELE\nin Big Bass Christmas - Frozen Lake\nMindesteinzahlung: 35 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 23 · 23 DEZ.\nWEIHNACHTS-FREISPIELE\n99 FREISPIELE\nin Big Bass Christmas - Frozen Lake\nMindesteinzahlung: 35 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 23 · 23 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 23 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 23 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 24 · 24 DEZ.\nWEIHNACHTS-FREISPIELE\n84 FREISPIELE\nin Yeti Quest\nMindesteinzahlung: 30 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 24 · 24 DEZ.\nWEIHNACHTS-FREISPIELE\n84 FREISPIELE\nin Yeti Quest\nMindesteinzahlung: 30 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 24 · 24 DEZ.\nWEIHNACHTS-FREISPIELE\n84 FREISPIELE\nin Yeti Quest\nMindesteinzahlung: 30 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 24 · 24 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 24 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 24 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 25 · 25 DEZ.\nWEIHNACHTS-FREISPIELE\n101 FREISPIELE\nin Christmas Carol Megaways\nMindesteinzahlung: 35 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 25 · 25 DEZ.\nWEIHNACHTS-FREISPIELE\n101 FREISPIELE\nin Christmas Carol Megaways\nMindesteinzahlung: 35 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 25 · 25 DEZ.\nWEIHNACHTS-FREISPIELE\n101 FREISPIELE\nin Christmas Carol Megaways\nMindesteinzahlung: 35 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 25 · 25 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 25 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 25 DEZ.\nVollständige Teilnahmebedingungen"
+   ],
+   [
+    "TAG 26 · 26 DEZ.\nWEIHNACHTSBONUS\n53% BIS ZU 500 EUR\nMindesteinzahlung: 25 EUR\nEINZAHLEN & SICHERN\nVollständige Teilnahmebedingungen",
+    "TAG 26 · 26 DEZ.\nWEIHNACHTSBONUS\n53% BIS ZU 500 EUR\nMindesteinzahlung: 25 EUR\n✓ Bonus gutgeschrieben\nVollständige Teilnahmebedingungen",
+    "TAG 26 · 26 DEZ.\nWEIHNACHTSBONUS\n53% BIS ZU 500 EUR\nMindesteinzahlung: 25 EUR\nGeschenk abgelaufen\nVollständige Teilnahmebedingungen",
+    "TAG 26 · 26 DEZ.\nÜBERRASCHUNGSGESCHENK\nVerfügbar ab: 26 DEZ.\nKomm morgen wieder und schalte dieses Geschenk frei\nGesperrt · 26 DEZ.\nVollständige Teilnahmebedingungen"
+   ]
+  ],
+  "NL": [
+   [
+    "FULL CARD TEXT · DEPOSIT & CLAIM",
+    "FULL CARD TEXT · BONUS CREDITED",
+    "FULL CARD TEXT · GIFT EXPIRED",
+    "FULL CARD TEXT · LOCKED"
+   ],
+   [
+    "DAG 1 · 1 DEC.\nKERSTBONUS\n73% TOT 450 EUR\nMinimale storting: 35 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 1 · 1 DEC.\nKERSTBONUS\n73% TOT 450 EUR\nMinimale storting: 35 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 1 · 1 DEC.\nKERSTBONUS\n73% TOT 450 EUR\nMinimale storting: 35 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 1 · 1 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 1 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 1 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 2 · 2 DEC.\nKERST-FREESPINS\n83 GRATIS SPINS\nin Thunder Coins: Hold and Win\nMinimale storting: 25 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 2 · 2 DEC.\nKERST-FREESPINS\n83 GRATIS SPINS\nin Thunder Coins: Hold and Win\nMinimale storting: 25 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 2 · 2 DEC.\nKERST-FREESPINS\n83 GRATIS SPINS\nin Thunder Coins: Hold and Win\nMinimale storting: 25 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 2 · 2 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 2 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 2 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 3 · 3 DEC.\nKERST-FREESPINS\n60 GRATIS SPINS\nin Gemhalla\nMinimale storting: 28 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 3 · 3 DEC.\nKERST-FREESPINS\n60 GRATIS SPINS\nin Gemhalla\nMinimale storting: 28 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 3 · 3 DEC.\nKERST-FREESPINS\n60 GRATIS SPINS\nin Gemhalla\nMinimale storting: 28 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 3 · 3 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 3 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 3 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 4 · 4 DEC.\nKERSTBONUS\n55% TOT 550 EUR\nMinimale storting: 30 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 4 · 4 DEC.\nKERSTBONUS\n55% TOT 550 EUR\nMinimale storting: 30 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 4 · 4 DEC.\nKERSTBONUS\n55% TOT 550 EUR\nMinimale storting: 30 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 4 · 4 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 4 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 4 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 5 · 5 DEC.\nKERST-FREESPINS\n90 GRATIS SPINS\nin Big Bass Splash\nMinimale storting: 25 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 5 · 5 DEC.\nKERST-FREESPINS\n90 GRATIS SPINS\nin Big Bass Splash\nMinimale storting: 25 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 5 · 5 DEC.\nKERST-FREESPINS\n90 GRATIS SPINS\nin Big Bass Splash\nMinimale storting: 25 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 5 · 5 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 5 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 5 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 6 · 6 DEC.\nKERST-FREESPINS\n70 GRATIS SPINS\nin Bonanza Billion\nMinimale storting: 30 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 6 · 6 DEC.\nKERST-FREESPINS\n70 GRATIS SPINS\nin Bonanza Billion\nMinimale storting: 30 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 6 · 6 DEC.\nKERST-FREESPINS\n70 GRATIS SPINS\nin Bonanza Billion\nMinimale storting: 30 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 6 · 6 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 6 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 6 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 7 · 7 DEC.\nKERST-FREESPINS\n88 GRATIS SPINS\nin Thunder Coins: Hold and Win\nMinimale storting: 22 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 7 · 7 DEC.\nKERST-FREESPINS\n88 GRATIS SPINS\nin Thunder Coins: Hold and Win\nMinimale storting: 22 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 7 · 7 DEC.\nKERST-FREESPINS\n88 GRATIS SPINS\nin Thunder Coins: Hold and Win\nMinimale storting: 22 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 7 · 7 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 7 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 7 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 8 · 8 DEC.\nKERSTBONUS\n65% TOT 650 EUR\nMinimale storting: 35 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 8 · 8 DEC.\nKERSTBONUS\n65% TOT 650 EUR\nMinimale storting: 35 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 8 · 8 DEC.\nKERSTBONUS\n65% TOT 650 EUR\nMinimale storting: 35 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 8 · 8 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 8 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 8 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 9 · 9 DEC.\nKERST-FREESPINS\n74 GRATIS SPINS\nin John Hunter and the Book of Tut\nMinimale storting: 22 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 9 · 9 DEC.\nKERST-FREESPINS\n74 GRATIS SPINS\nin John Hunter and the Book of Tut\nMinimale storting: 22 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 9 · 9 DEC.\nKERST-FREESPINS\n74 GRATIS SPINS\nin John Hunter and the Book of Tut\nMinimale storting: 22 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 9 · 9 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 9 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 9 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 10 · 10 DEC.\nKERST-FREESPINS\n54 GRATIS SPINS\nin Bonanza Billion\nMinimale storting: 25 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 10 · 10 DEC.\nKERST-FREESPINS\n54 GRATIS SPINS\nin Bonanza Billion\nMinimale storting: 25 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 10 · 10 DEC.\nKERST-FREESPINS\n54 GRATIS SPINS\nin Bonanza Billion\nMinimale storting: 25 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 10 · 10 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 10 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 10 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 11 · 11 DEC.\nKERSTBONUS\n45% TOT 450 EUR\nMinimale storting: 22 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 11 · 11 DEC.\nKERSTBONUS\n45% TOT 450 EUR\nMinimale storting: 22 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 11 · 11 DEC.\nKERSTBONUS\n45% TOT 450 EUR\nMinimale storting: 22 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 11 · 11 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 11 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 11 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 12 · 12 DEC.\nKERST-FREESPINS\n75 GRATIS SPINS\nin Sweet Bonanza Xmas\nMinimale storting: 25 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 12 · 12 DEC.\nKERST-FREESPINS\n75 GRATIS SPINS\nin Sweet Bonanza Xmas\nMinimale storting: 25 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 12 · 12 DEC.\nKERST-FREESPINS\n75 GRATIS SPINS\nin Sweet Bonanza Xmas\nMinimale storting: 25 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 12 · 12 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 12 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 12 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 13 · 13 DEC.\nKERST-FREESPINS\n91 GRATIS SPINS\nin Big Bass Splash\nMinimale storting: 25 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 13 · 13 DEC.\nKERST-FREESPINS\n91 GRATIS SPINS\nin Big Bass Splash\nMinimale storting: 25 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 13 · 13 DEC.\nKERST-FREESPINS\n91 GRATIS SPINS\nin Big Bass Splash\nMinimale storting: 25 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 13 · 13 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 13 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 13 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 14 · 14 DEC.\nKERST-FREESPINS\n86 GRATIS SPINS\nin Christmas Carol Megaways\nMinimale storting: 30 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 14 · 14 DEC.\nKERST-FREESPINS\n86 GRATIS SPINS\nin Christmas Carol Megaways\nMinimale storting: 30 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 14 · 14 DEC.\nKERST-FREESPINS\n86 GRATIS SPINS\nin Christmas Carol Megaways\nMinimale storting: 30 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 14 · 14 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 14 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 14 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 15 · 15 DEC.\nKERSTBONUS\n60% TOT 600 EUR\nMinimale storting: 25 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 15 · 15 DEC.\nKERSTBONUS\n60% TOT 600 EUR\nMinimale storting: 25 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 15 · 15 DEC.\nKERSTBONUS\n60% TOT 600 EUR\nMinimale storting: 25 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 15 · 15 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 15 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 15 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 16 · 16 DEC.\nKERST-FREESPINS\n72 GRATIS SPINS\nin Gemhalla\nMinimale storting: 28 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 16 · 16 DEC.\nKERST-FREESPINS\n72 GRATIS SPINS\nin Gemhalla\nMinimale storting: 28 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 16 · 16 DEC.\nKERST-FREESPINS\n72 GRATIS SPINS\nin Gemhalla\nMinimale storting: 28 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 16 · 16 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 16 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 16 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 17 · 17 DEC.\nKERST-FREESPINS\n96 GRATIS SPINS\nin 25 Cookies: Hit the Bonus\nMinimale storting: 30 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 17 · 17 DEC.\nKERST-FREESPINS\n96 GRATIS SPINS\nin 25 Cookies: Hit the Bonus\nMinimale storting: 30 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 17 · 17 DEC.\nKERST-FREESPINS\n96 GRATIS SPINS\nin 25 Cookies: Hit the Bonus\nMinimale storting: 30 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 17 · 17 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 17 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 17 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 18 · 18 DEC.\nKERSTBONUS\n63% TOT 650 EUR\nMinimale storting: 25 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 18 · 18 DEC.\nKERSTBONUS\n63% TOT 650 EUR\nMinimale storting: 25 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 18 · 18 DEC.\nKERSTBONUS\n63% TOT 650 EUR\nMinimale storting: 25 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 18 · 18 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 18 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 18 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 19 · 19 DEC.\nKERST-FREESPINS\n83 GRATIS SPINS\nin Yeti Quest\nMinimale storting: 30 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 19 · 19 DEC.\nKERST-FREESPINS\n83 GRATIS SPINS\nin Yeti Quest\nMinimale storting: 30 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 19 · 19 DEC.\nKERST-FREESPINS\n83 GRATIS SPINS\nin Yeti Quest\nMinimale storting: 30 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 19 · 19 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 19 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 19 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 20 · 20 DEC.\nKERST-FREESPINS\n57 GRATIS SPINS\nin Sweet Bonanza Xmas\nMinimale storting: 25 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 20 · 20 DEC.\nKERST-FREESPINS\n57 GRATIS SPINS\nin Sweet Bonanza Xmas\nMinimale storting: 25 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 20 · 20 DEC.\nKERST-FREESPINS\n57 GRATIS SPINS\nin Sweet Bonanza Xmas\nMinimale storting: 25 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 20 · 20 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 20 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 20 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 21 · 21 DEC.\nKERST-FREESPINS\n81 GRATIS SPINS\nin 25 Cookies: Hit the Bonus\nMinimale storting: 22 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 21 · 21 DEC.\nKERST-FREESPINS\n81 GRATIS SPINS\nin 25 Cookies: Hit the Bonus\nMinimale storting: 22 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 21 · 21 DEC.\nKERST-FREESPINS\n81 GRATIS SPINS\nin 25 Cookies: Hit the Bonus\nMinimale storting: 22 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 21 · 21 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 21 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 21 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 22 · 22 DEC.\nKERSTBONUS\n70% TOT 700 EUR\nMinimale storting: 30 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 22 · 22 DEC.\nKERSTBONUS\n70% TOT 700 EUR\nMinimale storting: 30 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 22 · 22 DEC.\nKERSTBONUS\n70% TOT 700 EUR\nMinimale storting: 30 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 22 · 22 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 22 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 22 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 23 · 23 DEC.\nKERST-FREESPINS\n99 GRATIS SPINS\nin Big Bass Christmas - Frozen Lake\nMinimale storting: 35 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 23 · 23 DEC.\nKERST-FREESPINS\n99 GRATIS SPINS\nin Big Bass Christmas - Frozen Lake\nMinimale storting: 35 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 23 · 23 DEC.\nKERST-FREESPINS\n99 GRATIS SPINS\nin Big Bass Christmas - Frozen Lake\nMinimale storting: 35 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 23 · 23 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 23 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 23 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 24 · 24 DEC.\nKERST-FREESPINS\n84 GRATIS SPINS\nin Yeti Quest\nMinimale storting: 30 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 24 · 24 DEC.\nKERST-FREESPINS\n84 GRATIS SPINS\nin Yeti Quest\nMinimale storting: 30 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 24 · 24 DEC.\nKERST-FREESPINS\n84 GRATIS SPINS\nin Yeti Quest\nMinimale storting: 30 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 24 · 24 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 24 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 24 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 25 · 25 DEC.\nKERST-FREESPINS\n101 GRATIS SPINS\nin Christmas Carol Megaways\nMinimale storting: 35 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 25 · 25 DEC.\nKERST-FREESPINS\n101 GRATIS SPINS\nin Christmas Carol Megaways\nMinimale storting: 35 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 25 · 25 DEC.\nKERST-FREESPINS\n101 GRATIS SPINS\nin Christmas Carol Megaways\nMinimale storting: 35 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 25 · 25 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 25 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 25 DEC.\nVolledige algemene voorwaarden"
+   ],
+   [
+    "DAG 26 · 26 DEC.\nKERSTBONUS\n53% TOT 500 EUR\nMinimale storting: 25 EUR\nSTORTEN & CLAIMEN\nVolledige algemene voorwaarden",
+    "DAG 26 · 26 DEC.\nKERSTBONUS\n53% TOT 500 EUR\nMinimale storting: 25 EUR\n✓ Bonus bijgeschreven\nVolledige algemene voorwaarden",
+    "DAG 26 · 26 DEC.\nKERSTBONUS\n53% TOT 500 EUR\nMinimale storting: 25 EUR\nCadeau verlopen\nVolledige algemene voorwaarden",
+    "DAG 26 · 26 DEC.\nVERRASSINGSCADEAU\nBeschikbaar vanaf: 26 DEC.\nKom morgen terug om dit cadeau te ontgrendelen\nVergrendeld · 26 DEC.\nVolledige algemene voorwaarden"
+   ]
+  ],
+  "EN": [
+   [
+    "FULL CARD TEXT · DEPOSIT & CLAIM",
+    "FULL CARD TEXT · BONUS CREDITED",
+    "FULL CARD TEXT · GIFT EXPIRED",
+    "FULL CARD TEXT · LOCKED"
+   ],
+   [
+    "DAY 1 · 1 DEC\nCHRISTMAS BONUS\n73% UP TO 450 GBP\nMin. deposit: 35 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 1 · 1 DEC\nCHRISTMAS BONUS\n73% UP TO 450 GBP\nMin. deposit: 35 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 1 · 1 DEC\nCHRISTMAS BONUS\n73% UP TO 450 GBP\nMin. deposit: 35 GBP\nGift expired\nFull terms & conditions",
+    "DAY 1 · 1 DEC\nSURPRISE GIFT\nOpens: 1 DEC\nCome back tomorrow to unlock this gift\nLocked · 1 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 2 · 2 DEC\nCHRISTMAS FREE SPINS\n83 FREE SPINS\non Thunder Coins: Hold and Win\nMin. deposit: 25 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 2 · 2 DEC\nCHRISTMAS FREE SPINS\n83 FREE SPINS\non Thunder Coins: Hold and Win\nMin. deposit: 25 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 2 · 2 DEC\nCHRISTMAS FREE SPINS\n83 FREE SPINS\non Thunder Coins: Hold and Win\nMin. deposit: 25 GBP\nGift expired\nFull terms & conditions",
+    "DAY 2 · 2 DEC\nSURPRISE GIFT\nOpens: 2 DEC\nCome back tomorrow to unlock this gift\nLocked · 2 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 3 · 3 DEC\nCHRISTMAS FREE SPINS\n60 FREE SPINS\non Gemhalla\nMin. deposit: 28 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 3 · 3 DEC\nCHRISTMAS FREE SPINS\n60 FREE SPINS\non Gemhalla\nMin. deposit: 28 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 3 · 3 DEC\nCHRISTMAS FREE SPINS\n60 FREE SPINS\non Gemhalla\nMin. deposit: 28 GBP\nGift expired\nFull terms & conditions",
+    "DAY 3 · 3 DEC\nSURPRISE GIFT\nOpens: 3 DEC\nCome back tomorrow to unlock this gift\nLocked · 3 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 4 · 4 DEC\nCHRISTMAS BONUS\n55% UP TO 550 GBP\nMin. deposit: 30 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 4 · 4 DEC\nCHRISTMAS BONUS\n55% UP TO 550 GBP\nMin. deposit: 30 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 4 · 4 DEC\nCHRISTMAS BONUS\n55% UP TO 550 GBP\nMin. deposit: 30 GBP\nGift expired\nFull terms & conditions",
+    "DAY 4 · 4 DEC\nSURPRISE GIFT\nOpens: 4 DEC\nCome back tomorrow to unlock this gift\nLocked · 4 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 5 · 5 DEC\nCHRISTMAS FREE SPINS\n90 FREE SPINS\non Big Bass Splash\nMin. deposit: 25 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 5 · 5 DEC\nCHRISTMAS FREE SPINS\n90 FREE SPINS\non Big Bass Splash\nMin. deposit: 25 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 5 · 5 DEC\nCHRISTMAS FREE SPINS\n90 FREE SPINS\non Big Bass Splash\nMin. deposit: 25 GBP\nGift expired\nFull terms & conditions",
+    "DAY 5 · 5 DEC\nSURPRISE GIFT\nOpens: 5 DEC\nCome back tomorrow to unlock this gift\nLocked · 5 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 6 · 6 DEC\nCHRISTMAS FREE SPINS\n70 FREE SPINS\non Bonanza Billion\nMin. deposit: 30 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 6 · 6 DEC\nCHRISTMAS FREE SPINS\n70 FREE SPINS\non Bonanza Billion\nMin. deposit: 30 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 6 · 6 DEC\nCHRISTMAS FREE SPINS\n70 FREE SPINS\non Bonanza Billion\nMin. deposit: 30 GBP\nGift expired\nFull terms & conditions",
+    "DAY 6 · 6 DEC\nSURPRISE GIFT\nOpens: 6 DEC\nCome back tomorrow to unlock this gift\nLocked · 6 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 7 · 7 DEC\nCHRISTMAS FREE SPINS\n88 FREE SPINS\non Thunder Coins: Hold and Win\nMin. deposit: 22 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 7 · 7 DEC\nCHRISTMAS FREE SPINS\n88 FREE SPINS\non Thunder Coins: Hold and Win\nMin. deposit: 22 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 7 · 7 DEC\nCHRISTMAS FREE SPINS\n88 FREE SPINS\non Thunder Coins: Hold and Win\nMin. deposit: 22 GBP\nGift expired\nFull terms & conditions",
+    "DAY 7 · 7 DEC\nSURPRISE GIFT\nOpens: 7 DEC\nCome back tomorrow to unlock this gift\nLocked · 7 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 8 · 8 DEC\nCHRISTMAS BONUS\n65% UP TO 650 GBP\nMin. deposit: 35 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 8 · 8 DEC\nCHRISTMAS BONUS\n65% UP TO 650 GBP\nMin. deposit: 35 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 8 · 8 DEC\nCHRISTMAS BONUS\n65% UP TO 650 GBP\nMin. deposit: 35 GBP\nGift expired\nFull terms & conditions",
+    "DAY 8 · 8 DEC\nSURPRISE GIFT\nOpens: 8 DEC\nCome back tomorrow to unlock this gift\nLocked · 8 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 9 · 9 DEC\nCHRISTMAS FREE SPINS\n74 FREE SPINS\non John Hunter and the Book of Tut\nMin. deposit: 22 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 9 · 9 DEC\nCHRISTMAS FREE SPINS\n74 FREE SPINS\non John Hunter and the Book of Tut\nMin. deposit: 22 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 9 · 9 DEC\nCHRISTMAS FREE SPINS\n74 FREE SPINS\non John Hunter and the Book of Tut\nMin. deposit: 22 GBP\nGift expired\nFull terms & conditions",
+    "DAY 9 · 9 DEC\nSURPRISE GIFT\nOpens: 9 DEC\nCome back tomorrow to unlock this gift\nLocked · 9 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 10 · 10 DEC\nCHRISTMAS FREE SPINS\n54 FREE SPINS\non Bonanza Billion\nMin. deposit: 25 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 10 · 10 DEC\nCHRISTMAS FREE SPINS\n54 FREE SPINS\non Bonanza Billion\nMin. deposit: 25 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 10 · 10 DEC\nCHRISTMAS FREE SPINS\n54 FREE SPINS\non Bonanza Billion\nMin. deposit: 25 GBP\nGift expired\nFull terms & conditions",
+    "DAY 10 · 10 DEC\nSURPRISE GIFT\nOpens: 10 DEC\nCome back tomorrow to unlock this gift\nLocked · 10 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 11 · 11 DEC\nCHRISTMAS BONUS\n45% UP TO 450 GBP\nMin. deposit: 22 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 11 · 11 DEC\nCHRISTMAS BONUS\n45% UP TO 450 GBP\nMin. deposit: 22 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 11 · 11 DEC\nCHRISTMAS BONUS\n45% UP TO 450 GBP\nMin. deposit: 22 GBP\nGift expired\nFull terms & conditions",
+    "DAY 11 · 11 DEC\nSURPRISE GIFT\nOpens: 11 DEC\nCome back tomorrow to unlock this gift\nLocked · 11 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 12 · 12 DEC\nCHRISTMAS FREE SPINS\n75 FREE SPINS\non Sweet Bonanza Xmas\nMin. deposit: 25 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 12 · 12 DEC\nCHRISTMAS FREE SPINS\n75 FREE SPINS\non Sweet Bonanza Xmas\nMin. deposit: 25 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 12 · 12 DEC\nCHRISTMAS FREE SPINS\n75 FREE SPINS\non Sweet Bonanza Xmas\nMin. deposit: 25 GBP\nGift expired\nFull terms & conditions",
+    "DAY 12 · 12 DEC\nSURPRISE GIFT\nOpens: 12 DEC\nCome back tomorrow to unlock this gift\nLocked · 12 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 13 · 13 DEC\nCHRISTMAS FREE SPINS\n91 FREE SPINS\non Big Bass Splash\nMin. deposit: 25 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 13 · 13 DEC\nCHRISTMAS FREE SPINS\n91 FREE SPINS\non Big Bass Splash\nMin. deposit: 25 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 13 · 13 DEC\nCHRISTMAS FREE SPINS\n91 FREE SPINS\non Big Bass Splash\nMin. deposit: 25 GBP\nGift expired\nFull terms & conditions",
+    "DAY 13 · 13 DEC\nSURPRISE GIFT\nOpens: 13 DEC\nCome back tomorrow to unlock this gift\nLocked · 13 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 14 · 14 DEC\nCHRISTMAS FREE SPINS\n86 FREE SPINS\non Christmas Carol Megaways\nMin. deposit: 30 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 14 · 14 DEC\nCHRISTMAS FREE SPINS\n86 FREE SPINS\non Christmas Carol Megaways\nMin. deposit: 30 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 14 · 14 DEC\nCHRISTMAS FREE SPINS\n86 FREE SPINS\non Christmas Carol Megaways\nMin. deposit: 30 GBP\nGift expired\nFull terms & conditions",
+    "DAY 14 · 14 DEC\nSURPRISE GIFT\nOpens: 14 DEC\nCome back tomorrow to unlock this gift\nLocked · 14 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 15 · 15 DEC\nCHRISTMAS BONUS\n60% UP TO 600 GBP\nMin. deposit: 25 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 15 · 15 DEC\nCHRISTMAS BONUS\n60% UP TO 600 GBP\nMin. deposit: 25 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 15 · 15 DEC\nCHRISTMAS BONUS\n60% UP TO 600 GBP\nMin. deposit: 25 GBP\nGift expired\nFull terms & conditions",
+    "DAY 15 · 15 DEC\nSURPRISE GIFT\nOpens: 15 DEC\nCome back tomorrow to unlock this gift\nLocked · 15 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 16 · 16 DEC\nCHRISTMAS FREE SPINS\n72 FREE SPINS\non Gemhalla\nMin. deposit: 28 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 16 · 16 DEC\nCHRISTMAS FREE SPINS\n72 FREE SPINS\non Gemhalla\nMin. deposit: 28 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 16 · 16 DEC\nCHRISTMAS FREE SPINS\n72 FREE SPINS\non Gemhalla\nMin. deposit: 28 GBP\nGift expired\nFull terms & conditions",
+    "DAY 16 · 16 DEC\nSURPRISE GIFT\nOpens: 16 DEC\nCome back tomorrow to unlock this gift\nLocked · 16 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 17 · 17 DEC\nCHRISTMAS FREE SPINS\n96 FREE SPINS\non 25 Cookies: Hit the Bonus\nMin. deposit: 30 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 17 · 17 DEC\nCHRISTMAS FREE SPINS\n96 FREE SPINS\non 25 Cookies: Hit the Bonus\nMin. deposit: 30 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 17 · 17 DEC\nCHRISTMAS FREE SPINS\n96 FREE SPINS\non 25 Cookies: Hit the Bonus\nMin. deposit: 30 GBP\nGift expired\nFull terms & conditions",
+    "DAY 17 · 17 DEC\nSURPRISE GIFT\nOpens: 17 DEC\nCome back tomorrow to unlock this gift\nLocked · 17 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 18 · 18 DEC\nCHRISTMAS BONUS\n63% UP TO 650 GBP\nMin. deposit: 25 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 18 · 18 DEC\nCHRISTMAS BONUS\n63% UP TO 650 GBP\nMin. deposit: 25 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 18 · 18 DEC\nCHRISTMAS BONUS\n63% UP TO 650 GBP\nMin. deposit: 25 GBP\nGift expired\nFull terms & conditions",
+    "DAY 18 · 18 DEC\nSURPRISE GIFT\nOpens: 18 DEC\nCome back tomorrow to unlock this gift\nLocked · 18 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 19 · 19 DEC\nCHRISTMAS FREE SPINS\n83 FREE SPINS\non Yeti Quest\nMin. deposit: 30 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 19 · 19 DEC\nCHRISTMAS FREE SPINS\n83 FREE SPINS\non Yeti Quest\nMin. deposit: 30 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 19 · 19 DEC\nCHRISTMAS FREE SPINS\n83 FREE SPINS\non Yeti Quest\nMin. deposit: 30 GBP\nGift expired\nFull terms & conditions",
+    "DAY 19 · 19 DEC\nSURPRISE GIFT\nOpens: 19 DEC\nCome back tomorrow to unlock this gift\nLocked · 19 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 20 · 20 DEC\nCHRISTMAS FREE SPINS\n57 FREE SPINS\non Sweet Bonanza Xmas\nMin. deposit: 25 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 20 · 20 DEC\nCHRISTMAS FREE SPINS\n57 FREE SPINS\non Sweet Bonanza Xmas\nMin. deposit: 25 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 20 · 20 DEC\nCHRISTMAS FREE SPINS\n57 FREE SPINS\non Sweet Bonanza Xmas\nMin. deposit: 25 GBP\nGift expired\nFull terms & conditions",
+    "DAY 20 · 20 DEC\nSURPRISE GIFT\nOpens: 20 DEC\nCome back tomorrow to unlock this gift\nLocked · 20 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 21 · 21 DEC\nCHRISTMAS FREE SPINS\n81 FREE SPINS\non 25 Cookies: Hit the Bonus\nMin. deposit: 22 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 21 · 21 DEC\nCHRISTMAS FREE SPINS\n81 FREE SPINS\non 25 Cookies: Hit the Bonus\nMin. deposit: 22 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 21 · 21 DEC\nCHRISTMAS FREE SPINS\n81 FREE SPINS\non 25 Cookies: Hit the Bonus\nMin. deposit: 22 GBP\nGift expired\nFull terms & conditions",
+    "DAY 21 · 21 DEC\nSURPRISE GIFT\nOpens: 21 DEC\nCome back tomorrow to unlock this gift\nLocked · 21 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 22 · 22 DEC\nCHRISTMAS BONUS\n70% UP TO 700 GBP\nMin. deposit: 30 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 22 · 22 DEC\nCHRISTMAS BONUS\n70% UP TO 700 GBP\nMin. deposit: 30 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 22 · 22 DEC\nCHRISTMAS BONUS\n70% UP TO 700 GBP\nMin. deposit: 30 GBP\nGift expired\nFull terms & conditions",
+    "DAY 22 · 22 DEC\nSURPRISE GIFT\nOpens: 22 DEC\nCome back tomorrow to unlock this gift\nLocked · 22 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 23 · 23 DEC\nCHRISTMAS FREE SPINS\n99 FREE SPINS\non Big Bass Christmas - Frozen Lake\nMin. deposit: 35 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 23 · 23 DEC\nCHRISTMAS FREE SPINS\n99 FREE SPINS\non Big Bass Christmas - Frozen Lake\nMin. deposit: 35 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 23 · 23 DEC\nCHRISTMAS FREE SPINS\n99 FREE SPINS\non Big Bass Christmas - Frozen Lake\nMin. deposit: 35 GBP\nGift expired\nFull terms & conditions",
+    "DAY 23 · 23 DEC\nSURPRISE GIFT\nOpens: 23 DEC\nCome back tomorrow to unlock this gift\nLocked · 23 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 24 · 24 DEC\nCHRISTMAS FREE SPINS\n84 FREE SPINS\non Yeti Quest\nMin. deposit: 30 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 24 · 24 DEC\nCHRISTMAS FREE SPINS\n84 FREE SPINS\non Yeti Quest\nMin. deposit: 30 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 24 · 24 DEC\nCHRISTMAS FREE SPINS\n84 FREE SPINS\non Yeti Quest\nMin. deposit: 30 GBP\nGift expired\nFull terms & conditions",
+    "DAY 24 · 24 DEC\nSURPRISE GIFT\nOpens: 24 DEC\nCome back tomorrow to unlock this gift\nLocked · 24 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 25 · 25 DEC\nCHRISTMAS FREE SPINS\n101 FREE SPINS\non Christmas Carol Megaways\nMin. deposit: 35 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 25 · 25 DEC\nCHRISTMAS FREE SPINS\n101 FREE SPINS\non Christmas Carol Megaways\nMin. deposit: 35 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 25 · 25 DEC\nCHRISTMAS FREE SPINS\n101 FREE SPINS\non Christmas Carol Megaways\nMin. deposit: 35 GBP\nGift expired\nFull terms & conditions",
+    "DAY 25 · 25 DEC\nSURPRISE GIFT\nOpens: 25 DEC\nCome back tomorrow to unlock this gift\nLocked · 25 DEC\nFull terms & conditions"
+   ],
+   [
+    "DAY 26 · 26 DEC\nCHRISTMAS BONUS\n53% UP TO 500 GBP\nMin. deposit: 25 GBP\nDEPOSIT & CLAIM\nFull terms & conditions",
+    "DAY 26 · 26 DEC\nCHRISTMAS BONUS\n53% UP TO 500 GBP\nMin. deposit: 25 GBP\n✓ Bonus credited\nFull terms & conditions",
+    "DAY 26 · 26 DEC\nCHRISTMAS BONUS\n53% UP TO 500 GBP\nMin. deposit: 25 GBP\nGift expired\nFull terms & conditions",
+    "DAY 26 · 26 DEC\nSURPRISE GIFT\nOpens: 26 DEC\nCome back tomorrow to unlock this gift\nLocked · 26 DEC\nFull terms & conditions"
+   ]
+  ],
+  "RO": [
+   [
+    "FULL CARD TEXT · DEPOSIT & CLAIM",
+    "FULL CARD TEXT · BONUS CREDITED",
+    "FULL CARD TEXT · GIFT EXPIRED",
+    "FULL CARD TEXT · LOCKED"
+   ],
+   [
+    "ZIUA 1 · 1 DEC.\nBONUS DE CRĂCIUN\n73% PÂNĂ LA 8.500 MDL\nDepunere minimă: 500 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 1 · 1 DEC.\nBONUS DE CRĂCIUN\n73% PÂNĂ LA 8.500 MDL\nDepunere minimă: 500 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 1 · 1 DEC.\nBONUS DE CRĂCIUN\n73% PÂNĂ LA 8.500 MDL\nDepunere minimă: 500 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 1 · 1 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 1 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 1 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 2 · 2 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n83 ROTIRI GRATUITE\nîn Thunder Coins: Hold and Win\nDepunere minimă: 350 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 2 · 2 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n83 ROTIRI GRATUITE\nîn Thunder Coins: Hold and Win\nDepunere minimă: 350 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 2 · 2 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n83 ROTIRI GRATUITE\nîn Thunder Coins: Hold and Win\nDepunere minimă: 350 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 2 · 2 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 2 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 2 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 3 · 3 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n60 ROTIRI GRATUITE\nîn Gemhalla\nDepunere minimă: 400 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 3 · 3 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n60 ROTIRI GRATUITE\nîn Gemhalla\nDepunere minimă: 400 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 3 · 3 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n60 ROTIRI GRATUITE\nîn Gemhalla\nDepunere minimă: 400 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 3 · 3 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 3 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 3 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 4 · 4 DEC.\nBONUS DE CRĂCIUN\n55% PÂNĂ LA 10.000 MDL\nDepunere minimă: 450 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 4 · 4 DEC.\nBONUS DE CRĂCIUN\n55% PÂNĂ LA 10.000 MDL\nDepunere minimă: 450 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 4 · 4 DEC.\nBONUS DE CRĂCIUN\n55% PÂNĂ LA 10.000 MDL\nDepunere minimă: 450 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 4 · 4 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 4 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 4 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 5 · 5 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n90 ROTIRI GRATUITE\nîn Big Bass Splash\nDepunere minimă: 350 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 5 · 5 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n90 ROTIRI GRATUITE\nîn Big Bass Splash\nDepunere minimă: 350 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 5 · 5 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n90 ROTIRI GRATUITE\nîn Big Bass Splash\nDepunere minimă: 350 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 5 · 5 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 5 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 5 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 6 · 6 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n70 ROTIRI GRATUITE\nîn Bonanza Billion\nDepunere minimă: 450 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 6 · 6 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n70 ROTIRI GRATUITE\nîn Bonanza Billion\nDepunere minimă: 450 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 6 · 6 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n70 ROTIRI GRATUITE\nîn Bonanza Billion\nDepunere minimă: 450 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 6 · 6 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 6 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 6 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 7 · 7 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n88 ROTIRI GRATUITE\nîn Thunder Coins: Hold and Win\nDepunere minimă: 300 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 7 · 7 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n88 ROTIRI GRATUITE\nîn Thunder Coins: Hold and Win\nDepunere minimă: 300 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 7 · 7 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n88 ROTIRI GRATUITE\nîn Thunder Coins: Hold and Win\nDepunere minimă: 300 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 7 · 7 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 7 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 7 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 8 · 8 DEC.\nBONUS DE CRĂCIUN\n65% PÂNĂ LA 12.000 MDL\nDepunere minimă: 500 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 8 · 8 DEC.\nBONUS DE CRĂCIUN\n65% PÂNĂ LA 12.000 MDL\nDepunere minimă: 500 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 8 · 8 DEC.\nBONUS DE CRĂCIUN\n65% PÂNĂ LA 12.000 MDL\nDepunere minimă: 500 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 8 · 8 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 8 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 8 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 9 · 9 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n74 ROTIRI GRATUITE\nîn John Hunter and the Book of Tut\nDepunere minimă: 300 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 9 · 9 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n74 ROTIRI GRATUITE\nîn John Hunter and the Book of Tut\nDepunere minimă: 300 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 9 · 9 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n74 ROTIRI GRATUITE\nîn John Hunter and the Book of Tut\nDepunere minimă: 300 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 9 · 9 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 9 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 9 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 10 · 10 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n54 ROTIRI GRATUITE\nîn Bonanza Billion\nDepunere minimă: 350 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 10 · 10 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n54 ROTIRI GRATUITE\nîn Bonanza Billion\nDepunere minimă: 350 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 10 · 10 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n54 ROTIRI GRATUITE\nîn Bonanza Billion\nDepunere minimă: 350 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 10 · 10 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 10 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 10 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 11 · 11 DEC.\nBONUS DE CRĂCIUN\n45% PÂNĂ LA 8.500 MDL\nDepunere minimă: 300 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 11 · 11 DEC.\nBONUS DE CRĂCIUN\n45% PÂNĂ LA 8.500 MDL\nDepunere minimă: 300 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 11 · 11 DEC.\nBONUS DE CRĂCIUN\n45% PÂNĂ LA 8.500 MDL\nDepunere minimă: 300 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 11 · 11 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 11 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 11 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 12 · 12 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n75 ROTIRI GRATUITE\nîn Sweet Bonanza Xmas\nDepunere minimă: 350 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 12 · 12 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n75 ROTIRI GRATUITE\nîn Sweet Bonanza Xmas\nDepunere minimă: 350 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 12 · 12 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n75 ROTIRI GRATUITE\nîn Sweet Bonanza Xmas\nDepunere minimă: 350 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 12 · 12 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 12 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 12 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 13 · 13 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n91 ROTIRI GRATUITE\nîn Big Bass Splash\nDepunere minimă: 350 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 13 · 13 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n91 ROTIRI GRATUITE\nîn Big Bass Splash\nDepunere minimă: 350 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 13 · 13 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n91 ROTIRI GRATUITE\nîn Big Bass Splash\nDepunere minimă: 350 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 13 · 13 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 13 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 13 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 14 · 14 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n86 ROTIRI GRATUITE\nîn Christmas Carol Megaways\nDepunere minimă: 450 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 14 · 14 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n86 ROTIRI GRATUITE\nîn Christmas Carol Megaways\nDepunere minimă: 450 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 14 · 14 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n86 ROTIRI GRATUITE\nîn Christmas Carol Megaways\nDepunere minimă: 450 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 14 · 14 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 14 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 14 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 15 · 15 DEC.\nBONUS DE CRĂCIUN\n60% PÂNĂ LA 11.000 MDL\nDepunere minimă: 350 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 15 · 15 DEC.\nBONUS DE CRĂCIUN\n60% PÂNĂ LA 11.000 MDL\nDepunere minimă: 350 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 15 · 15 DEC.\nBONUS DE CRĂCIUN\n60% PÂNĂ LA 11.000 MDL\nDepunere minimă: 350 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 15 · 15 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 15 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 15 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 16 · 16 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n72 ROTIRI GRATUITE\nîn Gemhalla\nDepunere minimă: 400 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 16 · 16 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n72 ROTIRI GRATUITE\nîn Gemhalla\nDepunere minimă: 400 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 16 · 16 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n72 ROTIRI GRATUITE\nîn Gemhalla\nDepunere minimă: 400 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 16 · 16 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 16 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 16 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 17 · 17 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n96 ROTIRI GRATUITE\nîn 25 Cookies: Hit the Bonus\nDepunere minimă: 450 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 17 · 17 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n96 ROTIRI GRATUITE\nîn 25 Cookies: Hit the Bonus\nDepunere minimă: 450 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 17 · 17 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n96 ROTIRI GRATUITE\nîn 25 Cookies: Hit the Bonus\nDepunere minimă: 450 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 17 · 17 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 17 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 17 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 18 · 18 DEC.\nBONUS DE CRĂCIUN\n63% PÂNĂ LA 12.000 MDL\nDepunere minimă: 350 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 18 · 18 DEC.\nBONUS DE CRĂCIUN\n63% PÂNĂ LA 12.000 MDL\nDepunere minimă: 350 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 18 · 18 DEC.\nBONUS DE CRĂCIUN\n63% PÂNĂ LA 12.000 MDL\nDepunere minimă: 350 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 18 · 18 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 18 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 18 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 19 · 19 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n83 ROTIRI GRATUITE\nîn Yeti Quest\nDepunere minimă: 450 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 19 · 19 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n83 ROTIRI GRATUITE\nîn Yeti Quest\nDepunere minimă: 450 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 19 · 19 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n83 ROTIRI GRATUITE\nîn Yeti Quest\nDepunere minimă: 450 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 19 · 19 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 19 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 19 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 20 · 20 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n57 ROTIRI GRATUITE\nîn Sweet Bonanza Xmas\nDepunere minimă: 350 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 20 · 20 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n57 ROTIRI GRATUITE\nîn Sweet Bonanza Xmas\nDepunere minimă: 350 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 20 · 20 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n57 ROTIRI GRATUITE\nîn Sweet Bonanza Xmas\nDepunere minimă: 350 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 20 · 20 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 20 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 20 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 21 · 21 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n81 ROTIRI GRATUITE\nîn 25 Cookies: Hit the Bonus\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 21 · 21 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n81 ROTIRI GRATUITE\nîn 25 Cookies: Hit the Bonus\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 21 · 21 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n81 ROTIRI GRATUITE\nîn 25 Cookies: Hit the Bonus\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 21 · 21 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 21 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 21 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 22 · 22 DEC.\nBONUS DE CRĂCIUN\n70% PÂNĂ LA 13.000 MDL\nDepunere minimă: 450 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 22 · 22 DEC.\nBONUS DE CRĂCIUN\n70% PÂNĂ LA 13.000 MDL\nDepunere minimă: 450 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 22 · 22 DEC.\nBONUS DE CRĂCIUN\n70% PÂNĂ LA 13.000 MDL\nDepunere minimă: 450 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 22 · 22 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 22 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 22 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 23 · 23 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n99 ROTIRI GRATUITE\nîn Big Bass Christmas - Frozen Lake\nDepunere minimă: 500 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 23 · 23 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n99 ROTIRI GRATUITE\nîn Big Bass Christmas - Frozen Lake\nDepunere minimă: 500 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 23 · 23 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n99 ROTIRI GRATUITE\nîn Big Bass Christmas - Frozen Lake\nDepunere minimă: 500 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 23 · 23 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 23 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 23 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 24 · 24 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n84 ROTIRI GRATUITE\nîn Yeti Quest\nDepunere minimă: 450 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 24 · 24 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n84 ROTIRI GRATUITE\nîn Yeti Quest\nDepunere minimă: 450 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 24 · 24 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n84 ROTIRI GRATUITE\nîn Yeti Quest\nDepunere minimă: 450 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 24 · 24 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 24 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 24 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 25 · 25 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n101 ROTIRI GRATUITE\nîn Christmas Carol Megaways\nDepunere minimă: 500 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 25 · 25 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n101 ROTIRI GRATUITE\nîn Christmas Carol Megaways\nDepunere minimă: 500 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 25 · 25 DEC.\nROTIRI GRATUITE DE CRĂCIUN\n101 ROTIRI GRATUITE\nîn Christmas Carol Megaways\nDepunere minimă: 500 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 25 · 25 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 25 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 25 DEC.\nTermeni și condiții complete"
+   ],
+   [
+    "ZIUA 26 · 26 DEC.\nBONUS DE CRĂCIUN\n53% PÂNĂ LA 9.500 MDL\nDepunere minimă: 350 MDL\nDEPUNE ȘI REVENDICĂ\nTermeni și condiții complete",
+    "ZIUA 26 · 26 DEC.\nBONUS DE CRĂCIUN\n53% PÂNĂ LA 9.500 MDL\nDepunere minimă: 350 MDL\n✓ Bonus creditat\nTermeni și condiții complete",
+    "ZIUA 26 · 26 DEC.\nBONUS DE CRĂCIUN\n53% PÂNĂ LA 9.500 MDL\nDepunere minimă: 350 MDL\nCadou expirat\nTermeni și condiții complete",
+    "ZIUA 26 · 26 DEC.\nCADOU SURPRIZĂ\nDisponibil din: 26 DEC.\nRevino mâine pentru a debloca acest cadou\nBlocat · 26 DEC.\nTermeni și condiții complete"
+   ]
+  ],
+  "UI ELEMENT": [
+   [
+    "EN (Original)",
+    "DE (Deutsch)",
+    "NL (Nederlands)",
+    "RO (Română / MD)"
+   ],
+   [
+    "Deposit & Claim",
+    "Einzahlen & sichern",
+    "Storten & claimen",
+    "Depune și revendică"
+   ],
+   [
+    "Processing...",
+    "Wird bearbeitet...",
+    "Bezig met verwerken...",
+    "Se procesează..."
+   ],
+   [
+    "Terms & Conditions",
+    "Teilnahmebedingungen",
+    "Algemene voorwaarden",
+    "Termeni și condiții"
+   ],
+   [],
+   [],
+   [],
+   [],
+   [],
+   [],
+   [
+    "EN (Original)",
+    "DE (Deutsch)",
+    "NL (Nederlands)",
+    "RO (Română / MD)"
+   ],
+   [
+    "How it works",
+    "So funktioniert’s",
+    "Zo werkt het",
+    "Cum funcționează"
+   ],
+   [
+    "Visit every day",
+    "Besuche uns jeden Tag",
+    "Kom elke dag terug",
+    "Revino în fiecare zi"
+   ],
+   [
+    "A new location unlocks each day, 1–25 December.",
+    "Vom 1. bis 25. Dezember wird jeden Tag ein neuer Ort freigeschaltet.",
+    "Van 1 t/m 25 december wordt elke dag een nieuwe locatie ontgrendeld.",
+    "În fiecare zi, între 1 și 25 decembrie, se deblochează o nouă locație."
+   ],
+   [
+    "Open the gift",
+    "Öffne das Geschenk",
+    "Open het cadeau",
+    "Deschide cadoul"
+   ],
+   [
+    "Tap today’s glowing gift to reveal your bonus.",
+    "Tippe auf das leuchtende Geschenk des Tages, um deinen Bonus aufzudecken.",
+    "Tik op het oplichtende cadeau van vandaag om je bonus te onthullen.",
+    "Apasă pe cadoul strălucitor al zilei pentru a descoperi bonusul."
+   ],
+   [
+    "Deposit & claim",
+    "Einzahlen & sichern",
+    "Storten & claimen",
+    "Depune și revendică"
+   ],
+   [
+    "The gift turns green when the bonus is credited.",
+    "Sobald der Bonus gutgeschrieben wurde, wird das Geschenk grün.",
+    "Het cadeau wordt groen zodra de bonus is bijgeschreven.",
+    "Cadoul devine verde odată ce bonusul a fost creditat."
+   ],
+   [],
+   [],
+   [],
+   [],
+   [],
+   [
+    "LOCATION"
+   ],
+   [],
+   [
+    "День",
+    "Русский (RU)",
+    "Română (RO)",
+    "English (EN)",
+    "Deutsch (DE)",
+    "Nederlands (NL)"
+   ],
+   [
+    "1.0",
+    "Сказочная деревня",
+    "Satul de basm",
+    "Fairytale Village",
+    "Märchendorf",
+    "Sprookjesdorp"
+   ],
+   [
+    "2.0",
+    "Башня лунного света",
+    "Turnul Luminii Lunii",
+    "Moonlight Tower",
+    "Mondscheinturm",
+    "Maanlichttoren"
+   ],
+   [
+    "3.0",
+    "Дом эльфов",
+    "Casa Elfilor",
+    "Elf House",
+    "Elfenhaus",
+    "Elfenhuis"
+   ],
+   [
+    "4.0",
+    "Золотой мост",
+    "Podul de Aur",
+    "Golden Bridge",
+    "Goldene Brücke",
+    "Gouden Brug"
+   ],
+   [
+    "5.0",
+    "Снежная почта",
+    "Poșta Zăpezii",
+    "Snowy Post Office",
+    "Schneepostamt",
+    "Sneeuwpostkantoor"
+   ],
+   [
+    "6.0",
+    "Пряничная улица",
+    "Strada de Turtă Dulce",
+    "Gingerbread Street",
+    "Lebkuchenstraße",
+    "Peperkoekstraat"
+   ],
+   [
+    "7.0",
+    "Ледяной мост",
+    "Podul de Gheață",
+    "Ice Bridge",
+    "Eisbrücke",
+    "IJsbrug"
+   ],
+   [
+    "8.0",
+    "Зимний маяк",
+    "Farul de Iarnă",
+    "Winter Lighthouse",
+    "Winterleuchtturm",
+    "Wintervuurtoren"
+   ],
+   [
+    "9.0",
+    "Зеркальный лабиринт",
+    "Labirintul Oglinzilor",
+    "Mirror Maze",
+    "Spiegellabyrinth",
+    "Spiegeldoolhof"
+   ],
+   [
+    "10.0",
+    "Светящийся тоннель",
+    "Tunelul Luminos",
+    "Glowing Tunnel",
+    "Leuchtender Tunnel",
+    "Lichtgevende Tunnel"
+   ],
+   [
+    "11.0",
+    "Домик гномов",
+    "Căsuța Piticilor",
+    "Gnome Cottage",
+    "Wichtelhäuschen",
+    "Kabouterhuisje"
+   ],
+   [
+    "12.0",
+    "Карамельный остров",
+    "Insula de Caramel",
+    "Caramel Island",
+    "Karamellinsel",
+    "Karamel Eiland"
+   ],
+   [
+    "13.0",
+    "Часовая башня",
+    "Turnul cu Ceas",
+    "Clock Tower",
+    "Uhrturm",
+    "Klokkentoren"
+   ],
+   [
+    "14.0",
+    "Пряничный поезд",
+    "Trenul de Turtă Dulce",
+    "Gingerbread Train",
+    "Lebkuchenzug",
+    "Peperkoektrein"
+   ],
+   [
+    "15.0",
+    "Сказочная библиотека",
+    "Biblioteca de Basm",
+    "Fairytale Library",
+    "Märchenbibliothek",
+    "Sprookjesbibliotheek"
+   ],
+   [
+    "16.0",
+    "Подземный лабиринт",
+    "Labirintul Subteran",
+    "Underground Maze",
+    "Unterirdisches Labyrinth",
+    "Ondergronds Doolhof"
+   ],
+   [
+    "17.0",
+    "Пекарня Санты",
+    "Brutăria lui Moș Crăciun",
+    "Santa's Bakery",
+    "Weihnachtsmanns Bäckerei",
+    "Kerstmans Bakkerij"
+   ],
+   [
+    "18.0",
+    "Облачный замок",
+    "Castelul din Nori",
+    "Cloud Castle",
+    "Wolkenschloss",
+    "Wolkenkasteel"
+   ],
+   [
+    "19.0",
+    "Цветочная долина",
+    "Valea Florilor",
+    "Flower Valley",
+    "Blumental",
+    "Bloemenvallei"
+   ],
+   [
+    "20.0",
+    "Станция летающих саней",
+    "Stația Săniilor Zburătoare",
+    "Flying Sleigh Station",
+    "Flugschlittenstation",
+    "Vliegende-Sleeënstation"
+   ],
+   [
+    "21.0",
+    "Зимняя пристань",
+    "Debarcaderul de Iarnă",
+    "Winter Pier",
+    "Winteranlegestelle",
+    "Winteraanlegsteiger"
+   ],
+   [
+    "22.0",
+    "Башня рождественских мелодий",
+    "Turnul Melodiilor de Crăciun",
+    "Christmas Melody Tower",
+    "Weihnachtsmelodienturm",
+    "Kerstmelodietoren"
+   ],
+   [
+    "23.0",
+    "Зимний театр",
+    "Teatrul de Iarnă",
+    "Winter Theatre",
+    "Wintertheater",
+    "Wintertheater"
+   ],
+   [
+    "24.0",
+    "Конфетный дворец",
+    "Palatul Bomboanelor",
+    "Candy Palace",
+    "Bonbonpalast",
+    "Snoeppaleis"
+   ],
+   [
+    "25.0",
+    "Звёздные ворота",
+    "Poarta Stelelor",
+    "Star Gate",
+    "Sternentor",
+    "Sterrenpoort"
+   ],
+   [
+    "26.0",
+    "Дворец Санты",
+    "Palatul lui Moș Crăciun",
+    "Santa's Palace",
+    "Palast des Weihnachtsmanns",
+    "Paleis van de Kerstman"
+   ]
+  ]
+ }
+}

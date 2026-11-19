@@ -6,1456 +6,1196 @@
     {
       "day": 1,
       "date": "2026-12-01",
-      "location": "TBD",
+      "location": "Märchendorf",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 73,
+        "max": 450,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "73% BIS ZU 450 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 35,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 35 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 1 · 1 DEZ.",
+          "WEIHNACHTSBONUS",
+          "73% BIS ZU 450 EUR",
+          "Mindesteinzahlung: 35 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 1 · 1 DEZ.",
+          "WEIHNACHTSBONUS",
+          "73% BIS ZU 450 EUR",
+          "Mindesteinzahlung: 35 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 1 · 1 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 1 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 1 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 2,
       "date": "2026-12-02",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Mondscheinturm",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 83,
+        "text": "83 FREISPIELE"
       },
-      "game": null,
+      "game": "Thunder Coins: Hold and Win",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 2 · 2 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "83 FREISPIELE",
+          "in Thunder Coins: Hold and Win",
+          "Mindesteinzahlung: 25 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 2 · 2 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "83 FREISPIELE",
+          "in Thunder Coins: Hold and Win",
+          "Mindesteinzahlung: 25 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 2 · 2 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 2 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 2 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 3,
       "date": "2026-12-03",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Elfenhaus",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 60,
+        "text": "60 FREISPIELE"
       },
-      "game": null,
+      "game": "Gemhalla",
       "minDeposit": {
-        "value": 0,
+        "value": 28,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 28 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 3 · 3 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "60 FREISPIELE",
+          "in Gemhalla",
+          "Mindesteinzahlung: 28 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 3 · 3 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "60 FREISPIELE",
+          "in Gemhalla",
+          "Mindesteinzahlung: 28 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 3 · 3 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 3 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 3 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 4,
       "date": "2026-12-04",
-      "location": "TBD",
+      "location": "Goldene Brücke",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 55,
+        "max": 550,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "55% BIS ZU 550 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 4 · 4 DEZ.",
+          "WEIHNACHTSBONUS",
+          "55% BIS ZU 550 EUR",
+          "Mindesteinzahlung: 30 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 4 · 4 DEZ.",
+          "WEIHNACHTSBONUS",
+          "55% BIS ZU 550 EUR",
+          "Mindesteinzahlung: 30 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 4 · 4 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 4 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 4 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 5,
       "date": "2026-12-05",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Schneepostamt",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 90,
+        "text": "90 FREISPIELE"
       },
-      "game": null,
+      "game": "Big Bass Splash",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 5 · 5 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "90 FREISPIELE",
+          "in Big Bass Splash",
+          "Mindesteinzahlung: 25 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 5 · 5 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "90 FREISPIELE",
+          "in Big Bass Splash",
+          "Mindesteinzahlung: 25 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 5 · 5 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 5 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 5 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 6,
       "date": "2026-12-06",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Lebkuchenstraße",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 70,
+        "text": "70 FREISPIELE"
       },
-      "game": null,
+      "game": "Bonanza Billion",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 6 · 6 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "70 FREISPIELE",
+          "in Bonanza Billion",
+          "Mindesteinzahlung: 30 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 6 · 6 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "70 FREISPIELE",
+          "in Bonanza Billion",
+          "Mindesteinzahlung: 30 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 6 · 6 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 6 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 6 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 7,
       "date": "2026-12-07",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Eisbrücke",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 88,
+        "text": "88 FREISPIELE"
       },
-      "game": null,
+      "game": "Thunder Coins: Hold and Win",
       "minDeposit": {
-        "value": 0,
+        "value": 22,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 22 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 7 · 7 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "88 FREISPIELE",
+          "in Thunder Coins: Hold and Win",
+          "Mindesteinzahlung: 22 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 7 · 7 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "88 FREISPIELE",
+          "in Thunder Coins: Hold and Win",
+          "Mindesteinzahlung: 22 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 7 · 7 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 7 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 7 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 8,
       "date": "2026-12-08",
-      "location": "TBD",
+      "location": "Winterleuchtturm",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 65,
+        "max": 650,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "65% BIS ZU 650 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 35,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 35 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 8 · 8 DEZ.",
+          "WEIHNACHTSBONUS",
+          "65% BIS ZU 650 EUR",
+          "Mindesteinzahlung: 35 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 8 · 8 DEZ.",
+          "WEIHNACHTSBONUS",
+          "65% BIS ZU 650 EUR",
+          "Mindesteinzahlung: 35 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 8 · 8 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 8 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 8 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 9,
       "date": "2026-12-09",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Spiegellabyrinth",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 74,
+        "text": "74 FREISPIELE"
       },
-      "game": null,
+      "game": "John Hunter and the Book of Tut",
       "minDeposit": {
-        "value": 0,
+        "value": 22,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 22 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 9 · 9 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "74 FREISPIELE",
+          "in John Hunter and the Book of Tut",
+          "Mindesteinzahlung: 22 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 9 · 9 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "74 FREISPIELE",
+          "in John Hunter and the Book of Tut",
+          "Mindesteinzahlung: 22 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 9 · 9 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 9 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 9 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 10,
       "date": "2026-12-10",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Leuchtender Tunnel",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 54,
+        "text": "54 FREISPIELE"
       },
-      "game": null,
+      "game": "Bonanza Billion",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 10 · 10 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "54 FREISPIELE",
+          "in Bonanza Billion",
+          "Mindesteinzahlung: 25 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 10 · 10 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "54 FREISPIELE",
+          "in Bonanza Billion",
+          "Mindesteinzahlung: 25 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 10 · 10 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 10 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 10 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 11,
       "date": "2026-12-11",
-      "location": "TBD",
+      "location": "Wichtelhäuschen",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 45,
+        "max": 450,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "45% BIS ZU 450 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 22,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 22 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 11 · 11 DEZ.",
+          "WEIHNACHTSBONUS",
+          "45% BIS ZU 450 EUR",
+          "Mindesteinzahlung: 22 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 11 · 11 DEZ.",
+          "WEIHNACHTSBONUS",
+          "45% BIS ZU 450 EUR",
+          "Mindesteinzahlung: 22 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 11 · 11 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 11 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 11 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 12,
       "date": "2026-12-12",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Karamellinsel",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 78,
+        "text": "78 FREISPIELE"
       },
-      "game": null,
+      "game": "Sweet Bonanza Xmas",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 12 · 12 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "78 FREISPIELE",
+          "in Sweet Bonanza Xmas",
+          "Mindesteinzahlung: 25 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 12 · 12 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "78 FREISPIELE",
+          "in Sweet Bonanza Xmas",
+          "Mindesteinzahlung: 25 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 12 · 12 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 12 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 12 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 13,
       "date": "2026-12-13",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Uhrturm",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 91,
+        "text": "91 FREISPIELE"
       },
-      "game": null,
+      "game": "Big Bass Splash",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 13 · 13 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "91 FREISPIELE",
+          "in Big Bass Splash",
+          "Mindesteinzahlung: 25 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 13 · 13 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "91 FREISPIELE",
+          "in Big Bass Splash",
+          "Mindesteinzahlung: 25 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 13 · 13 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 13 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 13 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 14,
       "date": "2026-12-14",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Lebkuchenzug",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 86,
+        "text": "86 FREISPIELE"
       },
-      "game": null,
+      "game": "Christmas Carol Megaways",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 14 · 14 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "86 FREISPIELE",
+          "in Christmas Carol Megaways",
+          "Mindesteinzahlung: 30 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 14 · 14 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "86 FREISPIELE",
+          "in Christmas Carol Megaways",
+          "Mindesteinzahlung: 30 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 14 · 14 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 14 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 14 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 15,
       "date": "2026-12-15",
-      "location": "TBD",
+      "location": "Märchenbibliothek",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 60,
+        "max": 600,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "60% BIS ZU 600 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 15 · 15 DEZ.",
+          "WEIHNACHTSBONUS",
+          "60% BIS ZU 600 EUR",
+          "Mindesteinzahlung: 25 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 15 · 15 DEZ.",
+          "WEIHNACHTSBONUS",
+          "60% BIS ZU 600 EUR",
+          "Mindesteinzahlung: 25 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 15 · 15 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 15 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 15 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 16,
       "date": "2026-12-16",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Unterirdisches Labyrinth",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 72,
+        "text": "72 FREISPIELE"
       },
-      "game": null,
+      "game": "Gemhalla",
       "minDeposit": {
-        "value": 0,
+        "value": 28,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 28 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 16 · 16 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "72 FREISPIELE",
+          "in Gemhalla",
+          "Mindesteinzahlung: 28 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 16 · 16 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "72 FREISPIELE",
+          "in Gemhalla",
+          "Mindesteinzahlung: 28 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 16 · 16 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 16 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 16 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 17,
       "date": "2026-12-17",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Weihnachtsmanns Bäckerei",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 96,
+        "text": "96 FREISPIELE"
       },
-      "game": null,
+      "game": "25 Cookies: Hit the Bonus",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 17 · 17 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "96 FREISPIELE",
+          "in 25 Cookies: Hit the Bonus",
+          "Mindesteinzahlung: 30 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 17 · 17 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "96 FREISPIELE",
+          "in 25 Cookies: Hit the Bonus",
+          "Mindesteinzahlung: 30 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 17 · 17 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 17 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 17 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 18,
       "date": "2026-12-18",
-      "location": "TBD",
+      "location": "Wolkenschloss",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 63,
+        "max": 650,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "63% BIS ZU 650 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 18 · 18 DEZ.",
+          "WEIHNACHTSBONUS",
+          "63% BIS ZU 650 EUR",
+          "Mindesteinzahlung: 25 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 18 · 18 DEZ.",
+          "WEIHNACHTSBONUS",
+          "63% BIS ZU 650 EUR",
+          "Mindesteinzahlung: 25 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 18 · 18 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 18 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 18 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 19,
       "date": "2026-12-19",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Blumental",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 83,
+        "text": "83 FREISPIELE"
       },
-      "game": null,
+      "game": "Yeti Quest",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 19 · 19 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "83 FREISPIELE",
+          "in Yeti Quest",
+          "Mindesteinzahlung: 30 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 19 · 19 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "83 FREISPIELE",
+          "in Yeti Quest",
+          "Mindesteinzahlung: 30 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 19 · 19 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 19 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 19 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 20,
       "date": "2026-12-20",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Flugschlittenstation",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 57,
+        "text": "57 FREISPIELE"
       },
-      "game": null,
+      "game": "Sweet Bonanza Xmas",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 20 · 20 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "57 FREISPIELE",
+          "in Sweet Bonanza Xmas",
+          "Mindesteinzahlung: 25 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 20 · 20 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "57 FREISPIELE",
+          "in Sweet Bonanza Xmas",
+          "Mindesteinzahlung: 25 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 20 · 20 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 20 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 20 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 21,
       "date": "2026-12-21",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Winteranlegestelle",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 81,
+        "text": "81 FREISPIELE"
       },
-      "game": null,
+      "game": "25 Cookies: Hit the Bonus",
       "minDeposit": {
-        "value": 0,
+        "value": 22,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 22 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 21 · 21 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "81 FREISPIELE",
+          "in 25 Cookies: Hit the Bonus",
+          "Mindesteinzahlung: 22 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 21 · 21 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "81 FREISPIELE",
+          "in 25 Cookies: Hit the Bonus",
+          "Mindesteinzahlung: 22 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 21 · 21 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 21 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 21 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 22,
       "date": "2026-12-22",
-      "location": "TBD",
+      "location": "Weihnachtsmelodienturm",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 70,
+        "max": 700,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "70% BIS ZU 700 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 22 · 22 DEZ.",
+          "WEIHNACHTSBONUS",
+          "70% BIS ZU 700 EUR",
+          "Mindesteinzahlung: 30 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 22 · 22 DEZ.",
+          "WEIHNACHTSBONUS",
+          "70% BIS ZU 700 EUR",
+          "Mindesteinzahlung: 30 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 22 · 22 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 22 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 22 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 23,
       "date": "2026-12-23",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Wintertheater",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 99,
+        "text": "99 FREISPIELE"
       },
-      "game": null,
+      "game": "Big Bass Christmas - Frozen Lake",
       "minDeposit": {
-        "value": 0,
+        "value": 35,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 35 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 23 · 23 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "99 FREISPIELE",
+          "in Big Bass Christmas - Frozen Lake",
+          "Mindesteinzahlung: 35 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 23 · 23 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "99 FREISPIELE",
+          "in Big Bass Christmas - Frozen Lake",
+          "Mindesteinzahlung: 35 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 23 · 23 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 23 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 23 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 24,
       "date": "2026-12-24",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Bonbonpalast",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 84,
+        "text": "84 FREISPIELE"
       },
-      "game": null,
+      "game": "Yeti Quest",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 24 · 24 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "84 FREISPIELE",
+          "in Yeti Quest",
+          "Mindesteinzahlung: 30 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 24 · 24 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "84 FREISPIELE",
+          "in Yeti Quest",
+          "Mindesteinzahlung: 30 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 24 · 24 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 24 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 24 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 25,
       "date": "2026-12-25",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Sternentor",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 101,
+        "text": "101 FREISPIELE"
       },
-      "game": null,
+      "game": "Christmas Carol Megaways",
       "minDeposit": {
-        "value": 0,
+        "value": 35,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 35 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 25 · 25 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "101 FREISPIELE",
+          "in Christmas Carol Megaways",
+          "Mindesteinzahlung: 35 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 25 · 25 DEZ.",
+          "WEIHNACHTS-FREISPIELE",
+          "101 FREISPIELE",
+          "in Christmas Carol Megaways",
+          "Mindesteinzahlung: 35 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 25 · 25 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 25 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 25 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     },
     {
       "day": 26,
       "date": "2026-12-26",
-      "location": "TBD",
+      "location": "Palast des Weihnachtsmanns",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 53,
+        "max": 500,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "53% BIS ZU 500 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 26 · 26 DEZ.",
+          "WEIHNACHTSBONUS",
+          "53% BIS ZU 500 EUR",
+          "Mindesteinzahlung: 25 EUR",
+          "EINZAHLEN & SICHERN",
+          "Vollständige Teilnahmebedingungen"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 26 · 26 DEZ.",
+          "WEIHNACHTSBONUS",
+          "53% BIS ZU 500 EUR",
+          "Mindesteinzahlung: 25 EUR",
+          "Geschenk abgelaufen",
+          "Vollständige Teilnahmebedingungen"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "TAG 26 · 26 DEZ.",
+          "ÜBERRASCHUNGSGESCHENK",
+          "Verfügbar ab: 26 DEZ.",
+          "Komm morgen wieder und schalte dieses Geschenk frei",
+          "Gesperrt · 26 DEZ.",
+          "Vollständige Teilnahmebedingungen"
         ]
       }
     }

@@ -6,1456 +6,1196 @@
     {
       "day": 1,
       "date": "2026-12-01",
-      "location": "TBD",
+      "location": "Sprookjesdorp",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 73,
+        "max": 450,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "73% TOT 450 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 35,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 35 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 1 · 1 DEC.",
+          "KERSTBONUS",
+          "73% TOT 450 EUR",
+          "Minimale storting: 35 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 1 · 1 DEC.",
+          "KERSTBONUS",
+          "73% TOT 450 EUR",
+          "Minimale storting: 35 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 1 · 1 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 1 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 1 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 2,
       "date": "2026-12-02",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Maanlichttoren",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 83,
+        "text": "83 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Thunder Coins: Hold and Win",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 2 · 2 DEC.",
+          "KERST-FREESPINS",
+          "83 GRATIS SPINS",
+          "in Thunder Coins: Hold and Win",
+          "Minimale storting: 25 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 2 · 2 DEC.",
+          "KERST-FREESPINS",
+          "83 GRATIS SPINS",
+          "in Thunder Coins: Hold and Win",
+          "Minimale storting: 25 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 2 · 2 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 2 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 2 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 3,
       "date": "2026-12-03",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Elfenhuis",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 60,
+        "text": "60 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Gemhalla",
       "minDeposit": {
-        "value": 0,
+        "value": 28,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 28 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 3 · 3 DEC.",
+          "KERST-FREESPINS",
+          "60 GRATIS SPINS",
+          "in Gemhalla",
+          "Minimale storting: 28 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 3 · 3 DEC.",
+          "KERST-FREESPINS",
+          "60 GRATIS SPINS",
+          "in Gemhalla",
+          "Minimale storting: 28 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 3 · 3 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 3 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 3 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 4,
       "date": "2026-12-04",
-      "location": "TBD",
+      "location": "Gouden Brug",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 55,
+        "max": 550,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "55% TOT 550 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 4 · 4 DEC.",
+          "KERSTBONUS",
+          "55% TOT 550 EUR",
+          "Minimale storting: 30 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 4 · 4 DEC.",
+          "KERSTBONUS",
+          "55% TOT 550 EUR",
+          "Minimale storting: 30 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 4 · 4 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 4 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 4 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 5,
       "date": "2026-12-05",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Sneeuwpostkantoor",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 90,
+        "text": "90 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Big Bass Splash",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 5 · 5 DEC.",
+          "KERST-FREESPINS",
+          "90 GRATIS SPINS",
+          "in Big Bass Splash",
+          "Minimale storting: 25 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 5 · 5 DEC.",
+          "KERST-FREESPINS",
+          "90 GRATIS SPINS",
+          "in Big Bass Splash",
+          "Minimale storting: 25 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 5 · 5 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 5 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 5 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 6,
       "date": "2026-12-06",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Peperkoekstraat",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 70,
+        "text": "70 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Bonanza Billion",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 6 · 6 DEC.",
+          "KERST-FREESPINS",
+          "70 GRATIS SPINS",
+          "in Bonanza Billion",
+          "Minimale storting: 30 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 6 · 6 DEC.",
+          "KERST-FREESPINS",
+          "70 GRATIS SPINS",
+          "in Bonanza Billion",
+          "Minimale storting: 30 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 6 · 6 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 6 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 6 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 7,
       "date": "2026-12-07",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "IJsbrug",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 88,
+        "text": "88 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Thunder Coins: Hold and Win",
       "minDeposit": {
-        "value": 0,
+        "value": 22,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 22 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 7 · 7 DEC.",
+          "KERST-FREESPINS",
+          "88 GRATIS SPINS",
+          "in Thunder Coins: Hold and Win",
+          "Minimale storting: 22 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 7 · 7 DEC.",
+          "KERST-FREESPINS",
+          "88 GRATIS SPINS",
+          "in Thunder Coins: Hold and Win",
+          "Minimale storting: 22 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 7 · 7 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 7 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 7 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 8,
       "date": "2026-12-08",
-      "location": "TBD",
+      "location": "Wintervuurtoren",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 65,
+        "max": 650,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "65% TOT 650 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 35,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 35 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 8 · 8 DEC.",
+          "KERSTBONUS",
+          "65% TOT 650 EUR",
+          "Minimale storting: 35 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 8 · 8 DEC.",
+          "KERSTBONUS",
+          "65% TOT 650 EUR",
+          "Minimale storting: 35 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 8 · 8 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 8 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 8 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 9,
       "date": "2026-12-09",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Spiegeldoolhof",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 74,
+        "text": "74 GRATIS SPINS"
       },
-      "game": null,
+      "game": "John Hunter and the Book of Tut",
       "minDeposit": {
-        "value": 0,
+        "value": 22,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 22 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 9 · 9 DEC.",
+          "KERST-FREESPINS",
+          "74 GRATIS SPINS",
+          "in John Hunter and the Book of Tut",
+          "Minimale storting: 22 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 9 · 9 DEC.",
+          "KERST-FREESPINS",
+          "74 GRATIS SPINS",
+          "in John Hunter and the Book of Tut",
+          "Minimale storting: 22 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 9 · 9 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 9 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 9 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 10,
       "date": "2026-12-10",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Lichtgevende Tunnel",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 54,
+        "text": "54 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Bonanza Billion",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 10 · 10 DEC.",
+          "KERST-FREESPINS",
+          "54 GRATIS SPINS",
+          "in Bonanza Billion",
+          "Minimale storting: 25 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 10 · 10 DEC.",
+          "KERST-FREESPINS",
+          "54 GRATIS SPINS",
+          "in Bonanza Billion",
+          "Minimale storting: 25 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 10 · 10 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 10 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 10 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 11,
       "date": "2026-12-11",
-      "location": "TBD",
+      "location": "Kabouterhuisje",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 45,
+        "max": 450,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "45% TOT 450 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 22,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 22 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 11 · 11 DEC.",
+          "KERSTBONUS",
+          "45% TOT 450 EUR",
+          "Minimale storting: 22 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 11 · 11 DEC.",
+          "KERSTBONUS",
+          "45% TOT 450 EUR",
+          "Minimale storting: 22 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 11 · 11 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 11 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 11 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 12,
       "date": "2026-12-12",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Karamel Eiland",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 78,
+        "text": "78 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Sweet Bonanza Xmas",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 12 · 12 DEC.",
+          "KERST-FREESPINS",
+          "78 GRATIS SPINS",
+          "in Sweet Bonanza Xmas",
+          "Minimale storting: 25 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 12 · 12 DEC.",
+          "KERST-FREESPINS",
+          "78 GRATIS SPINS",
+          "in Sweet Bonanza Xmas",
+          "Minimale storting: 25 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 12 · 12 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 12 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 12 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 13,
       "date": "2026-12-13",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Klokkentoren",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 91,
+        "text": "91 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Big Bass Splash",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 13 · 13 DEC.",
+          "KERST-FREESPINS",
+          "91 GRATIS SPINS",
+          "in Big Bass Splash",
+          "Minimale storting: 25 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 13 · 13 DEC.",
+          "KERST-FREESPINS",
+          "91 GRATIS SPINS",
+          "in Big Bass Splash",
+          "Minimale storting: 25 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 13 · 13 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 13 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 13 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 14,
       "date": "2026-12-14",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Peperkoektrein",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 86,
+        "text": "86 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Christmas Carol Megaways",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 14 · 14 DEC.",
+          "KERST-FREESPINS",
+          "86 GRATIS SPINS",
+          "in Christmas Carol Megaways",
+          "Minimale storting: 30 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 14 · 14 DEC.",
+          "KERST-FREESPINS",
+          "86 GRATIS SPINS",
+          "in Christmas Carol Megaways",
+          "Minimale storting: 30 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 14 · 14 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 14 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 14 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 15,
       "date": "2026-12-15",
-      "location": "TBD",
+      "location": "Sprookjesbibliotheek",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 60,
+        "max": 600,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "60% TOT 600 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 15 · 15 DEC.",
+          "KERSTBONUS",
+          "60% TOT 600 EUR",
+          "Minimale storting: 25 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 15 · 15 DEC.",
+          "KERSTBONUS",
+          "60% TOT 600 EUR",
+          "Minimale storting: 25 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 15 · 15 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 15 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 15 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 16,
       "date": "2026-12-16",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Ondergronds Doolhof",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 72,
+        "text": "72 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Gemhalla",
       "minDeposit": {
-        "value": 0,
+        "value": 28,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 28 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 16 · 16 DEC.",
+          "KERST-FREESPINS",
+          "72 GRATIS SPINS",
+          "in Gemhalla",
+          "Minimale storting: 28 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 16 · 16 DEC.",
+          "KERST-FREESPINS",
+          "72 GRATIS SPINS",
+          "in Gemhalla",
+          "Minimale storting: 28 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 16 · 16 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 16 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 16 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 17,
       "date": "2026-12-17",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Kerstmans Bakkerij",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 96,
+        "text": "96 GRATIS SPINS"
       },
-      "game": null,
+      "game": "25 Cookies: Hit the Bonus",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 17 · 17 DEC.",
+          "KERST-FREESPINS",
+          "96 GRATIS SPINS",
+          "in 25 Cookies: Hit the Bonus",
+          "Minimale storting: 30 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 17 · 17 DEC.",
+          "KERST-FREESPINS",
+          "96 GRATIS SPINS",
+          "in 25 Cookies: Hit the Bonus",
+          "Minimale storting: 30 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 17 · 17 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 17 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 17 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 18,
       "date": "2026-12-18",
-      "location": "TBD",
+      "location": "Wolkenkasteel",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 63,
+        "max": 650,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "63% TOT 650 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 18 · 18 DEC.",
+          "KERSTBONUS",
+          "63% TOT 650 EUR",
+          "Minimale storting: 25 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 18 · 18 DEC.",
+          "KERSTBONUS",
+          "63% TOT 650 EUR",
+          "Minimale storting: 25 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 18 · 18 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 18 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 18 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 19,
       "date": "2026-12-19",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Bloemenvallei",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 83,
+        "text": "83 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Yeti Quest",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 19 · 19 DEC.",
+          "KERST-FREESPINS",
+          "83 GRATIS SPINS",
+          "in Yeti Quest",
+          "Minimale storting: 30 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 19 · 19 DEC.",
+          "KERST-FREESPINS",
+          "83 GRATIS SPINS",
+          "in Yeti Quest",
+          "Minimale storting: 30 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 19 · 19 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 19 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 19 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 20,
       "date": "2026-12-20",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Vliegende-Sleeënstation",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 57,
+        "text": "57 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Sweet Bonanza Xmas",
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 20 · 20 DEC.",
+          "KERST-FREESPINS",
+          "57 GRATIS SPINS",
+          "in Sweet Bonanza Xmas",
+          "Minimale storting: 25 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 20 · 20 DEC.",
+          "KERST-FREESPINS",
+          "57 GRATIS SPINS",
+          "in Sweet Bonanza Xmas",
+          "Minimale storting: 25 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 20 · 20 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 20 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 20 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 21,
       "date": "2026-12-21",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Winteraanlegsteiger",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 81,
+        "text": "81 GRATIS SPINS"
       },
-      "game": null,
+      "game": "25 Cookies: Hit the Bonus",
       "minDeposit": {
-        "value": 0,
+        "value": 22,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 22 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 21 · 21 DEC.",
+          "KERST-FREESPINS",
+          "81 GRATIS SPINS",
+          "in 25 Cookies: Hit the Bonus",
+          "Minimale storting: 22 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 21 · 21 DEC.",
+          "KERST-FREESPINS",
+          "81 GRATIS SPINS",
+          "in 25 Cookies: Hit the Bonus",
+          "Minimale storting: 22 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 21 · 21 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 21 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 21 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 22,
       "date": "2026-12-22",
-      "location": "TBD",
+      "location": "Kerstmelodietoren",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 70,
+        "max": 700,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "70% TOT 700 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 22 · 22 DEC.",
+          "KERSTBONUS",
+          "70% TOT 700 EUR",
+          "Minimale storting: 30 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 22 · 22 DEC.",
+          "KERSTBONUS",
+          "70% TOT 700 EUR",
+          "Minimale storting: 30 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 22 · 22 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 22 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 22 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 23,
       "date": "2026-12-23",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Wintertheater",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 99,
+        "text": "99 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Big Bass Christmas - Frozen Lake",
       "minDeposit": {
-        "value": 0,
+        "value": 35,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 35 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 23 · 23 DEC.",
+          "KERST-FREESPINS",
+          "99 GRATIS SPINS",
+          "in Big Bass Christmas - Frozen Lake",
+          "Minimale storting: 35 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 23 · 23 DEC.",
+          "KERST-FREESPINS",
+          "99 GRATIS SPINS",
+          "in Big Bass Christmas - Frozen Lake",
+          "Minimale storting: 35 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 23 · 23 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 23 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 23 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 24,
       "date": "2026-12-24",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Snoeppaleis",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 84,
+        "text": "84 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Yeti Quest",
       "minDeposit": {
-        "value": 0,
+        "value": 30,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 30 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 24 · 24 DEC.",
+          "KERST-FREESPINS",
+          "84 GRATIS SPINS",
+          "in Yeti Quest",
+          "Minimale storting: 30 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 24 · 24 DEC.",
+          "KERST-FREESPINS",
+          "84 GRATIS SPINS",
+          "in Yeti Quest",
+          "Minimale storting: 30 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 24 · 24 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 24 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 24 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 25,
       "date": "2026-12-25",
-      "location": "TBD",
-      "type": "bonus",
+      "location": "Sterrenpoort",
+      "type": "fs",
       "amount": {
-        "percent": 0,
-        "max": 0,
-        "currency": "EUR",
-        "text": "TBD"
+        "freeSpins": 101,
+        "text": "101 GRATIS SPINS"
       },
-      "game": null,
+      "game": "Christmas Carol Megaways",
       "minDeposit": {
-        "value": 0,
+        "value": 35,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 35 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 25 · 25 DEC.",
+          "KERST-FREESPINS",
+          "101 GRATIS SPINS",
+          "in Christmas Carol Megaways",
+          "Minimale storting: 35 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 25 · 25 DEC.",
+          "KERST-FREESPINS",
+          "101 GRATIS SPINS",
+          "in Christmas Carol Megaways",
+          "Minimale storting: 35 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 25 · 25 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 25 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 25 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     },
     {
       "day": 26,
       "date": "2026-12-26",
-      "location": "TBD",
+      "location": "Paleis van de Kerstman",
       "type": "bonus",
       "amount": {
-        "percent": 0,
-        "max": 0,
+        "percent": 53,
+        "max": 500,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "53% TOT 500 EUR"
       },
       "game": null,
       "minDeposit": {
-        "value": 0,
+        "value": 25,
         "currency": "EUR",
-        "text": "TBD"
+        "text": "Minimale storting: 25 EUR"
       },
-      "wagering": {
-        "multiplier": 0,
-        "text": "TBD"
-      },
-      "validUntil": {
-        "time": "23:59",
-        "text": "TBD"
-      },
+      "wagering": "",
+      "validUntil": "",
       "raw": {
         "active": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 26 · 26 DEC.",
+          "KERSTBONUS",
+          "53% TOT 500 EUR",
+          "Minimale storting: 25 EUR",
+          "STORTEN & CLAIMEN",
+          "Volledige algemene voorwaarden"
         ],
         "expired": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 26 · 26 DEC.",
+          "KERSTBONUS",
+          "53% TOT 500 EUR",
+          "Minimale storting: 25 EUR",
+          "Cadeau verlopen",
+          "Volledige algemene voorwaarden"
         ],
         "locked": [
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD",
-          "TBD"
+          "DAG 26 · 26 DEC.",
+          "VERRASSINGSCADEAU",
+          "Beschikbaar vanaf: 26 DEC.",
+          "Kom morgen terug om dit cadeau te ontgrendelen",
+          "Vergrendeld · 26 DEC.",
+          "Volledige algemene voorwaarden"
         ]
       }
     }

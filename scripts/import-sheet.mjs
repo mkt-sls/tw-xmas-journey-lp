@@ -1,11 +1,9 @@
 #!/usr/bin/env node
-// Turns data/source/sheet.json into the JSON the page uses:
-//   data/ui/<lang>.json       UI strings + 26 location names per language
-//   data/cards/<MARKET>.json  26 daily cards per market (FR_CA is our own translation of EN_CAD)
-//   data/markets.json         list of markets
-//   data/browser-map.json     browser language -> market rules
-//   data/ISSUES.md            plain-English list of fixes and open questions for the client
-// Re-run it whenever the sheet changes: node scripts/extract-sheet.mjs <dump> && node scripts/import-sheet.mjs
+// Turns data/source/sheet.json (the Top Win texts sheet, see extract-sheet.mjs) into the JSON the page uses:
+//   data/cards/<MARKET>.json  26 daily cards per market
+//   data/ui/<lang>.json       UI strings per language
+// Also writes the sheet-derived part of data/ISSUES.md (scripts/import-links.mjs adds the links part).
+// Re-run: node scripts/extract-sheet.mjs <texts.xlsx> && node scripts/import-sheet.mjs && node scripts/import-links.mjs
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -13,643 +11,312 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dataDir = path.join(root, 'data');
-const sheet = JSON.parse(fs.readFileSync(path.join(dataDir, 'source', 'sheet.json'), 'utf8')).tabs;
+const tabs = JSON.parse(fs.readFileSync(path.join(dataDir, 'source', 'sheet.json'), 'utf8')).tabs;
 
 const DAYS = 26;
-const NBSP = ' ';
-const PLACEHOLDER_ENDED = 'The Christmas Journey has ended. Thank you for travelling with us!';
-const UI_LANGS = ['EN', 'RU', 'FR_CA', 'DE', 'BG', 'NL', 'RO_MD', 'TR', 'NO', 'IT', 'DA', 'SV'];
 
-// ---- market table ------------------------------------------------------------
-// flag = lowercase ISO country code (also used for the flag image name); flagEmoji for text-only use.
+// Market -> sheet tab, UI language file, currency. (markets.json and browser-map.json are kept by hand.)
+// uiCol = column of the language in the UI ELEMENT UI block (A1:D19); locCol = column in the LOCATION table (rows 27-52):
+// that table is ordered day | RU | RO | EN | DE | NL (RU is not used).
 const MARKETS = [
-  { id: 'DE', uiLang: 'DE', currency: 'EUR', flag: 'de', flagEmoji: '🇩🇪', label: 'Deutsch' },
-  { id: 'BG', uiLang: 'BG', currency: 'EUR', flag: 'bg', flagEmoji: '🇧🇬', label: 'Български' },
-  { id: 'NL', uiLang: 'NL', currency: 'EUR', flag: 'nl', flagEmoji: '🇳🇱', label: 'Nederlands' },
-  { id: 'IT', uiLang: 'IT', currency: 'EUR', flag: 'it', flagEmoji: '🇮🇹', label: 'Italiano' },
-  { id: 'RU', uiLang: 'RU', currency: 'EUR', flag: 'ru', flagEmoji: '🇷🇺', label: 'Русский' },
-  { id: 'TR', uiLang: 'TR', currency: 'TRY', flag: 'tr', flagEmoji: '🇹🇷', label: 'Türkçe' },
-  { id: 'DA', uiLang: 'DA', currency: 'DKK', flag: 'dk', flagEmoji: '🇩🇰', label: 'Dansk' },
-  { id: 'SV', uiLang: 'SV', currency: 'SEK', flag: 'se', flagEmoji: '🇸🇪', label: 'Svenska' },
-  { id: 'NO', uiLang: 'NO', currency: 'NOK', flag: 'no', flagEmoji: '🇳🇴', label: 'Norsk' },
-  { id: 'EN_AUD', uiLang: 'EN', currency: 'AUD', flag: 'au', flagEmoji: '🇦🇺', label: 'English (Australia)' },
-  { id: 'EN_GBP', uiLang: 'EN', currency: 'GBP', flag: 'gb', flagEmoji: '🇬🇧', label: 'English (UK)' },
-  { id: 'EN_USD', uiLang: 'EN', currency: 'USD', flag: 'us', flagEmoji: '🇺🇸', label: 'English (US)' },
-  { id: 'EN_CAD', uiLang: 'EN', currency: 'CAD', flag: 'ca', flagEmoji: '🇨🇦', label: 'English (Canada)' },
-  { id: 'FR_CA', uiLang: 'FR_CA', currency: 'CAD', flag: 'ca', flagEmoji: '🇨🇦', label: 'Français (Canada)' },
-  { id: 'RO_MDL', uiLang: 'RO_MD', currency: 'MDL', flag: 'md', flagEmoji: '🇲🇩', label: 'Română (Moldova)' },
-].map((m) => ({ ...m, cardsFile: `data/cards/${m.id}.json` }));
+  { id: 'DE', tab: 'DE', uiLang: 'DE', currency: 'EUR', uiCol: 1, locCol: 4 },
+  { id: 'NL', tab: 'NL', uiLang: 'NL', currency: 'EUR', uiCol: 2, locCol: 5 },
+  { id: 'EN_GBP', tab: 'EN', uiLang: 'EN', currency: 'GBP', uiCol: 0, locCol: 3 },
+  { id: 'RO_MDL', tab: 'RO', uiLang: 'RO_MD', currency: 'MDL', uiCol: 3, locCol: 2 },
+];
 
-const BROWSER_MAP = {
-  note: 'Match the full tag first (case-insensitive, e.g. "en-AU"), then the primary language ("de"), then fallback.',
-  exact: { 'en-AU': 'EN_AUD', 'en-CA': 'EN_CAD', 'en-US': 'EN_USD', 'fr-CA': 'FR_CA' },
-  language: {
-    en: 'EN_GBP', de: 'DE', bg: 'BG', nl: 'NL', it: 'IT', ru: 'RU', tr: 'TR',
-    da: 'DA', sv: 'SV', nb: 'NO', no: 'NO', nn: 'NO', ro: 'RO_MDL',
-  },
-  fallback: 'EN_GBP',
+// ---- explicit overrides of the sheets (owner decisions 2026-11-19). Each one is also listed in data/ISSUES.md. ------------
+// Free-spin counts: numbers follow the links sheet (tab TW EUROPE).
+// Day 12 says 75 FS in all four text tabs, the links sheet says 78. Shown 78 provisionally; ask the client: 75 or 78?
+const FS_OVERRIDES = { 12: { from: 75, to: 78 } };
+// "How it works" step 1 says "1-25 December" in every language; the campaign runs 1-26 December. Only the number changes.
+const STEP1_OVERRIDES = {
+  EN: ['1–25 December', '1–26 December'],
+  DE: ['1. bis 25. Dezember', '1. bis 26. Dezember'],
+  NL: ['1 t/m 25 december', '1 t/m 26 december'],
+  RO_MD: ['între 1 și 25 decembrie', 'între 1 și 26 decembrie'],
 };
+// Day 21 RO has no minimum-deposit line anywhere: see MDL_FOR_EUR below (22 -> 300 MDL).
 
-// ---- logs --------------------------------------------------------------------
-const fixes = []; // applied fixes
-const issues = []; // { title, lines[] } numbered open points for the client
-const notes = []; // informational, not counted
-const unparsed = []; // cells that did not parse
-const log = (msg) => console.log('[fix] ' + msg);
-
-function addFix(msg) {
-  fixes.push(msg);
-  log(msg);
-}
-
-// ---- UI strings --------------------------------------------------------------
-function buildUi() {
-  const ui = sheet['UI ELEMENT'];
-  const mainCols = ui.main.columns; // GROUP, KEY / DAY, EN SOURCE, EN, RU, ...
-  const langIdx = {};
-  UI_LANGS.forEach((l) => {
-    const i = mainCols.indexOf(l);
-    if (i < 0) throw new Error('UI column missing: ' + l);
-    langIdx[l] = i;
-  });
+// Place names: UI ELEMENT, LOCATION title in A24, header in row 26, days 1-26 in rows 27-52.
+function readLocations(market) {
+  const ui = tabs['UI ELEMENT'];
+  if (!/LOCATION/i.test(ui[23]?.[0] ?? '')) throw new Error('UI ELEMENT A24 is not the LOCATION title');
   const out = {};
-  for (const l of UI_LANGS) out[l] = { lang: l, strings: {}, extras: {}, locations: {} };
-
-  const seenKeys = new Map();
-  for (const row of ui.main.rows) {
-    const [group, key] = row;
-    if (group === 'UI') {
-      if (seenKeys.has(key)) issueDupKey(key);
-      seenKeys.set(key, true);
-      for (const l of UI_LANGS) out[l].strings[key] = row[langIdx[l]];
-    } else if (group === 'LOCATION') {
-      for (const l of UI_LANGS) out[l].locations[key] = row[langIdx[l]];
-    } else {
-      unparsed.push(`UI ELEMENT row with unknown group "${group}"`);
-    }
-    if (row[2] !== row[3]) {
-      unparsed.push(`UI key "${key}": "EN SOURCE" column differs from "EN" column ("${row[2]}" vs "${row[3]}")`);
-    }
-  }
-
-  // Extra blocks below the main table.
-  const ctaCols = ui.cta.columns; // UI element, EN SOURCE, EN, RU, FR_CA, ...
-  const ctaKeys = { 'CTA 1': 'cta_primary', 'CTA 2': 'cta_processing', 'CTA 3': 'cta_terms' };
-  for (const row of ui.cta.rows) {
-    const k = Object.keys(ctaKeys).find((p) => row[0].startsWith(p));
-    if (!k) {
-      unparsed.push(`UI extra row not recognised: ${row[0]}`);
-      continue;
-    }
-    for (const l of UI_LANGS) out[l].extras[ctaKeys[k]] = row[ctaCols.indexOf(l)];
-  }
-  // Second block: columns are EN SOURCE, EN, RU, FR_CA, DE, BG, NL, RO_MD, TR, NO, IT, DA, SV.
-  const extraLangs = ['EN', 'RU', 'FR_CA', 'DE', 'BG', 'NL', 'RO_MD', 'TR', 'NO', 'IT', 'DA', 'SV'];
-  const extraKeys = {
-    'Day 7': 'day_7',
-    'of 26': 'of_26',
-    '4 gifts collected': 'gifts_collected_4',
-    'Next gift in': 'next_gift_in',
-  };
-  let timerRowSeen = false;
-  for (const row of ui.extra.rows) {
-    if (row.length === 1) {
-      if (row[0] === 'Timer') timerRowSeen = true;
-      continue;
-    }
-    const key = extraKeys[row[0]];
-    if (!key) {
-      unparsed.push(`UI extra row not recognised: ${row[0]}`);
-      continue;
-    }
-    extraLangs.forEach((l, i) => {
-      out[l].extras[key] = row[1 + i];
-    });
-  }
-  return { out, timerRowSeen };
-}
-
-const dupKeyHits = [];
-function issueDupKey(key) {
-  dupKeyHits.push(key);
-}
-
-// ---- number / line parsing ---------------------------------------------------
-// Numbers with thousand separators: "1,000" "1 000" "20.000" "2 600"
-const NUM_RE = /\d{1,3}(?:[   .,]\d{3})+(?!\d)|\d+/g;
-const toInt = (s) => parseInt(s.replace(/[   .,]/g, ''), 10);
-const numbersIn = (s) => (s.match(NUM_RE) || []).map(toInt);
-const CURRENCY_TOKENS = ['EUR', '€', 'GBP', 'USD', 'CAD', 'AUD', 'TRY', 'DKK', 'SEK', 'NOK', 'MDL', '£', '$', '₺'];
-
-function currencyIn(s) {
-  const found = CURRENCY_TOKENS.filter((t) => s.includes(t));
-  if (found.length === 0) return null;
-  const norm = { '€': 'EUR', '£': 'GBP', '$': 'USD', '₺': 'TRY' };
-  return found.map((t) => norm[t] || t);
-}
-
-function dayNumbersIn(line) {
-  // remove clock times first so "23:59" / "23 h 59" are not read as days
-  const noTime = line.replace(/\b\d{1,2}\s*[:h]\s*\d{2}\b/g, ' ');
-  return (noTime.match(/\d{1,2}/g) || []).map(Number);
-}
-
-/** Parses one non-locked card (lines[]) into fields. Returns { fields, problems[] }. */
-function parseOpenCard(lines, market, day) {
-  const problems = [];
-  const n = lines.length;
-  if (n !== 8 && n !== 9) {
-    return { fields: null, problems: [`unexpected number of lines (${n})`] };
-  }
-  const isFs = n === 9;
-  const header = lines[0];
-  const typeLine = lines[1];
-  const amountLine = lines[2];
-  const gameLine = isFs ? lines[3] : null;
-  const [minLine, wagLine, validLine, ctaLine] = lines.slice(isFs ? 4 : 3, isFs ? 8 : 7);
-
-  const hd = dayNumbersIn(header);
-  if (!hd.includes(day)) problems.push(`header "${header}" does not contain day ${day}`);
-
-  const fields = { type: isFs ? 'freespins' : 'bonus', typeLabel: typeLine };
-
-  const nums = numbersIn(amountLine);
-  if (isFs) {
-    if (nums.length < 1) problems.push(`no spin count in "${amountLine}"`);
-    fields.amount = { spins: nums[0] ?? null, text: amountLine };
-  } else {
-    const pm = amountLine.match(/(\d+)\s*%|%\s*(\d+)/);
-    const percent = pm ? parseInt(pm[1] ?? pm[2], 10) : null;
-    const rest = amountLine.replace(/(\d+)\s*%|%\s*(\d+)/, ' ');
-    const maxNums = numbersIn(rest);
-    if (percent === null || maxNums.length < 1) problems.push(`cannot read percent/max in "${amountLine}"`);
-    fields.amount = { percent, max: maxNums[0] ?? null, currency: market.currency, text: amountLine };
-    const cur = currencyIn(amountLine);
-    if (cur && !cur.includes(market.currency)) problems.push(`currency ${cur.join('/')} in "${amountLine}" (market is ${market.currency})`);
-  }
-
-  if (isFs) {
-    const stripped = gameLine.replace(/^\S+\s+/, '');
-    fields.game = stripped;
-    fields.gameLine = gameLine;
-  } else {
-    fields.game = null;
-  }
-
-  const minAfter = minLine.includes(':') ? minLine.slice(minLine.indexOf(':') + 1) : minLine;
-  const minNums = numbersIn(minAfter);
-  if (minNums.length < 1) problems.push(`no min deposit in "${minLine}"`);
-  fields.minDeposit = { value: minNums[0] ?? null, currency: market.currency, text: minLine };
-  const curMin = currencyIn(minAfter);
-  if (curMin && !curMin.includes(market.currency)) problems.push(`currency ${curMin.join('/')} in "${minLine}" (market is ${market.currency})`);
-
-  const wm = wagLine.match(/x\s*(\d+)/i);
-  if (!wm) problems.push(`no wagering multiplier in "${wagLine}"`);
-  fields.wagering = { multiplier: wm ? parseInt(wm[1], 10) : null, text: wagLine };
-
-  const tm = validLine.match(/(\d{1,2})\s*[:h]\s*(\d{2})/);
-  if (!tm) problems.push(`no valid-until time in "${validLine}"`);
-  const vd = dayNumbersIn(validLine);
-  if (!vd.includes(day)) problems.push(`valid-until "${validLine}" does not mention day ${day}`);
-  fields.validUntil = { time: tm ? `${tm[1].padStart(2, '0')}:${tm[2]}` : null, text: validLine };
-
-  fields.stateLine = ctaLine;
-  return { fields, problems };
-}
-
-function parseLockedCard(lines, day) {
-  const problems = [];
-  if (lines.length !== 6) return { problems: [`locked card has ${lines.length} lines, expected 6`] };
-  const hd = dayNumbersIn(lines[0]);
-  if (!hd.includes(day)) problems.push(`locked header "${lines[0]}" does not contain day ${day}`);
-  const od = dayNumbersIn(lines[2]);
-  const ld = dayNumbersIn(lines[4]);
-  if (!od.includes(day)) problems.push(`locked line "${lines[2]}" does not mention day ${day}`);
-  if (!ld.includes(day)) problems.push(`locked line "${lines[4]}" does not mention day ${day}`);
-  return { problems };
-}
-
-// ---- build card files --------------------------------------------------------
-const cardIssues = []; // strings
-const STATES = [['active', 0], ['expired', 2], ['locked', 3]]; // columns in sheet.json rows (1 = credited, unused)
-
-function buildMarketCards(market, uiByLang) {
-  const tab = sheet[market.id];
-  if (!tab) throw new Error('Missing tab for market ' + market.id);
-  if (tab.rows.length !== DAYS) throw new Error(`${market.id}: ${tab.rows.length} rows, expected ${DAYS}`);
-  const days = [];
   for (let d = 1; d <= DAYS; d++) {
-    const row = tab.rows[d - 1];
-    const raw = {
-      active: row[0].split('\n'),
-      expired: row[2].split('\n'),
-      locked: row[3].split('\n'),
-    };
-    days.push({ day: d, raw });
-  }
-  return days;
-}
-
-/** Applies explicit known fixes to raw lines before parsing. */
-function applyCardFixes(market, days) {
-  if (market.id === 'RO_MDL') {
-    const day4 = days[3];
-    let count = 0;
-
-    for (const state of ['active', 'expired', 'locked']) {
-      day4.raw[state] = day4.raw[state].map((l) => {
-        if (/\bGBP\b/.test(l)) {
-          count++;
-          return l.replace(/\bGBP\b/g, 'MDL');
-        }
-        return l;
-      });
-    }
-    // The "Bonus credited" column is not imported at all.
-    if (count === 0) {
-      notes.push('Expected "22 GBP" on RO_MDL day 4 was not found any more (maybe already fixed in the sheet).');
-    } else {
-      addFix(`RO_MDL day 4: "GBP" replaced by "MDL" in ${count} line(s) (min deposit is now "22 MDL" in the active and expired cards; the locked card has no amount).`);
-    }
-  }
-}
-
-function finishMarket(market, days, ui) {
-  const gbpDays = market.id === 'EN_GBP' ? null : gbpReference;
-  const out = [];
-  for (const entry of days) {
-    const { day, raw } = entry;
-    const parsedActive = parseOpenCard(raw.active, market, day);
-    const parsedExpired = parseOpenCard(raw.expired, market, day);
-    const parsedLocked = parseLockedCard(raw.locked, day);
-    for (const [label, p] of [['active', parsedActive], ['expired', parsedExpired], ['locked', parsedLocked]]) {
-      for (const msg of p.problems) unparsed.push(`${market.id} day ${day} (${label} card): ${msg}`);
-    }
-    const f = parsedActive.fields;
-    if (!f) continue;
-    // the expired card must show the same offer as the active card
-    const fe = parsedExpired.fields;
-    if (fe) {
-      const same =
-        JSON.stringify([fe.type, fe.amount, fe.game, fe.minDeposit, fe.wagering]) ===
-        JSON.stringify([f.type, f.amount, f.game, f.minDeposit, f.wagering]);
-      if (!same) unparsed.push(`${market.id} day ${day}: the "Gift expired" card shows a different offer than the "Deposit & Claim" card`);
-    }
-    // compare with the GBP tab for structure that must be identical in every market
-    if (gbpDays) {
-      const g = gbpDays[day - 1];
-      const diffs = [];
-      if (g.type !== f.type) diffs.push(`offer type (${f.type} vs ${g.type})`);
-      if (g.type === f.type) {
-        if (f.type === 'bonus' && g.amount.percent !== f.amount.percent) diffs.push(`percent (${f.amount.percent}% vs ${g.amount.percent}%)`);
-        if (f.type === 'freespins' && g.amount.spins !== f.amount.spins) diffs.push(`spin count (${f.amount.spins} vs ${g.amount.spins})`);
-        if (f.type === 'freespins' && g.game && f.game && g.game.toLowerCase() !== f.game.toLowerCase()) diffs.push(`game ("${f.game}" vs "${g.game}")`);
-      }
-      if (g.wagering.multiplier !== f.wagering.multiplier) diffs.push(`wagering (x${f.wagering.multiplier} vs x${g.wagering.multiplier})`);
-      if (diffs.length) crossDiffs.push(`${market.id} day ${day}: differs from the EN_GBP tab in ${diffs.join(', ')}`);
-    }
-    out.push({
-      day,
-      date: `2026-12-${String(day).padStart(2, '0')}`,
-      location: ui.locations[String(day)] ?? null,
-      type: f.type,
-      amount: f.amount,
-      game: f.game,
-      minDeposit: f.minDeposit,
-      wagering: f.wagering,
-      validUntil: f.validUntil,
-      raw,
-    });
+    const row = ui[25 + d];
+    if (Number(row?.[0]) !== d) throw new Error(`UI ELEMENT row ${26 + d}: expected day ${d}, got "${row?.[0]}"`);
+    const name = String(row[market.locCol] ?? '').trim();
+    if (!name) throw new Error(`UI ELEMENT row ${26 + d}: empty place name for ${market.uiLang}`);
+    out[String(d)] = name;
   }
   return out;
 }
 
-const crossDiffs = [];
-let gbpReference = null;
+const issues = []; // sheet findings for the client, plain English
+const selfTranslated = []; // { lang, key, value }
 
-// ---- FR_CA cards: our translation of EN_CAD ----------------------------------
-function frDayLabel(n) {
-  return n === 1 ? '1er' : String(n);
-}
-function frNumber(n) {
-  return n >= 1000 ? String(n).replace(/\B(?=(\d{3})+(?!\d))/g, NBSP) : String(n);
-}
-
-function buildFrCa(enCadDays, uiFr) {
-  const s = uiFr.strings;
-  const x = uiFr.extras;
-  const opensTemplate = s.opens_dec8; // "S’ouvre le 8 décembre"
-  const days = [];
-  for (const d of enCadDays) {
-    const dl = frDayLabel(d.day);
-    const header = `JOUR ${d.day} · ${dl.toUpperCase()} DÉCEMBRE`;
-    const typeLine = d.type === 'bonus' ? 'BONUS DE NOËL' : 'TOURS GRATUITS DE NOËL';
-    const amountLine =
-      d.type === 'bonus'
-        ? `${d.amount.percent} % JUSQU’À ${frNumber(d.amount.max)} CAD`
-        : `${d.amount.spins} TOURS GRATUITS`;
-    const gameLine = d.type === 'freespins' ? `sur ${d.game}` : null;
-    const minLine = `Dépôt min. : ${frNumber(d.minDeposit.value)} CAD`;
-    const wagLine = `Exigence de mise : x${d.wagering.multiplier}`;
-    const validLine = `Valable jusqu’au ${dl} déc., ${d.validUntil.time.replace(':', ' h ')}`;
-    const common = [header, typeLine, amountLine, ...(gameLine ? [gameLine] : []), minLine, wagLine, validLine];
-    const terms = s.full_terms;
-    const active = [...common, x.cta_primary, terms];
-    const expired = [...common, s.gift_expired, terms];
-    const lockedHeader = header;
-    const opens = opensTemplate.replace(/8 décembre/, `${dl} décembre`);
-    const locked = [lockedHeader, s.surprise_gift, opens, s.come_back_tomorrow, `${s.locked} · ${dl} déc.`, terms];
-    days.push({ day: d.day, raw: { active, expired, locked } });
-  }
-  return days;
-}
-
-// ---- main --------------------------------------------------------------------
-const { out: uiAll, timerRowSeen } = buildUi();
-
-// Known fix 2 + 3 on UI strings
-{
-  const de = uiAll.DE.strings;
-  if (de.step1_body && de.step1_body.includes('1. bis 25.')) {
-    de.step1_body = de.step1_body.replace('1. bis 25.', '1. bis 26.');
-    addFix('DE step1_body: "1. bis 25." changed to "1. bis 26." (the campaign has 26 days).');
-  } else {
-    notes.push('Expected "1. bis 25." in DE step1_body was not found any more (maybe already fixed in the sheet).');
-  }
-  let n = 0;
-  const langsFixed = [];
-  for (const l of UI_LANGS) {
-    const v = uiAll[l].strings.day_of;
-    if (typeof v === 'string' && /\b25\b/.test(v)) {
-      uiAll[l].strings.day_of = v.replace(/\b25\b/, '26');
-      n++;
-      langsFixed.push(l);
-    }
-  }
-  if (n) addFix(`"Day 7 of 25" type text (key day_of): 25 changed to 26 in ${n} language(s): ${langsFixed.join(', ')}.`);
-  else notes.push('No "of 25" found in key day_of any more.');
-
-  // Report other places where a lone 25 appears in UI text (not changed)
-  const other25 = [];
-  for (const l of UI_LANGS) {
-    for (const [k, v] of Object.entries(uiAll[l].strings)) {
-      if (/\b25\b/.test(v)) other25.push(`${l}.${k}: "${v}"`);
-    }
-  }
-  if (other25.length) notes.push('Other UI strings still containing "25" (checked, not changed): ' + other25.join('; '));
-}
-
-// Step 3 body: explicit owner override (task 4). The sheet text describes a green "credited" gift that
-// does not exist on the page. These 12 strings are agency-made; the client must verify them.
-const STEP3_BODY = {
-  EN: 'Deposit before 23:59 to claim the day’s bonus.',
-  RU: 'Пополни счёт до 23:59, чтобы забрать бонус дня.',
-  FR_CA: 'Dépose avant 23 h 59 pour réclamer le bonus du jour.',
-  DE: 'Zahle bis 23:59 Uhr ein, um den Tagesbonus zu sichern.',
-  BG: 'Депозирай до 23:59 ч., за да вземеш бонуса за деня.',
-  NL: 'Stort vóór 23:59 uur om de bonus van de dag te claimen.',
-  RO_MD: 'Depune până la 23:59 pentru a revendica bonusul zilei.',
-  TR: 'Günün bonusunu almak için 23:59’a kadar yatırım yap.',
-  NO: 'Sett inn før kl. 23:59 for å hente dagens bonus.',
-  IT: 'Deposita entro le 23:59 per riscuotere il bonus del giorno.',
-  DA: 'Indbetal inden kl. 23:59 for at hente dagens bonus.',
-  SV: 'Sätt in före kl. 23:59 för att hämta dagens bonus.',
+// ---- self-translated / skeleton UI strings -------------------------------------------------
+// Keys the texts sheet does not carry. English = skeleton wording; DE/NL/RO are OUR translation (listed in ISSUES.md).
+const OWN = {
+  brand: { EN: 'Top Win', DE: 'Top Win', NL: 'Top Win', RO_MD: 'Top Win' },
+  login: { EN: 'Log in', DE: 'Anmelden', NL: 'Inloggen', RO_MD: 'Autentificare' },
+  register: { EN: 'Register', DE: 'Registrieren', NL: 'Registreren', RO_MD: 'Înregistrare' },
+  campaign_dates: {
+    EN: '1–26 DECEMBER · 26 GIFTS',
+    DE: '1.–26. DEZEMBER · 26 GESCHENKE',
+    NL: '1–26 DECEMBER · 26 CADEAUS',
+    RO_MD: '1–26 DECEMBRIE · 26 CADOURI',
+  },
+  campaign_title: { EN: 'Christmas Journey', DE: 'Weihnachtsreise', NL: 'Kerstreis', RO_MD: 'Călătoria de Crăciun' },
+  subtitle: {
+    EN: 'Follow Father Christmas through a snowy English village. A new gift unlocks every day — open it, claim your bonus.',
+    DE: 'Folge dem Weihnachtsmann durch ein verschneites englisches Dorf. Jeden Tag wird ein neues Geschenk freigeschaltet – öffne es und sichere dir deinen Bonus.',
+    NL: 'Volg de Kerstman door een besneeuwd Engels dorp. Elke dag wordt een nieuw cadeau ontgrendeld – open het en claim je bonus.',
+    RO_MD: 'Urmează-l pe Moș Crăciun printr-un sat englezesc acoperit de zăpadă. În fiecare zi se deblochează un cadou nou – deschide-l și revendică-ți bonusul.',
+  },
+  today: { EN: 'TODAY', DE: 'HEUTE', NL: 'VANDAAG', RO_MD: 'AZI' },
+  '26 DAYS': { EN: '26 DAYS', DE: '26 TAGE', NL: '26 DAGEN', RO_MD: '26 ZILE' },
+  yesterday: { EN: 'YESTERDAY · {date}', DE: 'GESTERN · {date}', NL: 'GISTEREN · {date}', RO_MD: 'IERI · {date}' },
+  todays_stop: {
+    EN: 'TODAY’S STOP · {date}',
+    DE: 'HEUTIGER HALT · {date}',
+    NL: 'STOP VAN VANDAAG · {date}',
+    RO_MD: 'OPRIREA DE AZI · {date}',
+  },
+  tomorrow: { EN: 'TOMORROW · {date}', DE: 'MORGEN · {date}', NL: 'MORGEN · {date}', RO_MD: 'MÂINE · {date}' },
+  in_two_days: { EN: 'IN 2 DAYS · {date}', DE: 'IN 2 TAGEN · {date}', NL: 'OVER 2 DAGEN · {date}', RO_MD: 'PESTE 2 ZILE · {date}' },
+  missed: { EN: 'MISSED · {date}', DE: 'VERPASST · {date}', NL: 'GEMIST · {date}', RO_MD: 'PIERDUT · {date}' },
+  open_gift: { EN: 'OPEN GIFT', DE: 'GESCHENK ÖFFNEN', NL: 'CADEAU OPENEN', RO_MD: 'DESCHIDE CADOUL' },
+  unlocks_in: {
+    EN: 'Unlocks in {time}',
+    DE: 'Wird freigeschaltet in {time}',
+    NL: 'Wordt ontgrendeld over {time}',
+    RO_MD: 'Se deblochează în {time}',
+  },
+  // Sheet step 3 body says "the gift turns green when the bonus is credited"; there is no credited state, so we keep this.
+  step3_body: {
+    EN: 'Deposit before 23:59 to claim the day’s bonus.',
+    DE: 'Zahle vor 23:59 Uhr ein, um den Tagesbonus zu sichern.',
+    NL: 'Stort vóór 23:59 om de bonus van de dag te claimen.',
+    RO_MD: 'Depune înainte de 23:59 pentru a revendica bonusul zilei.',
+  },
+  responsible: {
+    EN: '18+ · Play responsibly',
+    DE: '18+ · Verantwortungsvoll spielen',
+    NL: '18+ · Speel verantwoord',
+    RO_MD: '18+ · Joacă responsabil',
+  },
+  be_gamble_aware: { EN: '', DE: '', NL: '', RO_MD: '' },
+  campaign_terms: {
+    EN: 'Full campaign terms apply',
+    DE: 'Es gelten die vollständigen Aktionsbedingungen',
+    NL: 'Volledige actievoorwaarden zijn van toepassing',
+    RO_MD: 'Se aplică termenii complecți ai campaniei',
+  },
+  day_of: { EN: 'Day 7 of 26', DE: 'Tag 7 von 26', NL: 'Dag 7 van 26', RO_MD: 'Ziua 7 din 26' },
+  gifts_collected: {
+    EN: '4 gifts collected',
+    DE: '4 Geschenke gesammelt',
+    NL: '4 cadeaus verzameld',
+    RO_MD: '4 cadouri colectate',
+  },
+  next_gift: { EN: 'Next gift in', DE: 'Nächstes Geschenk in', NL: 'Volgend cadeau over', RO_MD: 'Următorul cadou în' },
+  gift_timer: { EN: '{time}', DE: '{time}', NL: '{time}', RO_MD: '{time}' },
+  campaign_ended: {
+    EN: 'The Christmas Journey has ended. Thank you for travelling with us!',
+    DE: 'Die Weihnachtsreise ist zu Ende. Danke, dass du mitgereist bist!',
+    NL: 'De Kerstreis is afgelopen. Bedankt dat je met ons meereisde!',
+    RO_MD: 'Călătoria de Crăciun s-a încheiat. Îți mulțumim că ai călătorit cu noi!',
+  },
 };
-for (const l of UI_LANGS) {
-  if (!STEP3_BODY[l]) throw new Error('STEP3_BODY missing for ' + l);
-  uiAll[l].strings.step3_body = STEP3_BODY[l];
-}
-log('OVERRIDE step3_body replaced in ' + UI_LANGS.length + ' languages (owner decision, agency translations).');
+const OWN_EXTRAS = {
+  day_7: { EN: 'Day 7', DE: 'Tag 7', NL: 'Dag 7', RO_MD: 'Ziua 7' },
+  of_26: { EN: 'of 26', DE: 'von 26', NL: 'van 26', RO_MD: 'din 26' },
+  gifts_collected_4: OWN.gifts_collected,
+  next_gift_in: OWN.next_gift,
+};
 
-// campaign_ended placeholder
-for (const l of UI_LANGS) uiAll[l].strings.campaign_ended = PLACEHOLDER_ENDED;
+// ---- helpers -------------------------------------------------------------------------------
+const lines = (cell) => String(cell ?? '').split('\n').map((s) => s.trim()).filter(Boolean);
+const NUM = '(\\d[\\d.]*)';
 
-// Cards: parse EN_GBP first (reference), then everything else
-const rawByMarket = {};
-for (const m of MARKETS) {
-  if (m.id === 'FR_CA') continue;
-  const days = buildMarketCards(m, uiAll);
-  applyCardFixes(m, days);
-  rawByMarket[m.id] = days;
-}
-
-// Pre-parse GBP as the structural reference
-{
-  const gbp = MARKETS.find((m) => m.id === 'EN_GBP');
-  gbpReference = rawByMarket.EN_GBP.map((e) => ({
-    ...parseOpenCard(e.raw.active, gbp, e.day).fields,
-    day: e.day,
-  }));
-}
-
-const cardsOut = {};
-for (const m of MARKETS) {
-  if (m.id === 'FR_CA') continue;
-  const uiLang = uiAll[m.uiLang];
-  cardsOut[m.id] = finishMarket(m, rawByMarket[m.id], uiLang);
-}
-
-// FR_CA from EN_CAD
-{
-  const m = MARKETS.find((x) => x.id === 'FR_CA');
-  const frRaw = buildFrCa(cardsOut.EN_CAD, uiAll.FR_CA);
-  cardsOut.FR_CA = finishMarket(m, frRaw, uiAll.FR_CA);
-}
-
-// Game spelling: collect variants per day
-const gameVariants = new Map(); // day -> Map(spelling -> [markets])
-for (const m of MARKETS) {
-  for (const d of cardsOut[m.id]) {
-    if (!d.game) continue;
-    if (!gameVariants.has(d.day)) gameVariants.set(d.day, new Map());
-    const mm = gameVariants.get(d.day);
-    if (!mm.has(d.game)) mm.set(d.game, []);
-    mm.get(d.game).push(m.id);
+function parseAmount(line, currency) {
+  const pct = line.match(new RegExp(`^(\\d+)%.*?${NUM}\\s+([A-Z]{3})$`));
+  if (pct) {
+    return { kind: 'bonus', amount: { percent: Number(pct[1]), max: Number(pct[2].replace(/\./g, '')), currency: pct[3], text: line } };
   }
+  const fs = line.match(/^(\d+)\s+\S/);
+  if (fs) return { kind: 'fs', amount: { freeSpins: Number(fs[1]), text: line } };
+  throw new Error(`Cannot read amount line "${line}"`);
 }
 
-// ---- turn sample dates / time in UI strings into templates --------------------
-// The sheet hardcodes the Dec-7 sample ("TODAY’S STOP · DEC 7", "Opens 8 December", "Unlocks in 14:32:08").
-// The page needs {date} / {time} placeholders. Every language is checked; a sample that cannot be found is
-// kept as raw text and listed in ISSUES.md.
-{
-  const unresolved = [];
-  const tagKeys = ['yesterday', 'todays_stop', 'tomorrow', 'in_two_days', 'missed'];
-  for (const l of UI_LANGS) {
-    const s = uiAll[l].strings;
-    for (const k of tagKeys) {
-      const v = s[k];
-      // every sample is "<WORD> · <date>"; the date is whatever follows the last " · "
-      const i = typeof v === 'string' ? v.lastIndexOf(' · ') : -1;
-      if (i > 0 && /\d/.test(v.slice(i + 3))) s[k] = v.slice(0, i) + ' · {date}';
-      else unresolved.push(`${l}.${k}: "${v}"`);
+function parseMin(line) {
+  const m = line.match(new RegExp(`:\\s*${NUM}\\s+([A-Z]{3})$`));
+  return m ? { value: Number(m[1].replace(/\./g, '')), currency: m[2], text: line } : null;
+}
+
+// Minimum deposit of the "side table" in the links sheet (EUR/GBP -> MDL); used when a MDL cell is empty.
+const MDL_FOR_EUR = { 22: 300, 25: 350, 28: 400, 30: 450, 35: 500 };
+
+// ---- cards ---------------------------------------------------------------------------------
+function buildCards(market) {
+  const rows = tabs[market.tab];
+  if (!rows || rows.length < DAYS + 1) throw new Error(`Tab ${market.tab}: expected ${DAYS + 1} rows, got ${rows?.length}`);
+  const locations = readLocations(market);
+  const days = [];
+  let minLinePrefix = null;
+  for (let d = 1; d <= DAYS; d++) {
+    const row = rows[d];
+    const [active, credited, expired, locked] = [0, 1, 2, 3].map((i) => lines(row[i]));
+    // Override: free-spin count follows the links sheet (see FS_OVERRIDES). The amount is line 3 (index 2) of every card state.
+    const fsFix = FS_OVERRIDES[d];
+    if (fsFix) {
+      for (const l of [active, credited, expired]) {
+        if (l[2].startsWith(`${fsFix.to} `)) continue; // the sheet was already corrected
+        if (!l[2].startsWith(`${fsFix.from} `)) throw new Error(`${market.tab} day ${d}: expected ${fsFix.from} free spins, got "${l[2]}"`);
+        l[2] = l[2].replace(String(fsFix.from), String(fsFix.to));
+      }
+      if (market.id === 'DE') {
+        issues.push(
+          `Day ${d}: the texts sheet says ${fsFix.from} free spins in all four languages, the links sheet says ${fsFix.to}. ` +
+            `The page shows ${fsFix.to} for now (numbers follow the links sheet). Ask client: ${fsFix.from} or ${fsFix.to}?`,
+        );
+      }
     }
-    // countdown sample 14:32:08 (in "Unlocks in 14:32:08" and in the bare gift_timer)
-    if (typeof s.unlocks_in === 'string' && s.unlocks_in.includes('14:32:08')) s.unlocks_in = s.unlocks_in.replace('14:32:08', '{time}');
-    else unresolved.push(`${l}.unlocks_in: "${s.unlocks_in}"`);
-    if (s.gift_timer === '14:32:08') s.gift_timer = '{time}';
-    // "Opens 8 December": day 8 + month word (a Turkish suffix after the month, e.g. "8 Aralık’ta", stays outside {date})
-    if (typeof s.opens_dec8 === 'string' && /\b8\.?\s+[^\s’]+/.test(s.opens_dec8)) s.opens_dec8 = s.opens_dec8.replace(/\b8\.?\s+[^\s’]+/, '{date}');
-    else unresolved.push(`${l}.opens_dec8: "${s.opens_dec8}"`);
+    // The first line of every state carries the same "DAY n · date" label.
+    for (const [name, l] of [['credited', credited], ['expired', expired], ['locked', locked]]) {
+      if (l[0] !== active[0]) issues.push(`${market.tab} day ${d}: the "${name}" text starts with a different day label than the "deposit & claim" text.`);
+    }
+    if (!new RegExp(`\\b${d}\\b`).test(active[0])) issues.push(`${market.tab} row ${d + 1}: day label "${active[0]}" does not contain day number ${d}.`);
+
+    const { kind, amount } = parseAmount(active[2], market.currency);
+    const game = kind === 'fs' ? active[3].replace(/^\S+\s+/, '') : null;
+    const minIdx = kind === 'fs' ? 4 : 3;
+    let minDeposit = parseMin(active[minIdx] ?? '');
+
+    if (minDeposit) minLinePrefix = minLinePrefix ?? active[minIdx].replace(/:.*$/, '');
+    if (!minDeposit) {
+      // Day 21 RO: the sheet has no "minimum deposit" line. Use the side table of the links sheet (22 -> 300 MDL) and flag it.
+      if (market.currency === 'MDL' && active.length === minIdx + 2) {
+        const eurMin = parseMin(tabs.DE[d][0].split('\n').find((x) => /:\s*\d+\s*EUR$/.test(x)) ?? '');
+        const mdl = eurMin && MDL_FOR_EUR[eurMin.value];
+        if (!mdl) throw new Error(`Day ${d}: no minimum deposit and no side-table value`);
+        const prefix = minLinePrefix ?? tabs.RO[1][0].split('\n').find((x) => x.includes(':') && /MDL$/.test(x)).replace(/:.*$/, '');
+        const text = `${prefix}: ${mdl} MDL`;
+        minDeposit = { value: mdl, currency: 'MDL', text };
+        for (const l of [active, credited, expired]) l.splice(minIdx, 0, text);
+        issues.push(
+          `RO day ${d}: the texts sheet has no "minimum deposit" line (the MDL cell in the links sheet is empty too). ` +
+            `The page shows "${text}" (the links sheet side table says ${eurMin.value} EUR/GBP -> ${mdl} MDL). Please confirm.`,
+        );
+      } else {
+        throw new Error(`${market.tab} day ${d}: cannot find the minimum deposit line in ${JSON.stringify(active)}`);
+      }
+    }
+    // Layout check (after a patch the arrays are one line longer than the sheet's).
+    const n = active.length;
+    if (n !== (kind === 'fs' ? 7 : 6)) throw new Error(`${market.tab} day ${d}: unexpected active line count ${n}`);
+    if (locked.length !== 6) throw new Error(`${market.tab} day ${d}: unexpected locked line count ${locked.length}`);
+    if (expired.length !== n || credited.length !== n) throw new Error(`${market.tab} day ${d}: states differ in line count`);
+
+    days.push({
+      day: d,
+      date: `2026-12-${String(d).padStart(2, '0')}`,
+      location: locations[String(d)], // UI ELEMENT, LOCATION table
+      type: kind,
+      amount,
+      game,
+      minDeposit,
+      wagering: '', // not in the sheet yet: row hidden when empty
+      validUntil: '', // not in the sheet yet: row hidden when empty
+      raw: { active, expired, locked },
+    });
   }
-  if (unresolved.length) notes.push('Sample dates/time not turned into templates (kept as sheet text): ' + unresolved.join('; '));
-  notes.push('IT opens_dec8 template is "Si apre l’{date}": Italian writes "l’8 / l’11" but "il 12", so the elided article is only right for some days. The page does not use this key for the locked card (it shows the sheet’s own card line).');
+  return { market: market.id, uiLang: market.uiLang, currency: market.currency, days };
 }
 
-// ---- write JSON --------------------------------------------------------------
-function writeJson(rel, obj) {
-  const f = path.join(root, rel);
-  fs.mkdirSync(path.dirname(f), { recursive: true });
-  fs.writeFileSync(f, JSON.stringify(obj, null, 2) + '\n', 'utf8');
-}
-
-for (const l of UI_LANGS) writeJson(`data/ui/${l}.json`, uiAll[l]);
-for (const m of MARKETS) {
-  const body = {
-    market: m.id,
-    uiLang: m.uiLang,
-    currency: m.currency,
-    days: cardsOut[m.id],
+// ---- UI strings ----------------------------------------------------------------------------
+function buildUi(market, cards) {
+  const lang = market.uiLang;
+  const ui = tabs['UI ELEMENT'];
+  const col = market.uiCol;
+  const sheetUi = {
+    cta_primary: ui[1][col],
+    processing: ui[2][col],
+    terms_conditions: ui[3][col],
+    how_it_works: ui[11][col],
+    step1_title: ui[12][col],
+    step1_body: ui[13][col],
+    step2_title: ui[14][col],
+    step2_body: ui[15][col],
+    step3_title: ui[16][col],
   };
-  if (m.id === 'FR_CA') {
-    body.translatedBy = 'agency, client to verify';
-    body.sourceMarket = 'EN_CAD';
+  for (const [k, v] of Object.entries(sheetUi)) if (!v) throw new Error(`UI ELEMENT: missing ${k} for ${lang}`);
+
+  // Step 1 body in the sheet says "1–25 December"; the campaign runs 1–26 (see STEP1_OVERRIDES). Everything else stays as in the sheet.
+  const [from, to] = STEP1_OVERRIDES[lang];
+  if (!sheetUi.step1_body.includes(to)) {
+    if (!sheetUi.step1_body.includes(from)) throw new Error(`UI ELEMENT step1_body for ${lang} has neither "${from}" nor "${to}": ${sheetUi.step1_body}`);
+    sheetUi.step1_body = sheetUi.step1_body.replace(from, to);
   }
-  writeJson(`data/cards/${m.id}.json`, body);
-}
-writeJson('data/markets.json', MARKETS);
-writeJson('data/browser-map.json', BROWSER_MAP);
+  // No other "25" day range may be left in the UI texts.
+  for (const [k, v] of Object.entries(sheetUi)) if (/\b25\b/.test(v)) throw new Error(`UI ELEMENT ${k} for ${lang} still has a "25": ${v}`);
 
-// ---- ISSUES.md ---------------------------------------------------------------
-// 1. RO_MDL suspicious amounts
-const gbpNums = cardsOut.EN_GBP;
-const roLines = [];
-for (const d of cardsOut.RO_MDL) {
-  const g = gbpNums[d.day - 1];
-  const reasons = [];
-  if (d.type === 'bonus') {
-    if (d.minDeposit.value >= d.amount.max) reasons.push(`the minimum deposit (${d.minDeposit.value} MDL) is equal to or higher than the maximum bonus (${d.amount.max} MDL)`);
-    if (d.amount.max === g.amount.max && d.minDeposit.value === g.minDeposit.value) reasons.push(`both numbers are identical to the GBP tab (max ${g.amount.max}, min ${g.minDeposit.value})`);
-    else if (d.amount.max === g.amount.max) reasons.push(`the maximum bonus is identical to the GBP tab (${g.amount.max})`);
-    else if (d.minDeposit.value === g.minDeposit.value) reasons.push(`the minimum deposit is identical to the GBP tab (${g.minDeposit.value})`);
-  } else if (d.minDeposit.value === g.minDeposit.value) {
-    reasons.push(`the minimum deposit is identical to the GBP tab (${g.minDeposit.value})`);
+  // Card-state words come from the card texts themselves, so page and card always agree.
+  const d1 = cards.days[0].raw;
+  const row = tabs[market.tab][1];
+  const credited = lines(row[1]);
+  const locked = d1.locked;
+  const strings = {
+    ...pick(OWN, lang),
+    ...sheetUi,
+    bonus_credited: credited[credited.length - 2],
+    gift_expired: d1.expired[d1.expired.length - 2],
+    locked: locked[4].split(' · ')[0],
+    full_terms: d1.active.at(-1),
+    surprise_gift: locked[1],
+    opens_dec8: locked[2].replace(/:.*$/, '') + ' {date}',
+    come_back_tomorrow: locked[3],
+  };
+  strings.step3_body = OWN.step3_body[lang];
+  // Everything from OWN is our wording (English = skeleton text, other languages = our translation): list it for the client.
+  for (const k of Object.keys(OWN)) {
+    if (!['brand', 'be_gamble_aware', 'gift_timer'].includes(k)) selfTranslated.push({ lang, key: k, value: OWN[k][lang] });
   }
-  if (reasons.length) {
-    const what = d.type === 'bonus' ? `${d.amount.percent}% up to ${d.amount.max} MDL, min deposit ${d.minDeposit.value} MDL` : `${d.amount.spins} free spins, min deposit ${d.minDeposit.value} MDL`;
-    roLines.push(`Day ${d.day} (${what}): ${reasons.join('; ')}.`);
+
+  const extras = {
+    cta_primary: sheetUi.cta_primary,
+    cta_processing: sheetUi.processing,
+    cta_terms: sheetUi.terms_conditions,
+    ...pick(OWN_EXTRAS, lang),
+  };
+  const locations = readLocations(market);
+  return { lang, strings, extras, locations };
+}
+
+function pick(table, lang) {
+  return Object.fromEntries(Object.entries(table).map(([k, v]) => [k, v[lang]]));
+}
+
+// ---- run -----------------------------------------------------------------------------------
+fs.mkdirSync(path.join(dataDir, 'cards'), { recursive: true });
+fs.mkdirSync(path.join(dataDir, 'ui'), { recursive: true });
+const written = new Set();
+for (const market of MARKETS) {
+  const cards = buildCards(market);
+  fs.writeFileSync(path.join(dataDir, 'cards', `${market.id}.json`), JSON.stringify(cards, null, 2) + '\n', 'utf8');
+  if (!written.has(market.uiLang)) {
+    written.add(market.uiLang);
+    fs.writeFileSync(path.join(dataDir, 'ui', `${market.uiLang}.json`), JSON.stringify(buildUi(market, cards), null, 2) + '\n', 'utf8');
   }
+  console.log(`Wrote cards/${market.id}.json and ui/${market.uiLang}.json`);
 }
 
-let n = 0;
-const sections = [];
-function section(title, intro, items) {
-  if (!items || items.length === 0) return;
-  n += items.length;
-  sections.push({ title, intro, items });
-}
-
-// RO_MDL amounts: resolved. The client corrected the MDL column in the links sheet; scripts/import-links.mjs applies it (runs at the end of this script).
-
-// Game spelling
-const spellItems = [];
-for (const [day, mm] of gameVariants) {
-  const lowerSet = new Set([...mm.keys()].map((k) => k.toLowerCase()));
-  if (mm.size > 1 && lowerSet.size === 1) {
-    const parts = [...mm.entries()].map(([sp, ms]) => `"${sp}" in ${ms.join(', ')}`);
-    spellItems.push(`Day ${day}: the same game is spelled in two ways - ${parts.join(' and ')}. Please tell us the correct spelling (it is shown as written in each market for now).`);
-  } else if (mm.size > 1) {
-    const parts = [...mm.entries()].map(([sp, ms]) => `"${sp}" in ${ms.join(', ')}`);
-    spellItems.push(`Day ${day}: different game names across markets - ${parts.join(' and ')}.`);
-  }
-}
-section('Game name spelling differs between markets ("Sweet Bonanza XMas" vs "Xmas")', '', spellItems);
-
-// Duplicate keys with different translations
-const dupItems = [];
-{
-  const pairs = [
-    ['processing', 'cta_processing', 'Processing...'],
-    ['terms_conditions', 'cta_terms', 'Terms & Conditions'],
-    ['step3_title', 'cta_primary', 'Deposit & Claim'],
-    ['gifts_collected', 'gifts_collected_4', '4 gifts collected'],
-    ['next_gift', 'next_gift_in', 'Next gift in'],
-  ];
-  for (const [a, b, label] of pairs) {
-    const diffs = [];
-    for (const l of UI_LANGS) {
-      const va = uiAll[l].strings[a];
-      const vb = uiAll[l].extras[b];
-      if (va === undefined || vb === undefined) continue;
-      if (va.trim().toLowerCase() !== vb.trim().toLowerCase()) diffs.push(`${l}: "${va}" vs "${vb}"`);
-    }
-    if (diffs.length) dupItems.push(`"${label}" appears twice in the UI ELEMENT tab with different translations (${diffs.length} language${diffs.length > 1 ? 's' : ''}): ${diffs.join('; ')}. The page uses the main table value ("${a}") unless told otherwise.`);
-  }
-}
-for (const k of new Set(dupKeyHits)) dupItems.push(`The key "${k}" appears more than once in the main UI table; the last row wins.`);
-section('Same text translated differently in two places of the UI ELEMENT tab', '', dupItems);
-
-// Missing pieces
-const missing = [];
-if (timerRowSeen) missing.push('The last row of the UI ELEMENT tab is called "Timer" but has no text or translations. We use the countdown format 14:32:08 (HH:MM:SS) from the "gift_timer" row and the "Unlocks in" text; please confirm that is all that is needed.');
-else missing.push('The "Timer" row was not found in the UI ELEMENT tab.');
-missing.push(`There is no "campaign ended" message in the sheet. After 26 December the page needs one, so we added the English placeholder "${PLACEHOLDER_ENDED}" under the key campaign_ended, in all 12 UI languages. Please send the translations.`);
-missing.push('Login link and Terms & Conditions links (card "Full terms & conditions" and the legal line "Full campaign terms apply") are not in the links sheet and not confirmed. src/config.js still has "#" placeholders for login, terms and campaignTerms. Please send the final URLs. (Deposit links per day come from the links sheet via scripts/import-links.mjs.)');
-section('Missing in the sheet', '', missing);
-
-section(
-  'Step 3 text replaced - all 12 translations are agency-made, please verify',
-  'The sheet text of step 3 (key step3_body, EN "The gift turns green when the bonus is credited.") described a green "credited" gift. The page has no such state (only missed / active / locked) and no tracking, so the owner replaced it with "Deposit before 23:59 to claim the day’s bonus." The script applies this override on every import, the sheet is untouched. The heading ("Deposit & claim") stays as in the sheet. These strings were written by the agency, not taken from the sheet:',
-  UI_LANGS.map((l) => `${l}: "${STEP3_BODY[l]}"`),
+// Findings for ISSUES.md: handed to import-links.mjs, which writes the whole file.
+fs.writeFileSync(
+  path.join(dataDir, 'source', 'sheet-findings.json'),
+  JSON.stringify({ issues, selfTranslated }, null, 2) + '\n',
+  'utf8',
 );
-
-section(
-  'FR_CA (French Canada) cards are our translation',
-  '',
-  ['The sheet has a French (Canada) interface column but no French (Canada) card tab. We translated the cards from EN_CAD: same amounts in CAD, game names left unchanged, and the words already used in the FR_CA UI column reused where they exist (Cadeau expiré, Cadeau surprise, Déposer et réclamer, ...). Offer wording such as "Bonus de Noël", "Tours gratuits de Noël", "Dépôt min.", "Exigence de mise" and "Valable jusqu’au ... 23 h 59" is ours. Marked in data/cards/FR_CA.json as translatedBy "agency, client to verify". Please have it checked.'],
-);
-
-section('Cells that could not be read cleanly', 'The import kept the raw sheet text for these, but the structured values (amount, min deposit, ...) may be missing or wrong:', unparsed.filter((u) => !/EN SOURCE/.test(u)));
-section('Other differences between markets', 'These values should normally be the same in every market:', crossDiffs);
-section('EN SOURCE column does not match the EN column', '', unparsed.filter((u) => /EN SOURCE/.test(u)));
-
-const md = [];
-md.push('# Christmas Journey - open points from the sheet import');
-md.push('');
-md.push('Generated by `scripts/import-sheet.mjs` from the Google Sheet "Перевод Лендинга JP". Re-run the script after the sheet changes and this file is rewritten.');
-md.push('');
-md.push(`**Open points for the client: ${n}**`);
-md.push('');
-md.push('## Fixes applied automatically');
-md.push('');
-md.push('These were obvious sheet errors. The script corrects them on every import; the sheet itself is untouched.');
-md.push('');
-if (fixes.length === 0) md.push('- (none)');
-for (const f of fixes) md.push(`- ${f}`);
-md.push('');
-let sn = 0;
-for (const s of sections) {
-  sn++;
-  md.push(`## ${sn}. ${s.title}`);
-  md.push('');
-  if (s.intro) {
-    md.push(s.intro);
-    md.push('');
-  }
-  for (const it of s.items) md.push(`- ${it}`);
-  md.push('');
-}
-md.push('## Good to know');
-md.push('');
-md.push('- The "Bonus credited" column of the market tabs is not used. The page has only three states: missed (Gift expired), active (Deposit & Claim) and locked (Surprise gift).');
-md.push('- Some UI texts contain sample values that the page replaces with live ones: dates ("YESTERDAY · DEC 6", "TODAY’S STOP · DEC 7", "Opens 8 December", ...) and the countdown "14:32:08".');
-for (const nt of notes) md.push(`- ${nt}`);
-md.push('');
-fs.writeFileSync(path.join(dataDir, 'ISSUES.md'), md.join('\n'), 'utf8');
-
-console.log(`Wrote ${UI_LANGS.length} ui files, ${MARKETS.length} cards files, markets.json, browser-map.json, ISSUES.md`);
-console.log(`Fixes applied: ${fixes.length}; open points listed: ${n} (sections: ${sections.length})`);
-
-// ---- links sheet: per-day deposit links, MDL amounts, diff report ----------------
-import { execFileSync } from 'node:child_process';
-execFileSync(process.execPath, [path.join(root, 'scripts/import-links.mjs')], { stdio: 'inherit' });
+console.log(`${issues.length} sheet findings, ${selfTranslated.length} self-translated strings (data/source/sheet-findings.json)`);

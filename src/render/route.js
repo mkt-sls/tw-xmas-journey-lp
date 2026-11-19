@@ -224,7 +224,7 @@ function ariaLabel(ui, uiLang, card, day, state, today) {
   if (state === 'active') status = dayTag(ui, uiLang, day, today);
   else if (state === 'missed') status = ui.gift_expired;
   else status = `${ui.locked}: ${longDate(dayDate(day), uiLang)}`;
-  return `${dayLabel}, ${where}, ${status}`;
+  return [dayLabel, where, status].filter(Boolean).join(', '); // location can be empty
 }
 
 function stopHtml({ layout, spec, slot, day, today, ui, uiLang, card, chipDay, countdown, marketId }) {
