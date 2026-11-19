@@ -11,7 +11,7 @@ import { campaignDay, parseNow } from './date.js';
 import { loadMarketData } from './i18n.js';
 import { getMarket, htmlLangFor, resolveMarket, saveMarket } from './market.js';
 import { renderCard } from './render/card.js';
-import { bindMarketMenu, renderHeader } from './render/header.js';
+import { bindMarketMenu, fitHeader, renderHeader } from './render/header.js';
 import { renderHowItWorks } from './render/howItWorks.js';
 import { renderIntro } from './render/intro.js';
 import { renderLegend } from './render/legend.js';
@@ -80,6 +80,7 @@ function fitStage() {
   page.style.setProperty('--dx', `${dx}px`);
   // the desktop route line is squeezed by f, so Santa's board angle follows the squeezed line
   if (santa) santa.style.setProperty('--rot', `${santaAngle(l, Number(santa.dataset.santaSlot), santa.dataset.santaMode, f)}deg`);
+  fitHeader(app, l);
   fitLabels(app);
 }
 
@@ -115,6 +116,7 @@ function render() {
   // the web font changes text widths once loaded: redraw the garlands and re-fit the labels
   document.fonts?.ready.then(() => {
     drawGarlands(app);
+    fitHeader(app, layout());
     fitLabels(app);
   });
   maybePlayUnlock(l);

@@ -51,6 +51,30 @@
   gap: 6px;
 }
 
+/* Mobile header fit levels (fitHeader in render/header.js picks the first that fits; level 0 = Figma 58:987).
+   Text never below 11px, buttons stay 36px high, the flag button 36px wide at the tightest levels. */
+.header__logo { flex: none; }
+.header__logo img { display: block; }
+.header[data-fit='1'] .header__inner { padding: 0 12px; }
+.header[data-fit='1'] .header__actions { gap: 5px; }
+.header[data-fit='1'] .btn-outline,
+.header[data-fit='1'] .btn-register { padding: 0 9px; }
+.header[data-fit='1'] .header__logo img { width: 100px; }
+
+.header[data-fit='2'] .header__inner { padding: 0 10px; }
+.header[data-fit='2'] .header__actions { gap: 4px; }
+.header[data-fit='2'] .btn-outline,
+.header[data-fit='2'] .btn-register { padding: 0 7px; font-size: 11px; }
+.header[data-fit='2'] .header__logo img { width: 92px; }
+.page[data-layout='mobile'] .header[data-fit='2'] .market__btn { min-width: 36px; min-height: 36px; }
+
+.header[data-fit='3'] .header__inner { padding: 0 8px; }
+.header[data-fit='3'] .header__actions { gap: 3px; }
+.header[data-fit='3'] .btn-outline,
+.header[data-fit='3'] .btn-register { padding: 0 6px; font-size: 11px; letter-spacing: 0.01em; }
+.header[data-fit='3'] .header__logo img { width: 80px; }
+.page[data-layout='mobile'] .header[data-fit='3'] .market__btn { min-width: 36px; min-height: 36px; }
+
 /* ---- hero: intro + route ---- */
 .hero {
   position: relative;
@@ -98,7 +122,7 @@
   text-transform: uppercase;
 }
 .intro__title span + span {
-  margin-top: -4px;
+  margin-top: calc(-4px - 0.2em); /* the 0.2em is the paint-box padding of the gradient part (title-b), see below */
 }
 .intro__title-a {
   color: #fff;
@@ -106,8 +130,9 @@
 }
 /* the second word: orange gradient. A filter shadow instead of text-shadow, which would show through the clipped text. */
 .intro__title-b {
-  padding-bottom: 0.06em;
-  margin-bottom: -0.06em;
+  /* paint box taller than the line box (line-height .95): "Ă" / "â" accents and descenders stay inside the gradient. Same method as the card headline in check-headline.mjs. */
+  padding-block: 0.2em;
+  margin-block: -0.2em;
   background: linear-gradient(180deg, #ffc24d, #ff8c00 55%, #ff4500);
   -webkit-background-clip: text;
   background-clip: text;
@@ -342,7 +367,11 @@
   white-space: nowrap;
 }
 .page[data-layout='desktop'] .intro__title span + span {
-  margin-top: 0;
+  margin-top: -0.2em;
+}
+/* title_join: the two parts read as one word ("WEIHNACHTS" + "REISE") */
+.page[data-layout='desktop'] .intro__title[data-join] {
+  gap: 0;
 }
 
 .page[data-layout='desktop'] .intro__sub {

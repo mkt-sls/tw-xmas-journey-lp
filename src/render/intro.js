@@ -7,19 +7,24 @@ function eyebrow(text) {
   return `<span class="intro__dates">${escNb(dates)}</span>${gifts ? `<span class="intro__gifts">${escNb(gifts)}</span>` : ''}`;
 }
 
-// "Christmas Journey" -> "Christmas" in white, the last word in the orange gradient (Figma "Title v2"); one word stays white
-function title(text) {
-  const words = String(text ?? '').trim().split(/\s+/);
-  if (words.length < 2) return `<span class="intro__title-a">${esc(text)}</span>`;
-  const last = words.pop();
-  return `<span class="intro__title-a">${esc(words.join(' '))}</span><span class="intro__title-b">${esc(last)}</span>`;
+// Title in two parts from the data (title_a white, title_b orange gradient; Figma "Title v2"). Each language chooses its own split;
+// title_join = "1": the parts read as one word on desktop (no gap). Without title_a/title_b the last word of campaign_title is the gradient part.
+function title(ui) {
+  let a = ui.title_a;
+  let b = ui.title_b;
+  if (!a || !b) {
+    const words = String(ui.campaign_title ?? '').trim().split(/\s+/);
+    b = words.length > 1 ? words.pop() : '';
+    a = words.join(' ');
+  }
+  return `<span class="intro__title-a">${esc(a)}</span>${b ? `<span class="intro__title-b">${esc(b)}</span>` : ''}`;
 }
 
 export function renderIntro({ ui }) {
   return `
   <div class="intro">
     <p class="intro__eyebrow">${eyebrow(ui.campaign_dates)}</p>
-    <h1 class="intro__title" aria-label="${esc(ui.campaign_title)}">${title(ui.campaign_title)}</h1>
+    <h1 class="intro__title"${ui.title_join ? ' data-join' : ''} aria-label="${esc(ui.campaign_title)}">${title(ui)}</h1>
     <p class="intro__sub">${escNb(ui.subtitle)}</p>
   </div>`;
 }

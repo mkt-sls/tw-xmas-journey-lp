@@ -27,7 +27,7 @@ const MARKETS = [
 
 // ---- explicit overrides of the sheets (owner decisions 2026-11-19). Each one is also listed in data/ISSUES.md. ------------
 // Free-spin counts: numbers follow the links sheet (tab TW EUROPE).
-// Day 12 says 75 FS in all four text tabs, the links sheet says 78. Shown 78 provisionally; ask the client: 75 or 78?
+// Day 12 = 78 FS: confirmed by owner 2026-11-19 (links sheet says 78, texts sheet says 75 in all four tabs). The client should correct the texts sheet.
 const FS_OVERRIDES = { 12: { from: 75, to: 78 } };
 // "How it works" step 1 says "1-25 December" in every language; the campaign runs 1-26 December. Only the number changes.
 const STEP1_OVERRIDES = {
@@ -69,6 +69,10 @@ const OWN = {
     RO_MD: '1–26 decembrie · 26 cadouri',
   },
   campaign_title: { EN: 'Christmas Journey', DE: 'Weihnachtsreise', NL: 'Kerstreis', RO_MD: 'Călătoria de Crăciun' },
+  // title in two parts so each language picks its own break: part A white, part B orange gradient. title_join = '1': no gap between the parts on desktop (one word).
+  title_a: { EN: 'Christmas', DE: 'Weihnachts', NL: 'Kerst', RO_MD: 'Călătoria de' },
+  title_b: { EN: 'Journey', DE: 'reise', NL: 'reis', RO_MD: 'Crăciun' },
+  title_join: { EN: undefined, DE: '1', NL: '1', RO_MD: undefined },
   subtitle: {
     EN: 'Follow Father Christmas through a snowy English village. A new gift unlocks every day — open it, claim your bonus.',
     DE: 'Folge dem Weihnachtsmann durch ein verschneites englisches Dorf. Jeden Tag wird ein neues Geschenk freigeschaltet – öffne es und sichere dir deinen Bonus.',
@@ -146,7 +150,7 @@ function buildCards(market) {
       if (market.id === 'DE') {
         issues.push(
           `Day ${d}: the texts sheet says ${fsFix.from} free spins in all four languages, the links sheet says ${fsFix.to}. ` +
-            `The page shows ${fsFix.to} for now (numbers follow the links sheet). Ask client: ${fsFix.from} or ${fsFix.to}?`,
+            `Confirmed by the owner (2026-11-19): the page shows ${fsFix.to}. Not a question: please correct the texts sheet to ${fsFix.to}.`,
         );
       }
     }
@@ -247,7 +251,7 @@ function buildUi(market, cards) {
   // ("the gift turns green when the bonus is credited") is dropped on purpose.
   // Everything from OWN is our wording (English = skeleton text, other languages = our translation): list it for the client.
   for (const k of Object.keys(OWN)) {
-    if (k !== 'brand') selfTranslated.push({ lang, key: k, value: OWN[k][lang] });
+    if (k !== 'brand' && !k.startsWith('title_')) selfTranslated.push({ lang, key: k, value: OWN[k][lang] });
   }
 
   const locations = readLocations(market);
@@ -255,7 +259,7 @@ function buildUi(market, cards) {
 }
 
 function pick(table, lang) {
-  return Object.fromEntries(Object.entries(table).map(([k, v]) => [k, v[lang]]));
+  return Object.fromEntries(Object.entries(table).filter(([, v]) => v[lang] !== undefined).map(([k, v]) => [k, v[lang]]));
 }
 
 // ---- run -----------------------------------------------------------------------------------

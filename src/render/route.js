@@ -417,9 +417,21 @@ export function fitLabels(root, margin = 8) {
   labels.forEach((el) => {
     const box = el.getBoundingClientRect();
     const k = box.width / el.offsetWidth || 1; // stage scale
+    // what must stay on screen is the label plus its garland and holly (they stick out of the box), and the active label
+    // breathes up to 3.5% bigger about its centre (anim.css): the margin is kept at the biggest size
+    let left = box.left;
+    let right = box.right;
+    el.querySelectorAll('.garland svg, .label__holly, .label__cap').forEach((part) => {
+      const p = part.getBoundingClientRect();
+      left = Math.min(left, p.left);
+      right = Math.max(right, p.right);
+    });
+    const grow = el.classList.contains('label--active') ? (box.width * 0.035) / 2 : 0;
+    left -= grow;
+    right += grow;
     let dx = 0;
-    if (box.left < margin) dx = margin - box.left;
-    else if (box.right > vw - margin) dx = vw - margin - box.right;
+    if (left < margin) dx = margin - left;
+    else if (right > vw - margin) dx = vw - margin - right;
     if (dx) el.style.translate = `${r(dx / k)}px 0`;
   });
   // neighbours pushed into each other (a wide active label nudged away from the edge): move the right one on

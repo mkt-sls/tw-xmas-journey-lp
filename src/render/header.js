@@ -5,7 +5,7 @@ import { CHEVRON_SVG, asset, esc, flagUrl } from './util.js';
 export function renderHeader({ ui, market }) {
   const code = marketCode(market);
   return `
-  <header class="header">
+  <header class="header" data-fit="0">
     <div class="header__inner">
       <a class="header__logo" href="./" aria-label="${esc(ui.brand)}"><img src="${asset('logo-topwin.svg')}" alt="" width="151" height="30"></a>
       <div class="header__actions">
@@ -109,4 +109,30 @@ export function bindMarketMenu(root, onSelect) {
     o.addEventListener('click', () => choose(i));
     o.addEventListener('pointermove', () => active !== i && setActive(i));
   });
+}
+
+/**
+ * Mobile header fit. The Figma sizes (level 0: 16px side padding, 6px gap, 12px text, 12px button padding, 110px logo) are kept
+ * whenever they fit; a longer translation ("Registrieren", "Înregistrare") steps down through the levels in layout.css until
+ * logo, language switcher, LOG IN and REGISTER sit on one row inside the side padding. Text never goes below 11px; buttons stay 36px high.
+ * Desktop always uses level 0. If even the last level does not fit (RO at 320), the header keeps the last level: scripts/check-header.mjs reports it.
+ */
+export const HEADER_LEVELS = 4;
+export function fitHeader(root, layout) {
+  const header = root.querySelector('.header');
+  if (!header) return;
+  const inner = header.querySelector('.header__inner');
+  const actions = header.querySelector('.header__actions');
+  const logo = header.querySelector('.header__logo');
+  const fits = () => {
+    const a = actions.getBoundingClientRect();
+    const l = logo.getBoundingClientRect();
+    const i = inner.getBoundingClientRect();
+    const pad = Number.parseFloat(getComputedStyle(inner).paddingRight) * (i.width / inner.offsetWidth || 1);
+    return a.right <= i.right - pad + 0.5 && a.left >= l.right + 4 * (i.width / inner.offsetWidth || 1) - 0.5;
+  };
+  let level = 0;
+  header.dataset.fit = '0';
+  if (layout !== 'mobile') return;
+  while (!fits() && level < HEADER_LEVELS - 1) header.dataset.fit = String(++level);
 }

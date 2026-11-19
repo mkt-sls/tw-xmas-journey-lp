@@ -938,7 +938,12 @@
 [data-layout='desktop'] .label--locked.label--far,
 [data-layout='desktop'] .label--missed.label--far { max-width: 190px; }
 [data-layout='mobile'] .label { max-width: 190px; }
-[data-layout='mobile'] .open-btn { gap: 4px; padding: 0 10px; letter-spacing: 0.02em; }
+/* today's label: narrower, so that with the 8px screen margin (plus garland) it does not cover the podium; the button grows vertically */
+[data-layout='mobile'] .label--active { max-width: 176px; }
+/* long translations ("DESCHIDE CADOUL", "GESCHENK ÖFFNEN") wrap onto two centred lines and the button grows taller instead of sticking out of the label or shrinking the text */
+[data-layout='mobile'] .open-btn { gap: 4px; padding: 6px 8px; letter-spacing: 0.02em; line-height: 1.1; }
+[data-layout='mobile'] .open-btn span { min-width: 0; text-align: center; text-wrap: balance; }
+[data-layout='mobile'] .open-btn svg { flex: none; }
 [data-layout='mobile'] .label--locked .label__name,
 [data-layout='mobile'] .label--locked .label__tag { text-align: left; }
 .route-group > * {
