@@ -74,7 +74,7 @@ export function bindMarketMenu(root, onSelect) {
     list.hidden = true;
     btn.setAttribute('aria-expanded', 'false');
     document.removeEventListener('pointerdown', outside, true);
-    if (focusBtn) btn.focus();
+    if (focusBtn) btn.focus({ preventScroll: true });
   };
   const outside = (e) => {
     if (!wrap.contains(e.target)) close(false);

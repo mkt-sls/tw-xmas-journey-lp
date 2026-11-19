@@ -129,7 +129,7 @@ function render() {
       url.searchParams.set('market', id);
       window.history.replaceState(null, '', url);
     }
-    setMarket(id).then(() => app.querySelector('.market__btn')?.focus());
+    setMarket(id).then(() => app.querySelector('.market__btn')?.focus({ preventScroll: true }));
   });
 }
 

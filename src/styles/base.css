@@ -7,6 +7,13 @@
 html {
   -webkit-text-size-adjust: 100%;
   background: var(--bg);
+  /* scrollbar space is always reserved: locking the scroll while a card is open (body.has-overlay) must not change the page width */
+  scrollbar-gutter: stable;
+}
+
+/* scroll locked: the reserved gutter is an empty strip the scrim (rgba(4,9,24,.72) over --bg) does not cover - paint it in the scrimmed colour */
+html:has(body.has-overlay) {
+  background: #060c1f;
 }
 
 body {

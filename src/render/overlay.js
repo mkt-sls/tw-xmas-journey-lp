@@ -44,10 +44,10 @@ export function openOverlay({ html, layout, returnFocus = document.activeElement
       const last = f[f.length - 1];
       if (e.shiftKey && (document.activeElement === first || !panel.contains(document.activeElement))) {
         e.preventDefault();
-        last.focus();
+        last.focus({ preventScroll: true });
       } else if (!e.shiftKey && (document.activeElement === last || !panel.contains(document.activeElement))) {
         e.preventDefault();
-        first.focus();
+        first.focus({ preventScroll: true });
       }
     }
   };
@@ -59,7 +59,7 @@ export function openOverlay({ html, layout, returnFocus = document.activeElement
   current = { el, onKey, returnFocus, onClose, app };
   requestAnimationFrame(() => {
     el.classList.add('is-open');
-    (panel.querySelector('.btn-primary:not([disabled])') ?? panel.querySelector('[data-close]'))?.focus();
+    (panel.querySelector('.btn-primary:not([disabled])') ?? panel.querySelector('[data-close]'))?.focus({ preventScroll: true });
   });
   return el;
 }
@@ -74,6 +74,6 @@ export function closeOverlay(restoreFocus = true) {
   app.removeAttribute('aria-hidden');
   app.inert = false;
   const target = typeof returnFocus === 'function' ? returnFocus() : returnFocus;
-  if (restoreFocus && target && document.contains(target)) target.focus();
+  if (restoreFocus && target && document.contains(target)) target.focus({ preventScroll: true });
   onClose?.();
 }
