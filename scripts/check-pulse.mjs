@@ -16,6 +16,14 @@
 //   opaque, so a ring painted under it would pass every geometric test and still never be seen.
 // - ANCHORS: every other running animation of `scale` / `transform` (today's label breathing, the unlock lock, ...) must keep
 //   its element's on-screen centre within ANCHOR_PX at 0 / 25 / 50 / 75% (see anchorCheck).
+// WHY THE VISIBILITY THRESHOLD IS WHAT IT IS (task E, 2026-11-20): the red-ring pixels are counted over the WHOLE ring area (the
+// bounding box of the static ellipse plus its stroke, NOT clipped to the gift button box; the ring is ~25% wider than the box, so
+// the old in-box count saw only ~77 of ~454 px at 1440 Dec 26 and sat on a 1 px edge: 62 vs threshold 63.25 = flaky FAIL).
+// A fully visible line would show about arc * bw pixels (arc = ellipse length, bw = stroke width on screen). By design about half
+// of the ring is covered: the podium art and the present (img.gift__front / route base), today's label garland and Santa's glow
+// (measured in A2: 34-36 of 72 ring points visible at 1366 / 1440 / 1536). Measured in task E (3 runs, 10 widths x 3 dates): seen is 2.0x to 3.4x the threshold, i.e. 50% to 85% of arc * bw (the lowest, 1536 Dec 1, is about 0.51).
+// The rule is: seen >= MIN_SEEN_SHARE of arc * bw (see the constant for the value). Do not lower it just to pass:
+// it must still fail when the ring is painted under the opaque art (before T5h almost nothing of it showed).
 // Pass: at t=0 centre, rx and ry match the static ellipse within MAX_PX (CSS px); at 50% / 100% the centre stays within MAX_PX
 // and the ring is larger; only ::before has content; no baked ring in the art; at least a third of the ring line is seen.
 // Playwright is not a project dependency: PLAYWRIGHT_MODULE / CHROME as in scripts/check-santa.mjs.
@@ -50,6 +58,7 @@ const DATES = arg('--dates', '2026-12-01,2026-12-07,2026-12-26').split(',');
 const SHOTS = args.includes('--shots');
 const HEIGHT = { 390: 844, 768: 1024, 1024: 768, 1366: 768, 1440: 900, 1536: 864, 1600: 900, 1920: 1080, 2560: 1440, 3840: 2160 };
 const PHASES = [0, 0.5, 1];
+const MIN_SEEN_SHARE = 0.25; // share of (ring length * stroke width) that must be seen, see the header
 
 // ---------------------------------------------------------------- in-page: the Figma ring (static ellipse)
 // Top Win: the ring is the Figma layer "Pulse ring" (58:1227), an ellipse 150x70 at (-15, 53) in the 120x126 gift symbol, 2px stroke
@@ -101,7 +110,7 @@ async function staticEllipse(page) {
       if (seen) rays++;
       if (best > 15) ringRays++;
     }
-    return { img: { W, H, cx: ax, cy: ay, rx: arx, ry: ary, n: 0 }, screen: { cx, cy, rx, ry }, bakedRing: { ringRays, rays } };
+    return { img: { W, H, cx: ax, cy: ay, rx: arx, ry: ary, n: 0 }, screen: { cx, cy, rx, ry, bw }, bakedRing: { ringRays, rays } };
   });
 }
 
@@ -140,7 +149,7 @@ async function pulseAt(page, phase) {
 // Is the ring actually SEEN at t=0? The podium art is opaque: a ring painted under it is invisible (it was, before T5h).
 // Screenshot of today's gift with every animation paused, the snow hidden and the ring painted pure red at full opacity (its
 // place and layer unchanged), once with the ring and once with it hidden; count the pixels that change by more than 60.
-async function ringVisiblePixels(page) {
+async function ringVisiblePixels(page, ell) {
   await page.evaluate(() => {
     document.getAnimations().forEach((a) => a.pause());
     const st = document.createElement('style');
@@ -148,11 +157,12 @@ async function ringVisiblePixels(page) {
     st.textContent = '.snow{display:none!important} .gift--active::before{border-color:#f00!important;opacity:1!important}';
     document.head.appendChild(st);
   });
-  const box = await page.$eval('.gift--active', (g) => {
-    const r = g.getBoundingClientRect();
-    return { left: r.left + scrollX, top: r.top + scrollY, width: r.width, height: r.height };
-  });
-  const clip = { x: Math.max(0, box.left), y: Math.max(0, box.top), width: box.width, height: box.height };
+  // the whole ring area (static ellipse + stroke + 3 px), not the gift button box
+  const sc = await page.evaluate(() => ({ x: scrollX, y: scrollY }));
+  const m = ell.bw / 2 + 3;
+  const x0 = Math.max(0, ell.cx - ell.rx - m + sc.x);
+  const y0 = Math.max(0, ell.cy - ell.ry - m + sc.y);
+  const clip = { x: x0, y: y0, width: ell.cx + ell.rx + m + sc.x - x0, height: ell.cy + ell.ry + m + sc.y - y0 };
   const a = (await page.screenshot({ clip, fullPage: true })).toString('base64');
   await page.evaluate(() => {
     const st = document.createElement('style');
@@ -274,7 +284,7 @@ async function main() {
           }
         }
         await pulseAt(page, 0);
-        const seen = await ringVisiblePixels(page);
+        const seen = await ringVisiblePixels(page, st.screen);
         const s = st.screen;
         const p0 = ph[0];
         const dc = (p) => Math.hypot(p.cx - s.cx, p.cy - s.cy);
@@ -287,11 +297,12 @@ async function main() {
         // the ring line is about 2 * pi * sqrt((rx^2 + ry^2) / 2) px long; at least a third of it must show (the back half
         // passes behind the present)
         const arc = 2 * Math.PI * Math.sqrt((s.rx ** 2 + s.ry ** 2) / 2);
-        const visible = seen >= arc / 8;
+        const need = arc * s.bw * MIN_SEEN_SHARE;
+        const visible = seen >= need;
         const anchorsOk = anchors.length > 0 && anchors.every((x) => x.drift <= ANCHOR_PX);
         const pass =
           e0.dc <= MAX_PX && e0.drx <= MAX_PX && e0.dry <= MAX_PX && dMid <= MAX_PX && dEnd <= MAX_PX && grows && onlyBefore && noBaked && visible && anchorsOk;
-        rows.push({ date, width, layout, anchors, anchorsOk, seen, arc, s, p0, e0, dMid, dEnd, grows, pseudo, baked: st.bakedRing, img: st.img, pass });
+        rows.push({ date, width, layout, anchors, anchorsOk, seen, need, arc, s, p0, e0, dMid, dEnd, grows, pseudo, baked: st.bakedRing, img: st.img, pass });
       }
       await ctx.close();
     }
@@ -302,11 +313,11 @@ async function main() {
   const pad = (v, n) => String(v).padEnd(n);
   const f = (v) => v.toFixed(2);
   console.log(
-    `${pad('date', 11)}| ${pad('width', 6)}| ${pad('static ellipse cx,cy rx,ry', 30)}| ${pad('t0 dCentre', 11)}| ${pad('t0 dRx', 7)}| ${pad('t0 dRy', 7)}| ${pad('t50 dC', 7)}| ${pad('t100 dC', 8)}| ${pad('pseudo', 18)}| ${pad('baked ring rays', 16)}| ${pad('ring px seen', 13)}| ${pad('anchor drift px (scale/transform animations)', 44)}| result`,
+    `${pad('date', 11)}| ${pad('width', 6)}| ${pad('static ellipse cx,cy rx,ry', 30)}| ${pad('t0 dCentre', 11)}| ${pad('t0 dRx', 7)}| ${pad('t0 dRy', 7)}| ${pad('t50 dC', 7)}| ${pad('t100 dC', 8)}| ${pad('pseudo', 18)}| ${pad('baked ring rays', 16)}| ${pad('ring px seen/need', 13)}| ${pad('anchor drift px (scale/transform animations)', 44)}| result`,
   );
   for (const r of rows)
     console.log(
-      `${pad(r.date, 11)}| ${pad(r.width, 6)}| ${pad(`${f(r.s.cx)},${f(r.s.cy)} ${f(r.s.rx)},${f(r.s.ry)}`, 30)}| ${pad(f(r.e0.dc), 11)}| ${pad(f(r.e0.drx), 7)}| ${pad(f(r.e0.dry), 7)}| ${pad(f(r.dMid), 7)}| ${pad(f(r.dEnd), 8)}| ${pad(r.pseudo.join(' ') || '-', 18)}| ${pad(`${r.baked.ringRays}/${r.baked.rays}`, 16)}| ${pad(`${r.seen}/${Math.round(r.arc)}`, 13)}| ${pad(r.anchors.map((x) => `${x.name.split('.').slice(0, 3).join('.')} ${x.drift.toFixed(2)}`).join(', '), 44)}| ${r.pass ? 'PASS' : 'FAIL'}${r.grows ? '' : ' (does not grow)'}`,
+      `${pad(r.date, 11)}| ${pad(r.width, 6)}| ${pad(`${f(r.s.cx)},${f(r.s.cy)} ${f(r.s.rx)},${f(r.s.ry)}`, 30)}| ${pad(f(r.e0.dc), 11)}| ${pad(f(r.e0.drx), 7)}| ${pad(f(r.e0.dry), 7)}| ${pad(f(r.dMid), 7)}| ${pad(f(r.dEnd), 8)}| ${pad(r.pseudo.join(' ') || '-', 18)}| ${pad(`${r.baked.ringRays}/${r.baked.rays}`, 16)}| ${pad(`${r.seen}/${Math.round(r.need)}`, 13)}| ${pad(r.anchors.map((x) => `${x.name.split('.').slice(0, 3).join('.')} ${x.drift.toFixed(2)}`).join(', '), 44)}| ${r.pass ? 'PASS' : 'FAIL'}${r.grows ? '' : ' (does not grow)'}`,
     );
   const i0 = rows[0].img;
   console.log(`\nstatic ellipse in gift-today@2x.webp (${i0.W}x${i0.H}): centre (${f(i0.cx)}, ${f(i0.cy)}), rx ${f(i0.rx)}, ry ${f(i0.ry)}, ${i0.n} line points`);

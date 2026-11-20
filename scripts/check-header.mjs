@@ -3,9 +3,18 @@
 //   node scripts/check-header.mjs                      header: every market x widths 320/360/375/390/414/430
 //   node scripts/check-header.mjs --labels             also: today label on every day 1-26 (margin, clipping, overlaps)
 //   node scripts/check-header.mjs --shots <outDir>     also: screenshots (header crops, mobile 390, desktop 1920; ?date=2026-12-07)
+//   node scripts/check-header.mjs --resize            ONLY the resize test (see below); --days=5,16,17 to narrow it
 //   --widths=320,360  --markets=DE,NL  to narrow the run
 //
-// HEADER, per market x width (the page is loaded once per market, then the viewport is resized):
+// EVERY measured width is a FRESH page load at that width (viewport set first, then page.goto). The page's today-button fit
+// (fitTodayButton in src/render/route.js) does not refit reliably after a resize, so a page loaded at 430 and then shrunk
+// reports "2 lines" where a phone that opens the page at 390 gets one line (task A2, 2026-11-20). Do not go back to
+// one goto + several setViewportSize calls for the header / label checks.
+// RESIZE TEST (--resize, separate on purpose): load at 430, shrink to 390/375/360/320, wait 400 ms, and compare the active label's
+// today button (line count, box) and label box with a fresh load at the same width. Any difference is a FAIL
+// "resize differs from fresh load". It is a real page bug (the resize path), not a false alarm; it is expected to fail until the page is fixed.
+//
+// HEADER, per market x width (fresh load per market and width):
 // - logo, flag button, LOG IN, REGISTER all inside the viewport with >= 8px to each edge, no two boxes overlap, gap >= 2px;
 // - button text not clipped (scrollWidth <= clientWidth) and on one line; button font >= 11px; every box >= 36px high;
 // - no horizontal page scroll.
@@ -43,6 +52,9 @@ const WIDTHS = (opt('widths') || '320,360,375,390,414,430').split(',').map(Numbe
 const MARKETS = (opt('markets') || 'DE,NL,EN_GBP,RO_MDL').split(',');
 const LABELS = args.includes('--labels');
 const TITLE = args.includes('--title');
+const RESIZE = args.includes('--resize');
+const RESIZE_WIDTHS = [320, 360, 375, 390];
+const DAYS = (opt('days') || '').split(',').filter(Boolean).map(Number);
 const SHOTS = args.includes('--shots') ? args[args.indexOf('--shots') + 1] : null;
 const EDGE = 8;
 const MIN_FONT = 9; // step 7: below 11px only for the LOG IN / REGISTER buttons where nothing else fits (levels 4-5)
@@ -170,6 +182,17 @@ function labelProblems(m) {
   return p;
 }
 
+/** Fresh page load at a given width: viewport first, then goto, then fonts and two frames settled. */
+async function openFresh(page, url, w, h) {
+  await page.setViewportSize({ width: w, height: h });
+  await page.goto(url, { waitUntil: 'networkidle' });
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+  });
+  await page.waitForTimeout(100);
+}
+
 async function main() {
   const server = await createServer({ root: ROOT, logLevel: 'error', server: { port: 5198, strictPort: false, fs: { strict: false } } });
   await server.listen();
@@ -182,11 +205,8 @@ async function main() {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
     const page = await ctx.newPage();
     for (const market of MARKETS) {
-      await page.goto(`${base}/?date=2026-12-07&market=${market}`, { waitUntil: 'networkidle' });
-      await page.evaluate(() => document.fonts.ready);
-      for (const w of WIDTHS) {
-        await page.setViewportSize({ width: w, height: 844 });
-        await page.waitForTimeout(120);
+      for (const w of RESIZE ? [] : WIDTHS) {
+        await openFresh(page, `${base}/?date=2026-12-07&market=${market}`, w, 844);
         const m = await page.evaluate(measureHeader);
         const p = headerProblems(m);
         rows++;
@@ -241,15 +261,12 @@ async function main() {
         }
       }
     }
-    if (LABELS) {
+    if (LABELS && !RESIZE) {
       for (const market of MARKETS) {
         for (let day = 1; day <= 26; day++) {
           const date = `2026-12-${String(day).padStart(2, '0')}`;
-          await page.goto(`${base}/?date=${date}&market=${market}`, { waitUntil: 'networkidle' });
-          await page.evaluate(() => document.fonts.ready);
           for (const w of WIDTHS) {
-            await page.setViewportSize({ width: w, height: 844 });
-            await page.waitForTimeout(150);
+            await openFresh(page, `${base}/?date=${date}&market=${market}`, w, 844);
             const m = await page.evaluate(measureLabels);
             const p = labelProblems(m);
             rows++;
@@ -262,6 +279,44 @@ async function main() {
           }
         }
         console.log(`done labels ${market}`);
+      }
+    }
+    if (RESIZE) {
+      const days = DAYS.length ? DAYS : Array.from({ length: 26 }, (_, i) => i + 1);
+      const key = (a) => (a ? { lines: a.btn?.lines, btn: a.btn, box: a.box } : null);
+      const near = (a, b) => ['left', 'right', 'top', 'bottom'].every((k) => Math.abs(a[k] - b[k]) <= 1);
+      for (const market of MARKETS) {
+        let diffs = 0;
+        for (const day of days) {
+          const url = `${base}/?date=2026-12-${String(day).padStart(2, '0')}&market=${market}`;
+          // fresh results first (one load per width), then one load at 430 that is shrunk step by step
+          const fresh = {};
+          for (const w of RESIZE_WIDTHS) {
+            await openFresh(page, url, w, 844);
+            fresh[w] = key((await page.evaluate(measureLabels)).labels.find((l) => l.cls.includes('label--active')));
+          }
+          await openFresh(page, url, 430, 844);
+          for (const w of RESIZE_WIDTHS.slice().reverse()) {
+            await page.setViewportSize({ width: w, height: 844 });
+            await page.waitForTimeout(400);
+            const res = key((await page.evaluate(measureLabels)).labels.find((l) => l.cls.includes('label--active')));
+            const f = fresh[w];
+            rows++;
+            const p = [];
+            if (!f || !res) p.push('no active label');
+            else {
+              if (f.lines !== res.lines) p.push(`today button lines fresh ${f.lines} vs resized ${res.lines}`);
+              if (f.btn && res.btn && !near(f.btn, res.btn)) p.push(`button box fresh L${f.btn.left.toFixed(1)} R${f.btn.right.toFixed(1)} T${f.btn.top.toFixed(1)} B${f.btn.bottom.toFixed(1)} vs resized L${res.btn.left.toFixed(1)} R${res.btn.right.toFixed(1)} T${res.btn.top.toFixed(1)} B${res.btn.bottom.toFixed(1)}`);
+              if (!near(f.box, res.box)) p.push(`label box fresh L${f.box.left.toFixed(1)} R${f.box.right.toFixed(1)} vs resized L${res.box.left.toFixed(1)} R${res.box.right.toFixed(1)}`);
+            }
+            if (p.length) {
+              fails++;
+              diffs++;
+              console.log(`FAIL resize differs from fresh load: ${market} day ${day} 430->${w}: ${p.join('; ')}`);
+            }
+          }
+        }
+        console.log(`done resize ${market}: ${diffs} differences`);
       }
     }
     if (SHOTS) {
@@ -297,7 +352,7 @@ async function main() {
     await browser.close();
     await server.close();
   }
-  if (LABELS) console.log(wraps.size ? `TODAY BUTTON still on 2 lines (days): ${[...wraps].map(([k, v]) => `${k}: day ${v.join("/")}`).join(', ')}` : 'TODAY BUTTON on ONE line everywhere');
+  if (LABELS && !RESIZE) console.log(wraps.size ? `TODAY BUTTON still on 2 lines (days): ${[...wraps].map(([k, v]) => `${k}: day ${v.join("/")}`).join(', ')}` : 'TODAY BUTTON on ONE line everywhere');
   console.log(fails ? `\n${fails} FAILED of ${rows}` : `\nALL PASS (${rows} rows)`);
   process.exit(fails ? 1 : 0);
 }
