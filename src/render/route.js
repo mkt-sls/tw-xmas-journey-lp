@@ -153,7 +153,7 @@ const mid = DESKTOP.width / 2;
 // Santa's opaque art around his board point at the full desktop size (--sc 0.62), in stage units, measured with
 // scripts/check-santa.mjs: it reaches ART.left to the left of the board point and ART.right to the right of it.
 const SANTA_SC = 0.8;
-const ART = { left: 168 * SANTA_SC, right: 90 * SANTA_SC };
+const ART = { left: 190 * SANTA_SC, right: 90 * SANTA_SC };
 const LABEL_HALF = 115; // half the width of a far (locked / missed) label, stage units
 const EDGE = 8; // gap to the viewport edge
 
