@@ -77,6 +77,7 @@
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 800;
+  line-height: 1.6; /* two-line text at 320px ("DEPUNE ȘI / REVENDICĂ"): the Ă of the second line must keep >= 3px from the first line; one line is centred as before */
   text-align: center;
   text-decoration: none;
 }
@@ -884,6 +885,7 @@
   color: var(--muted);
   font-size: 12px;
   font-weight: 600;
+  line-height: 1.4; /* "Vollständige / Teilnahmebedingungen" on two lines at 320px: >= 3px between the lines */
   text-align: center;
   text-decoration: underline;
 }
@@ -954,7 +956,7 @@
 [data-layout='mobile'] .open-btn svg { flex: none; }
 /* Step 7: fitTodayButton (render/route.js) puts today's "open gift" text on ONE line where the label can grow without covering the gift,
    the TODAY pill or the screen margin (first at 15px, then 14 / 13 / 12px, with slightly tighter padding); where it cannot, the two-line layout above stays. */
-[data-layout='mobile'] .label--oneline { max-width: none; }
+[data-layout='mobile'] .label--oneline { max-width: var(--open-w, none); }
 [data-layout='mobile'] .label--oneline { padding-inline: 8px; }
 [data-layout='mobile'] .label--oneline .open-btn { padding-inline: 7px; font-size: var(--open-fs, 15px); }
 [data-layout='mobile'] .label--oneline .open-btn span { white-space: nowrap; }

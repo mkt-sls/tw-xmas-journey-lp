@@ -421,9 +421,13 @@ function nudgeLabel(el, margin, vw) {
   const grow = el.classList.contains('label--active') ? (box.width * 0.035) / 2 : 0;
   left -= grow;
   right += grow;
-  let dx = 0;
-  if (left < margin) dx = margin - left;
-  else if (right > vw - margin) dx = vw - margin - right;
+  // today's one-line label may have been moved away from its gift by fitTodayButton (dataset.giftShift, in label px); keep that move
+  const pre = (Number(el.dataset.giftShift) || 0) * k;
+  left += pre;
+  right += pre;
+  let dx = pre;
+  if (left < margin) dx += margin - left;
+  else if (right > vw - margin) dx += vw - margin - right;
   if (dx) el.style.translate = `${r(dx / k)}px 0`;
   return { left: left + dx, right: right + dx, box: { left: box.left + dx - grow, right: box.right + dx + grow, top: box.top, bottom: box.bottom } };
 }
@@ -439,14 +443,49 @@ function fitTodayButton(root, margin, vw) {
   if (!btn || !lab.closest('[data-layout="mobile"]')) return;
   lab.classList.remove('label--oneline');
   lab.style.removeProperty('--open-fs');
+  lab.style.removeProperty('--open-w');
+  delete lab.dataset.giftShift;
   const id = lab.dataset.open;
   const gift = root.querySelector(`.gift[data-open="${id}"] .gift__img`);
   const pill = root.querySelector(`.gift[data-open="${id}"] .today-pill`);
   const hit = (a, b, tol) => a.left < b.right - tol && b.left < a.right - tol && a.top < b.bottom - tol && b.top < a.bottom - tol;
+  // The label may grow only as far as the gift allows: a long place name ("Unterirdisches Labyrinth") must wrap inside that width
+  // instead of stretching the label over the gift, which used to push the whole button back onto two lines.
+  const room = () => {
+    if (!gift) return 190;
+    const g = gift.getBoundingClientRect();
+    const sh = g.width * 0.2;
+    const b = lab.getBoundingClientRect();
+    let over = 0; // garland / holly sticking out of the label box
+    lab.querySelectorAll('.garland svg, .label__holly, .label__cap').forEach((part) => {
+      const p = part.getBoundingClientRect();
+      over = Math.max(over, b.left - p.left, p.right - b.right);
+    });
+    const toLeft = b.left + b.width / 2 < g.left + g.width / 2;
+    const free = toLeft ? g.left + sh + 2 - margin : vw - margin - (g.right - sh - 2);
+    return Math.floor((free - 2 * over) / 1.035 / (b.width / lab.offsetWidth || 1));
+  };
   for (const fs of [15, 14, 13, 12]) {
     lab.classList.add('label--oneline');
+    lab.style.removeProperty('--open-w');
     lab.style.setProperty('--open-fs', `${fs}px`);
-    const n = nudgeLabel(lab, margin, vw);
+    lab.style.setProperty('--open-w', `${room()}px`);
+    drawGarlands(root); // the garland follows the label's new size (it is only drawn at render time otherwise: stale after a resize)
+    delete lab.dataset.giftShift;
+    let n = nudgeLabel(lab, margin, vw);
+    if (gift) {
+      // growing the label about its centre pushes it over the gift: slide it away from the gift (the margin test below then decides if it still fits)
+      const g = gift.getBoundingClientRect();
+      const sh = g.width * 0.2;
+      const gl = g.left + sh;
+      const gr = g.right - sh;
+      if (n.box.top < g.bottom && g.top < n.box.bottom && n.box.left < gr - 2 && gl + 2 < n.box.right) {
+        const k = lab.getBoundingClientRect().width / lab.offsetWidth || 1;
+        const toLeft = (n.box.left + n.box.right) / 2 < (g.left + g.right) / 2;
+        lab.dataset.giftShift = String(r((toLeft ? gl + 1.5 - n.box.right : gr - 1.5 - n.box.left) / k));
+        n = nudgeLabel(lab, margin, vw);
+      }
+    }
     let ok = n.left >= margin - 0.01 && n.right <= vw - margin + 0.01;
     if (ok && gift) {
       const g = gift.getBoundingClientRect();
@@ -454,6 +493,12 @@ function fitTodayButton(root, margin, vw) {
       ok = !hit(n.box, { left: g.left + sh, right: g.right - sh, top: g.top, bottom: g.bottom }, 2);
     }
     if (ok && pill) ok = !hit(n.box, pill.getBoundingClientRect(), 0.5);
+    // the button (its text cannot wrap) must stay inside the label: with the capped width a long text would stick out at both sides
+    if (ok) {
+      const lb = lab.getBoundingClientRect();
+      const bb = btn.getBoundingClientRect();
+      ok = bb.left >= lb.left - 0.5 && bb.right <= lb.right + 0.5;
+    }
     // text really on one line (the 2-line CSS is the fallback)
     if (ok) {
       const rng = document.createRange();
@@ -464,6 +509,9 @@ function fitTodayButton(root, margin, vw) {
   }
   lab.classList.remove('label--oneline');
   lab.style.removeProperty('--open-fs');
+  lab.style.removeProperty('--open-w');
+  delete lab.dataset.giftShift;
+  drawGarlands(root);
 }
 
 /**
@@ -476,7 +524,28 @@ export function fitLabels(root, margin = 8) {
   labels.forEach((el) => {
     el.style.translate = '';
   });
+  // Today's label "breathes" (scale 1 -> 1.035, anim.css). Every measurement below must see it at scale 1, otherwise the result depends on the
+  // moment of the call: a fresh load measures at phase 0, a resize at any phase, and a label near a limit (gift, margin) flips between one and two lines.
+  // The animation is switched off for the measuring and put back at the same point of its cycle.
+  const active = root.querySelector('.label--active');
+  const phase = active ? active.getAnimations().map((a) => [a.animationName, a.currentTime]) : [];
+  if (active) active.style.animation = 'none';
+  try {
+    fitLabelsMeasured(root, margin, vw, labels);
+  } finally {
+    if (active) {
+      active.style.animation = '';
+      active.getAnimations().forEach((a) => {
+        const was = phase.find(([name]) => name === a.animationName);
+        if (was) a.currentTime = was[1];
+      });
+    }
+  }
+}
+
+function fitLabelsMeasured(root, margin, vw, labels) {
   fitTodayButton(root, margin, vw);
+  drawGarlands(root); // desktop too: the garland is drawn at render time only, so after a resize it would keep the old size and the nudge below would measure it
   labels.forEach((el) => nudgeLabel(el, margin, vw));
   // neighbours pushed into each other (a wide active label nudged away from the edge): move the right one on
   const sorted = [...labels].sort((p, q) => p.getBoundingClientRect().left - q.getBoundingClientRect().left);
