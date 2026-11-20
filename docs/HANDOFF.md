@@ -1,106 +1,54 @@
-# Top Win Christmas Journey — handoff 2026-11-19
+# Top Win Christmas Journey — handoff 2026-11-20
 
-This page is for the next session or person picking up the Top Win Christmas Journey landing page. It says what is live, where the content comes from, what the owner decided, what is still broken, and which checks have not been run yet.
+For the next session (possibly on another PC). What is live, what is half done, what the owner still has to decide.
 
-## Live and repo state
+## Read this first
+- **TW is a redesign of the Jackpot page** `christmas_journey_lp` (on the old PC: `D:\.claude\JP\christmas_journey_lp`; GitHub repo of the same name under the same org — check with `gh repo list mkt-sls`). Same files, same logic; TW has its own Figma look, art and texts. TW was copied from JP commit `c77ebc4` (2026-11-18). **Before fixing anything, check whether JP already fixed it** (`git log` in JP) and port it, keeping TW's own art numbers.
+- Work rules of the owner: questions get answers; code changes only after the owner says "start"; pushes only after "push". Never run python in this repo.
 
-- Live URL: https://mkt-sls.github.io/tw-xmas-journey-lp/
-- Live build = `main` commit `0fc7114` ("Step 8: card open/close no longer moves the page"). Steps 1 to 8 are done.
-- Live was compared with the repo: 51 files identical.
-- Repo: `main`, clean at handoff. Deploy: GitHub Pages runs on every push to `main`.
-- Stack: Vite, vanilla JS, Vitest for `npm test`. Run `npm ci` once, then `npm run dev`, `npm test` or `npm run build`.
+## Live and repo state (2026-11-20 ~18:00)
+- Live URL: https://mkt-sls.github.io/tw-xmas-journey-lp/ . GitHub Pages deploys on every push to `main`.
+- Live code = `a31f6d5` (page code). This handoff is a docs-only commit on top.
+- Done and live today:
+  - `1dee17d` check scripts: `check-header` loads the page fresh per width (old version gave false alarms), new `check-header --resize`, `check-pulse` counts the whole ring.
+  - `c21419b` + `254d680` small phones: today button on one line on every market/day/width, also after resize/rotation (fit was measured mid "breathing" animation); RO card button "DEPUNE ȘI / REVENDICĂ" and DE terms link no longer touch; today label keeps >= 8 px from the screen edge.
+  - `c31fac8`, `1322328`, `a31f6d5` Santa: not clipped at 1024-1216 (before campaign, Dec 1); off the TODAY pill on Dec 1 at 808-1023; board on the route on wide screens. check-santa 112/112, sweep 0 fails.
+- **Half done, NOT on main:** branch `design-mkt-1/tw-layout-width` (pushed to origin if the worker made it in time; it may be a "WIP:" commit — read its commit message for which checks passed / failed / did not run):
+  - Item 2: port of JP's `layoutWidth()` (page width without the classic 15 px scrollbar). Measured before: on desktops with a classic scrollbar the stage was fitted 15 px too wide at every width 1024-1920; on Dec 26 at 1024/1100 a label stuck out ~2 px. Port fixes that, but made Santa sit over a gift on Dec 26 at 1024 (route squeezed more than ever tested). Owner decision (a): keep the port and let Santa shrink a bit more only for that extra squeeze (f < ~0.738), every other case unchanged. Then run the remaining checks one at a time and push only when all pass.
+  - Item 4: `check-texts --mobile` flag ported from JP (phone emulation, avoids false "Weihnachts clipped 1 px at 320" that only happens with a 15 px desktop scrollbar). May not be done yet.
+  - That branch also edits this HANDOFF.md (a note about `--mobile`): expect a small merge conflict here; keep both.
 
-## Sources
+## Owner decisions still open
+1. Mobile route labels: keep the TW Figma positions (master's recommendation) or centre them on their gifts like JP (`38af0f5`, `5ec1c40`; JP's gift-art numbers would need re-measuring on TW art)?
+2. Legend pill (not in Figma, added by us): keep or remove? Blocks task D.
+3. Day 12 free spins = 78 (confirmed by owner 2026-11-19; texts sheet says 75).
 
-- **Texts and place names.** Google Sheet `1OfbBN6d6mei4t0iReU_ZNNVelqjQwl3fBxh-aGpzwAY`, title "Переводы EUTop-Win" (last modified 2026-11-19 10:39 UTC).
-  - Tabs DE, NL, EN, RO hold the cards (A1:D27).
-  - Tab UI ELEMENT (A1:F52) holds the UI strings (A1:D19) and the LOCATION table.
-  - LOCATION table: title in A24, header in row 26 (`День | Русский (RU) | Română (RO) | English (EN) | Deutsch (DE) | Nederlands (NL)`), days 1 to 26 in rows 27 to 52. RU is not used.
-  - Each day's `location` (cards JSON and `ui/*.json` `locations`) is the place name in that language.
-  - Wagering and "valid until" are still missing from the sheet, so those rows stay hidden.
-- **Numbers and links.** Links sheet `1qpxJhrKTPyaUyGmJRrwPQNbh4T8s7458HJCCi2QwiTo`, tab **TW EUROPE only**. Tab **JP** belongs to Jackpot: never use it. Where texts and links disagree, the numbers follow TW EUROPE.
-- **Importer overrides** (`scripts/import-sheet.mjs`, all listed in `data/ISSUES.md`):
-  - Day 12 free spins 75 changed to 78 (from the links sheet). Client to confirm 75 or 78.
-  - How-it-works step 1 "1–25 December" changed to "1–26" in all four languages.
-  - Day 21 RO minimum deposit was missing; set to 300 MDL (links side table showed 22 changed to 300).
-- **Figma.** File `s2CqwGqe0O0FcALhBNlTRe`, canvas `58:332`.
+## Next tasks
+1. Finish branch `design-mkt-1/tw-layout-width` (above), then push to main after owner says "push".
+2. D: Figma desktop differences: golden ring around the today pedestal missing; header buttons' margin ~15 px narrower than Figma; footer shorter (expected); legend pill (decision 2).
+3. Not done yet: Figma review on mobile.
 
-## Owner decisions
+## Known non-issues (measured, do not re-chase)
+- Two-part title boxes overlap at 375-768 but glyphs never touch (gap 5-12 px).
+- Desktop label tag "HEUTIGER HALT" overlaps only the transparent glow of the gift button.
+- DE title "Weihnachts" 1 px cut at 320 appears only with a 15 px desktop scrollbar; same on old live build.
+- Pulse 1440 Dec 26 old fail was a threshold flake; fixed in check-pulse.
 
-From `docs/PLAN.md` and the owner's notes:
+## Sources (unchanged)
+- Texts and place names: Google Sheet `1OfbBN6d6mei4t0iReU_ZNNVelqjQwl3fBxh-aGpzwAY` (tabs DE, NL, EN, RO; UI ELEMENT with LOCATION table rows 27-52).
+- Numbers and links: sheet `1qpxJhrKTPyaUyGmJRrwPQNbh4T8s7458HJCCi2QwiTo`, tab **TW EUROPE** only (tab JP = Jackpot, never).
+- Figma: file `s2CqwGqe0O0FcALhBNlTRe`, canvas `58:332`.
+- Markets: DE (EUR), NL (EUR), EN_GBP (GBP), RO_MDL (MDL). 26 days, 1-26 December 2026. One deposit link per day on `tw-de.icu` with the day code (LOG IN, REGISTER, T&C use it too). Footer "18+ · Play responsibly". Only Figma and sheet text is shown.
 
-- 26 days, 1 to 26 December 2026.
-- Markets: DE (EUR, de), NL (EUR, nl), EN_GBP (GBP, en), RO_MDL (MDL, ro). Fallback market: EN_GBP.
-- One deposit link per day on `tw-de.icu`, with that day's promo code, for all markets.
-- LOG IN, REGISTER and T&C all use that same day link.
-- No mini-game on this page (it lives in a separate repo).
-- Footer text: "18+ · Play responsibly", without BeGambleAware.
-- Text rules: only Figma and sheet text is shown; no tracking strings; no "campaign ended" message.
-
-## Open problems to fix
-
-Each fix needs the owner's "start" before work begins. Numbers are from measurements in the checks named in the list.
-
-1. **Santa (route and today pill).**
-   - Dec 1, widths 808 to 1023: Santa covers the TODAY pill (8).
-   - Nov 25 and Dec 1, widths 1024 to 1216: Santa is clipped (7 each).
-   - Dec 2, widths 1632 to 3840: the board sits 4.01 to 4.74 px off the route. Limit is 4 px; 71 widths fail.
-2. **320 px and small phones.**
-   - RO how-it-works title "DEPUNE ȘI / REVENDICĂ": the two lines touch (-1.6 px).
-   - DE terms link line gap is 2.6 px (limit 3 px), on 26 days.
-   - Header to label gap is 7.7 px (limit 8 px).
-   - Today button still wraps to 2 lines: DE days 16, 17, 22, 26; NL day 20; RO days 17, 20, 22. Seen at 320 and 360.
-3. **Figma desktop differences.**
-   - Golden ring around the today pedestal is missing.
-   - Header buttons' margin is about 15 px narrower than Figma.
-   - Footer is shorter than Figma (expected, because of the text rules).
-   - A legend pill was added and is not in Figma.
-
-## Passed so far
-
-- Cards at 1440 px: all 4 markets, all 28 dates (checked on day 12: 78 free spins; day 21 RO: 300 MDL; no wagering or valid-until shown).
-- Every link goes to `tw-de.icu` with the day code.
-- Console clean on desktop.
-- No jackpot content on the page.
-
-## Checks not run yet
-
-- Text fit, ink, header, pulse and jump checks at widths 375 to 1920.
-- Cards at 390 px.
-- Mobile console check.
-- Figma review on mobile and in the sheet.
-
-## How to re-import and run the checks
-
-Run everything from the repo root. Never run python in this repo.
-
-Re-import from the sheets (the texts sheet is downloaded as xlsx first, the links sheet is saved as text by hand; see `docs/PLAN.md` for the download steps):
-
+## How to run
+`npm ci`, then `npm run dev`, `npm test`, `npm run build`. Re-import steps: `docs/PLAN.md`.
+Check scripts need a local Playwright + Chrome: set `PLAYWRIGHT_MODULE` and `CHROME` as each script header says (Playwright is not a project dependency).
 ```
-node scripts/extract-sheet.mjs data/source/texts-sheet.xlsx   # -> data/source/sheet.json
-node scripts/import-sheet.mjs                                 # -> data/cards/*.json, data/ui/*.json
-node scripts/import-links.mjs                                 # -> data/links.json, data/source/links-diff.md, data/ISSUES.md
-npm test
-npm run build
+node scripts/check-santa.mjs [--sweep --fails-only]
+node scripts/check-header.mjs [--labels] [--resize]   # fresh load per width (~8 min with --labels)
+node scripts/check-pulse.mjs
+node scripts/check-modal-jump.mjs
+node scripts/check-line-ink.mjs
+node scripts/check-texts.mjs --widths=390             # ~6 min per width, one width per process
 ```
-
-After the import, read `data/source/links-diff.md` (target: only the known gaps) and `data/ISSUES.md`, then commit `data/`. `import-links.mjs` must run after `import-sheet.mjs`. `data/markets.json` and `data/browser-map.json` are edited by hand. UI wording that is not in the texts sheet lives in the `OWN` table at the top of `scripts/import-sheet.mjs`.
-
-Numeric check scripts in `scripts/` (they start their own Vite server; Playwright is not a project dependency, so point `PLAYWRIGHT_MODULE` and `CHROME` at a local install as the script headers describe):
-
-```
-node scripts/check-santa.mjs                       # all dates x 390, 768, 1366, 1920
-node scripts/check-santa.mjs --sweep --fails-only  # desktop and mobile width sweep
-node scripts/check-header.mjs [--labels]           # mobile header (and today labels)
-node scripts/check-header.mjs --resize             # resize test: load at 430, shrink, compare with a fresh load (fails while the page has the resize bug)
-node scripts/check-headline.mjs [--shots]          # card headline gradient
-node scripts/check-line-ink.mjs                    # line-to-line ink overlap
-node scripts/check-modal-jump.mjs                  # card open/close must not move the page
-node scripts/check-pulse.mjs                       # today pulse ring
-node scripts/check-texts.mjs --widths=390          # every visible text, one width per run
-node scripts/shots-step7.mjs <outDir>              # owner screenshots
-```
-
-`scripts/check-texts.mjs` takes about 6 minutes per width, so run one width per process.
-
-`scripts/check-header.mjs` loads the page fresh for every market, day and width (a page shrunk from 430 by `setViewportSize` reports a wrong today-button line count, because the page does not refit after a resize). `--resize` is the separate test for that resize path.
+Run ONE check at a time: several Vite servers together hit an EPERM on node_modules/.vite/deps, and on 2026-11-20 parallel checks ran the PC out of memory.
