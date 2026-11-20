@@ -92,6 +92,7 @@ Numeric check scripts in `scripts/` (they start their own Vite server; Playwrigh
 node scripts/check-santa.mjs                       # all dates x 390, 768, 1366, 1920
 node scripts/check-santa.mjs --sweep --fails-only  # desktop and mobile width sweep
 node scripts/check-header.mjs [--labels]           # mobile header (and today labels)
+node scripts/check-header.mjs --resize             # resize test: load at 430, shrink, compare with a fresh load (fails while the page has the resize bug)
 node scripts/check-headline.mjs [--shots]          # card headline gradient
 node scripts/check-line-ink.mjs                    # line-to-line ink overlap
 node scripts/check-modal-jump.mjs                  # card open/close must not move the page
@@ -101,3 +102,5 @@ node scripts/shots-step7.mjs <outDir>              # owner screenshots
 ```
 
 `scripts/check-texts.mjs` takes about 6 minutes per width, so run one width per process.
+
+`scripts/check-header.mjs` loads the page fresh for every market, day and width (a page shrunk from 430 by `setViewportSize` reports a wrong today-button line count, because the page does not refit after a resize). `--resize` is the separate test for that resize path.
