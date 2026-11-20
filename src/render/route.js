@@ -188,8 +188,12 @@ const EDGE = 8; // gap to the viewport edge
  * squeeze, so below SQUEEZE_FULL he shrinks with it, or he would touch the gifts on both sides of his segment.
  */
 const SQUEEZE_FULL = 0.97;
+const SQUEEZE_TESTED = 0.738; // lowest f the Santa checks covered before the fit used the width without the scrollbar
 export function santaScale(f) {
-  return f >= SQUEEZE_FULL ? SANTA_SC : SANTA_SC * Math.max(0.55, 1 - (SQUEEZE_FULL - f) * 3);
+  if (f >= SQUEEZE_FULL) return SANTA_SC;
+  const k = Math.max(0.55, 1 - (SQUEEZE_FULL - f) * 3);
+  // below f 0.738 (a 1024 window: the fit now works from the 1009px page without the scrollbar) the floor shrinks with f, or he touches a gift
+  return SANTA_SC * (f < SQUEEZE_TESTED ? k * (f / SQUEEZE_TESTED) ** 4 : k);
 }
 
 /**
@@ -546,11 +550,20 @@ function fitTodayButton(root, margin, vw) {
 }
 
 /**
+ * The ONE width every layout fit works from: the width the page really has, without the classic scrollbar. html reserves the scrollbar
+ * gutter (base.css) and #app is a full-width block inside it, so on a desktop with a classic scrollbar this is 15px less than
+ * window.innerWidth / documentElement.clientWidth (which read the full window width, also while the card overlay hides the scrollbar).
+ */
+export function layoutWidth() {
+  return document.getElementById('app')?.clientWidth || document.documentElement.clientWidth;
+}
+
+/**
  * Keeps every label inside the viewport: a label that sticks out (long German/Russian names, narrow phones)
  * is nudged back with the independent `translate` property (transform and scale stay free for the animations).
  */
 export function fitLabels(root, margin = 8) {
-  const vw = document.documentElement.clientWidth;
+  const vw = layoutWidth();
   const labels = [...root.querySelectorAll('.label')];
   labels.forEach((el) => {
     el.style.translate = '';
