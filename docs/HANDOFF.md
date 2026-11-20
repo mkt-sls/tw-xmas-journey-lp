@@ -103,4 +103,6 @@ node scripts/shots-step7.mjs <outDir>              # owner screenshots
 
 `scripts/check-texts.mjs` takes about 6 minutes per width, so run one width per process.
 
+`check-texts --mobile` emulates a real phone (isMobile, hasTouch, overlay scrollbars) for widths up to 768. Without it headless Chrome keeps a 15 px classic scrollbar gutter, which shows up as a 1 px cut of the DE "Weihnachts" at 320 that a real phone does not have. Not yet run in this session (time).
+
 `scripts/check-header.mjs` loads the page fresh for every market, day and width (a page shrunk from 430 by `setViewportSize` reports a wrong today-button line count, because the page does not refit after a resize). `--resize` is the separate test for that resize path.

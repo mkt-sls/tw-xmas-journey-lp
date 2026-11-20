@@ -1,6 +1,6 @@
 // Numeric check of EVERY visible text of the page (T6e addition, owner 2026-11-19). Nothing is hand-listed: the texts are discovered from the DOM.
 //
-//   node scripts/check-texts.mjs --widths=390 [--markets=TR,RU] [--out=DIR]
+//   node scripts/check-texts.mjs --widths=390 [--markets=TR,RU] [--out=DIR] [--mobile]
 //
 // Run ONE width per process on a small machine (about 6 minutes per width for 15 markets x 26 days).
 // For every market x day 1-26 x width it collects, from the rendered page and from the opened card (and the market menu):
@@ -44,6 +44,8 @@ try {
 const args = process.argv.slice(2);
 const arg = (name) => args.find((a) => a.startsWith(`--${name}=`))?.slice(name.length + 3);
 const WIDTHS = (arg('widths') || '360,390,430,768,1024,1366,1920').split(',').map(Number);
+// --mobile: phone emulation (touch, overlay scrollbars => no 15px gutter, DPR 3) for widths <= 768, like a real phone
+const MOBILE_EMU = args.includes('--mobile');
 const ONLY = arg('markets')?.split(',');
 const OUT = arg('out') || process.cwd();
 const ALL_MARKETS = fs
@@ -251,7 +253,8 @@ async function main() {
     for (const width of WIDTHS) {
       const before = failures.length;
       for (const market of ALL_MARKETS) {
-        const ctx = await browser.newContext({ viewport: { width, height: width <= 768 ? 844 : 900 }, deviceScaleFactor: 1 });
+        const emu = MOBILE_EMU && width <= 768;
+        const ctx = await browser.newContext({ viewport: { width, height: width <= 768 ? 844 : 900 }, deviceScaleFactor: emu ? 3 : 1, ...(emu ? { isMobile: true, hasTouch: true } : {}) });
         const page = await ctx.newPage();
         const seen = new Set();
         let d = 1, first = true;
