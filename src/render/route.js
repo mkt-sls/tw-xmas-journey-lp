@@ -418,15 +418,20 @@ function nudgeLabel(el, margin, vw) {
     left = Math.min(left, p.left);
     right = Math.max(right, p.right);
   });
+  // the breathing scale works about the label centre, so garland / holly / cap that stick out of the box grow outwards by 3.5 % of THEIR distance
+  // from the centre, not of the box half-width (that left 7.6-8.0px at 320px instead of 8)
   const grow = el.classList.contains('label--active') ? (box.width * 0.035) / 2 : 0;
-  left -= grow;
-  right += grow;
+  if (grow) {
+    const cx = (box.left + box.right) / 2;
+    left = cx - (cx - left) * 1.035;
+    right = cx + (right - cx) * 1.035;
+  }
   // today's one-line label may have been moved away from its gift by fitTodayButton (dataset.giftShift, in label px); keep that move
   const pre = (Number(el.dataset.giftShift) || 0) * k;
   left += pre;
   right += pre;
   let dx = pre;
-  if (left < margin) dx += margin - left;
+  if (left < margin) dx += margin + 0.1 - left; // +0.1: the translate is rounded to 0.01 and the breathing frame is not exactly the measured one
   else if (right > vw - margin) dx += vw - margin - right;
   if (dx) el.style.translate = `${r(dx / k)}px 0`;
   return { left: left + dx, right: right + dx, box: { left: box.left + dx - grow, right: box.right + dx + grow, top: box.top, bottom: box.bottom } };
@@ -529,15 +534,20 @@ export function fitLabels(root, margin = 8) {
   // The animation is switched off for the measuring and put back at the same point of its cycle.
   const active = root.querySelector('.label--active');
   const phase = active ? active.getAnimations().map((a) => [a.animationName, a.currentTime]) : [];
-  if (active) active.style.animation = 'none';
+  const was = active ? { animation: active.style.animation, scale: active.style.scale } : null;
+  if (active) {
+    active.style.animation = 'none';
+    active.style.scale = '1'; // also when something (a check script) left an inline scale on it
+  }
   try {
     fitLabelsMeasured(root, margin, vw, labels);
   } finally {
     if (active) {
-      active.style.animation = '';
+      active.style.animation = was.animation;
+      active.style.scale = was.scale;
       active.getAnimations().forEach((a) => {
-        const was = phase.find(([name]) => name === a.animationName);
-        if (was) a.currentTime = was[1];
+        const p = phase.find(([name]) => name === a.animationName);
+        if (p) a.currentTime = p[1];
       });
     }
   }
