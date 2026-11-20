@@ -111,6 +111,31 @@ export function santaFlipped(layout, slot, mode = 'day') {
   return spot(layout, slot, mode).tx < 0;
 }
 
+// Desktop: the board is ~100px long (at full size) and the route is a curve, so a board laid along the TANGENT at its middle
+// leaves its two ends up to 4.7px off the line (Dec 2, 1920: the limit is 4). Laying it along the CHORD of the line over
+// +-BOARD_HALF px of screen x instead keeps every board point within ~2.4px (measured with scripts/check-santa.mjs).
+const BOARD_HALF = 60;
+function chordAngle(slot, mode, f, tangentDeg) {
+  const S = SANTA_SPOT.desktop;
+  const [seg, t0] = mode === 'end' ? S.end : mode === 'before' ? S.before : S.today[slot];
+  const c = bez(PATH.desktop[seg], t0);
+  const end = (sign) => {
+    let lo = 0;
+    let hi = 0.3;
+    for (let i = 0; i < 30; i++) {
+      const m = (lo + hi) / 2;
+      const q = bez(PATH.desktop[seg], Math.max(0, Math.min(1, t0 + sign * m)));
+      if (Math.abs(q.x - c.x) * f < BOARD_HALF) lo = m;
+      else hi = m;
+    }
+    return bez(PATH.desktop[seg], Math.max(0, Math.min(1, t0 + sign * lo)));
+  };
+  const a = end(-1);
+  const b = end(1);
+  if (b.x === a.x) return tangentDeg;
+  return (Math.atan2(b.y - a.y, (b.x - a.x) * f) * 180) / Math.PI;
+}
+
 /**
  * Rotation (deg) that makes his board parallel to the route at his point. `f` is the desktop horizontal squeeze of the
  * route (the line gets steeper when it is squeezed). Rotation is about the board centre, so the board stays on the line.
@@ -118,6 +143,7 @@ export function santaFlipped(layout, slot, mode = 'day') {
 export function santaAngle(layout, slot, mode = 'day', f = 1) {
   const p = spot(layout, slot, mode);
   let a = (Math.atan2(p.ty, p.tx * f) * 180) / Math.PI; // direction of the line on screen
+  if (layout === 'desktop') a = chordAngle(slot, mode, f, a);
   if (a > 90) a -= 180; // he faces right: the board's nose is the right end
   if (a <= -90) a += 180;
   // mirrored: his nose points left, so the board's angle against the (undirected) line is mirrored too
