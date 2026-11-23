@@ -1,4 +1,4 @@
-# Top Win Christmas Journey — handoff 2026-11-20
+# Top Win Christmas Journey — handoff 2026-11-23
 
 For the next session (possibly on another PC). What is live, what is half done, what the owner still has to decide.
 
@@ -6,27 +6,24 @@ For the next session (possibly on another PC). What is live, what is half done, 
 - **TW is a redesign of the Jackpot page** `christmas_journey_lp` (on the old PC: `D:\.claude\JP\christmas_journey_lp`; GitHub repo of the same name under the same org — check with `gh repo list mkt-sls`). Same files, same logic; TW has its own Figma look, art and texts. TW was copied from JP commit `c77ebc4` (2026-11-18). **Before fixing anything, check whether JP already fixed it** (`git log` in JP) and port it, keeping TW's own art numbers.
 - Work rules of the owner: questions get answers; code changes only after the owner says "start"; pushes only after "push". Never run python in this repo.
 
-## Live and repo state (2026-11-20 ~18:00)
-- Live URL: https://mkt-sls.github.io/tw-xmas-journey-lp/ . GitHub Pages deploys on every push to `main`.
-- Live code = `a31f6d5` (page code). This handoff is a docs-only commit on top.
-- Done and live today:
-  - `1dee17d` check scripts: `check-header` loads the page fresh per width (old version gave false alarms), new `check-header --resize`, `check-pulse` counts the whole ring.
-  - `c21419b` + `254d680` small phones: today button on one line on every market/day/width, also after resize/rotation (fit was measured mid "breathing" animation); RO card button "DEPUNE ȘI / REVENDICĂ" and DE terms link no longer touch; today label keeps >= 8 px from the screen edge.
-  - `c31fac8`, `1322328`, `a31f6d5` Santa: not clipped at 1024-1216 (before campaign, Dec 1); off the TODAY pill on Dec 1 at 808-1023; board on the route on wide screens. check-santa 112/112, sweep 0 fails.
-- **Half done, NOT on main:** branch `design-mkt-1/tw-layout-width` (pushed to origin if the worker made it in time; it may be a "WIP:" commit — read its commit message for which checks passed / failed / did not run):
-  - Item 2: port of JP's `layoutWidth()` (page width without the classic 15 px scrollbar). Measured before: on desktops with a classic scrollbar the stage was fitted 15 px too wide at every width 1024-1920; on Dec 26 at 1024/1100 a label stuck out ~2 px. Port fixes that, but made Santa sit over a gift on Dec 26 at 1024 (route squeezed more than ever tested). Owner decision (a): keep the port and let Santa shrink a bit more only for that extra squeeze (f < ~0.738), every other case unchanged. Then run the remaining checks one at a time and push only when all pass.
-  - Item 4: `check-texts --mobile` flag ported from JP (phone emulation, avoids false "Weihnachts clipped 1 px at 320" that only happens with a 15 px desktop scrollbar). May not be done yet.
-  - That branch also edits this HANDOFF.md (a note about `--mobile`): expect a small merge conflict here; keep both.
+## Live and repo state (2026-11-23 evening)
+- Live = main `9b43678` (Actions run 45225894937 ok, live assets index-DKeHWclv.js / index-DPQ0m5Gu.css match dist). GitHub Pages deploys on every push to `main`.
+- Live URL: https://mkt-sls.github.io/tw-xmas-journey-lp/ .
+- Done and live 2026-11-23:
+  - `c1cfc71` merge of tw-layout-width: layoutWidth() port (page width without the classic scrollbar), Santa shrinks further below f 0.738, `check-texts --mobile`.
+  - `6ea05f9` merge of tw-mobile-gap: route legend removed on desktop and mobile (owner); How it works 46 px under the route on desktop (Figma 58:511), on mobile ~5.5 px under the last route dots (Figma mobile frame 58:875). legend_* strings kept unused in data.
+  - `9b43678` merge of tw-label-centre: mobile route labels centred on their own gifts like JP (38af0f5 / 5ec1c40), TW gift middles measured (today -13.69, past/future -10.44 stage px); JP past-label exceptions kept; today's label exactly centred and Santa unchanged — owner accepted that Santa's board touches today's label on Dec 1, Dec 26 DE and some long names (60 cases, reported as "accepted (owner 2026-11-23, like JP)" by check-santa / check-label-centre). Past labels (yesterday, campaign over) anchored by their bottom edge so 2-line names grow upwards: every past/future label >= 1.67 px from Santa in all markets. New `scripts/check-label-centre.mjs` (--mobile, --ended), `check-santa --markets` (all markets), check-texts ignores today's label over its own invisible gift hit-area (JP 1085537).
+- Check results on 9b43678: npm test 95/95, check-santa 112/112, --markets 446/448, --sweep 3136/3136, check-label-centre --mobile 0 fails, check-header --labels 648 pass, --resize 0 differences, check-pulse 30/30, check-modal-jump 0 jumps. Known pre-existing text fails: 320/390 --mobile 4x intro title box overlap (letters >= 3.67 px apart, measured), 1366 .label__tag over the active gift's transparent glow.
+- Known, not fixed: NL Dec 1 Santa touches the TODAY pill "VANDAAG" at 320-414 (pre-existing). Jackpot also has Santa on today's label for long names Dec 2-25 (62/360 market-days, e.g. BG Dec 4) — owner: leave JP alone.
+- The machine was low on memory (Figma desktop app ~10 GB): long checks were killed; run them one at a time, narrow with `--markets` / `--widths`.
+- Untracked files `texts-failures-w1366.json` and `texts-failures-w390.json` in the repo root are check outputs, not part of the project: do not add or commit them.
 
 ## Owner decisions still open
-1. Mobile route labels: keep the TW Figma positions (master's recommendation) or centre them on their gifts like JP (`38af0f5`, `5ec1c40`; JP's gift-art numbers would need re-measuring on TW art)?
-2. Legend pill (not in Figma, added by us): keep or remove? Blocks task D.
-3. Day 12 free spins = 78 (confirmed by owner 2026-11-19; texts sheet says 75).
+(none from the old list: labels = centred like JP, legend = removed, day 12 = 78 FS stays as decided)
 
 ## Next tasks
-1. Finish branch `design-mkt-1/tw-layout-width` (above), then push to main after owner says "push".
-2. D: Figma desktop differences: golden ring around the today pedestal missing; header buttons' margin ~15 px narrower than Figma; footer shorter (expected); legend pill (decision 2).
-3. Not done yet: Figma review on mobile.
+1. D: Figma desktop differences: golden ring around the today pedestal missing; header buttons' margin ~15 px narrower than Figma; footer shorter (expected).
+2. Figma review on mobile (not done yet).
 
 ## Known non-issues (measured, do not re-chase)
 - Two-part title boxes overlap at 375-768 but glyphs never touch (gap 5-12 px).
@@ -49,8 +46,9 @@ node scripts/check-header.mjs [--labels] [--resize]   # fresh load per width (~8
 node scripts/check-pulse.mjs
 node scripts/check-modal-jump.mjs
 node scripts/check-line-ink.mjs
+node scripts/check-label-centre.mjs [--mobile] [--ended]
 node scripts/check-texts.mjs --widths=390             # ~6 min per width, one width per process
 ```
-Run ONE check at a time: several Vite servers together hit an EPERM on node_modules/.vite/deps, and on 2026-11-20 parallel checks ran the PC out of memory.
+Run ONE check at a time: several Vite servers together hit an EPERM on node_modules/.vite/deps, and parallel checks ran the PC out of memory (2026-11-20 and again 2026-11-23).
 
 `check-texts --mobile` emulates a real phone (isMobile, hasTouch, overlay scrollbars) for widths up to 768. Without it headless Chrome keeps a 15 px classic scrollbar gutter, which shows up as a 1 px cut of the DE "Weihnachts" at 320 that a real phone does not have. Run on 2026-11-23 at 320: the only fails left are the line-box overlap of the title spans (day 1); ink measured by pixel diff (320/360/375, DE/EN_GBP/NL/RO_MDL) has a gap of at least 3.67 px and no shared pixels.
