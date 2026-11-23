@@ -1,4 +1,4 @@
-/* Page layout. Desktop (>=1024): header, intro over the route stage, legend, steps, legal. Mobile: one column.
+/* Page layout. Desktop (>=1024): header, intro over the route stage, steps, legal. Mobile: one column.
    The route stage itself (fixed 1920x735 / 390x559 coordinates) is scaled in components.css via --s.
    Positions follow the Figma Main frames: desktop 58:511 (1920), mobile 58:875 (390). */
 
@@ -207,39 +207,6 @@
   overflow: hidden;
 }
 
-/* ---- legend ---- */
-.legend {
-  position: relative;
-  z-index: 2; /* above the stage bottom (it overlaps it by 16px) */
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 0;
-  width: min(358px, calc(100% - 32px));
-  margin: -4px auto 0;
-  padding: 14px 17px;
-  border: 1px solid var(--line);
-  border-radius: var(--r-modal);
-  background: var(--surface-3);
-}
-.legend__item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--text-soft);
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.4; /* 2-line legend entries ("Vandaag / beschikbaar"): >= 3px between the ink of the lines */
-}
-.legend__dot {
-  flex: none;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-.legend__dot--active { background: #ffae00; }
-.legend__dot--missed { background: #3a4a78; }
-.legend__dot--locked { background: #141d40; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28); }
-
 /* ---- how it works ---- */
 .how {
   max-width: 1228px;
@@ -349,7 +316,7 @@
 }
 
 /* ================= desktop ================= */
-/* wider than 1920: the whole page (header, route stage, legend, steps, legal) is zoomed to fill the viewport; min-height is in zoomed units */
+/* wider than 1920: the whole page (header, route stage, steps, legal) is zoomed to fill the viewport; min-height is in zoomed units */
 .page[data-layout='desktop'] {
   zoom: var(--z, 1);
   min-height: calc(100vh / var(--z, 1));
@@ -426,25 +393,8 @@
   margin-top: -114px;
 }
 
-.page[data-layout='desktop'] .legend {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  width: fit-content;
-  margin: -16px auto 0;
-  padding: 14px 24px;
-  border-radius: var(--r-pill);
-}
-.page[data-layout='desktop'] .legend__item {
-  font-size: 13px;
-}
-.page[data-layout='desktop'] .legend__dot {
-  width: 12px;
-  height: 12px;
-}
-
 .page[data-layout='desktop'] .how {
-  margin-top: 16px;
+  margin-top: 46px; /* Figma 58:511: route map bottom (y 870) to How it works (y 916); was 16 only because the legend pill sat between */
   padding: 0 24px;
 }
 

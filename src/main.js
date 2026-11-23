@@ -14,7 +14,6 @@ import { renderCard } from './render/card.js';
 import { bindMarketMenu, fitHeader, renderHeader } from './render/header.js';
 import { renderHowItWorks } from './render/howItWorks.js';
 import { renderIntro } from './render/intro.js';
-import { renderLegend } from './render/legend.js';
 import { renderLegal } from './render/legal.js';
 import { closeOverlay, openOverlay } from './render/overlay.js';
 import { deskZoom, desktopSantaFit, drawGarlands, fitLabels, layoutWidth, mobileZoom, renderRoute, santaAngle, stageSpec, tickCountdown } from './render/route.js';
@@ -106,7 +105,6 @@ function render() {
         ${renderIntro(ctx)}
         ${renderRoute(ctx)}
       </div>
-      ${renderLegend(ctx)}
       ${renderHowItWorks(ctx)}
     </main>
     ${renderLegal(ctx)}
