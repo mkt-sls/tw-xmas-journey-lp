@@ -2,6 +2,9 @@
 //
 //   node scripts/check-santa.mjs            (all 28 dates x 390, 768, 1366, 1920; writes the QA sheets)
 //   node scripts/check-santa.mjs --widths 390 --dates 2026-12-26
+//   node scripts/check-santa.mjs --markets all   (every market in data/cards: 2-line names exist only in DE / RO_MDL, the default
+//                                                 market never shows them; 4 markets x 28 dates x 4 widths, about 7 minutes. No QA
+//                                                 sheets. Mobile labels pixel by pixel in every market: scripts/check-label-centre.mjs)
 //   node scripts/check-santa.mjs --sweep --fails-only   (desktop 1024-3840 every 32px + 1280/1440/1536/1600/1680, mobile
 //                                                        360-1023 every 32px + 1023; one load per date and layout, then the
 //                                                        viewport is resized; prints the failing rows and a summary)
@@ -67,7 +70,10 @@ const FAILS_ONLY = args.includes('--fails-only');
 const range = (a, b, step) => Array.from({ length: Math.floor((b - a) / step) + 1 }, (_, i) => a + i * step);
 const SWEEP_WIDTHS = [...new Set([...range(1024, 3840, 32), 1280, 1440, 1536, 1600, 1680, ...range(360, 1023, 32), 1023])].sort((a, b) => a - b);
 const WIDTHS = SWEEP ? SWEEP_WIDTHS : arg('--widths', '390,768,1366,1920').split(',').map(Number);
-const SHEETS = (arg('--sheets', SWEEP ? '' : '390,1366') || '').split(',').filter(Boolean).map(Number);
+// --markets DE,NL | all: load each market (2-line names exist only in DE / RO_MDL); default: the page's default market only
+const MARKET_ARG = arg('--markets', '');
+const MARKETS = !MARKET_ARG ? [''] : MARKET_ARG === 'all' ? fs.readdirSync(path.join(ROOT, 'data', 'cards')).filter((x) => x.endsWith('.json')).map((x) => x.replace('.json', '')) : MARKET_ARG.split(',');
+const SHEETS = MARKETS.length > 1 ? [] : (arg('--sheets', SWEEP ? '' : '390,1366') || '').split(',').filter(Boolean).map(Number);
 const HEIGHT = { 390: 844, 768: 1024, 1366: 768, 1920: 1080 };
 
 // ---------------------------------------------------------------- in-page measurement
@@ -341,11 +347,12 @@ async function main() {
     for (const group of groups) {
       const ctx = await browser.newContext({ viewport: { width: group[0], height: heightOf(group[0]) }, reducedMotion: 'reduce' });
       const page = await ctx.newPage();
+      for (const market of MARKETS)
       for (const date of DATES) {
         for (const width of group) {
           await page.setViewportSize({ width, height: heightOf(width) });
           if (width === group[0]) {
-            await page.goto(`${base}/?date=${date}`, { waitUntil: 'networkidle' });
+            await page.goto(`${base}/?date=${date}${market ? `&market=${market}` : ''}`, { waitUntil: 'networkidle' });
             await page.waitForSelector('.santa img');
           }
           await settle(page);
@@ -359,7 +366,7 @@ async function main() {
             console.log(date, width, "santa", [Math.min(...sx), Math.min(...sy), Math.max(...sx), Math.max(...sy)].map(Math.round), "board", m.board.map((p) => [Math.round(p.x), Math.round(p.y)]), "firstVis", v[0] && [Math.round(v[0].x), Math.round(v[0].y)], "lastVis", v.length && [Math.round(v.at(-1).x), Math.round(v.at(-1).y)], "wrap", m.wrap);
             m.obstacles.forEach((o) => console.log("  ", o.kind, [o.l, o.t, o.r, o.b].map(Math.round)));
           }
-          rows.push({ date, width, ...e, mode: m.mode, flip: m.flip });
+          rows.push({ date, market, width, ...e, mode: m.mode, flip: m.flip });
           if (SHEETS.includes(width)) crops[`${width}|${date}`] = { png: await crop(page, m), e };
         }
       }
@@ -367,19 +374,19 @@ async function main() {
     }
     // table
     const pad = (s, n) => String(s).padEnd(n);
-    console.log(`${pad('date', 11)}| ${pad('width', 6)}| ${pad('max dist px', 12)}| ${pad('angle diff', 11)}| ${pad('facing ok', 10)}| ${pad('overlap ok', 11)}| ${pad('bbox clear', 16)}| ${pad('Dec 1 left', 22)}| result`);
+    console.log(`${pad('date', 11)}| ${pad('market', 7)}| ${pad('width', 6)}| ${pad('max dist px', 12)}| ${pad('angle diff', 11)}| ${pad('facing ok', 10)}| ${pad('overlap ok', 11)}| ${pad('bbox clear', 16)}| ${pad('Dec 1 left', 22)}| result`);
     for (const r of rows) {
       if (FAILS_ONLY && r.pass) continue;
       console.log(
-        `${pad(r.date, 11)}| ${pad(r.width, 6)}| ${pad(r.maxDist.toFixed(2), 12)}| ${pad(r.diff.toFixed(1) + 'deg', 11)}| ${pad(r.facingOk ? 'yes' : 'NO', 10)}| ${pad(r.overlapOk ? (r.accepted.length ? 'accepted' : 'yes') : 'NO ' + r.hits.join('+'), 11)}| ${pad(r.bboxOk ? 'yes' : 'NO ' + r.boxHits.join('+'), 16)}| ${pad(r.date === '2026-12-01' ? `${r.dec1Ok ? 'yes' : 'NO'} ${r.santaCx.toFixed(0)}<${r.stopX.toFixed(0)}` : '-', 22)}| ${r.pass ? 'PASS' : 'FAIL'}`,
+        `${pad(r.date, 11)}| ${pad(r.market || '-', 7)}| ${pad(r.width, 6)}| ${pad(r.maxDist.toFixed(2), 12)}| ${pad(r.diff.toFixed(1) + 'deg', 11)}| ${pad(r.facingOk ? 'yes' : 'NO', 10)}| ${pad(r.overlapOk ? (r.accepted.length ? 'accepted' : 'yes') : 'NO ' + r.hits.join('+'), 11)}| ${pad(r.bboxOk ? 'yes' : 'NO ' + r.boxHits.join('+'), 16)}| ${pad(r.date === '2026-12-01' ? `${r.dec1Ok ? 'yes' : 'NO'} ${r.santaCx.toFixed(0)}<${r.stopX.toFixed(0)}` : '-', 22)}| ${r.pass ? 'PASS' : 'FAIL'}`,
       );
     }
     const fails = rows.filter((r) => !r.pass).length;
     const nW = new Set(rows.map((r) => r.width)).size;
-    console.log(`\n${rows.length - fails}/${rows.length} pass${fails ? `, ${fails} FAIL` : ''} (${nW} widths x ${DATES.length} dates)`);
+    console.log(`\n${rows.length - fails}/${rows.length} pass${fails ? `, ${fails} FAIL` : ''} (${nW} widths x ${DATES.length} dates x ${MARKETS.length} market${MARKETS.length > 1 ? 's' : ' (default)'})`);
     const acc = rows.filter((r) => r.accepted.length);
     if (acc.length)
-      console.log(`accepted (owner 2026-11-23, like JP): Santa touches today's mobile label in ${acc.length}/${rows.length} rows (${acc.map((r) => `${r.date} ${r.width}`).join(', ')})`);
+      console.log(`accepted (owner 2026-11-23, like JP): Santa touches today's mobile label in ${acc.length}/${rows.length} rows (${acc.map((r) => `${r.date}${r.market ? ' ' + r.market : ''} ${r.width}`).join(', ')})`);
     const boxTouch = rows.filter((r) => !r.bboxOk).length;
     console.log(`info: bounding box touches a gift/pill/label box (no pixel overlap needed) in ${boxTouch}/${rows.length} rows`);
     if (fails) console.log(`failing widths: ${[...new Set(rows.filter((r) => !r.pass).map((r) => r.width))].join(',')}`);

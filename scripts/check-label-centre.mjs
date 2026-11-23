@@ -1,10 +1,12 @@
 // Numeric check (mobile): the vertical MIDDLE of every route label equals the vertical MIDDLE of its gift (owner 2026-11-19, ported
 // from Jackpot commits 38af0f5 / 5ec1c40, TW owner decision 2026-11-23).
 //
-//   node scripts/check-label-centre.mjs --mobile [--widths=320,360,390,430] [--markets=DE,NL] [--dates=before,1-26,ended]
+//   node scripts/check-label-centre.mjs --mobile [--widths=320,360,375,390,414,430] [--markets=DE,NL] [--dates=before,1-26,ended]
 //                                       [--ended] [--active-only] [--out=FILE.json] [--shots=DIR]
 //
-// --widths: one or more mobile widths (default 320,360,390,430), each a FRESH page load per market x date (no resize).
+// --widths: one or more mobile widths (default 320,360,375,390,414,430, the phone widths of check-header), each a FRESH page load per
+//           market x date (no resize). All 6 widths x 4 markets x 28 dates take about 9 minutes; on a small machine run them in two
+//           groups (--widths=320,360,375 then --widths=390,414,430).
 // --dates:  comma list of "before" (2026-11-25, campaign not started: every label locked), a day or day range of December
 //           ("1-26", "8"), and "ended" (2026-12-28, campaign over: every label past). Default: before,1-26,ended (all 28 dates).
 // --ended:  the campaign-ended page only, same as --dates=ended (Jackpot b25df2a; check-texts --ended uses the same date).
@@ -19,16 +21,19 @@
 //   giftMidRel    = gift middle in STAGE units from the pedestal centre py (gift box top + 80 k): the number src/render/route.js
 //                   keeps in MOBILE.giftMid per state. Printed as min / max per state so it can be set from a run.
 // What each label should do comes from src/render/route.js itself (mobileLabelPlacement(state, slot), loaded through Vite):
-//   centred                     -> |delta| <= TOL
-//   centred + raised            -> delta = lower x stage scale (within TOL; lower < 0: the slot-0 past label, raised pastSlot0Raise)
-//   top-pinned                  -> not centred on purpose (Santa clearance), reported as "expected", not a failure
+//   centre   -> |delta| <= TOL
+//   bottom   -> the label's BOTTOM edge sits at py + bottom within TOL (MOBILE.pastBottom: past labels of slots 0 and 2, a 2-line
+//               name grows upwards)
+//   top      -> top-pinned, not centred on purpose (Santa clearance), reported as "expected", not a failure
 // Overlaps of every label (part of the exit code, see below): opaque art of ANY gift under the label box, the TODAY pill (pixel truth
 // for today's label: screenshot with the label hidden / shown; rectangles for the others), Santa's OPAQUE silhouette (his PNG pixels
-// pushed through the browser's own transforms, as in check-santa.mjs) inside the label box, and other labels.
+// pushed through the browser's own transforms, as in check-santa.mjs) inside the label box, Santa's PAINTED pixels closer than 1 px to
+// any pixel the label paints (holly, snow cap, garland and button included; screenshots of Santa alone and of the labels alone), and
+// other labels. Every market is loaded (2-line names occur only in DE / RO_MDL, which check-santa's default market never shows).
 // SANTA CLEARANCE is printed per state x slot x Santa mode: the smallest gap (px, negative = his silhouette reaches that far INTO
-// the label box) between his opaque art and the label box. It is the measurement behind the top-pinned / raised exceptions.
+// the label box) between his opaque art and the label box. It is the measurement behind the top-pinned / bottom-anchored exceptions.
 // Exit code 1 when a label that should be centred (or raised) is not, or on any overlap: gift art, TODAY pill, another label, Santa
-// inside a PAST / FUTURE label box. TODAY's label touching Santa (Dec 1 all markets, Dec 26 all markets (the holly; DE also the box), some long names on Dec 2-25 at
+// inside or < 1 px from a PAST / FUTURE label. TODAY's label touching Santa (Dec 1 all markets, Dec 26 all markets (the holly; DE also the box), some long names on Dec 2-25 at
 // 320-360) is listed as "accepted (owner 2026-11-23, like JP)": the label stays exactly centred and Santa stays where he is, as on
 // Jackpot, where his board touches today's label on long names too. Playwright is not a project dependency: PLAYWRIGHT_MODULE /
 // CHROME as in check-santa.mjs.
@@ -56,7 +61,7 @@ try {
 
 const args = process.argv.slice(2);
 const arg = (name) => args.find((a) => a.startsWith(`--${name}=`))?.slice(name.length + 3);
-const WIDTHS = (arg('widths') || arg('width') || '320,360,390,430').split(',').map(Number);
+const WIDTHS = (arg('widths') || arg('width') || '320,360,375,390,414,430').split(',').map(Number);
 const ONLY = arg('markets')?.split(',');
 const ACTIVE_ONLY = args.includes('--active-only');
 const OUT = arg('out');
@@ -203,6 +208,7 @@ async function measure() {
       const gb = gift.getBoundingClientRect();
       const st = gb.width / (120 * k);
       rec.giftMidRel = (rec.giftMid - gb.top) / st - 80 * k;
+      rec.labelBottomRel = (lb.b - gb.top) / st - 80 * k; // label bottom edge, stage px below the pedestal centre py
       rec.st = st; // CSS px per stage px
     }
     {
@@ -256,12 +262,14 @@ async function measure() {
 }
 
 /**
- * Pixel truth, Santa vs TODAY's label with everything it paints (box, holly, snow cap, garland bulbs): two screenshots of the area
- * around both on a transparent page, one with only Santa's art visible, one with only today's label, CSS filters off (his glow and
- * the label's drop shadow are not counted). Painted = alpha > 128. Returns the smallest distance between a Santa pixel and a label pixel (CSS px; 0 = touching or
- * overlapping) and how many device pixels both paint. Animations stay paused as measure() left them.
+ * Pixel truth, Santa vs EVERY label with everything it paints (box, holly, snow cap, today's garland and button): two screenshots of
+ * the area around Santa (his art box + 24 px) on a transparent page, one with only his art visible, one with only the labels, CSS
+ * filters off (his glow and the labels' drop shadows are not counted). Painted = alpha > 128. Each label's pixels are told apart by
+ * its own box incl. decorations (labels never overlap each other, checked separately). Returns, per label in DOM order (= slot), the
+ * smallest distance between a Santa pixel and a pixel of that label (CSS px; 0 = touching or overlapping; 20 = farther than the
+ * area) and how many device pixels both paint. Animations stay paused as measure() left them.
  */
-async function santaLabelPixels(page) {
+async function santaLabelsPixels(page) {
   const area = await page.evaluate(() => {
     const u = (els) => {
       const e = { l: Infinity, t: Infinity, r: -Infinity, b: -Infinity };
@@ -275,73 +283,83 @@ async function santaLabelPixels(page) {
       }
       return e;
     };
-    const lab = document.querySelector('.label--active');
     const santa = document.querySelector('.santa__art');
-    if (!lab || !santa) return null;
-    const a = u([lab, ...lab.querySelectorAll('*')]);
+    if (!santa) return null;
     const s = u([santa]);
-    const i = { l: Math.max(a.l, s.l) - 20, t: Math.max(a.t, s.t) - 20, r: Math.min(a.r, s.r) + 20, b: Math.min(a.b, s.b) + 20 };
-    if (i.r <= i.l || i.b <= i.t) return { far: true };
     const W = document.documentElement.clientWidth;
-    return { x: Math.max(0, i.l), y: Math.max(0, i.t), width: Math.min(W, i.r) - Math.max(0, i.l), height: i.b - Math.max(0, i.t) };
+    const x = Math.max(0, s.l - 24);
+    const y = Math.max(0, s.t - 24);
+    const labels = [...document.querySelectorAll('.label')].map((lab) => u([lab, ...lab.querySelectorAll('*')]));
+    return { x, y, width: Math.min(W, s.r + 24) - x, height: s.b + 24 - y, labels };
   });
   if (!area) return null;
-  if (area.far) return { gap: 20, both: 0 }; // more than 20 px apart in x or y
-  // keep the page scroll where it is: clip is in page coordinates = viewport coordinates at scroll 0
   const scroll = await page.evaluate(() => window.scrollY);
-  const clip = { ...area, y: area.y + scroll };
+  const clip = { x: area.x, y: area.y + scroll, width: area.width, height: area.height };
   const only = async (sel) => {
-    // filters off: Santa's soft glow (drop-shadow up to alpha 0.55) and the label's drop shadow are not the art itself
+    // filters off: Santa's soft glow (drop-shadow up to alpha 0.55) and the labels' drop shadows are not the art itself
     const tag = await page.addStyleTag({ content: `html,body{background:transparent!important}body *{visibility:hidden!important}${sel}{visibility:visible!important;filter:none!important}` });
     const png = await page.screenshot({ clip, omitBackground: true });
     await tag.evaluate((el) => el.remove());
     return png.toString('base64');
   };
   const s = await only('.santa__art');
-  const l = await only('.label--active,.label--active *');
-  return page.evaluate(async ([a, b, cssW]) => {
-    const ld = async (src) => {
-      const i = new Image();
-      i.src = 'data:image/png;base64,' + src;
-      await i.decode();
-      const c = new OffscreenCanvas(i.width, i.height);
-      const g = c.getContext('2d');
-      g.drawImage(i, 0, 0);
-      return { w: i.width, h: i.height, d: g.getImageData(0, 0, i.width, i.height).data };
-    };
-    const [S, L] = await Promise.all([ld(a), ld(b)]);
-    const { w, h } = S;
-    const dpr = w / cssW;
-    // distance (device px, chamfer 3-4) from every Santa pixel, then the smallest value under a label pixel
-    const INF = 1e9;
-    const dist = new Float64Array(w * h).fill(INF);
-    for (let i = 0; i < w * h; i++) if (S.d[i * 4 + 3] > 128) dist[i] = 0;
-    for (let y = 0; y < h; y++)
-      for (let x = 0; x < w; x++) {
-        const i = y * w + x;
-        if (x > 0) dist[i] = Math.min(dist[i], dist[i - 1] + 1);
-        if (y > 0) dist[i] = Math.min(dist[i], dist[i - w] + 1);
-        if (x > 0 && y > 0) dist[i] = Math.min(dist[i], dist[i - w - 1] + Math.SQRT2);
-        if (x < w - 1 && y > 0) dist[i] = Math.min(dist[i], dist[i - w + 1] + Math.SQRT2);
-      }
-    for (let y = h - 1; y >= 0; y--)
-      for (let x = w - 1; x >= 0; x--) {
-        const i = y * w + x;
-        if (x < w - 1) dist[i] = Math.min(dist[i], dist[i + 1] + 1);
-        if (y < h - 1) dist[i] = Math.min(dist[i], dist[i + w] + 1);
-        if (x < w - 1 && y < h - 1) dist[i] = Math.min(dist[i], dist[i + w + 1] + Math.SQRT2);
-        if (x > 0 && y < h - 1) dist[i] = Math.min(dist[i], dist[i + w - 1] + Math.SQRT2);
-      }
-    let gap = INF;
-    let both = 0;
-    for (let i = 0; i < w * h; i++)
-      if (L.d[i * 4 + 3] > 128) {
-        if (dist[i] === 0) both++;
-        gap = Math.min(gap, dist[i]);
-      }
-    // gap between the two pixel edges: centre distance minus one pixel
-    return { gap: gap >= INF ? Infinity : Math.max(0, gap - 1) / dpr, both };
-  }, [s, l, area.width]);
+  const l = await only('.label,.label *');
+  return page.evaluate(
+    async ([a, b, area]) => {
+      const ld = async (src) => {
+        const i = new Image();
+        i.src = 'data:image/png;base64,' + src;
+        await i.decode();
+        const c = new OffscreenCanvas(i.width, i.height);
+        const g = c.getContext('2d');
+        g.drawImage(i, 0, 0);
+        return { w: i.width, h: i.height, d: g.getImageData(0, 0, i.width, i.height).data };
+      };
+      const [S, L] = await Promise.all([ld(a), ld(b)]);
+      const { w, h } = S;
+      const dpr = w / area.width;
+      // distance (device px, chamfer) from every Santa pixel, then the smallest value under each label's pixels
+      const INF = 1e9;
+      const dist = new Float64Array(w * h).fill(INF);
+      for (let i = 0; i < w * h; i++) if (S.d[i * 4 + 3] > 128) dist[i] = 0;
+      for (let y = 0; y < h; y++)
+        for (let x = 0; x < w; x++) {
+          const i = y * w + x;
+          if (x > 0) dist[i] = Math.min(dist[i], dist[i - 1] + 1);
+          if (y > 0) dist[i] = Math.min(dist[i], dist[i - w] + 1);
+          if (x > 0 && y > 0) dist[i] = Math.min(dist[i], dist[i - w - 1] + Math.SQRT2);
+          if (x < w - 1 && y > 0) dist[i] = Math.min(dist[i], dist[i - w + 1] + Math.SQRT2);
+        }
+      for (let y = h - 1; y >= 0; y--)
+        for (let x = w - 1; x >= 0; x--) {
+          const i = y * w + x;
+          if (x < w - 1) dist[i] = Math.min(dist[i], dist[i + 1] + 1);
+          if (y < h - 1) dist[i] = Math.min(dist[i], dist[i + w] + 1);
+          if (x < w - 1 && y < h - 1) dist[i] = Math.min(dist[i], dist[i + w + 1] + Math.SQRT2);
+          if (x > 0 && y < h - 1) dist[i] = Math.min(dist[i], dist[i + w - 1] + Math.SQRT2);
+        }
+      return area.labels.map((e) => {
+        // the label's box in device px of the screenshot
+        const x0 = Math.max(0, Math.floor((e.l - area.x) * dpr));
+        const y0 = Math.max(0, Math.floor((e.t - area.y) * dpr));
+        const x1 = Math.min(w, Math.ceil((e.r - area.x) * dpr));
+        const y1 = Math.min(h, Math.ceil((e.b - area.y) * dpr));
+        let gap = INF;
+        let both = 0;
+        for (let y = y0; y < y1; y++)
+          for (let x = x0; x < x1; x++) {
+            const i = y * w + x;
+            if (L.d[i * 4 + 3] > 128) {
+              if (dist[i] === 0) both++;
+              if (dist[i] < gap) gap = dist[i];
+            }
+          }
+        // gap between the two pixel edges: centre distance minus one pixel; nothing of the label in the area = farther than 20 px
+        return { gap: gap >= INF ? 20 : Math.min(20, Math.max(0, gap - 1) / dpr), both };
+      });
+    },
+    [s, l, area],
+  );
 }
 
 async function settle(page) {
@@ -392,7 +410,9 @@ async function main() {
           const res = await page.evaluate(measure);
           // pixel truth for the pill: the label box is a rounded rectangle and the pill a capsule, so a rectangle touch can be empty.
           const act = res.find((r) => r.state === 'active');
-          if (act) act.cover.santaPx = await santaLabelPixels(page); // before the pill test: that one hides the label for good
+          // before the pill test: that one hides today's label for good
+          const px = await santaLabelsPixels(page);
+          if (px) res.forEach((r) => (r.cover.santaPx = px[r.slot]));
           if (act && act.cover.pill > 0) {
             const pb = act.pillBox;
             const clip = { x: Math.max(0, pb.l), y: Math.max(0, pb.t), width: pb.r - pb.l, height: pb.b - pb.t };
@@ -441,24 +461,28 @@ async function main() {
   for (const r of rows) {
     const p = placement ? placement(r.state, r.slot) : null;
     let kind = 'raw';
-    let want = 0;
-    if (p && !p.centred) kind = 'top-pinned (expected, not centred)';
-    else if (p && p.lower) {
-      kind = p.lower > 0 ? `lowered ${p.lower}` : `raised ${-p.lower}`;
-      want = p.lower * r.st;
-    } else if (p) kind = 'centred';
-    r.want = want;
-    r.err = r.delta - want;
+    let judged = false;
+    r.err = r.delta;
+    if (p?.mode === 'top') kind = 'top-pinned (expected, not centred)';
+    else if (p?.mode === 'bottom') {
+      // bottom-anchored: its bottom edge must sit at py + bottom (err in CSS px)
+      kind = `bottom-anchored at ${p.bottom}`;
+      r.err = (r.labelBottomRel - p.bottom) * r.st;
+      judged = true;
+    } else if (p?.mode === 'centre') {
+      kind = 'centred';
+      judged = true;
+    }
     r.kind = kind;
-    if (p && p.centred && Math.abs(r.err) > TOL) {
+    if (judged && Math.abs(r.err) > TOL) {
       fails++;
-      if (fails <= 40) console.log(`  FAIL ${r.width} ${r.market} ${r.date} ${r.state} slot ${r.slot}: delta ${f(r.delta)} px, want ${f(want)}`);
+      if (fails <= 40) console.log(`  FAIL ${r.width} ${r.market} ${r.date} ${r.state} slot ${r.slot} [${kind}]: off by ${f(r.err)} px`);
     }
     const k = `${String(r.width).padEnd(4)} ${r.state.padEnd(6)} slot ${r.slot} [${kind}]`;
     if (!groups.has(k)) groups.set(k, []);
     groups.get(k).push(r);
   }
-  console.log('\nCENTRING (err = label middle - gift middle - wanted offset, px)');
+  console.log('\nPLACEMENT (err = label middle - gift middle, or for bottom-anchored labels label bottom - wanted bottom; CSS px)');
   for (const [k, v] of [...groups].sort()) {
     const e = v.map((r) => Math.abs(r.err));
     console.log(`  ${k.padEnd(56)} n=${String(v.length).padEnd(4)} max |err| ${f(Math.max(...e))}  mean ${f(e.reduce((a, b) => a + b, 0) / e.length)}  (delta ${f(Math.min(...v.map((r) => r.delta)))}..${f(Math.max(...v.map((r) => r.delta)))})`);
@@ -475,30 +499,32 @@ async function main() {
   }
   for (const [k, v] of [...sg].sort()) if (v.gap < 12) console.log(`  ${k.padEnd(40)} min gap ${f(v.gap).padStart(7)} (${v.at})${v.gap < 0 ? '  <-- INSIDE' : ''}`);
   console.log('  (pairs with every gap >= 12 px not listed)');
-  // pixel truth: Santa's painted pixels vs everything today's label paints (box, holly, snow cap, garland bulbs)
-  console.log("\nSANTA vs TODAY'S LABEL, PIXELS (box + holly + snow cap + garland; smallest gap between painted pixels, CSS px; 0 = touching)");
+  // pixel truth: Santa's painted pixels vs everything each label paints (box, holly, snow cap, garland bulbs, today's button)
+  const pg = (r) => (r.cover.santaPx ? r.cover.santaPx.gap : 20);
+  console.log('\nSANTA vs LABELS, PIXELS (smallest gap between painted pixels, CSS px; 0 = touching; >= 20 = farther), per width x state x slot');
   for (const w of WIDTHS)
-    for (const s of [0, 1, 2]) {
-      const v = rows.filter((r) => r.width === w && r.state === 'active' && r.slot === s && r.cover.santaPx);
-      if (!v.length) continue;
-      const m = v.reduce((a, b) => (b.cover.santaPx.gap < a.cover.santaPx.gap ? b : a));
-      const g = m.cover.santaPx.gap;
-      const under1 = v.filter((r) => r.cover.santaPx.gap < 1).length;
-      console.log(`  ${w} slot ${s}: min ${g >= 20 ? '>= 20' : f(g)} px (${m.market} ${m.date}), < 1 px in ${under1}/${v.length}, overlapping pixels max ${Math.max(...v.map((r) => r.cover.santaPx.both))}`);
-    }
+    for (const st of ['active', 'missed', 'locked'])
+      for (const s of [0, 1, 2]) {
+        const v = rows.filter((r) => r.width === w && r.state === st && r.slot === s);
+        if (!v.length) continue;
+        const m = v.reduce((a, b) => (pg(b) < pg(a) ? b : a));
+        if (pg(m) >= 20) continue;
+        console.log(`  ${w} ${st.padEnd(6)} slot ${s}: min ${f(pg(m))} px (${m.market} ${m.date}), < 1 px in ${v.filter((r) => pg(r) < 1).length}/${v.length}, overlapping device px max ${Math.max(...v.map((r) => r.cover.santaPx?.both || 0))}`);
+      }
+  console.log('  (state x slot pairs with every gap >= 20 px not listed)');
 
   // today's label touching Santa: accepted (owner 2026-11-23, like Jackpot), listed, not counted
-  const accepted = rows.filter((r) => r.state === 'active' && (r.cover.santa.inside > 0 || (r.cover.santaPx && r.cover.santaPx.gap < 1)));
+  const accepted = rows.filter((r) => r.state === 'active' && (r.cover.santa.inside > 0 || pg(r) < 1));
   console.log(`\nTODAY'S LABEL TOUCHING SANTA: ${accepted.length} - accepted (owner 2026-11-23, like JP: label exactly centred, Santa unchanged)`);
   for (const r of accepted.slice(0, 40))
-    console.log(`  accepted ${r.width} ${r.market} ${r.date} slot ${r.slot}: box ${r.cover.santa.inside ? `${f(r.cover.santa.depth)} px inside his art` : `${f(r.cover.santa.gap)} px away`}, painted gap ${f(r.cover.santaPx.gap)} px, overlapping device px ${r.cover.santaPx.both}`);
-  // every other overlap is a failure: opaque art of any gift under a label, the TODAY pill, Santa inside a past / future label box, another label
-  const bad = rows.filter(
-    (r) => r.cover.giftArtPx > 0.5 || (r.state === 'active' ? (r.cover.pillPx ?? 0) > 0 : r.cover.pill > 0) || (r.state !== 'active' && r.cover.santa.inside > 0) || r.cover.other.length,
-  );
-  console.log(`\nOVERLAPS, FAIL (gift art px>0.5 | TODAY pill | Santa silhouette in a past / future label box | other label): ${bad.length} (active ${bad.filter((r) => r.state === 'active').length}, missed ${bad.filter((r) => r.state === 'missed').length}, locked ${bad.filter((r) => r.state === 'locked').length})`);
-  for (const r of bad.slice(0, 80))
-    console.log(`  ${r.width} ${r.market} ${r.date} ${r.state} slot ${r.slot} (label day ${r.day}): art ${f(r.cover.giftArtPx)}px2 ${JSON.stringify(r.cover.giftArt)}, pill ${f(r.state === 'active' ? r.cover.pillPx : r.cover.pill)}, santa in ${r.cover.santa.inside} pts depth ${f(r.cover.santa.depth)}, other ${JSON.stringify(r.cover.other)}`);
+    console.log(`  accepted ${r.width} ${r.market} ${r.date} slot ${r.slot}: box ${r.cover.santa.inside ? `${f(r.cover.santa.depth)} px inside his art` : `${f(r.cover.santa.gap)} px away`}, painted gap ${f(pg(r))} px, overlapping device px ${r.cover.santaPx?.both}`);
+  // every other overlap is a failure: opaque art of any gift under a label, the TODAY pill, Santa inside or closer than 1 px to a past /
+  // future label (its box, or any pixel it paints), another label
+  const santaBad = (r) => r.state !== 'active' && (r.cover.santa.inside > 0 || pg(r) < 1);
+  const bad = rows.filter((r) => r.cover.giftArtPx > 0.5 || (r.state === 'active' ? (r.cover.pillPx ?? 0) > 0 : r.cover.pill > 0) || santaBad(r) || r.cover.other.length);
+  console.log(`\nOVERLAPS, FAIL (gift art px>0.5 | TODAY pill | Santa inside / < 1 px from a past or future label | other label): ${bad.length} (active ${bad.filter((r) => r.state === 'active').length}, missed ${bad.filter((r) => r.state === 'missed').length}, locked ${bad.filter((r) => r.state === 'locked').length})`);
+  for (const r of bad.slice(0, 120))
+    console.log(`  ${r.width} ${r.market} ${r.date} ${r.state} slot ${r.slot} (label day ${r.day}, ${f(r.labelH / r.st)} stage px high): art ${f(r.cover.giftArtPx)}px2 ${JSON.stringify(r.cover.giftArt)}, pill ${f(r.state === 'active' ? r.cover.pillPx : r.cover.pill)}, santa box ${r.cover.santa.inside ? `${f(r.cover.santa.depth)} px inside` : `${f(r.cover.santa.gap)} px away`}, santa painted gap ${f(pg(r))} px (${r.cover.santaPx?.both || 0} device px overlap), other ${JSON.stringify(r.cover.other)}`);
   console.log(`\nCENTRING FAILS: ${fails}   OVERLAP FAILS: ${bad.length}   accepted today-label touches: ${accepted.length}`);
   process.exitCode = fails || bad.length ? 1 : 0;
 }
