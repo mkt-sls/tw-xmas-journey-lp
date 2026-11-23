@@ -311,8 +311,17 @@
 .page[data-layout='mobile'] .route-wrap {
   margin-top: -16px;
 }
+/* How it works: the Figma mobile frame (58:875) puts the title glyphs ~5.5px below the last route dots. The dots always end at the bottom
+   of the route box (the stage clips them) and the title ink starts 5px inside .how, so margin 0 = 5.5px. The pull is measured against the
+   box, not a fixed y. Below 390 Santa on the last stop (Dec 26) sits on the last dots and shrinks with --s while the title does not, so the
+   pull eases from 10px (s = 1) to 7px (s <= 0.923, 360 and below): keeps >= 8px between Santa / labels and the title. */
 .page[data-layout='mobile'] .how {
-  margin-top: 10px;
+  margin-top: calc(10px - clamp(7px, 7px + (var(--s, 1) - 0.923) * 39px, 10px));
+}
+/* after the campaign the stage has 45*s extra room below the last pedestal for Santa and the dots end 30.5*s into it (measured at 390):
+   pull the title up by the empty rest so the gap to the dots is the same as on the other days */
+.page[data-layout='mobile']:has([data-santa-end]) .how {
+  margin-top: calc(10px - clamp(7px, 7px + (var(--s, 1) - 0.923) * 39px, 10px) - var(--stage-pad-b, 0px) + 30.5px * var(--s, 1));
 }
 
 /* ================= desktop ================= */
