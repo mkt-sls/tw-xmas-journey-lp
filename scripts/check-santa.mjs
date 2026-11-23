@@ -16,6 +16,9 @@
 // line tangent, nose pointing along the route towards today's stop (after the campaign: forwards), and no part of Santa's
 // opaque silhouette over a gift, the TODAY pill, a label card or the intro text; on Dec 1 his centre is left of the Dec 1 stop
 // (he rides the lead-in line BEFORE it).
+// Accepted, not failed (owner 2026-11-23, "like JP"): on MOBILE his art touching TODAY's label card (Dec 1, Dec 26: the holly, and for 2-line names the card,
+// some long names on Dec 2-25): the label is exactly centred on its gift and Santa stays where he is. Shown as "accepted" in the
+// overlap column and counted in the summary. Every other label, the gifts, the pill and the intro text stay pass/fail.
 // Information only (owner decision, T5h): whether the BOUNDING BOX of his opaque silhouette touches the box of a gift/pedestal,
 // TODAY pill or label. His pose is diagonal, so the rectangles often touch while no pixel does (mobile: his raised hand above
 // the TODAY pill). Shown in the "bbox clear" column and counted in the summary, not part of pass/fail.
@@ -218,7 +221,10 @@ async function measure(page, boardPx) {
         obstacles.push({ kind: 'gift', l: r.left + x0 * sx, t: r.top + y0 * sy, r: r.left + x1 * sx, b: r.top + y1 * sy });
       }
       add('.today-pill', 'pill');
-      add('.label', 'label');
+      // today's MOBILE label: Santa touching it is accepted (owner 2026-11-23, like Jackpot: label exactly centred, Santa unchanged)
+      const mobile = document.querySelector('.page')?.dataset.layout === 'mobile';
+      add(mobile ? '.label:not(.label--active)' : '.label', 'label');
+      if (mobile) add('.label--active', 'today-label');
       // intro text: the line boxes of the text itself, not the full-width paragraph
       document.querySelectorAll('.intro__eyebrow, .intro__title, .intro__sub, .intro__ended, .how__title').forEach((el) => {
         const range = document.createRange();
@@ -292,7 +298,10 @@ function evaluate(m, date) {
   }
   // cut off: any opaque part of Santa outside the route area (overflow hidden) or the viewport
   if (m.sil.some((p) => p.x < 0 || p.x > m.W || p.y < m.wrap[0] || p.y > m.wrap[1])) hits.push("clipped");
-  const overlapOk = hits.length === 0;
+  // accepted contacts are reported, not failed: today's mobile label (owner 2026-11-23, like JP)
+  const accepted = hits.filter((h) => h === 'today-label');
+  const real = hits.filter((h) => h !== 'today-label');
+  const overlapOk = real.length === 0;
   // bounding box of the opaque silhouette against the boxes of gifts/pedestals, the TODAY pill and the labels
   const xs = m.sil.map((p) => p.x);
   const ys = m.sil.map((p) => p.y);
@@ -307,7 +316,7 @@ function evaluate(m, date) {
   // "on the line BEFORE the first stop" (his board is earlier along the route than the stop)
   const dec1Ok = date !== '2026-12-01' || (m.W < 1024 ? mid.s < nearest(m.line, m.stop, false).s : santaCx < m.stop.x);
   const pass = maxDist <= MAX_DIST && diff <= MAX_ANGLE && facingOk && overlapOk && dec1Ok;
-  return { maxDist, diff, facingOk, overlapOk, hits: [...new Set(hits)], bboxOk, boxHits: [...new Set(boxHits)], dec1Ok, santaCx, stopX: m.stop.x, pass };
+  return { maxDist, diff, facingOk, overlapOk, hits: [...new Set(real)], accepted: [...new Set(accepted)], bboxOk, boxHits: [...new Set(boxHits)], dec1Ok, santaCx, stopX: m.stop.x, pass };
 }
 
 // ---------------------------------------------------------------- run
@@ -362,12 +371,15 @@ async function main() {
     for (const r of rows) {
       if (FAILS_ONLY && r.pass) continue;
       console.log(
-        `${pad(r.date, 11)}| ${pad(r.width, 6)}| ${pad(r.maxDist.toFixed(2), 12)}| ${pad(r.diff.toFixed(1) + 'deg', 11)}| ${pad(r.facingOk ? 'yes' : 'NO', 10)}| ${pad(r.overlapOk ? 'yes' : 'NO ' + r.hits.join('+'), 11)}| ${pad(r.bboxOk ? 'yes' : 'NO ' + r.boxHits.join('+'), 16)}| ${pad(r.date === '2026-12-01' ? `${r.dec1Ok ? 'yes' : 'NO'} ${r.santaCx.toFixed(0)}<${r.stopX.toFixed(0)}` : '-', 22)}| ${r.pass ? 'PASS' : 'FAIL'}`,
+        `${pad(r.date, 11)}| ${pad(r.width, 6)}| ${pad(r.maxDist.toFixed(2), 12)}| ${pad(r.diff.toFixed(1) + 'deg', 11)}| ${pad(r.facingOk ? 'yes' : 'NO', 10)}| ${pad(r.overlapOk ? (r.accepted.length ? 'accepted' : 'yes') : 'NO ' + r.hits.join('+'), 11)}| ${pad(r.bboxOk ? 'yes' : 'NO ' + r.boxHits.join('+'), 16)}| ${pad(r.date === '2026-12-01' ? `${r.dec1Ok ? 'yes' : 'NO'} ${r.santaCx.toFixed(0)}<${r.stopX.toFixed(0)}` : '-', 22)}| ${r.pass ? 'PASS' : 'FAIL'}`,
       );
     }
     const fails = rows.filter((r) => !r.pass).length;
     const nW = new Set(rows.map((r) => r.width)).size;
     console.log(`\n${rows.length - fails}/${rows.length} pass${fails ? `, ${fails} FAIL` : ''} (${nW} widths x ${DATES.length} dates)`);
+    const acc = rows.filter((r) => r.accepted.length);
+    if (acc.length)
+      console.log(`accepted (owner 2026-11-23, like JP): Santa touches today's mobile label in ${acc.length}/${rows.length} rows (${acc.map((r) => `${r.date} ${r.width}`).join(', ')})`);
     const boxTouch = rows.filter((r) => !r.bboxOk).length;
     console.log(`info: bounding box touches a gift/pill/label box (no pixel overlap needed) in ${boxTouch}/${rows.length} rows`);
     if (fails) console.log(`failing widths: ${[...new Set(rows.filter((r) => !r.pass).map((r) => r.width))].join(',')}`);

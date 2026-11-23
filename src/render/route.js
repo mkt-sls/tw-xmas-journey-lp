@@ -24,7 +24,18 @@ const MOBILE = {
   py: [108.6, 294, 462.6],
   kActive: 1.05,
   kOther: 0.72,
-  // label anchors per slot: [left edge, top offset from pedestal centre, grow to the left?]
+  // vertical middle of each gift's opaque art relative to the pedestal centre py, stage units: gift + podium, and for today's gift
+  // also the present drawn on top (.gift__front); never the TODAY pill. Measured on the TW art by scripts/check-label-centre.mjs
+  // (giftMidRel: active -13.692..-13.696, missed / locked -10.427..-10.438 at 320/360/390/430). The labels centre on it (see stopHtml).
+  giftMid: { active: -13.69, missed: -10.44, locked: -10.44 },
+  // the past label of slot 0 is raised this far above its centred position (stage px): Santa, riding between slot 0 and 1, would otherwise
+  // poke into its bottom-left corner (Jackpot owner decision 2026-11-20, kept for TW 2026-11-23; scripts/check-label-centre.mjs)
+  pastSlot0Raise: 4,
+  // today's label is wider than the others: when it sits right of the gift (slots 0 and 2: Dec 1, Dec 26) it moves this far further
+  // out so it does not cover the podium or the TODAY pill
+  activeShiftRight: 16,
+  // label anchors per slot: [left edge offset, top offset from pedestal centre (only used by the top-pinned past labels, see
+  // mobileLabelPlacement), grow to the left?]; every other label gets its vertical position from its gift's middle (giftMid)
   label: [
     { dx: 39, dy: -44.6, left: false },
     { dx: -84, dy: -67, left: true },
@@ -33,6 +44,25 @@ const MOBILE = {
 };
 
 export const stageSpec = (layout) => (layout === 'desktop' ? DESKTOP : MOBILE);
+
+/**
+ * Mobile: where a route label sits vertically, by its state (active / missed / locked) and slot (0-2, top to bottom).
+ * Returns { centred, lower }: centred = the label's vertical middle sits on the middle of its own gift art (giftMid), whatever its
+ * line count, then moved `lower` stage px down (negative = up); not centred = top-pinned at the Figma offset MOBILE.label[slot].dy.
+ * The exceptions are Santa clearance for PAST labels (Jackpot owner decisions 2026-11-20, kept for TW 2026-11-23):
+ * - two PAST labels stay top-pinned: slot 1 (today in slot 2, Dec 26) and slot 2 (campaign over). Centred, they would sit where Santa
+ *   rides (measured on TW: 7.9-10.6 / 14.5-19.4 px inside his art);
+ * - the past label of slot 0 is centred but raised (pastSlot0Raise; centred it is 2.8-3.7 px inside his art).
+ * Today's label is exactly centred, like Jackpot, and Santa stays where he is: on Dec 1 (all markets), Dec 26 (all markets: the holly; DE also the box) and Dec 2-25 for
+ * some long names (320-360) his board touches its top corner (holly / snow cap). Accepted, owner 2026-11-23 ("like JP, keep it
+ * simple"; Jackpot has the same on Dec 2-25 for long names). scripts/check-label-centre.mjs and check-santa.mjs report it as accepted.
+ * scripts/check-label-centre.mjs reads this function to know what to expect.
+ */
+export function mobileLabelPlacement(state, slot) {
+  if (state === 'missed' && slot > 0) return { centred: false, lower: 0 };
+  if (state === 'missed') return { centred: true, lower: -MOBILE.pastSlot0Raise };
+  return { centred: true, lower: 0 };
+}
 
 // Top Win: Santa is shown at SANTA_SC (0.8 of the Figma hero size) and stands at t=0.44 of the segment before today's stop (0.48 for slot 4);
 // larger sizes failed scripts/check-santa.mjs (board off the line / silhouette over a gift). ART = silhouette reach incl. board tilt, measured on screen.
@@ -276,7 +306,7 @@ function stopHtml({ layout, spec, slot, day, today, ui, uiLang, card, chipDay, c
       ${state === 'active' ? `<span class="today-pill" aria-hidden="true">${esc(ui.today)}</span>` : ''}
     </button>`;
 
-  // label position. The label is pulled into place with `transform: translateX(...)`, while today's label breathes with the
+  // label position. The label is pulled into place with `transform: translateX(...)` (mobile: `translate(x, -50%)`), while today's label breathes with the
   // independent `scale` property (anim.css). `scale` grows about the transform-origin of the box BEFORE that translate, so the
   // origin must be the label's visual centre in those un-translated coordinates: x 0 when pulled left by half its width,
   // x -50% when pulled left by its full width. Otherwise the card grows from an edge and drifts sideways
@@ -287,9 +317,15 @@ function stopHtml({ layout, spec, slot, day, today, ui, uiLang, card, chipDay, c
     pos = `left:calc(${mid}px + var(--f) * ${cx - mid}px + var(--dx, 0px));top:${r(py + dy)}px;transform:translateX(-50%);transform-origin:0 50%`;
   } else {
     const a = MOBILE.label[slot];
-    // today's label is wider than the others: when it sits right of the gift (Dec 1, Dec 26) it moves 16px further out so it does not cover the podium
-    const dx = a.dx + (state === 'active' && !a.left ? 16 : 0);
-    pos = `left:${r(cx + dx)}px;top:${r(py + a.dy)}px;${a.left ? 'transform:translateX(-100%);transform-origin:-50% 50%' : ''}`;
+    const dx = a.dx + (state === 'active' && !a.left ? MOBILE.activeShiftRight : 0);
+    const place = mobileLabelPlacement(state, slot);
+    if (place.centred) {
+      // the label's vertical MIDDLE sits on the middle of its gift art (translateY -50%), whatever its line count or the countdown chip.
+      // The un-translated box's top edge is then the visual centre, so today's breathing `scale` grows about y 0 (x as before).
+      pos = `left:${r(cx + dx)}px;top:${r(py + MOBILE.giftMid[state] + place.lower)}px;transform:translate(${a.left ? '-100%' : '0'},-50%);transform-origin:${a.left ? '-50%' : '50%'} 0`;
+    } else {
+      pos = `left:${r(cx + dx)}px;top:${r(py + a.dy)}px;${a.left ? 'transform:translateX(-100%);transform-origin:-50% 50%' : ''}`;
+    }
   }
   const near = layout === 'desktop' ? Math.abs(slot - 2) === 1 : true;
   const name = esc(card.location);
