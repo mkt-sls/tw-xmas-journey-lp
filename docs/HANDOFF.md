@@ -52,3 +52,5 @@ node scripts/check-line-ink.mjs
 node scripts/check-texts.mjs --widths=390             # ~6 min per width, one width per process
 ```
 Run ONE check at a time: several Vite servers together hit an EPERM on node_modules/.vite/deps, and on 2026-11-20 parallel checks ran the PC out of memory.
+
+`check-texts --mobile` emulates a real phone (isMobile, hasTouch, overlay scrollbars) for widths up to 768. Without it headless Chrome keeps a 15 px classic scrollbar gutter, which shows up as a 1 px cut of the DE "Weihnachts" at 320 that a real phone does not have. Run on 2026-11-23 at 320: the only fails left are the line-box overlap of the title spans (day 1); ink measured by pixel diff (320/360/375, DE/EN_GBP/NL/RO_MDL) has a gap of at least 3.67 px and no shared pixels.

@@ -17,7 +17,7 @@ import { renderIntro } from './render/intro.js';
 import { renderLegend } from './render/legend.js';
 import { renderLegal } from './render/legal.js';
 import { closeOverlay, openOverlay } from './render/overlay.js';
-import { deskZoom, desktopSantaFit, drawGarlands, fitLabels, mobileZoom, renderRoute, santaAngle, stageSpec, tickCountdown } from './render/route.js';
+import { deskZoom, desktopSantaFit, drawGarlands, fitLabels, layoutWidth, mobileZoom, renderRoute, santaAngle, stageSpec, tickCountdown } from './render/route.js';
 import { track } from './track.js';
 import { initAmbient } from './anim/ambient.js';
 import { checkNewDay } from './anim/lastSeen.js';
@@ -60,15 +60,15 @@ function fitStage() {
   const spec = stageSpec(l);
   // desktop: see desktopFit; mobile: the 390px stage shrinks on narrower phones (360 -> 0.92) so nothing is cut off
   // desktop wider than the 1920 design: the whole page is CSS-zoomed by z so it fills the viewport; everything inside works in
-  // "design" pixels, so the usable width is innerWidth / z (= 1920 above 1920, the real width below)
-  const z = l === 'desktop' ? deskZoom(window.innerWidth) : mobileZoom(window.innerWidth);
-  const vw = window.innerWidth / z;
+  // "design" pixels, so the usable width is layoutWidth() / z (= 1920 above 1920, the real width below)
+  const z = l === 'desktop' ? deskZoom(layoutWidth()) : mobileZoom(layoutWidth());
+  const vw = layoutWidth() / z;
   const santa = page.querySelector('.santa');
   const slot = santa ? Number(santa.dataset.santaSlot) : 2;
   const mode = santa ? santa.dataset.santaMode : 'day';
   // desktop: the squeeze f, the stage shift dx and Santa's scale come from desktopSantaFit (route.js), so he is never cut off
   // at an edge or squeezed onto a gift at any width (scripts/check-santa.mjs --sweep)
-  const { s, f, dx, sc } = l === 'desktop' ? desktopSantaFit(vw, slot, mode) : { s: Math.min(1, window.innerWidth / 390), f: 1, dx: 0, sc: null };
+  const { s, f, dx, sc } = l === 'desktop' ? desktopSantaFit(vw, slot, mode) : { s: Math.min(1, layoutWidth() / 390), f: 1, dx: 0, sc: null };
   page.style.setProperty('--z', z);
   page.style.setProperty('--s', s);
   page.style.setProperty('--f', f);
