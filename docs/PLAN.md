@@ -6,7 +6,7 @@ Skeleton copied from the Jackpot Christmas Journey LP and re-labelled for Top Wi
 - 26 days, 1–26 December 2026.
 - Markets: DE (EUR, de), NL (EUR, nl), EN_GBP (GBP, en), RO_MDL (MDL, ro). Fallback market: EN_GBP.
 - One deposit link per day on `tw-de.icu`, with that day's promo code, for all markets.
-- LOG IN, REGISTER and T&C use that same day link.
+- LOG IN and REGISTER use that same day link. T&C ("Full terms & conditions" on the card) opens https://top-win-uk.top/en/bonus-policy on every market and day, in a new tab (owner 2026-11-24). No T&C link in the footer.
 - No mini-game here (separate repo).
 - Footer: "18+ · Play responsibly", without BeGambleAware.
 

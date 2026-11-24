@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import links from '../data/links.json';
 import markets from '../data/markets.json';
-import { CAMPAIGN, depositLinkFor, linkDay, linkFor } from './config.js';
+import { CAMPAIGN, depositLinkFor, linkDay, linkFor, links as cfgLinks } from './config.js';
 
 describe('per-day deposit links', () => {
   it('has 26 days in order with December 2026 dates', () => {
@@ -30,7 +30,7 @@ describe('per-day deposit links', () => {
   });
 });
 
-describe('login / register / terms use the current day link', () => {
+describe('login / register use the current day link', () => {
   const at = (iso) => linkDay(new Date(iso));
   it('clamps the day: before day 1 -> 1, after day 26 -> 26', () => {
     expect(at('2026-11-19T12:00:00')).toBe(1);
@@ -39,10 +39,20 @@ describe('login / register / terms use the current day link', () => {
     expect(at('2026-12-26T23:59:59')).toBe(26);
     expect(at('2027-01-05T12:00:00')).toBe(CAMPAIGN.days);
   });
-  it('linkFor maps all four names to that day link', () => {
-    for (const name of ['login', 'register', 'terms', 'campaignTerms', 'deposit']) {
+  it('linkFor maps login, register, deposit to that day link', () => {
+    for (const name of ['login', 'register', 'deposit']) {
       expect(linkFor(name, 'DE', 7)).toBe(links[6].deposit);
       expect(linkFor(name, 'RO_MDL', 26)).toBe(links[25].deposit);
     }
+  });
+});
+
+describe('T&C link', () => {
+  const TC = 'https://top-win-uk.top/en/bonus-policy';
+  it('is the bonus-policy URL on every market and every day, not the day link', () => {
+    for (const m of markets) for (let d = 1; d <= CAMPAIGN.days; d++) expect(linkFor('terms', m.id, d)).toBe(TC);
+  });
+  it('campaignTerms equals terms', () => {
+    expect(cfgLinks.campaignTerms).toBe(TC);
   });
 });

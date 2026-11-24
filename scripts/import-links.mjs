@@ -176,8 +176,8 @@ item(
   'There is no tracking system, so there is no credited state. We dropped the body text of step 3; the step shows only its title "Deposit & claim".',
 );
 item(
-  'LOG IN, REGISTER and "Full terms & conditions" links',
-  `All three use the deposit link of the current campaign day. Before 1 December they use the day 1 link, after 26 December the day 26 link. Please confirm.`,
+  'LOG IN and REGISTER links',
+  `Both use the deposit link of the current campaign day. Before 1 December they use the day 1 link, after 26 December the day 26 link. "Full terms & conditions" on the card opens https://top-win-uk.top/en/bonus-policy on every market and day (owner 2026-11-24). Please confirm.`,
 );
 item(
   'Translated by us — please check',
