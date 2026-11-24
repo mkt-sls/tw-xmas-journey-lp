@@ -10,6 +10,7 @@ export const CAMPAIGN = {
 };
 
 export const links = {
+  logo: 'https://top-win.global', // header logo: same URL on every market, opens in a new tab
   deposit: '#', // last-resort fallback only
   terms: 'https://top-win-uk.top/en/bonus-policy', // "Full terms & conditions" on the card: same URL on every market and day, opens in a new tab
   campaignTerms: 'https://top-win-uk.top/en/bonus-policy', // shown nowhere (no footer link), kept equal to terms

@@ -16,8 +16,8 @@
 //
 // HEADER (logo + market selector only, no LOG IN / REGISTER; owner 2026-11-24), per market x width (fresh load per market and width):
 // - no .btn-outline / .btn-register in the header; logo and selector inside the viewport with >= 8px to each edge and inside the header side padding;
-// - >= 8px between logo and selector; selector >= 31px high, 44x44 tap area; mobile (< 1024): logo centre = header centre within 0.5px;
-//   desktop: logo at the left padding; no horizontal page scroll.
+// - >= 8px between logo and selector; selector >= 31px high, 44x44 tap area; logo centre = header centre within 0.5px on every width;
+//   no horizontal page scroll.
 // LABELS (--labels): the label of today's gift (.label--active) for each day 1-26 and, on top of the header rules, every label:
 // - label box >= 8px from both screen edges and the "open gift" button text not clipped and inside its label;
 // - the active label does not overlap its own gift, the TODAY pill or the other labels.
@@ -92,7 +92,6 @@ function measureHeader() {
 function headerProblems(m) {
   const p = [];
   const it = m.items;
-  const mobile = m.vw < 1024;
   if (m.texts) p.push(`${m.texts} LOG IN / REGISTER button(s) still in the header`);
   for (const k of ['logo', 'flag']) {
     const b = it[k];
@@ -104,10 +103,9 @@ function headerProblems(m) {
   if (it.flag.right > m.padR + 0.5) p.push(`selector ${(it.flag.right - m.padR).toFixed(1)}px outside the right padding`);
   if (it.logo.left < m.padL - 0.5) p.push(`logo ${(m.padL - it.logo.left).toFixed(1)}px outside the left padding`);
   if (it.flag.left < it.logo.right + MIN_LOGO_GAP - 0.01) p.push(`logo / selector gap ${(it.flag.left - it.logo.right).toFixed(1)}px (< ${MIN_LOGO_GAP})`);
-  if (mobile) {
-    const lc = (it.logo.left + it.logo.right) / 2;
-    if (Math.abs(lc - m.hdrCentre) > 0.5) p.push(`logo centre ${lc.toFixed(2)} vs header centre ${m.hdrCentre.toFixed(2)} (> 0.5px apart)`);
-  } else if (Math.abs(it.logo.left - m.padL) > 0.5) p.push(`desktop logo ${(it.logo.left - m.padL).toFixed(1)}px from the left padding (should be at it)`);
+  // logo centred on the full header width on every layout (owner 2026-11-24)
+  const lc = (it.logo.left + it.logo.right) / 2;
+  if (Math.abs(lc - m.hdrCentre) > 0.5) p.push(`logo centre ${lc.toFixed(2)} vs header centre ${m.hdrCentre.toFixed(2)} (> 0.5px apart)`);
   if (!m.tap) p.push(`selector tap area smaller than ${TAP}x${TAP}px`);
   if (m.scrollW > m.vw + 0.5) p.push(`page scrolls sideways (${m.scrollW} > ${m.vw})`);
   return p;
