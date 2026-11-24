@@ -109,7 +109,7 @@ const PATH = {
 // before day 1). 'before' = lead-in before day 1; 'end' = segment after the last stop of the window.
 const SANTA_SPOT = {
   desktop: { before: [0, 0.28], end: [5, 0.42], today: [[0, 0.28], [1, 0.44], [2, 0.44], [3, 0.44], [4, 0.48]] },
-  mobile: { before: [0, 0.32], end: [3, 0.62], today: [[0, 0.32], [1, 0.53], [2, 0.53]] },
+  mobile: { before: [0, 0.32], end: [3, 0.62], today: [[0, 0.28], [1, 0.53], [2, 0.53]] },
 };
 
 const bez = (s, t) => {
