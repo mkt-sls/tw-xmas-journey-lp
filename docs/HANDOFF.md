@@ -1,4 +1,4 @@
-# Top Win Christmas Journey — handoff 2026-11-24 (updated after efd79be)
+# Top Win Christmas Journey — handoff 2026-11-24 (page code efd79be; later commits are docs only)
 
 For the next session (possibly on another PC). What is live, what is half done, what the owner still has to decide.
 
@@ -7,7 +7,7 @@ For the next session (possibly on another PC). What is live, what is half done, 
 - Work rules of the owner: questions get answers; code changes only after the owner says "start"; pushes only after "push". Never run python in this repo.
 
 ## Live and repo state (2026-11-24)
-- Live = main `efd79be` (merge of `tw-logo`). GitHub Actions run 45405161613 succeeded on 2026-11-24. GitHub Pages deploys on every push to `main`.
+- Live page code = `efd79be` (merge of `tw-logo`). Later commits on main are docs only. GitHub Actions run 45405161613 succeeded on 2026-11-24. GitHub Pages deploys on every push to `main`.
 - Live URL: https://mkt-sls.github.io/tw-xmas-journey-lp/ .
 - Recent deploys, newest first (all green, checked with `gh run list` on 2026-11-24):
   - `efd79be` / `665fdc3`, run 45405161613: header logo centred on every layout and linked to https://top-win.global in a new tab (details in the Header section).
@@ -25,7 +25,7 @@ For the next session (possibly on another PC). What is live, what is half done, 
 
 ### Header logo link (`665fdc3` / `efd79be`, 2026-11-24)
 - Logo centred on all layouts (desktop and mobile). `links.logo` in `src/config.js` = https://top-win.global, opens in a new tab (owner confirmed).
-- Only checked from this PC: https://top-win.global redirected to https://top-win-uk.top/uk/casino. Where it lands for DE, NL, RO and the other countries is not known.
+- https://top-win.global is the link the owner was given. Owner closed the question (2026-11-24): where it lands per country is not our task. (From this PC it redirected to https://top-win-uk.top/uk/casino.)
 - Test: `src/render/header.test.js`.
 
 ### Favicon (`5b7aaac`, 2026-11-24)
@@ -34,7 +34,9 @@ For the next session (possibly on another PC). What is live, what is half done, 
 ### Check results on efd79be (2026-11-24)
 - `npm test` 100/100.
 - `check-texts` on b4c589c (header before the logo was centred): widths 360/390/430/768/1024/1366/1920 gave 16 failures, all overlap-text on `.intro__title-a` (4 per market). On the merged-earlier code 322dcc1 (page code, not efd79be) 320 and 1440 were also run.
-- `check-texts` on the logo branch 665fdc3: only 390 `--mobile` (the 4 known title-a / title-b box overlaps; ink gap 4.3–6.7 px, 0 shared pixels) and 1366 (0 fails). 375 was not run.
+- `check-texts` on the logo branch 665fdc3: only 390 `--mobile` (the 4 known title-a / title-b box overlaps; ink gap 4.3–6.7 px, 0 shared pixels) and 1366 (0 fails).
+- `check-texts` on the centred-logo page code (`efd79be`, 2026-11-24): 320/360/375/430/768 with `--mobile`, and 768/1024/1440/1920 desktop, 4 markets, days 1-26: 0 new fails. 4 known `.intro__title-a` box overlaps (one per market, day 1) at each width of 768 or less; 0 at 1024 or more. Glyph gap not re-measured. Stop rule used: stop when under 3 GB free RAM.
+- Figma mobile review of the parts not covered before, on live `efd79be` (2026-11-24): Figma has only EN Dec 7, so there is no frame for Dec 1, Dec 26, the ended state, DE/NL/RO or 320; no motion; JP at 320 not checked. Page scroll width equals the viewport in 15 of 15 runs; logo centred at 390 and 320. 4 differences: step 3 body absent and wagering / valid-until rows hidden (both decided before); short month on the cards vs long month in Figma; RO_MDL title on 3 lines (see open item B).
 - `check-modal-jump`: 300/300 on `b4c589c` (EN_GBP and RO_MDL); 60/60 on the logo branch (4 markets x 5 widths).
 - Check runs were done per market and width. On this low-memory machine the full matrix crashes.
 
@@ -55,15 +57,29 @@ For the next session (possibly on another PC). What is live, what is half done, 
 ## Figma review
 - Desktop (Task D): closed, no change. The 15 px header gap was only the classic scrollbar. Today's golden ring exists at the Figma position but fades from 0.6 to 0 with the pulse, and is hidden under `prefers-reduced-motion`. Owner chose to keep it.
 - Mobile: review done on `1ba8b72`, before the header change; owner then asked to follow Jackpot. Compared by reading the code (not by screenshot): card docked at the bottom, TODAY pill visible, footer colour lighter than Figma for contrast, 56 px header plus 1 px line, step line-height 1.4 — same as or the same idea as JP. Kept on purpose: Santa scale 0.8 in TW vs 0.62 in JP; footer gap 96 px vs 74 px in JP; button text from the TW data.
-- Not reviewed on mobile yet: Dec 26, the ended state, the DE/NL/RO cards, 320 px, animations. Dec 1 mobile Santa changed in `b4c589c` (see above); no Figma review of that change is recorded.
+- Not reviewed on mobile: anything Figma has no frame for (Dec 1, Dec 26, the ended state, DE/NL/RO, 320 px), motion, and JP at 320. The part that could be compared was reviewed on `efd79be` (see Check results). Dec 1 mobile Santa changed in `b4c589c`; no Figma frame exists for it.
 
 ## Owner decisions still open
-- None. Nothing is decided that waits on the owner.
+- None that block. Two items below (A, B) are open but NOT STARTED in code: each waits for the owner's "start", and publishing waits for "push".
 
-## Next tasks (none decided)
-1. Check where https://top-win.global lands for DE, NL, RO and EN (only the UK redirect is known, from this PC).
-2. Run check-texts for 375 on any header version, and for 320/360/430/768/1024/1440/1920 on the centred logo, one width per process, if the owner wants them.
-3. Figma mobile review of the items listed above, if the owner asks for it.
+## Open, not started
+### A. Card texts (owner's words)
+- Locked card title with the long month, not in caps ("Opens: 8 December"). Master's proposal: keep day and month together with a no-break space; NL/RO month in lowercase; DE/NL/RO titles on 2 lines is normal.
+- Day pill shows only the day ("DAY 7"), no date. The master understood this for all card states and markets, caps kept; not confirmed by the owner.
+- The short month is data: `data/cards/<market>.json` raw lines, imported by `scripts/import-sheet.mjs`, rendered in `src/render/card.js` lines 45, 47, 48, 79. The change must survive a re-import.
+- Measured with caps and an unkept date: at 320 the NL locked title takes 3 lines (now 2, card +32 px); at 390 DE and RO take 2 lines (now 1), EN 1. The no-caps version, and whether the date still shows on available and missed cards, is being measured / not yet measured.
+
+### B. RO_MDL title
+- 3 lines at widths 320-366 ("CĂLĂTORIA DE" is 335 px in a 288 px box at 320, font 46 px).
+- Proposal: smaller font only when the first part wraps, 39.5 px at 320 (margins 16.2 px), 2 lines, route 57 px higher. Other markets unchanged. JP has no fit (30 px font).
+- After the change re-run check-santa, check-label-centre, check-header and check-texts for RO.
+- The owner sent the proposal picture without words: probably likes it, not confirmed.
+
+### Way of working
+- Owner wants before/after pictures for every visual choice. Pictures are on one PC only: `/c/Users/grosu.b/.claude/projects/D---claude-TW-tw-xmas-journey-lp/memory/xmas-before-after` (A1-A5, B1-B2 and worker specs; not in the repo).
+
+## Next tasks
+1. A and B above, one at a time, each only after the owner says "start".
 
 ## Known non-issues (measured, do not re-chase)
 - Two-part title boxes overlap at 375–768 px but glyphs never touch (gap 5–12 px). At 390 the ink gap is 4.3–6.7 px, 0 shared pixels.
