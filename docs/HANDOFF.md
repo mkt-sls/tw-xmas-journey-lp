@@ -1,4 +1,4 @@
-# Top Win Christmas Journey — handoff 2026-11-24
+# Top Win Christmas Journey — handoff 2026-11-24 (updated after efd79be)
 
 For the next session (possibly on another PC). What is live, what is half done, what the owner still has to decide.
 
@@ -7,23 +7,46 @@ For the next session (possibly on another PC). What is live, what is half done, 
 - Work rules of the owner: questions get answers; code changes only after the owner says "start"; pushes only after "push". Never run python in this repo.
 
 ## Live and repo state (2026-11-24)
-- Live = main `322dcc1` (Actions run 45370386402 ok, live assets `index-DKIRXiO-.js` / `index-BTB5yx5J.css`). The commit that adds this handoff comes after `322dcc1` and changes docs only; the page code stays at `322dcc1`. GitHub Pages deploys on every push to `main`.
+- Live = main `efd79be` (merge of `tw-logo`). GitHub Actions run 45405161613 succeeded on 2026-11-24. GitHub Pages deploys on every push to `main`.
 - Live URL: https://mkt-sls.github.io/tw-xmas-journey-lp/ .
-- Done and live 2026-11-24:
-  - `128cb09` / merge `1ba8b72`: card "Full terms & conditions" opens https://top-win-uk.top/en/bonus-policy on every market and every day, in a new tab. The owner chose the `/en/` URL for all markets. The de/nl/ro paths answer 200; their translation was not checked.
-  - `f32576c` / merge `67d68c2`: header like Jackpot, logo + market selector only (details in the Header section below).
-  - `322dcc1`: comment fix in the docs (header desktop padding comment now matches the CSS).
+- Recent deploys, newest first (all green, checked with `gh run list` on 2026-11-24):
+  - `efd79be` / `665fdc3`, run 45405161613: header logo centred on every layout and linked to https://top-win.global in a new tab (details in the Header section).
+  - `5b7aaac`, run 45394740693: favicon is now `favicon.ico` (16, 32, 48 px).
+  - `b4c589c`, run 45394239178: locked day card button and Dec 1 mobile Santa (details below).
+  - `a9350f5`: merge `tw-nl-santa`, commit subject "keep Santa clear of the TODAY pill on the NL route". Earlier this was listed as an open issue; the commit subject says it is fixed.
+  - Earlier on 2026-11-24: `128cb09` / merge `1ba8b72` (card "Full terms & conditions" opens https://top-win-uk.top/en/bonus-policy on every market and every day, in a new tab; the owner chose the `/en/` URL for all markets; de/nl/ro paths answer 200, their translation was not checked); `f32576c` / merge `67d68c2` (header like Jackpot, logo + market selector only); `322dcc1` (comment fix in the docs, header desktop padding comment now matches the CSS, Actions run 45370386402).
 - Earlier, live since 2026-11-23 (`9b43678`): layout width port (page width without the classic scrollbar), Santa shrinks further below f 0.738, route legend removed on desktop and mobile, "How it works" gap to the route, mobile route labels centred on their own gifts like JP, past labels (yesterday, campaign over) kept clear of Santa, new label check script.
-- Check results on `322dcc1`: `npm test` 95/95, build ok, check-pulse 30/30, check-header all pass.
-- Check results on `f32576c` (header change): check-santa 112/112, check-modal-jump 0 jumps, check-label-centre --mobile 0 fails, check-header 36 + 648 label + 416 resize all pass.
-- **check-texts has NOT been run since the header change.** Last measured state (`9b43678`): known pre-existing text fails at 320/390 `--mobile` (4x intro title box overlap, letters at least 3.67 px apart, measured) and at 1366 (`.label__tag` over the active gift's transparent glow).
-- Known, not fixed: NL Dec 1 Santa touches the TODAY pill "VANDAAG" at 320–414 px (pre-existing). Jackpot also has Santa on today's label for long names Dec 2–25 (62 of 360 market-days, e.g. BG Dec 4) — owner: leave JP alone.
-- The machine was low on memory (Figma desktop app ~10 GB): long checks were killed; run them one at a time, narrow with `--markets` / `--widths`.
-- Untracked files `texts-failures-w1366.json` and `texts-failures-w390.json` in the repo root are check outputs, not part of the project: do not add or commit them.
 
-## Header (owner 2026-11-24, on main since `67d68c2`)
+### Dec 1 mobile Santa and locked card button (`b4c589c`, 2026-11-24)
+- Dec 1 on mobile: Santa moved. `SANTA_SPOT.mobile.today[0]` changed `t` from 0.32 to 0.28 in `src/render/route.js`. Only Dec 1, all markets. The NL glove now clears the VANDAAG pill. The value 0.27 breaks the 4 px board-to-line limit, so 0.28 was chosen.
+- Measured: `check-santa` 448/448 (4 markets x 4 widths x 28 dates). Before the change it was 446/448.
+- Not established: the exact gap in px. Two measurements disagree, so no number is written here.
+- Locked day card: the button shows only `ui.locked` (the word "Locked"). The date shows only in the title. Data and cards are untouched. An import would bring the date back into `lines[4]`, but the button no longer uses it. Test: `src/card.test.js`.
+
+### Header logo link (`665fdc3` / `efd79be`, 2026-11-24)
+- Logo centred on all layouts (desktop and mobile). `links.logo` in `src/config.js` = https://top-win.global, opens in a new tab (owner confirmed).
+- Only checked from this PC: https://top-win.global redirected to https://top-win-uk.top/uk/casino. Where it lands for DE, NL, RO and the other countries is not known.
+- Test: `src/render/header.test.js`.
+
+### Favicon (`5b7aaac`, 2026-11-24)
+- `favicon.ico`, multi-size 16, 32, 48 px. Taken unchanged from topwin-bet.icu, the same file as the main site.
+
+### Check results on efd79be (2026-11-24)
+- `npm test` 100/100.
+- `check-texts` on the new header: 1366 and 1440 = 0 fails. 320 and 390: only the 4 title-a / title-b box overlaps (at 390 the ink gap is 4.3–6.7 px, 0 shared pixels). These two widths are the only ones measured on this header.
+- `check-modal-jump`: 300/300 on `b4c589c` (EN_GBP and RO_MDL); 60/60 on the logo branch (4 markets x 5 widths).
+- Check runs were done per market and width. On this low-memory machine the full matrix crashes.
+
+### Earlier check results
+- On `322dcc1`: `npm test` 95/95, build ok, check-pulse 30/30, check-header all pass.
+- On `f32576c` (header change): check-santa 112/112, check-modal-jump 0 jumps, check-label-centre --mobile 0 fails, check-header 36 + 648 label + 416 resize all pass.
+
+- The machine was low on memory (Figma desktop app ~10 GB): long checks were killed; run them one at a time, narrow with `--markets` / `--widths`.
+- Deleted 2026-11-24: the untracked `texts-failures-w1366.json` and `texts-failures-w390.json` in the repo root. They were check outputs, not part of the project.
+
+## Header (owner 2026-11-24, on main since `67d68c2`; logo link since `efd79be`)
 - Header = logo + market selector only, like Jackpot (ported from JP `8811313`, `777a0e5`, `6fe54f0`). No LOG IN, no REGISTER, on desktop and mobile. Deposit links unchanged.
-- Mobile (below 1024 px): logo centred on the full header width, selector on the right. Selector button at 80% size; its tap area stays 44 px.
+- Logo: centred on the full header width on every layout, and links to https://top-win.global (new tab). Selector on the right. Selector button at 80% size; its tap area stays 44 px.
 - Styled scrollbars in TW colours: page scrollbar 8 px, was the classic 15 px. `layoutWidth()` reads the real page width, so layouts get 7 px more width on desktop with a mouse.
 - Removed from the code: `fitHeader`, the `data-fit` levels, `.btn-outline`, `.btn-register`, the login and register links.
 - The ui strings `login` / `register` stay in `data/ui` and in the importer (like Jackpot); the page no longer renders them.
@@ -31,22 +54,23 @@ For the next session (possibly on another PC). What is live, what is half done, 
 ## Figma review
 - Desktop (Task D): closed, no change. The 15 px header gap was only the classic scrollbar. Today's golden ring exists at the Figma position but fades from 0.6 to 0 with the pulse, and is hidden under `prefers-reduced-motion`. Owner chose to keep it.
 - Mobile: review done on `1ba8b72`, before the header change; owner then asked to follow Jackpot. Compared by reading the code (not by screenshot): card docked at the bottom, TODAY pill visible, footer colour lighter than Figma for contrast, 56 px header plus 1 px line, step line-height 1.4 — same as or the same idea as JP. Kept on purpose: Santa scale 0.8 in TW vs 0.62 in JP; footer gap 96 px vs 74 px in JP; button text from the TW data.
-- Not reviewed on mobile yet: Dec 1, Dec 26, the ended state, the DE/NL/RO cards, 320 px, animations.
+- Not reviewed on mobile yet: Dec 26, the ended state, the DE/NL/RO cards, 320 px, animations. Dec 1 mobile Santa changed in `b4c589c` (see above); no Figma review of that change is recorded.
 
 ## Owner decisions still open
 - None. Nothing is decided that waits on the owner.
 
 ## Next tasks (none decided)
-1. Run check-texts (`--mobile`) after the header change, one width per process.
-2. Figma mobile review of the items listed above, if the owner asks for it.
+1. Check where https://top-win.global lands for DE, NL, RO and EN (only the UK redirect is known, from this PC).
+2. Run check-texts on the header for widths not yet measured (360, 375, 768), one width per process, if the owner wants them.
+3. Figma mobile review of the items listed above, if the owner asks for it.
 
 ## Known non-issues (measured, do not re-chase)
-- Two-part title boxes overlap at 375–768 px but glyphs never touch (gap 5–12 px).
+- Two-part title boxes overlap at 375–768 px but glyphs never touch (gap 5–12 px). At 390 the ink gap is 4.3–6.7 px, 0 shared pixels.
 - Desktop label tag "HEUTIGER HALT" overlaps only the transparent glow of the gift button.
-- DE title "Weihnachts" 1 px cut at 320 px appears only with a 15 px desktop scrollbar; same on the old live build.
-- Desktop header gap of 15 px was only the classic scrollbar (closed 2026-11-24).
+- DE title "Weihnachts": known and left by owner choice. It is cut by 1 px only when the viewport is 315 px or narrower (content 307 px or less). - Desktop header gap of 15 px was only the classic scrollbar (closed 2026-11-24).
 - Today's golden ring fades with the pulse and is hidden under reduced motion — by owner choice.
 - Pulse 1440 Dec 26 old fail was a threshold flake; fixed in check-pulse.
+- Jackpot also has Santa on today's label for long names Dec 2–25 (62 of 360 market-days, e.g. BG Dec 4) — owner: leave JP alone.
 
 ## Sources (unchanged)
 - Texts and place names: Google Sheet `1OfbBN6d6mei4t0iReU_ZNNVelqjQwl3fBxh-aGpzwAY` (tabs DE, NL, EN, RO; UI ELEMENT with LOCATION table rows 27–52).
@@ -61,11 +85,11 @@ Check scripts need a local Playwright + Chrome: set `PLAYWRIGHT_MODULE` and `CHR
 node scripts/check-santa.mjs [--sweep --fails-only]
 node scripts/check-header.mjs [--labels] [--resize]   # fresh load per width (~8 min with --labels)
 node scripts/check-pulse.mjs
-node scripts/check-modal-jump.mjs
+node scripts/check-modal-jump.mjs                     # low memory: one market and width per process
 node scripts/check-line-ink.mjs
 node scripts/check-label-centre.mjs [--mobile] [--ended]
 node scripts/check-texts.mjs --widths=390             # ~6 min per width, one width per process
 ```
 Run ONE check at a time: several Vite servers together hit an EPERM on node_modules/.vite/deps, and parallel checks ran the PC out of memory (2026-11-20 and again 2026-11-23).
 
-`check-texts --mobile` emulates a real phone (isMobile, hasTouch, overlay scrollbars) for widths up to 768. Without it headless Chrome keeps a 15 px classic scrollbar gutter, which shows up as a 1 px cut of the DE "Weihnachts" at 320 that a real phone does not have. Last run (2026-11-23, before the header change) at 320: the only fails left are the line-box overlap of the title spans (day 1); ink measured by pixel diff (320/360/375, DE/EN_GBP/NL/RO_MDL) has a gap of at least 3.67 px and no shared pixels.
+`check-texts --mobile` emulates a real phone (isMobile, hasTouch, overlay scrollbars) for widths up to 768. Without it headless Chrome keeps a 15 px classic scrollbar gutter, which shows up as a 1 px cut of the DE "Weihnachts" at 320 that a real phone does not have. Last run (2026-11-24, on `efd79be`) at 320 and 390: the only fails left are the line-box overlap of the title spans (day 1); the 320 ink gap was not re-measured on `efd79be` (the 3.67 px figure is from 2026-11-23, before the header change).

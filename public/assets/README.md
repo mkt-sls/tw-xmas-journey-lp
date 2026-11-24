@@ -18,7 +18,7 @@ Raster = WebP @2x. Vectors = SVG. Node id -> file:
 | card-illustration@2x.webp | 58:1374 (image in Bonus card · Available) | 840x624 (420x313 @2x) | WebP q88, opaque | The orbit art (gift, ring, crystal, ornament, chest, candy). Opaque on the plum plate `#1f1121`; the plate is the card art background |
 | card-gift-locked.svg / card-gift-expired.svg | 58:1591 / 58:1527 (FX gift) | 118 wide | SVG | The grey gift on the locked / expired card art |
 | logo-topwin.svg | 58:517 (Logo · TOP WIN) | 150.6x30 | SVG | Header logo (the mobile Figma logo 58:989 is the same artwork at 110x22) |
-| favicon.svg | derived from 58:517 | 32x32 | SVG | The logo on a rounded `#0B1530` square |
+| favicon.ico | taken unchanged from topwin-bet.icu (same file as the main site), not from Figma | 16, 32, 48 px (multi-size) | ICO | Commit `5b7aaac`, 2026-11-24 |
 | decor-desktop.svg | 58:512 (Brand slash decor) | 1920x1049 | SVG | Two diagonal bands + soft glow behind header and intro. Used as the page background on desktop. Mobile has the same node (58:876) but it sits under the opaque mobile image, so it is not used |
 | route-desktop.svg | 58:538 (Route) | 2110x140 | SVG | Dotted route, 2080x110 + shadow bleed. Figma position x -80, y 190 in the route-map frame |
 | route-mobile.svg | 58:882 (Route) | 181x630 | SVG | Figma position x 80, y -60 in the route-map frame (= stage x 80, y -31) |
