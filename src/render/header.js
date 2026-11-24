@@ -1,11 +1,10 @@
 import { MARKETS, marketCode } from '../market.js';
-import { linkFor } from '../config.js';
 import { CHEVRON_SVG, asset, esc, flagUrl } from './util.js';
 
 export function renderHeader({ ui, market }) {
   const code = marketCode(market);
   return `
-  <header class="header" data-fit="0">
+  <header class="header">
     <div class="header__inner">
       <a class="header__logo" href="./" aria-label="${esc(ui.brand)}"><img src="${asset('logo-topwin.svg')}" alt="" width="151" height="30"></a>
       <div class="header__actions">
@@ -26,8 +25,6 @@ export function renderHeader({ ui, market }) {
             ).join('')}
           </ul>
         </div>
-        <a class="btn-outline" href="${esc(linkFor('login', market.id))}" data-track="login">${esc(ui.login)}</a>
-        <a class="btn-register" href="${esc(linkFor('register', market.id))}" data-track="register">${esc(ui.register ?? 'Register')}</a>
       </div>
     </div>
   </header>`;
@@ -109,32 +106,4 @@ export function bindMarketMenu(root, onSelect) {
     o.addEventListener('click', () => choose(i));
     o.addEventListener('pointermove', () => active !== i && setActive(i));
   });
-}
-
-/**
- * Mobile header fit. The Figma sizes (level 0: 16px side padding, 6px gap, 12px text, 12px button padding, 110px logo) are kept
- * whenever they fit; a longer translation ("Registrieren", "Înregistrare") steps down through the levels in layout.css until
- * logo, language switcher, LOG IN and REGISTER sit on one row inside the side padding with >= 8px between logo and controls.
- * Levels 1-3 keep text >= 11px / 36px buttons; levels 4-5 shrink the LOG IN / REGISTER buttons (text 10px / 9px, 32px high) only where nothing else fits.
- * Desktop always uses level 0. If even the last level does not fit, the header keeps the last level: scripts/check-header.mjs reports it.
- */
-export const HEADER_LEVELS = 6;
-const HEADER_MIN_GAP = 8; // logo / controls: never closer than this, so the spacing logic is the same at every width
-export function fitHeader(root, layout) {
-  const header = root.querySelector('.header');
-  if (!header) return;
-  const inner = header.querySelector('.header__inner');
-  const actions = header.querySelector('.header__actions');
-  const logo = header.querySelector('.header__logo');
-  const fits = () => {
-    const a = actions.getBoundingClientRect();
-    const l = logo.getBoundingClientRect();
-    const i = inner.getBoundingClientRect();
-    const pad = Number.parseFloat(getComputedStyle(inner).paddingRight) * (i.width / inner.offsetWidth || 1);
-    return a.right <= i.right - pad + 0.5 && a.left >= l.right + HEADER_MIN_GAP * (i.width / inner.offsetWidth || 1) - 0.5;
-  };
-  let level = 0;
-  header.dataset.fit = '0';
-  if (layout !== 'mobile') return;
-  while (!fits() && level < HEADER_LEVELS - 1) header.dataset.fit = String(++level);
 }

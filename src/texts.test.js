@@ -6,7 +6,7 @@ const cardFiles = import.meta.glob('../data/cards/*.json', { eager: true, import
 
 // Every UI key the page renders (src/render/*.js). Keep in step with the renderers.
 const RENDERED_KEYS = [
-  'brand', 'login', 'register', 'campaign_dates', 'campaign_title', 'subtitle',
+  'brand', 'campaign_dates', 'campaign_title', 'subtitle',
   'today', 'yesterday', 'todays_stop', 'tomorrow', 'in_two_days', 'missed', 'open_gift', 'unlocks_in',
   'locked', 'gift_expired', 'legend_available', 'legend_missed', 'legend_locked',
   'how_it_works', 'step1_title', 'step1_body', 'step2_title', 'step2_body', 'step3_title', 'responsible',

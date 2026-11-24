@@ -14,10 +14,10 @@
 // today button (line count, box) and label box with a fresh load at the same width. Any difference is a FAIL
 // "resize differs from fresh load". It is a real page bug (the resize path), not a false alarm; it is expected to fail until the page is fixed.
 //
-// HEADER, per market x width (fresh load per market and width):
-// - logo, flag button, LOG IN, REGISTER all inside the viewport with >= 8px to each edge, no two boxes overlap, gap >= 2px;
-// - button text not clipped (scrollWidth <= clientWidth) and on one line; button font >= 11px; every box >= 36px high;
-// - no horizontal page scroll.
+// HEADER (logo + market selector only, no LOG IN / REGISTER; owner 2026-11-24), per market x width (fresh load per market and width):
+// - no .btn-outline / .btn-register in the header; logo and selector inside the viewport with >= 8px to each edge and inside the header side padding;
+// - >= 8px between logo and selector; selector >= 31px high, 44x44 tap area; mobile (< 1024): logo centre = header centre within 0.5px;
+//   desktop: logo at the left padding; no horizontal page scroll.
 // LABELS (--labels): the label of today's gift (.label--active) for each day 1-26 and, on top of the header rules, every label:
 // - label box >= 8px from both screen edges and the "open gift" button text not clipped and inside its label;
 // - the active label does not overlap its own gift, the TODAY pill or the other labels.
@@ -57,8 +57,8 @@ const RESIZE_WIDTHS = [320, 360, 375, 390];
 const DAYS = (opt('days') || '').split(',').filter(Boolean).map(Number);
 const SHOTS = args.includes('--shots') ? args[args.indexOf('--shots') + 1] : null;
 const EDGE = 8;
-const MIN_FONT = 9; // step 7: below 11px only for the LOG IN / REGISTER buttons where nothing else fits (levels 4-5)
-const MIN_H = 32;
+const MIN_H = 31; // selector button: 80% size like Jackpot (visible box 31px mobile, 33px desktop; tap area 44px, see the tap probe)
+const TAP = 44;
 const MIN_LOGO_GAP = 8;
 
 /** In the page: boxes and text facts of the header. */
@@ -69,25 +69,21 @@ function measureHeader() {
     const r = el.getBoundingClientRect();
     return { left: r.left, right: r.right, top: r.top, bottom: r.bottom, w: r.width, h: r.height };
   };
-  const out = { vw, scrollW: document.documentElement.scrollWidth, items: {} };
-  const defs = { logo: '.header__logo img', flag: '.market__btn', login: '.btn-outline', register: '.btn-register' };
+  const inner = q('.header__inner');
+  const ics = getComputedStyle(inner);
+  const ir = inner.getBoundingClientRect();
+  const hdr = q('.header').getBoundingClientRect();
+  const out = { vw, scrollW: document.documentElement.scrollWidth, items: {}, padL: ir.left + Number.parseFloat(ics.paddingLeft), padR: ir.right - Number.parseFloat(ics.paddingRight), hdrCentre: (hdr.left + hdr.right) / 2, texts: [...document.querySelectorAll('.header .btn-outline, .header .btn-register')].length };
+  const tap = q('.market__btn');
+  const tb = tap.getBoundingClientRect();
+  // the hit area is the ::after box (44px high): probe the 4 corners of a 44x44 area around the button centre
+  out.tap = (() => { const cx = (tb.left + tb.right) / 2; const cy = (tb.top + tb.bottom) / 2; return [[-21, -21], [21, -21], [-21, 21], [21, 21]].every(([dx, dy]) => { const e = document.elementFromPoint(cx + dx, cy + dy); return e && (e === tap || tap.contains(e)); }); })();
+  const defs = { logo: '.header__logo img', flag: '.market__btn' };
   for (const [k, sel] of Object.entries(defs)) {
     const el = q(sel);
     const b = box(el);
     const cs = getComputedStyle(el);
     const item = { ...b, font: Number.parseFloat(cs.fontSize) };
-    if (k === 'login' || k === 'register') {
-      // the text itself: its range must fit inside the content box of the button
-      const rng = document.createRange();
-      rng.selectNodeContents(el);
-      const t = rng.getBoundingClientRect();
-      item.textLeft = t.left;
-      item.textRight = t.right;
-      item.clipped = el.scrollWidth > el.clientWidth + 0.5 || t.left < b.left || t.right > b.right;
-      item.lines = rng.getClientRects().length;
-      item.text = el.textContent;
-      item.padL = Number.parseFloat(cs.paddingLeft);
-    }
     out.items[k] = item;
   }
   return out;
@@ -96,23 +92,23 @@ function measureHeader() {
 function headerProblems(m) {
   const p = [];
   const it = m.items;
-  const order = ['logo', 'flag', 'login', 'register'];
-  for (const k of order) {
+  const mobile = m.vw < 1024;
+  if (m.texts) p.push(`${m.texts} LOG IN / REGISTER button(s) still in the header`);
+  for (const k of ['logo', 'flag']) {
     const b = it[k];
     if (b.left < EDGE - 0.01) p.push(`${k} ${b.left.toFixed(1)}px from the left edge (< ${EDGE})`);
     if (m.vw - b.right < EDGE - 0.01) p.push(`${k} ${(m.vw - b.right).toFixed(1)}px from the right edge (< ${EDGE})`);
     if (k !== 'logo' && b.h < MIN_H - 0.01) p.push(`${k} ${b.h.toFixed(1)}px high (< ${MIN_H})`);
   }
-  for (let i = 1; i < order.length; i++) {
-    const a = it[order[i - 1]];
-    const b = it[order[i]];
-    { const need = i === 1 ? MIN_LOGO_GAP : 2; if (b.left < a.right + need - 0.01) p.push(`${order[i - 1]} / ${order[i]} gap ${(b.left - a.right).toFixed(1)}px (< ${need})`); }
-  }
-  for (const k of ['login', 'register']) {
-    if (it[k].clipped) p.push(`${k} "${it[k].text}" text clipped`);
-    if (it[k].lines > 1) p.push(`${k} "${it[k].text}" wraps to ${it[k].lines} lines`);
-    if (it[k].font < MIN_FONT) p.push(`${k} font ${it[k].font}px (< ${MIN_FONT})`);
-  }
+  // selector inside the header side padding
+  if (it.flag.right > m.padR + 0.5) p.push(`selector ${(it.flag.right - m.padR).toFixed(1)}px outside the right padding`);
+  if (it.logo.left < m.padL - 0.5) p.push(`logo ${(m.padL - it.logo.left).toFixed(1)}px outside the left padding`);
+  if (it.flag.left < it.logo.right + MIN_LOGO_GAP - 0.01) p.push(`logo / selector gap ${(it.flag.left - it.logo.right).toFixed(1)}px (< ${MIN_LOGO_GAP})`);
+  if (mobile) {
+    const lc = (it.logo.left + it.logo.right) / 2;
+    if (Math.abs(lc - m.hdrCentre) > 0.5) p.push(`logo centre ${lc.toFixed(2)} vs header centre ${m.hdrCentre.toFixed(2)} (> 0.5px apart)`);
+  } else if (Math.abs(it.logo.left - m.padL) > 0.5) p.push(`desktop logo ${(it.logo.left - m.padL).toFixed(1)}px from the left padding (should be at it)`);
+  if (!m.tap) p.push(`selector tap area smaller than ${TAP}x${TAP}px`);
   if (m.scrollW > m.vw + 0.5) p.push(`page scrolls sideways (${m.scrollW} > ${m.vw})`);
   return p;
 }
@@ -211,7 +207,7 @@ async function main() {
         const p = headerProblems(m);
         rows++;
         const it = m.items;
-        const info = `logo ${it.logo.w.toFixed(0)} flag ${it.flag.w.toFixed(0)} login ${it.login.w.toFixed(0)} reg ${it.register.w.toFixed(0)} font ${it.login.font} pad ${it.login.padL} edge L${it.logo.left.toFixed(0)}/R${(m.vw - it.register.right).toFixed(0)}`;
+        const info = `logo ${it.logo.w.toFixed(0)} L${it.logo.left.toFixed(0)} centre ${((it.logo.left + it.logo.right) / 2).toFixed(1)}/${m.hdrCentre.toFixed(1)} selector ${it.flag.w.toFixed(0)}x${it.flag.h.toFixed(0)} R${(m.vw - it.flag.right).toFixed(0)} gap ${(it.flag.left - it.logo.right).toFixed(0)}`;
         console.log(`${p.length ? 'FAIL' : 'ok  '} header ${market} ${w}: ${info}${p.length ? ' -> ' + p.join('; ') : ''}`);
         if (p.length) fails++;
       }
