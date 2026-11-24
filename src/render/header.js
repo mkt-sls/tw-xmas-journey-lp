@@ -1,3 +1,4 @@
+import { linkFor } from '../config.js';
 import { MARKETS, marketCode } from '../market.js';
 import { CHEVRON_SVG, asset, esc, flagUrl } from './util.js';
 
@@ -6,7 +7,7 @@ export function renderHeader({ ui, market }) {
   return `
   <header class="header">
     <div class="header__inner">
-      <a class="header__logo" href="./" aria-label="${esc(ui.brand)}"><img src="${asset('logo-topwin.svg')}" alt="" width="151" height="30"></a>
+      <a class="header__logo" href="${esc(linkFor('logo', market.id))}" target="_blank" rel="noopener" aria-label="${esc(ui.brand)}"><img src="${asset('logo-topwin.svg')}" alt="" width="151" height="30"></a>
       <div class="header__actions">
         <div class="market" data-market-root>
           <button type="button" class="market__btn" id="market-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="market-list" aria-label="${esc(market.label)} · ${esc(market.currency)}">

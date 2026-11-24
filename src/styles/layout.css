@@ -26,9 +26,10 @@
 }
 
 .header__inner {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end; /* market selector on the right; .header__logo is centred on its own */
   max-width: 1920px;
   height: 56px;
   margin: 0 auto;
@@ -51,15 +52,12 @@
   gap: 6px;
 }
 
-/* mobile (< 1024): logo centred on the full header width, market selector stays on the right (owner 2026-11-24, like Jackpot 777a0e5).
-   Desktop: logo left, selector right, side padding clamp(24px, 6.25vw, 120px). */
-.header__logo { flex: none; }
+/* All layouts: logo centred on the full header width (side padding is symmetric, so this is the content-box centre, scrollbar gutter excluded);
+   market selector stays on the right (owner 2026-11-24; mobile like Jackpot 777a0e5, desktop centred too).
+   Desktop only changes height, logo size and the side padding clamp(24px, 6.25vw, 120px). */
 .header__logo img { display: block; }
-.page:not([data-layout='desktop']) .header__inner {
-  position: relative;
-  justify-content: flex-end;
-}
-.page:not([data-layout='desktop']) .header__logo {
+.header__logo {
+  flex: none;
   position: absolute;
   left: 50%;
   top: 50%;
