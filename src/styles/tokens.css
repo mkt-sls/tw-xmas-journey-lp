@@ -20,7 +20,7 @@
   --line: rgba(255, 255, 255, 0.08);
   --line-2: rgba(255, 255, 255, 0.14);
 
-  /* CTA gradient (buttons, REGISTER, OPEN GIFT) */
+  /* CTA gradient (buttons, OPEN GIFT) */
   --cta: linear-gradient(90deg, #ff8c00, #ff4500);
 
   --r-card: 15px;

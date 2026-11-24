@@ -18,6 +18,10 @@ For the next session (possibly on another PC). What is live, what is half done, 
 - The machine was low on memory (Figma desktop app ~10 GB): long checks were killed; run them one at a time, narrow with `--markets` / `--widths`.
 - Untracked files `texts-failures-w1366.json` and `texts-failures-w390.json` in the repo root are check outputs, not part of the project: do not add or commit them.
 
+## Header (owner 2026-11-24, branch design-mkt-1/tw-header-jp, not on main until the owner says push)
+- Header = logo + market selector only, like Jackpot (8811313, 777a0e5, 6fe54f0). No LOG IN, no REGISTER, desktop and mobile. fitHeader / data-fit levels / .btn-outline / .btn-register / login+register links removed. Mobile (<1024): logo centred on the full header width, selector right. Selector button 80% size (tap area still 44 px), styled scrollbars in TW colours (page scrollbar 8 px, was the classic 15 px: layoutWidth() reads the real page width, so layouts get 7 px wider on desktop with a mouse).
+- ui strings `login` / `register` stay in data/ui and in the importer (like Jackpot); the page no longer renders them.
+
 ## Owner decisions still open
 (none from the old list: labels = centred like JP, legend = removed, day 12 = 78 FS stays as decided)
 
@@ -35,7 +39,7 @@ For the next session (possibly on another PC). What is live, what is half done, 
 - Texts and place names: Google Sheet `1OfbBN6d6mei4t0iReU_ZNNVelqjQwl3fBxh-aGpzwAY` (tabs DE, NL, EN, RO; UI ELEMENT with LOCATION table rows 27-52).
 - Numbers and links: sheet `1qpxJhrKTPyaUyGmJRrwPQNbh4T8s7458HJCCi2QwiTo`, tab **TW EUROPE** only (tab JP = Jackpot, never).
 - Figma: file `s2CqwGqe0O0FcALhBNlTRe`, canvas `58:332`.
-- Markets: DE (EUR), NL (EUR), EN_GBP (GBP), RO_MDL (MDL). 26 days, 1-26 December 2026. One deposit link per day on `tw-de.icu` with the day code (LOG IN and REGISTER use it too; T&C on the card = https://top-win-uk.top/en/bonus-policy on every market and day, new tab, owner 2026-11-24). Footer "18+ · Play responsibly". Only Figma and sheet text is shown.
+- Markets: DE (EUR), NL (EUR), EN_GBP (GBP), RO_MDL (MDL). 26 days, 1-26 December 2026. One deposit link per day on `tw-de.icu` with the day code (on the card deposit button; T&C on the card = https://top-win-uk.top/en/bonus-policy on every market and day, new tab, owner 2026-11-24). Footer "18+ · Play responsibly". Only Figma and sheet text is shown.
 
 ## How to run
 `npm ci`, then `npm run dev`, `npm test`, `npm run build`. Re-import steps: `docs/PLAN.md`.
