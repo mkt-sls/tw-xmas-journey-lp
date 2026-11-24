@@ -52,7 +52,7 @@
 }
 
 /* mobile (< 1024): logo centred on the full header width, market selector stays on the right (owner 2026-11-24, like Jackpot 777a0e5).
-   Desktop: logo left, selector right, side padding 16px. */
+   Desktop: logo left, selector right, side padding clamp(24px, 6.25vw, 120px). */
 .header__logo { flex: none; }
 .header__logo img { display: block; }
 .page:not([data-layout='desktop']) .header__inner {
