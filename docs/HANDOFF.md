@@ -35,7 +35,7 @@ For the next session (possibly on another PC). What is live, what is half done, 
 - Texts and place names: Google Sheet `1OfbBN6d6mei4t0iReU_ZNNVelqjQwl3fBxh-aGpzwAY` (tabs DE, NL, EN, RO; UI ELEMENT with LOCATION table rows 27-52).
 - Numbers and links: sheet `1qpxJhrKTPyaUyGmJRrwPQNbh4T8s7458HJCCi2QwiTo`, tab **TW EUROPE** only (tab JP = Jackpot, never).
 - Figma: file `s2CqwGqe0O0FcALhBNlTRe`, canvas `58:332`.
-- Markets: DE (EUR), NL (EUR), EN_GBP (GBP), RO_MDL (MDL). 26 days, 1-26 December 2026. One deposit link per day on `tw-de.icu` with the day code (LOG IN, REGISTER, T&C use it too). Footer "18+ · Play responsibly". Only Figma and sheet text is shown.
+- Markets: DE (EUR), NL (EUR), EN_GBP (GBP), RO_MDL (MDL). 26 days, 1-26 December 2026. One deposit link per day on `tw-de.icu` with the day code (LOG IN and REGISTER use it too; T&C on the card = https://top-win-uk.top/en/bonus-policy on every market and day, new tab, owner 2026-11-24). Footer "18+ · Play responsibly". Only Figma and sheet text is shown.
 
 ## How to run
 `npm ci`, then `npm run dev`, `npm test`, `npm run build`. Re-import steps: `docs/PLAN.md`.

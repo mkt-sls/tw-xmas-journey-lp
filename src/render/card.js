@@ -36,7 +36,7 @@ export function renderCard({ card, day, today, ui, marketId }) {
   const kind = state === 'active' ? 'active' : state === 'missed' ? 'expired' : 'locked';
   const lines = card.raw[kind];
   const n = lines.length;
-  const termsLink = `<a class="card__terms" href="${esc(linkFor('terms', marketId))}" data-track="terms_click" data-day="${day}">${escNb(lines[n - 1])}</a>`;
+  const termsLink = `<a class="card__terms" href="${esc(linkFor('terms', marketId))}" target="_blank" rel="noopener" data-track="terms_click" data-day="${day}">${escNb(lines[n - 1])}</a>`;
 
   let body;
   if (kind === 'locked') {

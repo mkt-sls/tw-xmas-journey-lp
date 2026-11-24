@@ -11,11 +11,13 @@ export const CAMPAIGN = {
 };
 
 // Link names that all point to the deposit link of the current campaign day:
-// LOG IN, REGISTER, "Full terms & conditions" on the card.
-const TODAY_LINKS = ['login', 'register', 'terms', 'campaignTerms'];
+// LOG IN and REGISTER. "Full terms & conditions" does NOT use it: it is the one bonus-policy URL below (owner 2026-11-24).
+const TODAY_LINKS = ['login', 'register'];
 
 export const links = {
   deposit: '#', // last-resort fallback only
+  terms: 'https://top-win-uk.top/en/bonus-policy', // "Full terms & conditions" on the card: same URL on every market and day, opens in a new tab
+  campaignTerms: 'https://top-win-uk.top/en/bonus-policy', // shown nowhere (no footer link), kept equal to terms
 };
 
 // Optional per-market overrides, e.g. { DE: { deposit: 'https://...', terms: 'https://...' } }
