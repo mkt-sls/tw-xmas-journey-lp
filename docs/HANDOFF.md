@@ -33,7 +33,8 @@ For the next session (possibly on another PC). What is live, what is half done, 
 
 ### Check results on efd79be (2026-11-24)
 - `npm test` 100/100.
-- `check-texts` on the new header: 1366 and 1440 = 0 fails. 320 and 390: only the 4 title-a / title-b box overlaps (at 390 the ink gap is 4.3–6.7 px, 0 shared pixels). These two widths are the only ones measured on this header.
+- `check-texts` on b4c589c (header before the logo was centred): widths 360/390/430/768/1024/1366/1920 gave 16 failures, all overlap-text on `.intro__title-a` (4 per market). On the merged-earlier code 322dcc1 (page code, not efd79be) 320 and 1440 were also run.
+- `check-texts` on the logo branch 665fdc3: only 390 `--mobile` (the 4 known title-a / title-b box overlaps; ink gap 4.3–6.7 px, 0 shared pixels) and 1366 (0 fails). 375 was not run.
 - `check-modal-jump`: 300/300 on `b4c589c` (EN_GBP and RO_MDL); 60/60 on the logo branch (4 markets x 5 widths).
 - Check runs were done per market and width. On this low-memory machine the full matrix crashes.
 
@@ -61,13 +62,14 @@ For the next session (possibly on another PC). What is live, what is half done, 
 
 ## Next tasks (none decided)
 1. Check where https://top-win.global lands for DE, NL, RO and EN (only the UK redirect is known, from this PC).
-2. Run check-texts on the header for widths not yet measured (360, 375, 768), one width per process, if the owner wants them.
+2. Run check-texts for 375 on any header version, and for 320/360/430/768/1024/1440/1920 on the centred logo, one width per process, if the owner wants them.
 3. Figma mobile review of the items listed above, if the owner asks for it.
 
 ## Known non-issues (measured, do not re-chase)
 - Two-part title boxes overlap at 375–768 px but glyphs never touch (gap 5–12 px). At 390 the ink gap is 4.3–6.7 px, 0 shared pixels.
 - Desktop label tag "HEUTIGER HALT" overlaps only the transparent glow of the gift button.
-- DE title "Weihnachts": known and left by owner choice. It is cut by 1 px only when the viewport is 315 px or narrower (content 307 px or less). - Desktop header gap of 15 px was only the classic scrollbar (closed 2026-11-24).
+- DE title "Weihnachts": known and left by owner choice. It is cut by 1 px only when the viewport is 315 px or narrower (content 307 px or less).
+- Desktop header gap of 15 px was only the classic scrollbar (closed 2026-11-24).
 - Today's golden ring fades with the pulse and is hidden under reduced motion — by owner choice.
 - Pulse 1440 Dec 26 old fail was a threshold flake; fixed in check-pulse.
 - Jackpot also has Santa on today's label for long names Dec 2–25 (62 of 360 market-days, e.g. BG Dec 4) — owner: leave JP alone.
