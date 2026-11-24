@@ -41,10 +41,12 @@ export function renderCard({ card, day, today, ui, marketId }) {
   let body;
   if (kind === 'locked') {
     // [day, SURPRISE GIFT, Opens N December, Come back..., Locked · N Dec, terms]
+    // The disabled button shows only the word (ui.locked from data/ui): the date is already in the title (lines[2]),
+    // so lines[4] ("Locked · N Dec") is not used here. data/cards stays as imported.
     body = `
       <p class="card__type">${escNb(lines[1])}</p>
       <div class="card__offer"><h2 class="card__opens" id="card-title">${escNb(lines[2])}</h2><p class="card__game">${escNb(lines[3])}</p></div>
-      <button type="button" class="btn-primary" disabled>${escNb(lines[4])}</button>
+      <button type="button" class="btn-primary" disabled>${escNb(ui.locked)}</button>
       ${termsLink}`;
   } else {
     const hasGame = Boolean(card.game);
