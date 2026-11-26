@@ -15,6 +15,7 @@
     "tomorrow": "MÂINE · {date}",
     "in_two_days": "PESTE 2 ZILE · {date}",
     "missed": "PIERDUT · {date}",
+    "come_back_on": "Revino pe {date} pentru a debloca acest cadou",
     "open_gift": "DESCHIDE CADOUL",
     "unlocks_in": "Se deblochează în {time}",
     "responsible": "18+ · Joacă responsabil",

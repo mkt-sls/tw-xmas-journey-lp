@@ -15,6 +15,7 @@
     "tomorrow": "TOMORROW · {date}",
     "in_two_days": "IN 2 DAYS · {date}",
     "missed": "MISSED · {date}",
+    "come_back_on": "Come back on {date} to unlock this gift",
     "open_gift": "OPEN GIFT",
     "unlocks_in": "Unlocks in {time}",
     "responsible": "18+ · Play responsibly",

@@ -50,6 +50,11 @@
     },
     {
       "lang": "DE",
+      "key": "come_back_on",
+      "value": "Komm am {date} wieder und schalte dieses Geschenk frei"
+    },
+    {
+      "lang": "DE",
       "key": "open_gift",
       "value": "GESCHENK ÖFFNEN"
     },
@@ -107,6 +112,11 @@
       "lang": "NL",
       "key": "missed",
       "value": "GEMIST · {date}"
+    },
+    {
+      "lang": "NL",
+      "key": "come_back_on",
+      "value": "Kom op {date} terug om dit cadeau te ontgrendelen"
     },
     {
       "lang": "NL",
@@ -170,6 +180,11 @@
     },
     {
       "lang": "EN",
+      "key": "come_back_on",
+      "value": "Come back on {date} to unlock this gift"
+    },
+    {
+      "lang": "EN",
       "key": "open_gift",
       "value": "OPEN GIFT"
     },
@@ -227,6 +242,11 @@
       "lang": "RO_MD",
       "key": "missed",
       "value": "PIERDUT · {date}"
+    },
+    {
+      "lang": "RO_MD",
+      "key": "come_back_on",
+      "value": "Revino pe {date} pentru a debloca acest cadou"
     },
     {
       "lang": "RO_MD",

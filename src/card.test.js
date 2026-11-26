@@ -55,3 +55,19 @@ describe('card dates', () => {
     });
   }
 });
+
+// Owner 2026-11-26: the locked card says "Come back tomorrow" only for tomorrow's gift; further gifts name their day.
+describe('locked card come-back line', () => {
+  const FAR = { EN: 'Come back on 9 December to unlock this gift', DE: 'Komm am 9. Dezember wieder und schalte dieses Geschenk frei', NL: 'Kom op 9 december terug om dit cadeau te ontgrendelen', RO_MD: 'Revino pe 9 decembrie pentru a debloca acest cadou' };
+  const line = (html) => text(html, /<\/h2><p class="card__game">([\s\S]*?)<\/p>/);
+  for (const m of markets) {
+    it(`${m.id}: tomorrow keeps the sheet line, 2+ days away names the day`, () => {
+      const ui = uiFiles[`../data/ui/${m.uiLang}.json`].strings;
+      const cards = cardFiles[`../data/cards/${m.id}.json`];
+      const r = (day, today) => renderCard({ card: cards.days[day - 1], day, today, ui, marketId: m.id, uiLang: m.uiLang }).html;
+      expect(line(r(8, 7))).toBe(cards.days[7].raw.locked[3]);
+      expect(line(r(9, 7))).toBe(FAR[m.uiLang]);
+      expect(r(9, 7)).toMatch(/9\.?\u00a0/); // day and month never split (DE "9. Dezember")
+    });
+  }
+});
