@@ -20,6 +20,28 @@ function title(ui) {
   return `<span class="intro__title-a">${esc(a)}</span>${b ? `<span class="intro__title-b">${esc(b)}</span>` : ''}`;
 }
 
+// Mobile title fit (owner 2026-11-26, item B): when the first part wraps on its own ("CĂLĂTORIA DE" on RO at 320-366 px), the title
+// goes down 0.5 px at a time until that part is one line again (RO 320: 46 -> 39.5 px, 2 lines instead of 3, the route moves up).
+// Titles whose parts already fit keep the CSS size, so EN / DE / NL and RO at 375+ are untouched. A single word never wraps, so it
+// never triggers the fit. Desktop: no fit (nowrap row). Line count from layout numbers (offsetHeight), so transforms do not disturb it.
+export const TITLE_MIN = 30;
+const TITLE_LINE_HEIGHT = 0.95; // .intro__title line-height
+
+export function fitTitle(root, layout) {
+  const h = root.querySelector('.intro__title');
+  const a = h?.querySelector('.intro__title-a');
+  if (!a) return null;
+  h.style.fontSize = '';
+  if (layout !== 'mobile' || !a.offsetWidth) return null;
+  const lines = () => Math.round(a.offsetHeight / (parseFloat(getComputedStyle(a).fontSize) * TITLE_LINE_HEIGHT));
+  let size = parseFloat(getComputedStyle(h).fontSize);
+  while (lines() > 1 && size > TITLE_MIN) {
+    size -= 0.5;
+    h.style.fontSize = `${size}px`;
+  }
+  return size;
+}
+
 export function renderIntro({ ui }) {
   return `
   <div class="intro">

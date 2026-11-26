@@ -134,8 +134,10 @@
 }
 
 /* accents (RO "CRĂCIUN": the breve over the Ă reaches up) need more air than the tight Figma spacing between the two lines; plain EN / NL / DE keep it */
+/* -0.087em = -4px at the 46px design size; in em so the gap scales when fitTitle (intro.js) shrinks the RO title (39.5px at 320):
+   a fixed -4px left the Ă breve under 3px from line 1 there (check-line-ink). */
 .page[data-layout='mobile'] .intro__title[data-accent] span + span {
-  margin-top: calc(-4px - 0.2em + 0.19em);
+  margin-top: calc(-0.087em - 0.2em + 0.19em);
 }
 .intro__title-a {
   color: #fff;

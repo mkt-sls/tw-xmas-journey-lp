@@ -1,13 +1,27 @@
 // Bonus card for a day. Wording comes from the raw localized lines in data/cards (exactly the sheet's text);
 // the parsed fields only decide the layout (is there a game line?).
 import { depositLinkFor, linkFor } from '../config.js';
-import { dayState } from '../date.js';
+import { dayDate, dayState } from '../date.js';
+import { longDate } from '../i18n.js';
 import { CLOSE_SVG, asset, esc, escNb } from './util.js';
 
 /** "Min. deposit: 35 GBP" -> ["Min. deposit", "35 GBP"]; also handles French "Dépôt min. : 35 CAD". */
 function splitTerm(line) {
   const m = String(line).match(/^(.*?)\s*:\s+(.*)$/);
   return m ? [m[1], m[2]] : [line, ''];
+}
+
+/** "DAY 8 · 8 DEC" -> "DAY 8": the pill shows only the day, on every card state (owner 2026-11-26). Data stays as imported. */
+function dayOnly(line) {
+  return String(line).split(/\s+·\s+/)[0];
+}
+
+/** "Opens: 8 DEC" -> "Opens: 8 December" / "Verfügbar ab: 8. Dezember": long month, not in caps; day and month never split
+ * across lines (no-break space). Owner 2026-11-26. Data stays as imported. */
+function opensLong(line, day, uiLang) {
+  const m = String(line).match(/^(.*?:)\s*/);
+  if (!m || !uiLang) return line;
+  return `${m[1]} ${longDate(dayDate(day), uiLang).replace(/\s/g, '\u00a0')}`;
 }
 
 function art(kind, chip) {
@@ -28,10 +42,10 @@ function art(kind, chip) {
 }
 
 /**
- * @param ctx { card, day, today, ui, marketId }
+ * @param ctx { card, day, today, ui, marketId, uiLang }
  * @returns {{ html: string, kind: 'active'|'expired'|'locked' }}
  */
-export function renderCard({ card, day, today, ui, marketId }) {
+export function renderCard({ card, day, today, ui, marketId, uiLang }) {
   const state = dayState(day, today);
   const kind = state === 'active' ? 'active' : state === 'missed' ? 'expired' : 'locked';
   const lines = card.raw[kind];
@@ -40,12 +54,12 @@ export function renderCard({ card, day, today, ui, marketId }) {
 
   let body;
   if (kind === 'locked') {
-    // [day, SURPRISE GIFT, Opens N December, Come back..., Locked · N Dec, terms]
+    // [day, SURPRISE GIFT, Opens: N DEC, Come back..., Locked · N Dec, terms]. The title shows the long month (opensLong).
     // The disabled button shows only the word (ui.locked from data/ui): the date is already in the title (lines[2]),
     // so lines[4] ("Locked · N Dec") is not used here. data/cards stays as imported.
     body = `
       <p class="card__type">${escNb(lines[1])}</p>
-      <div class="card__offer"><h2 class="card__opens" id="card-title">${escNb(lines[2])}</h2><p class="card__game">${escNb(lines[3])}</p></div>
+      <div class="card__offer"><h2 class="card__opens" id="card-title">${escNb(opensLong(lines[2], day, uiLang))}</h2><p class="card__game">${escNb(lines[3])}</p></div>
       <button type="button" class="btn-primary" disabled>${escNb(ui.locked)}</button>
       ${termsLink}`;
   } else {
@@ -76,7 +90,7 @@ export function renderCard({ card, day, today, ui, marketId }) {
 
   const html = `
   <div class="card card--${kind}" role="dialog" aria-modal="true" aria-labelledby="card-title">
-    ${art(kind, lines[0])}
+    ${art(kind, dayOnly(lines[0]))}
     <div class="card__body">${body}</div>
     ${kind === 'active' ? `<img class="card__cap" src="${asset('card-snow-cap.svg')}" alt=""><img class="card__holly" src="${asset('card-holly.svg')}" alt=""><i class="card__accent"></i>` : ''}
   </div>`;

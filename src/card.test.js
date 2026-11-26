@@ -28,3 +28,30 @@ describe('locked card button', () => {
     });
   }
 });
+
+// Owner 2026-11-26 (item A): the pill shows only the day on every card state; the locked title has the long month, not in caps,
+// with day and month joined by a no-break space.
+describe('card dates', () => {
+  const LONG = { EN: 'Opens: 8 December', DE: 'Verfügbar ab: 8. Dezember', NL: 'Beschikbaar vanaf: 8 december', RO_MD: 'Disponibil din: 8 decembrie' };
+  const chip = (html) => html.match(/<span class="card__chip">([\s\S]*?)<\/span>/)[1];
+  for (const m of markets) {
+    it(`${m.id}: pill = day only (active, missed, locked), locked title = long month`, () => {
+      const ui = uiFiles[`../data/ui/${m.uiLang}.json`].strings;
+      const cards = cardFiles[`../data/cards/${m.id}.json`];
+      for (const day of [1, 8, 26]) {
+        const card = cards.days[day - 1];
+        for (const today of [day - 1, day, day + 1]) {
+          const { html } = renderCard({ card, day, today, ui, marketId: m.id, uiLang: m.uiLang });
+          const c = chip(html);
+          expect(c, `${m.id} day ${day} today ${today}`).toBe(card.raw.active[0].split(' · ')[0]);
+          expect(c).not.toMatch(/·/);
+        }
+      }
+      const { html } = renderCard({ card: cards.days[7], day: 8, today: 7, ui, marketId: m.id, uiLang: m.uiLang });
+      const raw = html.match(/id="card-title">([\s\S]*?)<\/h2>/)[1];
+      expect(raw.replace(/\u00a0/g, ' ')).toBe(LONG[m.uiLang]);
+      // day and month stay together
+      expect(raw).toMatch(/\d\.?\u00a0[A-Za-z]+$/);
+    });
+  }
+});

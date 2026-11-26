@@ -13,7 +13,7 @@ import { getMarket, htmlLangFor, resolveMarket, saveMarket } from './market.js';
 import { renderCard } from './render/card.js';
 import { bindMarketMenu, renderHeader } from './render/header.js';
 import { renderHowItWorks } from './render/howItWorks.js';
-import { renderIntro } from './render/intro.js';
+import { fitTitle, renderIntro } from './render/intro.js';
 import { renderLegal } from './render/legal.js';
 import { closeOverlay, openOverlay } from './render/overlay.js';
 import { deskZoom, desktopSantaFit, drawGarlands, fitLabels, layoutWidth, mobileZoom, renderRoute, santaAngle, stageSpec, tickCountdown } from './render/route.js';
@@ -56,6 +56,7 @@ function fitStage() {
   const page = app.querySelector('.page');
   if (!page) return;
   const l = layout();
+  fitTitle(page, l);
   const spec = stageSpec(l);
   // desktop: see desktopFit; mobile: the 390px stage shrinks on narrower phones (360 -> 0.92) so nothing is cut off
   // desktop wider than the 1920 design: the whole page is CSS-zoomed by z so it fills the viewport; everything inside works in
@@ -112,6 +113,7 @@ function render() {
   drawGarlands(app);
   // the web font changes text widths once loaded: redraw the garlands and re-fit the labels
   document.fonts?.ready.then(() => {
+    fitTitle(app, layout());
     drawGarlands(app);
     fitLabels(app);
   });
@@ -142,7 +144,7 @@ async function openCard(day) {
   const l = layout();
   const card = state.cards.days[day - 1];
   if (!card) return;
-  const { html, kind } = renderCard({ card, day, today: state.today, ui: state.ui, marketId: state.market.id });
+  const { html, kind } = renderCard({ card, day, today: state.today, ui: state.ui, marketId: state.market.id, uiLang: state.uiLang });
   track('open_gift', { day, state: kind, market: state.market.id });
   // only today's gift plays the opening; missed and locked cards just play the card-in
   if (dayState(day, state.today) === 'active') {
