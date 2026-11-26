@@ -110,7 +110,7 @@ Owner chose each part from before/after pictures.
 - Cards: wagering and valid-until shown, no smaller card art on short phones (option 2). Locked card: "Come back on <date>" for gifts 2+ days away (option 2).
 
 ## Client message (2026-11-26)
-No open question is left for the client. The owner may send a short thank-you in Russian (drafted in the session): wagering, valid-until, dates 1–26 and the day 3 fix are on the page.
+No open question is left for the client. The owner sent the short thank-you in Russian (2026-11-26): wagering, valid-until, dates 1–26 and the day 3 fix are on the page.
 - Links sheet re-read in Chrome on 2026-11-26 (account with access, tab TW EUROPE, via `/gviz/tq?tqx=out:html&gid=524100056` + get_page_text): compared row by row with `data/source/links-sheet.txt`. Only change: day 3 Bonus Name. Codes, links, EUR/GBP/MDL amounts and min deposits identical. Day 21 MDL still empty (page: 300 MDL, owner confirmed). New PLN column: not our market.
 
 ## Next tasks

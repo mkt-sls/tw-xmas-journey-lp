@@ -16,9 +16,6 @@ Skeleton copied from the Jackpot Christmas Journey LP and re-labelled for Top Wi
 - Overrides in the importer (`scripts/import-sheet.mjs`, all listed in `data/ISSUES.md`): day 12 free spins 75 -> 78 and "How it works" step 1 "1–25" -> "1–26" (both kept in the importer, no longer needed: the sheet was corrected on 2026-11-26); day 21 RO minimum deposit missing -> 300 MDL (links side table 22 -> 300).
 - Figma file `s2CqwGqe0O0FcALhBNlTRe`, canvas `58:332`.
 
-## Current state
-Step 2 done: `data/` holds the real Top Win texts (4 markets) and the 26 day links; open client questions are in `data/ISSUES.md`. No art in `public/assets` yet (only de/nl/gb/md flags): step 3.
-
 ## How to re-import
 Run from the repo root. Never run python.
 
