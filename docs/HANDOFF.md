@@ -1,21 +1,41 @@
-# Top Win Christmas Journey — handoff 2026-11-24 (page code efd79be; later commits are docs only)
+# Top Win Christmas Journey — handoff 2026-11-26 (page code 2d3c896; later commits are docs only)
 
 For the next session (possibly on another PC). What is live, what is half done, what the owner still has to decide.
 
 ## Read this first
 - **TW is a redesign of the Jackpot page** `christmas_journey_lp` (on the old PC: `D:\.claude\JP\christmas_journey_lp`; GitHub repo of the same name under the same org — check with `gh repo list mkt-sls`). Same files, same logic; TW has its own Figma look, art and texts. TW was copied from JP commit `c77ebc4` (2026-11-18). **Before fixing anything, check whether JP already fixed it** (`git log` in JP) and port it, keeping TW's own art numbers. The owner's rule: check JP before asking the owner.
 - Work rules of the owner: questions get answers; code changes only after the owner says "start"; pushes only after "push". Never run python in this repo.
+- **Show before you ask** (owner 2026-11-26): every visual choice goes to the owner as before/after pictures FIRST, then the question. The owner cannot decide from text; a text-only question was rejected. Format the owner asked to keep: real-browser screenshots with phone emulation (390 and 320, every market), the option applied only in the browser DOM (repo untouched), options numbered side by side on one local HTML page, opened in the owner's browser; blur the focused element before the shot (the card close button keeps a focus ring after a click). After implementing: the same page again, with `main` vs the branch from the real code.
 
-## Live and repo state (2026-11-24)
-- Live page code = `efd79be` (merge of `tw-logo`). Later commits on main are docs only. GitHub Actions run 45405161613 succeeded on 2026-11-24. GitHub Pages deploys on every push to `main`.
+## Machine (since 2026-11-26)
+- Work moved to the owner's Mac. The old Windows PC is gone, and so are the A1-A5 / B1-B2 pictures named in earlier handoffs.
+- Repo: `~/Documents/GitHub/tw/tw-xmas-journey-lp`. Jackpot reference clone: `~/Documents/GitHub/tw/christmas_journey_lp`.
+- Playwright for the check scripts lives outside the repo, in `~/Documents/GitHub/tw/.tools`. Before any check:
+  `export PLAYWRIGHT_MODULE=$HOME/Documents/GitHub/tw/.tools/node_modules/playwright/index.mjs CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"`
+- A baseline of `main` in a git worktree needs a real copy of `node_modules`, not a symlink: with a symlink Vite refuses the web fonts and every measurement runs on the fallback font (happened 2026-11-26, the first baseline was wrong).
+
+## Live and repo state (2026-11-26)
+- Live page code = `2d3c896` (merge of `tw-card-dates`, items A and B). Later commits on main are docs only. GitHub Pages deploys on every push to `main` (run 45812489726 for 2d3c896).
 - Live URL: https://mkt-sls.github.io/tw-xmas-journey-lp/ .
-- Recent deploys, newest first (all green, checked with `gh run list` on 2026-11-24):
+- Recent deploys, newest first:
+  - `86656b2` / merge `2d3c896` (2026-11-26): items A and B, details in the next section.
   - `efd79be` / `665fdc3`, run 45405161613: header logo centred on every layout and linked to https://top-win.global in a new tab (details in the Header section).
   - `5b7aaac`, run 45394740693: favicon is now `favicon.ico` (16, 32, 48 px).
   - `b4c589c`, run 45394239178: locked day card button and Dec 1 mobile Santa (details below).
   - `a9350f5`: merge `tw-nl-santa`, commit subject "keep Santa clear of the TODAY pill on the NL route". Earlier this was listed as an open issue; the commit subject says it is fixed.
   - Earlier on 2026-11-24: `128cb09` / merge `1ba8b72` (card "Full terms & conditions" opens https://top-win-uk.top/en/bonus-policy on every market and every day, in a new tab; the owner chose the `/en/` URL for all markets; de/nl/ro paths answer 200, their translation was not checked); `f32576c` / merge `67d68c2` (header like Jackpot, logo + market selector only); `322dcc1` (comment fix in the docs, header desktop padding comment now matches the CSS, Actions run 45370386402).
 - Earlier, live since 2026-11-23 (`9b43678`): layout width port (page width without the classic scrollbar), Santa shrinks further below f 0.738, route legend removed on desktop and mobile, "How it works" gap to the route, mobile route labels centred on their own gifts like JP, past labels (yesterday, campaign over) kept clear of Santa, new label check script.
+
+### Card dates and RO title (`86656b2` / `2d3c896`, 2026-11-26)
+Owner chose each part from before/after pictures.
+- A1, locked card title with the long month, not in caps: "Opens: 8 December", "Verfügbar ab: 8. Dezember", "Beschikbaar vanaf: 8 december", "Disponibil din: 8 decembrie". `opensLong()` in `src/render/card.js` keeps the sheet's prefix up to the colon and adds `longDate()` from `src/i18n.js`, with a no-break space so day and month never split. On phones the DE/NL/RO titles take 2 lines (NL at 320: 3). `renderCard` now takes `uiLang` (passed from `main.js`).
+- A2, the card pill shows only the day ("DAY 8", "TAG 8", "DAG 8", "ZIUA 8") on every card state: active, missed and locked (`dayOnly()` in card.js).
+- A1 and A2 are render-time only: `data/cards` stays as imported, so a re-import keeps them.
+- B, RO_MDL title on mobile: `fitTitle()` in `src/render/intro.js`, called from `fitStage()` and after the fonts load. When `.intro__title-a` wraps, the title goes down 0.5 px at a time (min 30) until it is one line: 320 = 39.5 px (2 lines instead of 3, route about 57 px higher), 360 = 45 px. EN/DE/NL and RO at 375 or more keep 46 px. Desktop: no fit.
+- B side fix: the mobile accent rule `.intro__title[data-accent] span + span` margin is now `calc(-0.087em - 0.2em + 0.19em)` (was `-4px` fixed; -0.087em = -4px at 46 px). With the fixed -4px the Ă breve was under 3 px from line 1 at 39.5 px (check-line-ink failed).
+- Not changed: the route labels ("IERI · 6 DEC.") keep the short month. The owner was asked and has not said.
+- Checks on the branch (2026-11-26, Mac): `npm test` 104/104, build ok; check-santa 4 markets x 320/360/390/768/1366 560/560, the same 6 accepted rows as `main` (RO re-run after the em fix: 112/112); check-label-centre --mobile 0 fails, 90 accepted touches (same as `main`); check-line-ink 320/360/375/390 all markets 0 fails; check-texts --mobile RO 320/360/390: only the known `.intro__title-a` box overlap (1 per width), same as `main` at 320; check-modal-jump RO and DE at 320/390 0 jumps; check-header all pass.
+- Not run after the em fix: check-header, check-modal-jump. Not run at all: check-modal-jump on EN and NL; check-texts on EN, DE and NL; a `main` baseline of check-texts RO at 360 and 390.
 
 ### Dec 1 mobile Santa and locked card button (`b4c589c`, 2026-11-24)
 - Dec 1 on mobile: Santa moved. `SANTA_SPOT.mobile.today[0]` changed `t` from 0.32 to 0.28 in `src/render/route.js`. Only Dec 1, all markets. The NL glove now clears the VANDAAG pill. The value 0.27 breaks the 4 px board-to-line limit, so 0.28 was chosen.
@@ -60,26 +80,11 @@ For the next session (possibly on another PC). What is live, what is half done, 
 - Not reviewed on mobile: anything Figma has no frame for (Dec 1, Dec 26, the ended state, DE/NL/RO, 320 px), motion, and JP at 320. The part that could be compared was reviewed on `efd79be` (see Check results). Dec 1 mobile Santa changed in `b4c589c`; no Figma frame exists for it.
 
 ## Owner decisions still open
-- None that block. Two items below (A, B) are open but NOT STARTED in code: each waits for the owner's "start", and publishing waits for "push".
-
-## Open, not started
-### A. Card texts (owner's words)
-- Locked card title with the long month, not in caps ("Opens: 8 December"). Master's proposal: keep day and month together with a no-break space; NL/RO month in lowercase; DE/NL/RO titles on 2 lines is normal.
-- Day pill shows only the day ("DAY 7"), no date. The master understood this for all card states and markets, caps kept; not confirmed by the owner.
-- The short month is data: `data/cards/<market>.json` raw lines, imported by `scripts/import-sheet.mjs`, rendered in `src/render/card.js` lines 45, 47, 48, 79. The change must survive a re-import.
-- Measured with caps and an unkept date: at 320 the NL locked title takes 3 lines (now 2, card +32 px); at 390 DE and RO take 2 lines (now 1), EN 1. The no-caps version, and whether the date still shows on available and missed cards, is being measured / not yet measured.
-
-### B. RO_MDL title
-- 3 lines at widths 320-366 ("CĂLĂTORIA DE" is 335 px in a 288 px box at 320, font 46 px).
-- Proposal: smaller font only when the first part wraps, 39.5 px at 320 (margins 16.2 px), 2 lines, route 57 px higher. Other markets unchanged. JP has no fit (30 px font).
-- After the change re-run check-santa, check-label-centre, check-header and check-texts for RO.
-- The owner sent the proposal picture without words: probably likes it, not confirmed.
-
-### Way of working
-- Owner wants before/after pictures for every visual choice. Pictures are on one PC only: `/c/Users/grosu.b/.claude/projects/D---claude-TW-tw-xmas-journey-lp/memory/xmas-before-after` (A1-A5, B1-B2 and worker specs; not in the repo).
+- Route labels ("YESTERDAY · {date}", "TODAY’S STOP · {date}", ...) with the long month too? Asked 2026-11-26, no answer. Show before/after pictures first.
 
 ## Next tasks
-1. A and B above, one at a time, each only after the owner says "start".
+1. Nothing started. Items A and B are done and live (`2d3c896`).
+2. Optional, for completeness: the checks listed as not run in the card-dates section.
 
 ## Known non-issues (measured, do not re-chase)
 - Two-part title boxes overlap at 375–768 px but glyphs never touch (gap 5–12 px). At 390 the ink gap is 4.3–6.7 px, 0 shared pixels.
