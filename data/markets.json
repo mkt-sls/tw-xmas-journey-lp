@@ -27,6 +27,15 @@
     "cardsFile": "data/cards/EN_GBP.json"
   },
   {
+    "id": "PL",
+    "uiLang": "PL",
+    "currency": "PLN",
+    "flag": "pl",
+    "flagEmoji": "🇵🇱",
+    "label": "Polski",
+    "cardsFile": "data/cards/PL.json"
+  },
+  {
     "id": "RO_MDL",
     "enabled": false,
     "uiLang": "RO_MD",

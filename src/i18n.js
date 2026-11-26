@@ -10,7 +10,7 @@ export const BUNDLED_FILES = [...Object.keys(uiFiles), ...Object.keys(cardFiles)
 // EN uses en-US on purpose: the sheet's English tags read "DEC 7" for every English market.
 const DATE_LOCALE = {
   EN: 'en-US', RU: 'ru-RU', FR_CA: 'fr-CA', DE: 'de-DE', BG: 'bg-BG', NL: 'nl-NL',
-  RO_MD: 'ro-MD', TR: 'tr-TR', NO: 'nb-NO', IT: 'it-IT', DA: 'da-DK', SV: 'sv-SE',
+  RO_MD: 'ro-MD', PL: 'pl-PL', TR: 'tr-TR', NO: 'nb-NO', IT: 'it-IT', DA: 'da-DK', SV: 'sv-SE',
 };
 // Locale for the long "8 December" form (EN follows the sheet's "Opens 8 December").
 const LONG_LOCALE = { ...DATE_LOCALE, EN: 'en-GB' };
@@ -38,7 +38,8 @@ export function shortDate(date, uiLang) {
     s = `${date.getDate()} ${month.slice(0, 3)}`;
   }
   s = s.toLocaleUpperCase(locale);
-  if (uiLang !== 'EN' && !s.endsWith('.')) s += '.';
+  // PL: no dot, like tab PL ("1 gru").
+  if (uiLang !== 'EN' && uiLang !== 'PL' && !s.endsWith('.')) s += '.';
   return s;
 }
 

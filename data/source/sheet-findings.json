@@ -1,6 +1,8 @@
 {
   "issues": [
-    "RO day 21: the texts sheet has no \"minimum deposit\" line (the MDL cell in the links sheet is empty too). The page shows \"Depunere minimă: 300 MDL\" (the links sheet side table says 22 EUR/GBP -> 300 MDL). Confirmed by the owner (2026-11-26): not a question, listed for the record."
+    "RO day 21: the texts sheet has no \"minimum deposit\" line (the MDL cell in the links sheet is empty too). The page shows \"Depunere minimă: 300 MDL\" (the links sheet side table says 22 EUR/GBP -> 300 MDL). Confirmed by the owner (2026-11-26): not a question, listed for the record.",
+    "PL: Polish plural after 2, 3, 4 (not 12-14) is \"darmowe spiny\", not \"darmowych spinów\". The page shows: 83 DARMOWYCH SPINÓW -> 83 DARMOWE SPINY; 74 DARMOWYCH SPINÓW -> 74 DARMOWE SPINY; 54 DARMOWYCH SPINÓW -> 54 DARMOWE SPINY; 72 DARMOWYCH SPINÓW -> 72 DARMOWE SPINY; 83 DARMOWYCH SPINÓW -> 83 DARMOWE SPINY; 84 DARMOWYCH SPINÓW -> 84 DARMOWE SPINY. Please correct tab PL.",
+    "PL: tab PL has no colon after \"Min. depozyt\", \"Wymagany obrót\" and \"Ważne do\", and no game line on free-spin cards. The page adds the colon and the game line (\"na <game>\", as in the other languages). Listed for the record."
   ],
   "selfTranslated": [
     {
@@ -262,6 +264,116 @@
       "lang": "RO_MD",
       "key": "responsible",
       "value": "18+ · Joacă responsabil"
+    },
+    {
+      "lang": "PL",
+      "key": "cta_primary",
+      "value": "Wpłać i odbierz"
+    },
+    {
+      "lang": "PL",
+      "key": "processing",
+      "value": "Przetwarzanie..."
+    },
+    {
+      "lang": "PL",
+      "key": "terms_conditions",
+      "value": "Regulamin"
+    },
+    {
+      "lang": "PL",
+      "key": "how_it_works",
+      "value": "Jak to działa"
+    },
+    {
+      "lang": "PL",
+      "key": "step1_title",
+      "value": "Wracaj codziennie"
+    },
+    {
+      "lang": "PL",
+      "key": "step1_body",
+      "value": "Każdego dnia, od 1 do 26 grudnia, odblokowuje się nowe miejsce."
+    },
+    {
+      "lang": "PL",
+      "key": "step2_title",
+      "value": "Otwórz prezent"
+    },
+    {
+      "lang": "PL",
+      "key": "step2_body",
+      "value": "Dotknij świecącego prezentu dnia, aby odkryć swój bonus."
+    },
+    {
+      "lang": "PL",
+      "key": "step3_title",
+      "value": "Wpłać i odbierz"
+    },
+    {
+      "lang": "PL",
+      "key": "campaign_dates",
+      "value": "1–26 grudnia · 26 prezentów"
+    },
+    {
+      "lang": "PL",
+      "key": "campaign_title",
+      "value": "Świąteczna podróż"
+    },
+    {
+      "lang": "PL",
+      "key": "subtitle",
+      "value": "Podążaj za Świętym Mikołajem przez zaśnieżoną angielską wioskę. Każdego dnia odblokowuje się nowy prezent – otwórz go i odbierz swój bonus."
+    },
+    {
+      "lang": "PL",
+      "key": "today",
+      "value": "DZIŚ"
+    },
+    {
+      "lang": "PL",
+      "key": "yesterday",
+      "value": "WCZORAJ · {date}"
+    },
+    {
+      "lang": "PL",
+      "key": "todays_stop",
+      "value": "PRZYSTANEK DNIA · {date}"
+    },
+    {
+      "lang": "PL",
+      "key": "tomorrow",
+      "value": "JUTRO · {date}"
+    },
+    {
+      "lang": "PL",
+      "key": "in_two_days",
+      "value": "ZA 2 DNI · {date}"
+    },
+    {
+      "lang": "PL",
+      "key": "missed",
+      "value": "PRZEGAPIONY · {date}"
+    },
+    {
+      "lang": "PL",
+      "key": "come_back_on",
+      "value": "Wróć {date}, aby odblokować ten prezent"
+    },
+    {
+      "lang": "PL",
+      "key": "open_gift",
+      "value": "OTWÓRZ PREZENT"
+    },
+    {
+      "lang": "PL",
+      "key": "unlocks_in",
+      "value": "Odblokowanie za {time}"
+    },
+    {
+      "lang": "PL",
+      "key": "responsible",
+      "value": "18+ · Graj odpowiedzialnie"
     }
   ]
 }
