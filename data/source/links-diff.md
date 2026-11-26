@@ -11,5 +11,4 @@ None.
 
 - RO_MDL day 21: links sheet has no MDL block (page: min deposit 300 MDL). Known gap.
 
-Other links-sheet findings (not amount differences): 
-- Links sheet, day 3: the "Bonus Name" says "Bonus Day 2 Dec" (day 2), expected "Bonus Day 3 Dec".
+Other links-sheet findings (not amount differences): none

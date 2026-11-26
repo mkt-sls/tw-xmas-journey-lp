@@ -163,10 +163,10 @@ for (const i of issues) if (i !== roGap) item(i, '');
 // says 1-26); step 3 body dropped (owner: stays as it is, the sheet need not change); header without LOG IN / REGISTER and the T&C link
 // (owner decision); the locked card "Come back tomorrow" text (owner: we change it on our side).
 item(
-  'Translated by us — please check',
-  'Strings the texts sheet does not have. English is the text from the Figma design; German / Dutch / Romanian are our own translation. The table is below.',
+  'Translated by us (approved by the owner 2026-11-26, not sent to the client)',
+  'Strings the texts sheet does not have. English is the text from the Figma design; German / Dutch / Romanian are our own translation. The table is below, for the record.',
 );
-out.push('### Translated by us — please check');
+out.push('### Translated by us (approved by the owner 2026-11-26)');
 out.push('');
 out.push('| key | EN (Figma) | DE | NL | RO |');
 out.push('| --- | --- | --- | --- | --- |');

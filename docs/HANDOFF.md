@@ -34,7 +34,7 @@ For the next session (possibly on another PC). What is live, what is half done, 
 - Day 21 RO still has no min-deposit line in the texts sheet: the importer still inserts "Depunere minimă: 300 MDL" (owner confirmed 300 on 2026-11-26). 81 free spins for MDL is now in the texts sheet.
 - Card height +72 px. At 390 x 844 and 1366 x 900 everything fits. At 320 x 568 the deposit button is cut in half at the bottom of the card (the card scrolls; before, only the T&C link was below the edge). Owner chose to keep it (option 2) over a shorter card art on short screens (option 3: art 190 -> 130 px below 700 px height, shown and rejected). Jackpot has the same 3 rows and the same card CSS.
 - Tests changed: `cards.test.js` expects the two rows, `texts.test.js` allows "23:59" only in the valid-until row. 104/104 then.
-- `data/ISSUES.md` now lists 3 items: day 21 RO 300 MDL (for the record, owner confirmed), day 3 "Bonus Day 2 Dec" in the links sheet, our translations. Removed as closed: wagering, step 1, step 3 (owner: stays title-only, the client need not change the sheet), header / T&C link (owner decision), locked card text (we changed it). login / register / legend strings are no longer listed (the page does not show them).
+- `data/ISSUES.md` now lists 2 items, both for the record: day 21 RO 300 MDL (owner confirmed) and our translations (owner approved). The day 3 name item went away after the client fixed the links sheet. Removed as closed: wagering, step 1, step 3 (owner: stays title-only, the client need not change the sheet), header / T&C link (owner decision), locked card text (we changed it). login / register / legend strings are no longer listed (the page does not show them).
 - Not run on this change: check-texts, check-modal-jump.
 
 ### Locked card "come back" line (`7b79036` / `ac94285`, 2026-11-26)
@@ -104,14 +104,17 @@ Owner chose each part from before/after pictures.
 - Day 12 = 78 free spins: owner confirmed again 2026-11-26 (the texts sheet now says 78 too).
 - "How it works" step 3 stays title-only; the client need not change the sheet (owner 2026-11-26).
 - Header and T&C link: owner decision, not a client question (2026-11-26).
-- Our DE/NL/RO translations: owner OK to send them to the client for a check (2026-11-26).
+- Our DE/NL/RO translations (incl. `come_back_on`): approved by the owner, not sent to the client (2026-11-26).
+- "Valid until 23:59" = local time of each geo (owner 2026-11-26). The page already opens and closes gifts by the visitor's local day, so nothing changes in code. Only a visitor outside the market's country (travel, VPN) sees their own device day.
+- Links sheet day 3 "Bonus Day 2 Dec": corrected by the client to "Bonus Day 3 Dec" (read in Chrome 2026-11-26; local copy updated in `data/source/links-sheet.txt`). The bonus name is not shown on the page.
 - Cards: wagering and valid-until shown, no smaller card art on short phones (option 2). Locked card: "Come back on <date>" for gifts 2+ days away (option 2).
 
-## Client message (2026-11-26, drafted in Russian, not sent by us)
-The owner sends it. Open points in it: (1) "Valid until 23:59": which time zone? The page opens gifts by the visitor's local day; (2) please check our DE/NL/RO translations, with links per market; (3) links sheet day 3 bonus name "Bonus Day 2 Dec". Point 3 could not be checked: the Drive connector cannot see the links sheet, and the Chrome account open on the Mac gets "Ai nevoie de acces" (no access request was sent).
+## Client message (2026-11-26)
+No open question is left for the client. The owner may send a short thank-you in Russian (drafted in the session): wagering, valid-until, dates 1–26 and the day 3 fix are on the page.
+- Links sheet re-read in Chrome on 2026-11-26 (account with access, tab TW EUROPE, via `/gviz/tq?tqx=out:html&gid=524100056` + get_page_text): compared row by row with `data/source/links-sheet.txt`. Only change: day 3 Bonus Name. Codes, links, EUR/GBP/MDL amounts and min deposits identical. Day 21 MDL still empty (page: 300 MDL, owner confirmed). New PLN column: not our market.
 
 ## Next tasks
-1. Nothing started. Wait for the client's answers (time zone of "Valid until", translations, day 3 name). If the texts sheet changes again, re-import as in docs/PLAN.md and compare cell by cell first.
+1. Nothing started and nothing waiting on the client. If either sheet changes again, re-import as in docs/PLAN.md and compare cell by cell first.
 2. Optional, for completeness: check-texts and check-modal-jump on `ac94285` (the cards are 72 px taller since `306eb7a`), and the checks listed as not run in the card-dates section.
 
 ## Known non-issues (measured, do not re-chase)

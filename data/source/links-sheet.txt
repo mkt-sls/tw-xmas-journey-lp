@@ -1,10 +1,10 @@
 Source: https://docs.google.com/spreadsheets/d/1qpxJhrKTPyaUyGmJRrwPQNbh4T8s7458HJCCi2QwiTo/gviz/tq?tqx=out:html&sheet=TW%20EUROPE
-Read via Chrome get_page_text on 2026-11-19 (table cells joined by spaces).
+Read via Chrome get_page_text on 2026-11-19 (table cells joined by spaces). Re-read 2026-11-26: only the day 3 Bonus Name changed; the new PLN column is not copied (not our market).
 Columns: Date | Weekday | Bonus Name | Promo code name/link | Link | Bonus (EUR) | Min dep (EUR) | GBP | MDL
 ---
 1 December Tuesday Bonus Day 1 Dec ICEBLAST https://tw-de.icu/casino?modal=deposit&promocode=ICEBLAST 73% up to 450 EUR min dep 35 35 EUR 73% up to 450 GBP min dep 35 GBP 73% up to 8.500 MDL min dep 500 MDL
 2 December Wednesday Bonus Day 2 Dec FROSTWIN https://tw-de.icu/casino?modal=deposit&promocode=FROSTWIN 83 FS min dep 25 bet 0.10 Thunder Coins: Hold and Win 25 EUR 83 FS min dep 25 GBP 83 FS min dep 350 MDL
-3 December Thursday Bonus Day 2 Dec GOLDENBELL https://tw-de.icu/casino?modal=deposit&promocode=GOLDENBELL 60 FS min dep 28 bet 0.20 Gemhalla 28 EUR 60 FS min dep 28 GBP 60 FS min dep 400 MDL
+3 December Thursday Bonus Day 3 Dec GOLDENBELL https://tw-de.icu/casino?modal=deposit&promocode=GOLDENBELL 60 FS min dep 28 bet 0.20 Gemhalla 28 EUR 60 FS min dep 28 GBP 60 FS min dep 400 MDL
 4 December Friday Bonus Day 4 Dec WINTERJOY https://tw-de.icu/casino?modal=deposit&promocode=WINTERJOY 55% up to 550 EUR min dep 30 30 EUR 55% up to 550 GBP min dep 30 GBP 55% up to 10.000 MDL min dep 450 MDL
 5 December Saturday Bonus Day 5 Dec SANTA https://tw-de.icu/casino?modal=deposit&promocode=SANTA 90 FS min dep 25 bet 0.10 Big Bass Splash 25 EUR 90 FS min dep 25 GBP 90 FS min dep 350 MDL
 6 December Sunday Bonus Day 6 Dec CROWN https://tw-de.icu/casino?modal=deposit&promocode=CROWN 70 FS min dep 30 bet 0.20 Bonanza Billion 30 EUR 70 FS min dep 30 GBP 70 FS min dep 450 MDL
@@ -30,4 +30,4 @@ Columns: Date | Weekday | Bonus Name | Promo code name/link | Link | Bonus (EUR)
 26 December Saturday Bonus Day 26 Dec FLAME https://tw-de.icu/casino?modal=deposit&promocode=FLAME 53% up to 500 EUR min dep 25 25 EUR 53% up to 500 GBP min dep 25 GBP 53% up to 9.500 MDL min dep 350 MDL
 ---
 Side table (min dep EUR/GBP -> MDL): 22->300, 25->350, 28->400, 30->450, 35->500
-Known gaps: day 21 MDL cell empty; day 3 Bonus Name says "Bonus Day 2 Dec".
+Known gaps: day 21 MDL cell empty. (Day 3 Bonus Name corrected by the client, read 2026-11-26.)
