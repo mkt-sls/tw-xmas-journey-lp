@@ -2,7 +2,11 @@
 import browserMap from '../data/browser-map.json';
 import markets from '../data/markets.json';
 
-export const MARKETS = markets;
+// A market with "enabled": false in data/markets.json is off: not in the selector, not picked from the
+// browser language, ?market= and a saved choice ignore it. Its data stays in the repo; src/i18n.js and
+// vite.config.js keep its cards, texts and flag out of the build (owner 2026-11-26: RO_MDL off).
+export const ALL_MARKETS = markets;
+export const MARKETS = markets.filter((m) => m.enabled !== false);
 const STORAGE_KEY = 'tw-cj-market';
 
 export function getMarket(id) {
@@ -12,16 +16,16 @@ export function getMarket(id) {
 /**
  * Pick a market from a list of browser languages (navigator.languages order).
  * Per language: exact tag first (en-AU), then primary language (de). A language with no market
- * (e.g. "fr") is skipped and the next preference is tried. Nothing found -> fallback.
+ * (e.g. "fr"), or whose market is off, is skipped and the next preference is tried. Nothing found -> fallback.
  */
 export function marketFromLanguages(languages, map = browserMap) {
   const exact = Object.fromEntries(Object.entries(map.exact).map(([k, v]) => [k.toLowerCase(), v]));
   for (const raw of languages ?? []) {
     const tag = String(raw).trim().replace(/_/g, '-').toLowerCase();
     if (!tag) continue;
-    if (exact[tag]) return exact[tag];
+    if (getMarket(exact[tag])) return exact[tag];
     const primary = tag.split('-')[0];
-    if (map.language[primary]) return map.language[primary];
+    if (getMarket(map.language[primary])) return map.language[primary];
   }
   return map.fallback;
 }

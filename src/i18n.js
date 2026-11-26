@@ -1,6 +1,10 @@
 // UI strings, card data loading and date formatting per UI language.
-const uiFiles = import.meta.glob('../data/ui/*.json');
-const cardFiles = import.meta.glob('../data/cards/*.json');
+// Files of a market that is off ("enabled": false in data/markets.json) are excluded here, so they are
+// not in the build. Glob patterns must be literals: keep this list in step with markets.json
+// (src/market.test.js checks it). RO_MDL off since 2026-11-26; its UI language RO_MD has no other market.
+const uiFiles = import.meta.glob(['../data/ui/*.json', '!../data/ui/RO_MD.json']);
+const cardFiles = import.meta.glob(['../data/cards/*.json', '!../data/cards/RO_MDL.json']);
+export const BUNDLED_FILES = [...Object.keys(uiFiles), ...Object.keys(cardFiles)];
 
 // Locale used to format dates, per UI language (keys of data/ui/<lang>.json).
 // EN uses en-US on purpose: the sheet's English tags read "DEC 7" for every English market.

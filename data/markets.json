@@ -28,6 +28,7 @@
   },
   {
     "id": "RO_MDL",
+    "enabled": false,
     "uiLang": "RO_MD",
     "currency": "MDL",
     "flag": "md",

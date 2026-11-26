@@ -108,7 +108,7 @@ describe('browser language to market', () => {
     [['en'], 'EN_GBP'],
     [['en-US'], 'EN_GBP'],
     [['en-CA'], 'EN_GBP'],
-    [['ro-MD'], 'RO_MDL'],
+    [['ro-MD'], 'EN_GBP'], // RO_MDL is off (owner 2026-11-26)
     [['fr'], 'EN_GBP'],
     [['nl-BE'], 'NL'],
     [['de-AT'], 'DE'],
