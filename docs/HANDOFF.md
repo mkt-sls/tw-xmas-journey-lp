@@ -33,7 +33,7 @@ Owner chose each part from before/after pictures.
 - A1 and A2 are render-time only: `data/cards` stays as imported, so a re-import keeps them.
 - B, RO_MDL title on mobile: `fitTitle()` in `src/render/intro.js`, called from `fitStage()` and after the fonts load. When `.intro__title-a` wraps, the title goes down 0.5 px at a time (min 30) until it is one line: 320 = 39.5 px (2 lines instead of 3, route about 57 px higher), 360 = 45 px. EN/DE/NL and RO at 375 or more keep 46 px. Desktop: no fit.
 - B side fix: the mobile accent rule `.intro__title[data-accent] span + span` margin is now `calc(-0.087em - 0.2em + 0.19em)` (was `-4px` fixed; -0.087em = -4px at 46 px). With the fixed -4px the Ă breve was under 3 px from line 1 at 39.5 px (check-line-ink failed).
-- Not changed: the route labels ("IERI · 6 DEC.") keep the short month. The owner was asked and has not said.
+- Not changed: the route labels ("IERI · 6 DEC.") keep the short month. Owner decision 2026-11-26, see "Owner decisions closed".
 - Checks on the branch (2026-11-26, Mac): `npm test` 104/104, build ok; check-santa 4 markets x 320/360/390/768/1366 560/560, the same 6 accepted rows as `main` (RO re-run after the em fix: 112/112); check-label-centre --mobile 0 fails, 90 accepted touches (same as `main`); check-line-ink 320/360/375/390 all markets 0 fails; check-texts --mobile RO 320/360/390: only the known `.intro__title-a` box overlap (1 per width), same as `main` at 320; check-modal-jump RO and DE at 320/390 0 jumps; check-header all pass.
 - Not run after the em fix: check-header, check-modal-jump. Not run at all: check-modal-jump on EN and NL; check-texts on EN, DE and NL; a `main` baseline of check-texts RO at 360 and 390.
 
@@ -80,10 +80,13 @@ Owner chose each part from before/after pictures.
 - Not reviewed on mobile: anything Figma has no frame for (Dec 1, Dec 26, the ended state, DE/NL/RO, 320 px), motion, and JP at 320. The part that could be compared was reviewed on `efd79be` (see Check results). Dec 1 mobile Santa changed in `b4c589c`; no Figma frame exists for it.
 
 ## Owner decisions still open
-- Route labels ("YESTERDAY · {date}", "TODAY’S STOP · {date}", ...) with the long month too? Asked 2026-11-26, no answer. Show before/after pictures first.
+- None.
+
+## Owner decisions closed
+- Route labels keep the short month ("IERI · 6 DEC.", "TODAY’S STOP · DEC 8"). Owner chose option 1 on 2026-11-26 from before/after pictures (4 markets, Dec 8 and Dec 24, 390 / 320 / 1366). The options shown were: 1 short month (live); 2 long month on every label; 3 long month, with today's mobile tag on 2 lines. What the pictures measured, in case the question comes back: with option 2 the NL today tag "STOP VAN VANDAAG · 24 DECEMBER" overflows its label at 390 and 320. With options 2 and 3 the NL desktop far label "OVER 2 DAGEN · 26 DECEMBER" overflows its 190 px max width (the far label was checked only on NL). Jackpot also uses the short month. Do not re-ask.
 
 ## Next tasks
-1. Nothing started. Items A and B are done and live (`2d3c896`).
+1. Nothing started. Items A and B are done and live (`2d3c896`). The route label month question is closed (short month stays).
 2. Optional, for completeness: the checks listed as not run in the card-dates section.
 
 ## Known non-issues (measured, do not re-chase)
