@@ -1,4 +1,4 @@
-# Top Win Christmas Journey — handoff 2026-11-26 (page code ac94285)
+# Top Win Christmas Journey — handoff 2026-11-26 (page code 654b77d, Poland added)
 
 For the next session. What is live, how the page behaves, what the owner decided.
 
@@ -15,7 +15,8 @@ For the next session. What is live, how the page behaves, what the owner decided
 
 ## Live state
 - Live URL: https://mkt-sls.github.io/tw-xmas-journey-lp/ . GitHub Pages deploys on every push to `main`.
-- Live page code = `ac94285` (later commits on `main` are docs only).
+- Live page code = `654b77d` (merged in `bb2ed1f`, deploy checked: "Polski" is in the live bundle). Later commits on `main` are docs only.
+- Markets on: DE, NL, EN_GBP, PL. Off: RO_MDL.
 
 ## How the page behaves (owner decisions, with the code that does it)
 - **Moldova (RO_MDL) is off** (owner 2026-11-26). `"enabled": false` in `data/markets.json`: not in the selector; `?market=RO_MDL`, a saved RO_MDL choice and a Romanian browser all get EN_GBP (`src/market.js`). Not in the build: the plugin in `vite.config.js` drops the market entry, its browser-map languages and its flag; the glob list in `src/i18n.js` excludes `data/cards/RO_MDL.json` and `data/ui/RO_MD.json`. Its data stays in the repo and the import scripts and tests still cover it. To turn it back on: remove `"enabled": false` and the two `!` patterns in `src/i18n.js`, update `src/market.test.js` and the `ro-MD` row in `src/date.test.js`. The locale tables in `src/i18n.js` / `src/market.js` still name `ro-MD` (generic language tables, like TR or IT).
@@ -38,12 +39,14 @@ For the next session. What is live, how the page behaves, what the owner decided
 - Kept on purpose vs Jackpot / Figma: Santa scale 0.8 (JP 0.62); footer gap 96 px (JP 74); footer colour lighter than Figma for contrast; today's golden ring fades with the pulse and is hidden under reduced motion.
 
 ## Client
-- Nothing open. The owner sent a thank-you in Russian (2026-11-26).
+- Nothing waiting on the client. The owner sent a thank-you in Russian (2026-11-26).
+- Tab PL issues (`data/ISSUES.md` items 2 and 3: plural "DARMOWE SPINY" on 6 cards, missing colons and game lines) are fixed on our side in the importer. Not sent to the client; the owner decides whether to tell them. If the client corrects tab PL, the importer accepts both forms.
 - Last sheet reads 2026-11-26: texts sheet edited by the client 12:50 UTC, imported in `7b1d944`; links sheet tab TW EUROPE re-read in Chrome (via `/gviz/tq?tqx=out:html&gid=524100056` + get_page_text), only change was the day 3 bonus name (not shown on the page). Tab PL and the PLN column are used since 2026-11-26 (Poland added).
 
 ## Next tasks
-1. Nothing started and nothing waiting on the client. If either sheet changes again, re-import as in docs/PLAN.md and compare cell by cell first.
-2. Optional, for completeness (cards are 72 px taller since `306eb7a`): check-texts and check-modal-jump on `ac94285`, all markets. Last full results: `npm test` 108/108; check-santa, check-label-centre --mobile, check-line-ink, check-header all pass on the card-dates branch.
+1. Nothing started and nothing waiting on the client. If either sheet changes again, re-import as in docs/PLAN.md and compare cell by cell first. The links sheet dump now has the PLN column: copy it too.
+2. Optional, for completeness: check-texts and check-modal-jump on `654b77d`, all markets (PL never ran them); check-line-ink on PL at the other widths (360, 375, 414, 1024, 1440, 1920; only 320 and 390 ran).
+   Last results (2026-11-26, PL branch): `npm test` 124/124, build ok; on PL: check-santa 112/112, check-label-centre --mobile 0 fails, check-header all pass, check-line-ink 320 + 390 only the title pair below (known non-issue). Earlier markets: unchanged since the card-dates branch, where all checks passed.
 
 ## Known non-issues (measured, do not re-chase)
 - PL title: check-line-ink reports "ŚWIĄTECZNA" / "PODRÓŻ" gap -7 px at every width (18 pairs at 320 + 390). It compares whole lines: the Ą tail (left) and the Ż dot (right) are in different columns. Measured on screenshots: about 6 px from the Ą tail to "D" at 320, the Ż dot clear of "N". Not a touch.
