@@ -142,12 +142,14 @@ function buildCards(market) {
     // Override: free-spin count follows the links sheet (see FS_OVERRIDES). The amount is line 3 (index 2) of every card state.
     const fsFix = FS_OVERRIDES[d];
     if (fsFix) {
+      let fixed = false;
       for (const l of [active, credited, expired]) {
-        if (l[2].startsWith(`${fsFix.to} `)) continue; // the sheet was already corrected
+        if (l[2].startsWith(`${fsFix.to} `)) continue; // the sheet was already corrected (texts sheet 2026-11-26: 78)
         if (!l[2].startsWith(`${fsFix.from} `)) throw new Error(`${market.tab} day ${d}: expected ${fsFix.from} free spins, got "${l[2]}"`);
         l[2] = l[2].replace(String(fsFix.from), String(fsFix.to));
+        fixed = true;
       }
-      if (market.id === 'DE') {
+      if (fixed && market.id === 'DE') {
         issues.push(
           `Day ${d}: the texts sheet says ${fsFix.from} free spins in all four languages, the links sheet says ${fsFix.to}. ` +
             `Confirmed by the owner (2026-11-19): the page shows ${fsFix.to}. Not a question: please correct the texts sheet to ${fsFix.to}.`,
@@ -168,7 +170,8 @@ function buildCards(market) {
     if (minDeposit) minLinePrefix = minLinePrefix ?? active[minIdx].replace(/:.*$/, '');
     if (!minDeposit) {
       // Day 21 RO: the sheet has no "minimum deposit" line. Use the side table of the links sheet (22 -> 300 MDL) and flag it.
-      if (market.currency === 'MDL' && active.length === minIdx + 2) {
+      // Card without the min line: [.., amount, (game), wagering, valid until, CTA, terms] (texts sheet since 2026-11-26).
+      if (market.currency === 'MDL' && active.length === minIdx + 4) {
         const eurMin = parseMin(tabs.DE[d][0].split('\n').find((x) => /:\s*\d+\s*EUR$/.test(x)) ?? '');
         const mdl = eurMin && MDL_FOR_EUR[eurMin.value];
         if (!mdl) throw new Error(`Day ${d}: no minimum deposit and no side-table value`);
@@ -178,7 +181,7 @@ function buildCards(market) {
         for (const l of [active, credited, expired]) l.splice(minIdx, 0, text);
         issues.push(
           `RO day ${d}: the texts sheet has no "minimum deposit" line (the MDL cell in the links sheet is empty too). ` +
-            `The page shows "${text}" (the links sheet side table says ${eurMin.value} EUR/GBP -> ${mdl} MDL). Please confirm.`,
+            `The page shows "${text}" (the links sheet side table says ${eurMin.value} EUR/GBP -> ${mdl} MDL). Confirmed by the owner (2026-11-26): not a question, listed for the record.`,
         );
       } else {
         throw new Error(`${market.tab} day ${d}: cannot find the minimum deposit line in ${JSON.stringify(active)}`);
@@ -186,9 +189,16 @@ function buildCards(market) {
     }
     // Layout check (after a patch the arrays are one line longer than the sheet's).
     const n = active.length;
-    if (n !== (kind === 'fs' ? 7 : 6)) throw new Error(`${market.tab} day ${d}: unexpected active line count ${n}`);
+    if (n !== (kind === 'fs' ? 9 : 8)) throw new Error(`${market.tab} day ${d}: unexpected active line count ${n}`);
     if (locked.length !== 6) throw new Error(`${market.tab} day ${d}: unexpected locked line count ${locked.length}`);
     if (expired.length !== n || credited.length !== n) throw new Error(`${market.tab} day ${d}: states differ in line count`);
+    // Wagering and valid-until rows follow the min deposit (texts sheet 2026-11-26): "Wagering: x20", "Valid until: 23:59, 1 Dec".
+    // The card draws every row between the min deposit and the CTA from raw (card.js), so these fields only check the layout.
+    const wagering = active[minIdx + 1];
+    const validUntil = active[minIdx + 2];
+    if (!/:\s*x\d+$/.test(wagering)) throw new Error(`${market.tab} day ${d}: expected a wagering row, got "${wagering}"`);
+    if (!/:\s*\d{1,2}:\d{2},\s/.test(validUntil)) throw new Error(`${market.tab} day ${d}: expected a valid-until row, got "${validUntil}"`);
+    if (!new RegExp(`\\b${d}\\b`).test(validUntil.replace(/^.*?:\s*\d{1,2}:\d{2},/, ''))) throw new Error(`${market.tab} day ${d}: valid-until row is for another day: "${validUntil}"`);
 
     days.push({
       day: d,
@@ -198,8 +208,8 @@ function buildCards(market) {
       amount,
       game,
       minDeposit,
-      wagering: '', // not in the sheet yet: row hidden when empty
-      validUntil: '', // not in the sheet yet: row hidden when empty
+      wagering,
+      validUntil,
       raw: { active, expired, locked },
     });
   }
@@ -251,12 +261,16 @@ function buildUi(market, cards) {
   // ("the gift turns green when the bonus is credited") is dropped on purpose.
   // Everything from OWN is our wording (English = skeleton text, other languages = our translation): list it for the client.
   for (const k of Object.keys(OWN)) {
-    if (k !== 'brand' && !k.startsWith('title_')) selfTranslated.push({ lang, key: k, value: OWN[k][lang] });
+    if (k !== 'brand' && !k.startsWith('title_') && !NOT_SHOWN.has(k)) selfTranslated.push({ lang, key: k, value: OWN[k][lang] });
   }
 
   const locations = readLocations(market);
   return { lang, strings, locations };
 }
+
+// Kept in data/ui like Jackpot, but the page does not render them (header without LOG IN / REGISTER since 2026-11-24, route legend
+// removed 2026-11-23): not listed for the client to check.
+const NOT_SHOWN = new Set(['login', 'register', 'legend_available', 'legend_missed']);
 
 function pick(table, lang) {
   return Object.fromEntries(Object.entries(table).filter(([, v]) => v[lang] !== undefined).map(([k, v]) => [k, v[lang]]));

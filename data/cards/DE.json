@@ -20,14 +20,16 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 35 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 1. Dez.",
       "raw": {
         "active": [
           "TAG 1 · 1 DEZ.",
           "WEIHNACHTSBONUS",
           "73% BIS ZU 450 EUR",
           "Mindesteinzahlung: 35 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 1. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -36,6 +38,8 @@
           "WEIHNACHTSBONUS",
           "73% BIS ZU 450 EUR",
           "Mindesteinzahlung: 35 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 1. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -64,8 +68,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 2. Dez.",
       "raw": {
         "active": [
           "TAG 2 · 2 DEZ.",
@@ -73,6 +77,8 @@
           "83 FREISPIELE",
           "in Thunder Coins: Hold and Win",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 2. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -82,6 +88,8 @@
           "83 FREISPIELE",
           "in Thunder Coins: Hold and Win",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 2. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -110,8 +118,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 28 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 3. Dez.",
       "raw": {
         "active": [
           "TAG 3 · 3 DEZ.",
@@ -119,6 +127,8 @@
           "60 FREISPIELE",
           "in Gemhalla",
           "Mindesteinzahlung: 28 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 3. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -128,6 +138,8 @@
           "60 FREISPIELE",
           "in Gemhalla",
           "Mindesteinzahlung: 28 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 3. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -158,14 +170,16 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 4. Dez.",
       "raw": {
         "active": [
           "TAG 4 · 4 DEZ.",
           "WEIHNACHTSBONUS",
           "55% BIS ZU 550 EUR",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 4. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -174,6 +188,8 @@
           "WEIHNACHTSBONUS",
           "55% BIS ZU 550 EUR",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 4. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -202,8 +218,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 5. Dez.",
       "raw": {
         "active": [
           "TAG 5 · 5 DEZ.",
@@ -211,6 +227,8 @@
           "90 FREISPIELE",
           "in Big Bass Splash",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 5. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -220,6 +238,8 @@
           "90 FREISPIELE",
           "in Big Bass Splash",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 5. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -248,8 +268,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 6. Dez.",
       "raw": {
         "active": [
           "TAG 6 · 6 DEZ.",
@@ -257,6 +277,8 @@
           "70 FREISPIELE",
           "in Bonanza Billion",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 6. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -266,6 +288,8 @@
           "70 FREISPIELE",
           "in Bonanza Billion",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 6. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -294,8 +318,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 22 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 7. Dez.",
       "raw": {
         "active": [
           "TAG 7 · 7 DEZ.",
@@ -303,6 +327,8 @@
           "88 FREISPIELE",
           "in Thunder Coins: Hold and Win",
           "Mindesteinzahlung: 22 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 7. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -312,6 +338,8 @@
           "88 FREISPIELE",
           "in Thunder Coins: Hold and Win",
           "Mindesteinzahlung: 22 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 7. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -342,14 +370,16 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 35 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 8. Dez.",
       "raw": {
         "active": [
           "TAG 8 · 8 DEZ.",
           "WEIHNACHTSBONUS",
           "65% BIS ZU 650 EUR",
           "Mindesteinzahlung: 35 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 8. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -358,6 +388,8 @@
           "WEIHNACHTSBONUS",
           "65% BIS ZU 650 EUR",
           "Mindesteinzahlung: 35 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 8. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -386,8 +418,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 22 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 9. Dez.",
       "raw": {
         "active": [
           "TAG 9 · 9 DEZ.",
@@ -395,6 +427,8 @@
           "74 FREISPIELE",
           "in John Hunter and the Book of Tut",
           "Mindesteinzahlung: 22 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 9. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -404,6 +438,8 @@
           "74 FREISPIELE",
           "in John Hunter and the Book of Tut",
           "Mindesteinzahlung: 22 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 9. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -432,8 +468,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 10. Dez.",
       "raw": {
         "active": [
           "TAG 10 · 10 DEZ.",
@@ -441,6 +477,8 @@
           "54 FREISPIELE",
           "in Bonanza Billion",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 10. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -450,6 +488,8 @@
           "54 FREISPIELE",
           "in Bonanza Billion",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 10. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -480,14 +520,16 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 22 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 11. Dez.",
       "raw": {
         "active": [
           "TAG 11 · 11 DEZ.",
           "WEIHNACHTSBONUS",
           "45% BIS ZU 450 EUR",
           "Mindesteinzahlung: 22 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 11. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -496,6 +538,8 @@
           "WEIHNACHTSBONUS",
           "45% BIS ZU 450 EUR",
           "Mindesteinzahlung: 22 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 11. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -524,8 +568,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 12. Dez.",
       "raw": {
         "active": [
           "TAG 12 · 12 DEZ.",
@@ -533,6 +577,8 @@
           "78 FREISPIELE",
           "in Sweet Bonanza Xmas",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 12. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -542,6 +588,8 @@
           "78 FREISPIELE",
           "in Sweet Bonanza Xmas",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 12. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -570,8 +618,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 13. Dez.",
       "raw": {
         "active": [
           "TAG 13 · 13 DEZ.",
@@ -579,6 +627,8 @@
           "91 FREISPIELE",
           "in Big Bass Splash",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 13. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -588,6 +638,8 @@
           "91 FREISPIELE",
           "in Big Bass Splash",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 13. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -616,8 +668,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 14. Dez.",
       "raw": {
         "active": [
           "TAG 14 · 14 DEZ.",
@@ -625,6 +677,8 @@
           "86 FREISPIELE",
           "in Christmas Carol Megaways",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 14. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -634,6 +688,8 @@
           "86 FREISPIELE",
           "in Christmas Carol Megaways",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 14. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -664,14 +720,16 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 15. Dez.",
       "raw": {
         "active": [
           "TAG 15 · 15 DEZ.",
           "WEIHNACHTSBONUS",
           "60% BIS ZU 600 EUR",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 15. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -680,6 +738,8 @@
           "WEIHNACHTSBONUS",
           "60% BIS ZU 600 EUR",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 15. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -708,8 +768,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 28 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 16. Dez.",
       "raw": {
         "active": [
           "TAG 16 · 16 DEZ.",
@@ -717,6 +777,8 @@
           "72 FREISPIELE",
           "in Gemhalla",
           "Mindesteinzahlung: 28 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 16. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -726,6 +788,8 @@
           "72 FREISPIELE",
           "in Gemhalla",
           "Mindesteinzahlung: 28 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 16. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -754,8 +818,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 17. Dez.",
       "raw": {
         "active": [
           "TAG 17 · 17 DEZ.",
@@ -763,6 +827,8 @@
           "96 FREISPIELE",
           "in 25 Cookies: Hit the Bonus",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 17. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -772,6 +838,8 @@
           "96 FREISPIELE",
           "in 25 Cookies: Hit the Bonus",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 17. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -802,14 +870,16 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 18. Dez.",
       "raw": {
         "active": [
           "TAG 18 · 18 DEZ.",
           "WEIHNACHTSBONUS",
           "63% BIS ZU 650 EUR",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 18. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -818,6 +888,8 @@
           "WEIHNACHTSBONUS",
           "63% BIS ZU 650 EUR",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 18. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -846,8 +918,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 19. Dez.",
       "raw": {
         "active": [
           "TAG 19 · 19 DEZ.",
@@ -855,6 +927,8 @@
           "83 FREISPIELE",
           "in Yeti Quest",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 19. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -864,6 +938,8 @@
           "83 FREISPIELE",
           "in Yeti Quest",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 19. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -892,8 +968,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 20. Dez.",
       "raw": {
         "active": [
           "TAG 20 · 20 DEZ.",
@@ -901,6 +977,8 @@
           "57 FREISPIELE",
           "in Sweet Bonanza Xmas",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 20. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -910,6 +988,8 @@
           "57 FREISPIELE",
           "in Sweet Bonanza Xmas",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 20. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -938,8 +1018,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 22 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 21. Dez.",
       "raw": {
         "active": [
           "TAG 21 · 21 DEZ.",
@@ -947,6 +1027,8 @@
           "81 FREISPIELE",
           "in 25 Cookies: Hit the Bonus",
           "Mindesteinzahlung: 22 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 21. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -956,6 +1038,8 @@
           "81 FREISPIELE",
           "in 25 Cookies: Hit the Bonus",
           "Mindesteinzahlung: 22 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 21. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -986,14 +1070,16 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 22. Dez.",
       "raw": {
         "active": [
           "TAG 22 · 22 DEZ.",
           "WEIHNACHTSBONUS",
           "70% BIS ZU 700 EUR",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 22. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -1002,6 +1088,8 @@
           "WEIHNACHTSBONUS",
           "70% BIS ZU 700 EUR",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 22. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -1030,8 +1118,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 35 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 23. Dez.",
       "raw": {
         "active": [
           "TAG 23 · 23 DEZ.",
@@ -1039,6 +1127,8 @@
           "99 FREISPIELE",
           "in Big Bass Christmas - Frozen Lake",
           "Mindesteinzahlung: 35 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 23. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -1048,6 +1138,8 @@
           "99 FREISPIELE",
           "in Big Bass Christmas - Frozen Lake",
           "Mindesteinzahlung: 35 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 23. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -1076,8 +1168,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 30 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 24. Dez.",
       "raw": {
         "active": [
           "TAG 24 · 24 DEZ.",
@@ -1085,6 +1177,8 @@
           "84 FREISPIELE",
           "in Yeti Quest",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 24. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -1094,6 +1188,8 @@
           "84 FREISPIELE",
           "in Yeti Quest",
           "Mindesteinzahlung: 30 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 24. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -1122,8 +1218,8 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 35 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 25. Dez.",
       "raw": {
         "active": [
           "TAG 25 · 25 DEZ.",
@@ -1131,6 +1227,8 @@
           "101 FREISPIELE",
           "in Christmas Carol Megaways",
           "Mindesteinzahlung: 35 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 25. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -1140,6 +1238,8 @@
           "101 FREISPIELE",
           "in Christmas Carol Megaways",
           "Mindesteinzahlung: 35 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 25. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -1170,14 +1270,16 @@
         "currency": "EUR",
         "text": "Mindesteinzahlung: 25 EUR"
       },
-      "wagering": "",
-      "validUntil": "",
+      "wagering": "Umsatzanforderung: x20",
+      "validUntil": "Gültig bis: 23:59, 26. Dez.",
       "raw": {
         "active": [
           "TAG 26 · 26 DEZ.",
           "WEIHNACHTSBONUS",
           "53% BIS ZU 500 EUR",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 26. Dez.",
           "EINZAHLEN & SICHERN",
           "Vollständige Teilnahmebedingungen"
         ],
@@ -1186,6 +1288,8 @@
           "WEIHNACHTSBONUS",
           "53% BIS ZU 500 EUR",
           "Mindesteinzahlung: 25 EUR",
+          "Umsatzanforderung: x20",
+          "Gültig bis: 23:59, 26. Dez.",
           "Geschenk abgelaufen",
           "Vollständige Teilnahmebedingungen"
         ],
