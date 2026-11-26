@@ -16,6 +16,7 @@
     "tomorrow": "MORGEN · {date}",
     "in_two_days": "IN 2 TAGEN · {date}",
     "missed": "VERPASST · {date}",
+    "come_back_on": "Komm am {date} wieder und schalte dieses Geschenk frei",
     "open_gift": "GESCHENK ÖFFNEN",
     "unlocks_in": "Wird freigeschaltet in {time}",
     "responsible": "18+ · Verantwortungsvoll spielen",

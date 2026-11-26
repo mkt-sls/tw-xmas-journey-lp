@@ -2,7 +2,7 @@
 // the parsed fields only decide the layout (is there a game line?).
 import { depositLinkFor, linkFor } from '../config.js';
 import { dayDate, dayState } from '../date.js';
-import { longDate } from '../i18n.js';
+import { fill, longDate } from '../i18n.js';
 import { CLOSE_SVG, asset, esc, escNb } from './util.js';
 
 /** "Min. deposit: 35 GBP" -> ["Min. deposit", "35 GBP"]; also handles French "Dépôt min. : 35 CAD". */
@@ -22,6 +22,13 @@ function opensLong(line, day, uiLang) {
   const m = String(line).match(/^(.*?:)\s*/);
   if (!m || !uiLang) return line;
   return `${m[1]} ${longDate(dayDate(day), uiLang).replace(/\s/g, '\u00a0')}`;
+}
+
+/** Locked card line under the title. Tomorrow: the sheet's "Come back tomorrow to unlock this gift". Two or more days away:
+ * ui.come_back_on ("Come back on 9 December to unlock this gift", our wording in DE/NL/RO), owner 2026-11-26. */
+function comeBack(line, day, today, ui, uiLang) {
+  if (day - today < 2 || !ui.come_back_on || !uiLang) return line;
+  return fill(ui.come_back_on, { date: longDate(dayDate(day), uiLang).replace(/\s/g, '\u00a0') });
 }
 
 function art(kind, chip) {
@@ -59,7 +66,7 @@ export function renderCard({ card, day, today, ui, marketId, uiLang }) {
     // so lines[4] ("Locked · N Dec") is not used here. data/cards stays as imported.
     body = `
       <p class="card__type">${escNb(lines[1])}</p>
-      <div class="card__offer"><h2 class="card__opens" id="card-title">${escNb(opensLong(lines[2], day, uiLang))}</h2><p class="card__game">${escNb(lines[3])}</p></div>
+      <div class="card__offer"><h2 class="card__opens" id="card-title">${escNb(opensLong(lines[2], day, uiLang))}</h2><p class="card__game">${escNb(comeBack(lines[3], day, today, ui, uiLang))}</p></div>
       <button type="button" class="btn-primary" disabled>${escNb(ui.locked)}</button>
       ${termsLink}`;
   } else {

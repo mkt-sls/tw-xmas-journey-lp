@@ -16,6 +16,7 @@
     "tomorrow": "MORGEN · {date}",
     "in_two_days": "OVER 2 DAGEN · {date}",
     "missed": "GEMIST · {date}",
+    "come_back_on": "Kom op {date} terug om dit cadeau te ontgrendelen",
     "open_gift": "CADEAU OPENEN",
     "unlocks_in": "Wordt ontgrendeld over {time}",
     "responsible": "18+ · Speel verantwoord",

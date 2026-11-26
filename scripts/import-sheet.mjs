@@ -90,6 +90,13 @@ const OWN = {
   tomorrow: { EN: 'TOMORROW · {date}', DE: 'MORGEN · {date}', NL: 'MORGEN · {date}', RO_MD: 'MÂINE · {date}' },
   in_two_days: { EN: 'IN 2 DAYS · {date}', DE: 'IN 2 TAGEN · {date}', NL: 'OVER 2 DAGEN · {date}', RO_MD: 'PESTE 2 ZILE · {date}' },
   missed: { EN: 'MISSED · {date}', DE: 'VERPASST · {date}', NL: 'GEMIST · {date}', RO_MD: 'PIERDUT · {date}' },
+  // Locked card, gift 2 or more days away: the sheet's "Come back tomorrow" would be wrong there (owner 2026-11-26, option 2).
+  come_back_on: {
+    EN: 'Come back on {date} to unlock this gift',
+    DE: 'Komm am {date} wieder und schalte dieses Geschenk frei',
+    NL: 'Kom op {date} terug om dit cadeau te ontgrendelen',
+    RO_MD: 'Revino pe {date} pentru a debloca acest cadou',
+  },
   open_gift: { EN: 'OPEN GIFT', DE: 'GESCHENK ÖFFNEN', NL: 'CADEAU OPENEN', RO_MD: 'DESCHIDE CADOUL' },
   unlocks_in: {
     EN: 'Unlocks in {time}',
