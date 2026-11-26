@@ -49,7 +49,7 @@ try {
 const args = process.argv.slice(2);
 const opt = (k) => args.find((a) => a.startsWith(`--${k}=`))?.slice(k.length + 3);
 const WIDTHS = (opt('widths') || '320,360,375,390,414,430').split(',').map(Number);
-const MARKETS = (opt('markets') || 'DE,NL,EN_GBP,RO_MDL').split(',');
+const MARKETS = (opt('markets') || 'DE,NL,EN_GBP,PL,RO_MDL').split(',');
 const LABELS = args.includes('--labels');
 const TITLE = args.includes('--title');
 const RESIZE = args.includes('--resize');

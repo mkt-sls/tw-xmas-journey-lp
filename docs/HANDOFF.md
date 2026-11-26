@@ -33,18 +33,21 @@ For the next session. What is live, how the page behaves, what the owner decided
 - **Dec 1 mobile Santa**: `SANTA_SPOT.mobile.today[0]` = `[0, 0.28]` in `src/render/route.js` (0.27 breaks the 4 px board-to-line limit). Keeps the NL glove clear of the VANDAAG pill.
 - **Valid until 23:59** = local time of each geo. Gifts open and close by the visitor's local day; nothing to change.
 - **Data overrides** (kept in the importer, listed in `data/ISSUES.md`): day 21 RO min deposit 300 MDL (owner confirmed); day 12 = 78 free spins and step 1 "1–26" (the sheet now says the same). "How it works" step 3 stays title-only.
-- **Our DE/NL/RO translations** (strings not in the sheet, incl. `come_back_on`): approved by the owner, not sent to the client. Table in `data/ISSUES.md`.
+- **Our DE/NL/RO/PL translations** (strings not in the sheet, incl. `come_back_on`): approved by the owner, not sent to the client. Table in `data/ISSUES.md`.
+- **Poland (PL, PLN)**, added 2026-11-26 (owner): cards from tab PL of the texts sheet, numbers checked against the PLN column of TW EUROPE (0 differences). UI ELEMENT has no PL column, so the UI strings (`PL_UI`, `OWN`) and the 26 place names (`PL_LOCATIONS`) in `scripts/import-sheet.mjs` are ours (owner approved; days 8 and 17 shortened to "Zimowa Latarnia" and "Piekarnia Mikołaja"). `normalisePl()` fixes tab PL on import (owner: use the client's text with these fixes): the plural after 2-4 ("83 DARMOWE SPINY", not "DARMOWYCH SPINÓW", 6 cards), the missing game line ("na <game>", from tab EN), and the missing colon after "Min. depozyt", "Wymagany obrót", "Ważne do" (without it the card drops those rows). Locked title keeps the client's "Otwiera się 8 grudnia" (no colon; `opensLong()` handles it). Short date without a dot ("8 GRU"), like tab PL. Selector: "Polski", after English; browser language `pl` picks PL.
 - Kept on purpose vs Jackpot / Figma: Santa scale 0.8 (JP 0.62); footer gap 96 px (JP 74); footer colour lighter than Figma for contrast; today's golden ring fades with the pulse and is hidden under reduced motion.
 
 ## Client
 - Nothing open. The owner sent a thank-you in Russian (2026-11-26).
-- Last sheet reads 2026-11-26: texts sheet edited by the client 12:50 UTC, imported in `7b1d944`; links sheet tab TW EUROPE re-read in Chrome (via `/gviz/tq?tqx=out:html&gid=524100056` + get_page_text), only change was the day 3 bonus name (not shown on the page). Tab / column PL: not our market.
+- Last sheet reads 2026-11-26: texts sheet edited by the client 12:50 UTC, imported in `7b1d944`; links sheet tab TW EUROPE re-read in Chrome (via `/gviz/tq?tqx=out:html&gid=524100056` + get_page_text), only change was the day 3 bonus name (not shown on the page). Tab PL and the PLN column are used since 2026-11-26 (Poland added).
 
 ## Next tasks
 1. Nothing started and nothing waiting on the client. If either sheet changes again, re-import as in docs/PLAN.md and compare cell by cell first.
 2. Optional, for completeness (cards are 72 px taller since `306eb7a`): check-texts and check-modal-jump on `ac94285`, all markets. Last full results: `npm test` 108/108; check-santa, check-label-centre --mobile, check-line-ink, check-header all pass on the card-dates branch.
 
 ## Known non-issues (measured, do not re-chase)
+- PL title: check-line-ink reports "ŚWIĄTECZNA" / "PODRÓŻ" gap -7 px at every width (18 pairs at 320 + 390). It compares whole lines: the Ą tail (left) and the Ż dot (right) are in different columns. Measured on screenshots: about 6 px from the Ą tail to "D" at 320, the Ż dot clear of "N". Not a touch.
+- PL card amounts with "SPINÓW" get `data-accent` (line-height 1.12, `src/styles/components.css`): at 1.05 the Ó accent came 1.4 px under line 1. Only PL has marks in amounts (RO_MDL too, but it is off).
 - Two-part title boxes (`.intro__title-a` / `-b`) overlap at 375–768 px but glyphs never touch (gap 5–12 px; at 390: 4.3–6.7 px, 0 shared pixels). check-texts reports it as 1 overlap per market at widths 768 or less.
 - Desktop label tag "HEUTIGER HALT" overlaps only the transparent glow of the gift button.
 - DE title "Weihnachts" is cut by 1 px only at viewport 315 px or narrower. Owner choice.
@@ -53,10 +56,10 @@ For the next session. What is live, how the page behaves, what the owner decided
 - Figma has frames only for EN Dec 7 (desktop and mobile 390). No frame for Dec 1, Dec 26, the ended state, DE/NL/RO or 320.
 
 ## Sources
-- Texts and place names: Google Sheet `1OfbBN6d6mei4t0iReU_ZNNVelqjQwl3fBxh-aGpzwAY` (tabs DE, NL, EN, RO; UI ELEMENT with LOCATION table rows 27–52; tab PL not used).
+- Texts and place names: Google Sheet `1OfbBN6d6mei4t0iReU_ZNNVelqjQwl3fBxh-aGpzwAY` (tabs DE, NL, EN, RO, PL; UI ELEMENT with LOCATION table rows 27–52, no PL column).
 - Numbers and links: sheet `1qpxJhrKTPyaUyGmJRrwPQNbh4T8s7458HJCCi2QwiTo`, tab **TW EUROPE** only (tab JP = Jackpot, never).
 - Figma: file `s2CqwGqe0O0FcALhBNlTRe`, canvas `58:332`. Asset map: `public/assets/README.md`.
-- Markets: DE (EUR), NL (EUR), EN_GBP (GBP), RO_MDL (MDL). 26 days, 1–26 December 2026. One deposit link per day on `tw-de.icu` with the day code (card deposit button). Footer "18+ · Play responsibly".
+- Markets: DE (EUR), NL (EUR), EN_GBP (GBP), PL (PLN), RO_MDL (MDL, off). 26 days, 1–26 December 2026. One deposit link per day on `tw-de.icu` with the day code (card deposit button). Footer "18+ · Play responsibly".
 
 ## How to run
 `npm ci`, then `npm run dev`, `npm test`, `npm run build`. Re-import steps: `docs/PLAN.md`.

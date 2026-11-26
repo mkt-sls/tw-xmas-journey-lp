@@ -1,6 +1,6 @@
 // Line-ink check (Step 7): the ink of line N+1 must never touch the ink of line N.
 //
-//   node scripts/check-line-ink.mjs [--widths=320,360,...] [--markets=DE,NL,EN_GBP,RO_MDL] [--min-gap=3] [--all-dates] [--page-only] [--quiet]
+//   node scripts/check-line-ink.mjs [--widths=320,360,...] [--markets=DE,NL,EN_GBP,PL,RO_MDL] [--min-gap=3] [--all-dates] [--page-only] [--quiet]
 //
 // Why: scripts/check-headline.mjs only compares the ink of a line with its OWN paint box. Tight line spacing (Figma: the mobile "JOURNEY"
 // box starts 4px above the bottom of the "CHRISTMAS" box) is fine for English capitals, but an accent over a capital ("Ă" in RO "CRĂCIUN",
@@ -42,7 +42,7 @@ try {
 const args = process.argv.slice(2);
 const opt = (k, d) => args.find((a) => a.startsWith(`--${k}=`))?.slice(k.length + 3) ?? d;
 const WIDTHS = opt('widths', '320,360,375,390,414,1024,1440,1920').split(',').map(Number);
-const MARKETS = opt('markets', 'DE,NL,EN_GBP,RO_MDL').split(',');
+const MARKETS = opt('markets', 'DE,NL,EN_GBP,PL,RO_MDL').split(',');
 const MIN_GAP = Number(opt('min-gap', '3'));
 const ALL_DATES = args.includes('--all-dates');
 const PAGE_ONLY = args.includes('--page-only');

@@ -25,8 +25,9 @@ const findings = JSON.parse(fs.readFileSync(path.join(dataDir, 'source', 'sheet-
 const issues = [...findings.issues]; // plain strings
 const clientIssues = []; // { title, body }
 
-const NUM = '(\\d[\\d.]*)';
-const toInt = (s) => Number(s.replace(/\./g, ''));
+// MDL writes thousands with a dot ("8.500"), PLN with a comma ("2,000").
+const NUM = '(\\d[\\d.,]*)';
+const toInt = (s) => Number(s.replace(/[.,]/g, ''));
 
 // One currency block: "73% up to 450 GBP min dep 35 GBP" or "83 FS min dep 25 GBP" (or MDL).
 function parseBlock(text, cur) {
@@ -57,18 +58,22 @@ for (const line of rowLines) {
     });
   }
 
-  // rest = "<EUR block> <GBP block> <MDL block>"; split at the GBP block start.
-  const gbpAt = rest.search(/\d+% up to [\d.]+ GBP|\d+ FS min dep \d+ GBP/);
-  const mdlAt = rest.search(/\d+% up to [\d.]+ MDL|\d+ FS min dep \d+ MDL/);
+  // rest = "<EUR block> <GBP block> <MDL block> <PLN block>"; split at each block start. Day 21 has no MDL block.
+  const at = (cur) => rest.search(new RegExp(`\\d+% up to [\\d.,]+ ${cur}|\\d+ FS min dep \\d+ ${cur}`));
+  const gbpAt = at('GBP');
+  const mdlAt = at('MDL');
+  const plnAt = at('PLN');
+  const end = (from) => [mdlAt, plnAt].filter((x) => x > from).sort((a, b) => a - b)[0];
   const eurText = rest.slice(0, gbpAt);
   const eur = parseBlock(eurText, 'EUR');
-  const gbp = parseBlock(rest.slice(gbpAt, mdlAt < 0 ? undefined : mdlAt), 'GBP');
-  const mdl = mdlAt < 0 ? null : parseBlock(rest.slice(mdlAt), 'MDL');
+  const gbp = parseBlock(rest.slice(gbpAt, end(gbpAt)), 'GBP');
+  const mdl = mdlAt < 0 ? null : parseBlock(rest.slice(mdlAt, end(mdlAt)), 'MDL');
+  const pln = plnAt < 0 ? null : parseBlock(rest.slice(plnAt), 'PLN');
   const game = eurText.match(/bet [\d.]+ (.+?) \d+ EUR\s*$/)?.[1] ?? null;
   if (!eur || !gbp) throw new Error(`Day ${day}: cannot read EUR/GBP blocks from "${rest}"`);
 
   links.push({ day, date: `2026-12-${String(day).padStart(2, '0')}`, promo: code, deposit: url });
-  sheetRows.push({ day, EUR: eur, GBP: gbp, MDL: mdl, game });
+  sheetRows.push({ day, EUR: eur, GBP: gbp, MDL: mdl, PLN: pln, game });
 }
 links.sort((a, b) => a.day - b.day);
 if (links.some((l, i) => l.day !== i + 1)) throw new Error('Days are not 1..26 in order');
@@ -164,16 +169,16 @@ for (const i of issues) if (i !== roGap) item(i, '');
 // (owner decision); the locked card "Come back tomorrow" text (owner: we change it on our side).
 item(
   'Translated by us (approved by the owner 2026-11-26, not sent to the client)',
-  'Strings the texts sheet does not have. English is the text from the Figma design; German / Dutch / Romanian are our own translation. The table is below, for the record.',
+  'Strings the texts sheet does not have. English is the text from the Figma design; German / Dutch / Romanian / Polish are our own translation. The table is below, for the record.',
 );
 out.push('### Translated by us (approved by the owner 2026-11-26)');
 out.push('');
-out.push('| key | EN (Figma) | DE | NL | RO |');
-out.push('| --- | --- | --- | --- | --- |');
+out.push('| key | EN (Figma) | DE | NL | RO | PL |');
+out.push('| --- | --- | --- | --- | --- | --- |');
 const cell = (x) => String(x ?? '').replace(/\|/g, '\\|');
 for (const key of [...new Set(findings.selfTranslated.map((x) => x.key))]) {
   const v = (lang) => findings.selfTranslated.find((x) => x.lang === lang && x.key === key)?.value;
-  out.push(`| \`${key}\` | ${cell(v('EN'))} | ${cell(v('DE'))} | ${cell(v('NL'))} | ${cell(v('RO_MD'))} |`);
+  out.push(`| \`${key}\` | ${cell(v('EN'))} | ${cell(v('DE'))} | ${cell(v('NL'))} | ${cell(v('RO_MD'))} | ${cell(v('PL'))} |`);
 }
 out.push('');
 fs.writeFileSync(path.join(dataDir, 'ISSUES.md'), out.join('\n'), 'utf8');

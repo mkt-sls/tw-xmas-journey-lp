@@ -1,33 +1,33 @@
 Source: https://docs.google.com/spreadsheets/d/1qpxJhrKTPyaUyGmJRrwPQNbh4T8s7458HJCCi2QwiTo/gviz/tq?tqx=out:html&sheet=TW%20EUROPE
-Read via Chrome get_page_text on 2026-11-19 (table cells joined by spaces). Re-read 2026-11-26: only the day 3 Bonus Name changed; the new PLN column is not copied (not our market).
-Columns: Date | Weekday | Bonus Name | Promo code name/link | Link | Bonus (EUR) | Min dep (EUR) | GBP | MDL
+Read via Chrome get_page_text on 2026-11-19 (table cells joined by spaces). Re-read 2026-11-26: only the day 3 Bonus Name changed; PLN column copied 2026-11-26 (Poland added).
+Columns: Date | Weekday | Bonus Name | Promo code name/link | Link | Bonus (EUR) | Min dep (EUR) | GBP | MDL | PLN
 ---
-1 December Tuesday Bonus Day 1 Dec ICEBLAST https://tw-de.icu/casino?modal=deposit&promocode=ICEBLAST 73% up to 450 EUR min dep 35 35 EUR 73% up to 450 GBP min dep 35 GBP 73% up to 8.500 MDL min dep 500 MDL
-2 December Wednesday Bonus Day 2 Dec FROSTWIN https://tw-de.icu/casino?modal=deposit&promocode=FROSTWIN 83 FS min dep 25 bet 0.10 Thunder Coins: Hold and Win 25 EUR 83 FS min dep 25 GBP 83 FS min dep 350 MDL
-3 December Thursday Bonus Day 3 Dec GOLDENBELL https://tw-de.icu/casino?modal=deposit&promocode=GOLDENBELL 60 FS min dep 28 bet 0.20 Gemhalla 28 EUR 60 FS min dep 28 GBP 60 FS min dep 400 MDL
-4 December Friday Bonus Day 4 Dec WINTERJOY https://tw-de.icu/casino?modal=deposit&promocode=WINTERJOY 55% up to 550 EUR min dep 30 30 EUR 55% up to 550 GBP min dep 30 GBP 55% up to 10.000 MDL min dep 450 MDL
-5 December Saturday Bonus Day 5 Dec SANTA https://tw-de.icu/casino?modal=deposit&promocode=SANTA 90 FS min dep 25 bet 0.10 Big Bass Splash 25 EUR 90 FS min dep 25 GBP 90 FS min dep 350 MDL
-6 December Sunday Bonus Day 6 Dec CROWN https://tw-de.icu/casino?modal=deposit&promocode=CROWN 70 FS min dep 30 bet 0.20 Bonanza Billion 30 EUR 70 FS min dep 30 GBP 70 FS min dep 450 MDL
-7 December Monday Bonus Day 7 Dec XMASRUSH https://tw-de.icu/casino?modal=deposit&promocode=XMASRUSH 88 FS min dep 22 bet 0.10 Thunder Coins: Hold and Win 22 EUR 88 FS min dep 22 GBP 88 FS min dep 300 MDL
-8 December Tuesday Bonus Day 8 Dec SANTALUCK https://tw-de.icu/casino?modal=deposit&promocode=SANTALUCK 65% up to 650 EUR min dep 35 35 EUR 65% up to 650 GBP min dep 35 GBP 65% up to 12.000 MDL min dep 500 MDL
-9 December Wednesday Bonus Day 9 Dec GIFTBOX https://tw-de.icu/casino?modal=deposit&promocode=GIFTBOX 74 FS min dep 22 bet 0.10 John Hunter and the Book of Tut 22 EUR 74 FS min dep 22 GBP 74 FS min dep 300 MDL
-10 December Thursday Bonus Day 10 Dec FORTUNE https://tw-de.icu/casino?modal=deposit&promocode=FORTUNE 54 FS min dep 25 bet 0.20 Bonanza Billion 25 EUR 54 FS min dep 25 GBP 54 FS min dep 350 MDL
-11 December Friday Bonus Day 11 Dec SNOWPOWER https://tw-de.icu/casino?modal=deposit&promocode=SNOWPOWER 45% up to 450 EUR min dep 22 22 EUR 45% up to 450 GBP min dep 22 GBP 45% up to 8.500 MDL min dep 300 MDL
-12 December Saturday Bonus Day 12 Dec LUCKYELF https://tw-de.icu/casino?modal=deposit&promocode=LUCKYELF 78 FS min dep 25 bet 0.20 Sweet Bonanza Xmas 25 EUR 78 FS min dep 25 GBP 78 FS min dep 350 MDL
-13 December Sunday Bonus Day 13 Dec JOLLY https://tw-de.icu/casino?modal=deposit&promocode=JOLLY 91 FS min dep 25 bet 0.10 Big Bass Splash 25 EUR 91 FS min dep 25 GBP 91 FS min dep 350 MDL
-14 December Monday Bonus Day 14 Dec CRYSTAL https://tw-de.icu/casino?modal=deposit&promocode=CRYSTAL 86 FS min dep 30 bet 0.20 Christmas Carol Megaways 30 EUR 86 FS min dep 30 GBP 86 FS min dep 450 MDL
-15 December Tuesday Bonus Day 15 Dec WISH https://tw-de.icu/casino?modal=deposit&promocode=WISH 60% up to 600 EUR min dep 25 25 EUR 60% up to 600 GBP min dep 25 GBP 60% up to 11.000 MDL min dep 350 MDL
-16 December Wednesday Bonus Day 16 Dec WINTERBLISS https://tw-de.icu/casino?modal=deposit&promocode=WINTERBLISS 72 FS min dep 28 bet 0.20 Gemhalla 28 EUR 72 FS min dep 28 GBP 72 FS min dep 400 MDL
-17 December Thursday Bonus Day 17 Dec FROSTCOIN https://tw-de.icu/casino?modal=deposit&promocode=FROSTCOIN 96 FS min dep 30 bet 0.10 25 Cookies: Hit the Bonus 30 EUR 96 FS min dep 30 GBP 96 FS min dep 450 MDL
-18 December Friday Bonus Day 18 Dec SPARK https://tw-de.icu/casino?modal=deposit&promocode=SPARK 63% up to 650 EUR min dep 25 25 EUR 63% up to 650 GBP min dep 25 GBP 63% up to 12.000 MDL min dep 350 MDL
-19 December Saturday Bonus Day 19 Dec POLARBOOST https://tw-de.icu/casino?modal=deposit&promocode=POLARBOOST 83 FS min dep 30 bet 0.20 Yeti Quest 30 EUR 83 FS min dep 30 GBP 83 FS min dep 450 MDL
-20 December Sunday Bonus Day 20 Dec FESTIVERUSH https://tw-de.icu/casino?modal=deposit&promocode=FESTIVERUSH 57 FS min dep 25 bet 0.20 Sweet Bonanza Xmas 25 EUR 57 FS min dep 25 GBP 57 FS min dep 350 MDL
-21 December Monday Bonus Day 21 Dec GLORY https://tw-de.icu/casino?modal=deposit&promocode=GLORY 81 FS min dep 22 bet 0.10 25 Cookies: Hit the Bonus 22 EUR 81 FS min dep 22 GBP
-22 December Tuesday Bonus Day 22 Dec WINTERGLOW https://tw-de.icu/casino?modal=deposit&promocode=WINTERGLOW 70% up to 700 EUR min dep 30 30 EUR 70% up to 700 GBP min dep 30 GBP 70% up to 13.000 MDL min dep 450 MDL
-23 December Wednesday Bonus Day 23 Dec ICEWISH https://tw-de.icu/casino?modal=deposit&promocode=ICEWISH 99 FS min dep 35 bet 0.10 Big Bass Christmas - Frozen Lake 35 EUR 99 FS min dep 35 GBP 99 FS min dep 500 MDL
-24 December Thursday Bonus Day 24 Dec WONDER https://tw-de.icu/casino?modal=deposit&promocode=WONDER 84 FS min dep 30 bet 0.20 Yeti Quest 30 EUR 84 FS min dep 30 GBP 84 FS min dep 450 MDL
-25 December Friday Bonus Day 25 Dec JEWEL https://tw-de.icu/casino?modal=deposit&promocode=JEWEL 101 FS min dep 35 bet 0.20 Christmas Carol Megaways 35 EUR 101 FS min dep 35 GBP 101 FS min dep 500 MDL
-26 December Saturday Bonus Day 26 Dec FLAME https://tw-de.icu/casino?modal=deposit&promocode=FLAME 53% up to 500 EUR min dep 25 25 EUR 53% up to 500 GBP min dep 25 GBP 53% up to 9.500 MDL min dep 350 MDL
+1 December Tuesday Bonus Day 1 Dec ICEBLAST https://tw-de.icu/casino?modal=deposit&promocode=ICEBLAST 73% up to 450 EUR min dep 35 35 EUR 73% up to 450 GBP min dep 35 GBP 73% up to 8.500 MDL min dep 500 MDL 73% up to 2,000 PLN min dep 155 PLN
+2 December Wednesday Bonus Day 2 Dec FROSTWIN https://tw-de.icu/casino?modal=deposit&promocode=FROSTWIN 83 FS min dep 25 bet 0.10 Thunder Coins: Hold and Win 25 EUR 83 FS min dep 25 GBP 83 FS min dep 350 MDL 83 FS min dep 110 PLN
+3 December Thursday Bonus Day 3 Dec GOLDENBELL https://tw-de.icu/casino?modal=deposit&promocode=GOLDENBELL 60 FS min dep 28 bet 0.20 Gemhalla 28 EUR 60 FS min dep 28 GBP 60 FS min dep 400 MDL 60 FS min dep 125 PLN
+4 December Friday Bonus Day 4 Dec WINTERJOY https://tw-de.icu/casino?modal=deposit&promocode=WINTERJOY 55% up to 550 EUR min dep 30 30 EUR 55% up to 550 GBP min dep 30 GBP 55% up to 10.000 MDL min dep 450 MDL 55% up to 2,500 PLN min dep 135 PLN
+5 December Saturday Bonus Day 5 Dec SANTA https://tw-de.icu/casino?modal=deposit&promocode=SANTA 90 FS min dep 25 bet 0.10 Big Bass Splash 25 EUR 90 FS min dep 25 GBP 90 FS min dep 350 MDL 90 FS min dep 110 PLN
+6 December Sunday Bonus Day 6 Dec CROWN https://tw-de.icu/casino?modal=deposit&promocode=CROWN 70 FS min dep 30 bet 0.20 Bonanza Billion 30 EUR 70 FS min dep 30 GBP 70 FS min dep 450 MDL 70 FS min dep 135 PLN
+7 December Monday Bonus Day 7 Dec XMASRUSH https://tw-de.icu/casino?modal=deposit&promocode=XMASRUSH 88 FS min dep 22 bet 0.10 Thunder Coins: Hold and Win 22 EUR 88 FS min dep 22 GBP 88 FS min dep 300 MDL 88 FS min dep 100 PLN
+8 December Tuesday Bonus Day 8 Dec SANTALUCK https://tw-de.icu/casino?modal=deposit&promocode=SANTALUCK 65% up to 650 EUR min dep 35 35 EUR 65% up to 650 GBP min dep 35 GBP 65% up to 12.000 MDL min dep 500 MDL 65% up to 2,900 PLN min dep 155 PLN
+9 December Wednesday Bonus Day 9 Dec GIFTBOX https://tw-de.icu/casino?modal=deposit&promocode=GIFTBOX 74 FS min dep 22 bet 0.10 John Hunter and the Book of Tut 22 EUR 74 FS min dep 22 GBP 74 FS min dep 300 MDL 74 FS min dep 100 PLN
+10 December Thursday Bonus Day 10 Dec FORTUNE https://tw-de.icu/casino?modal=deposit&promocode=FORTUNE 54 FS min dep 25 bet 0.20 Bonanza Billion 25 EUR 54 FS min dep 25 GBP 54 FS min dep 350 MDL 54 FS min dep 110 PLN
+11 December Friday Bonus Day 11 Dec SNOWPOWER https://tw-de.icu/casino?modal=deposit&promocode=SNOWPOWER 45% up to 450 EUR min dep 22 22 EUR 45% up to 450 GBP min dep 22 GBP 45% up to 8.500 MDL min dep 300 MDL 45% up to 2,000 PLN min dep 100 PLN
+12 December Saturday Bonus Day 12 Dec LUCKYELF https://tw-de.icu/casino?modal=deposit&promocode=LUCKYELF 78 FS min dep 25 bet 0.20 Sweet Bonanza Xmas 25 EUR 78 FS min dep 25 GBP 78 FS min dep 350 MDL 78 FS min dep 110 PLN
+13 December Sunday Bonus Day 13 Dec JOLLY https://tw-de.icu/casino?modal=deposit&promocode=JOLLY 91 FS min dep 25 bet 0.10 Big Bass Splash 25 EUR 91 FS min dep 25 GBP 91 FS min dep 350 MDL 91 FS min dep 110 PLN
+14 December Monday Bonus Day 14 Dec CRYSTAL https://tw-de.icu/casino?modal=deposit&promocode=CRYSTAL 86 FS min dep 30 bet 0.20 Christmas Carol Megaways 30 EUR 86 FS min dep 30 GBP 86 FS min dep 450 MDL 86 FS min dep 135 PLN
+15 December Tuesday Bonus Day 15 Dec WISH https://tw-de.icu/casino?modal=deposit&promocode=WISH 60% up to 600 EUR min dep 25 25 EUR 60% up to 600 GBP min dep 25 GBP 60% up to 11.000 MDL min dep 350 MDL 60% up to 2,600 PLN min dep 110 PLN
+16 December Wednesday Bonus Day 16 Dec WINTERBLISS https://tw-de.icu/casino?modal=deposit&promocode=WINTERBLISS 72 FS min dep 28 bet 0.20 Gemhalla 28 EUR 72 FS min dep 28 GBP 72 FS min dep 400 MDL 72 FS min dep 125 PLN
+17 December Thursday Bonus Day 17 Dec FROSTCOIN https://tw-de.icu/casino?modal=deposit&promocode=FROSTCOIN 96 FS min dep 30 bet 0.10 25 Cookies: Hit the Bonus 30 EUR 96 FS min dep 30 GBP 96 FS min dep 450 MDL 96 FS min dep 135 PLN
+18 December Friday Bonus Day 18 Dec SPARK https://tw-de.icu/casino?modal=deposit&promocode=SPARK 63% up to 650 EUR min dep 25 25 EUR 63% up to 650 GBP min dep 25 GBP 63% up to 12.000 MDL min dep 350 MDL 63% up to 2,900 PLN min dep 110 PLN
+19 December Saturday Bonus Day 19 Dec POLARBOOST https://tw-de.icu/casino?modal=deposit&promocode=POLARBOOST 83 FS min dep 30 bet 0.20 Yeti Quest 30 EUR 83 FS min dep 30 GBP 83 FS min dep 450 MDL 83 FS min dep 135 PLN
+20 December Sunday Bonus Day 20 Dec FESTIVERUSH https://tw-de.icu/casino?modal=deposit&promocode=FESTIVERUSH 57 FS min dep 25 bet 0.20 Sweet Bonanza Xmas 25 EUR 57 FS min dep 25 GBP 57 FS min dep 350 MDL 57 FS min dep 110 PLN
+21 December Monday Bonus Day 21 Dec GLORY https://tw-de.icu/casino?modal=deposit&promocode=GLORY 81 FS min dep 22 bet 0.10 25 Cookies: Hit the Bonus 22 EUR 81 FS min dep 22 GBP 81 FS min dep 100 PLN
+22 December Tuesday Bonus Day 22 Dec WINTERGLOW https://tw-de.icu/casino?modal=deposit&promocode=WINTERGLOW 70% up to 700 EUR min dep 30 30 EUR 70% up to 700 GBP min dep 30 GBP 70% up to 13.000 MDL min dep 450 MDL 70% up to 3,100 PLN min dep 135 PLN
+23 December Wednesday Bonus Day 23 Dec ICEWISH https://tw-de.icu/casino?modal=deposit&promocode=ICEWISH 99 FS min dep 35 bet 0.10 Big Bass Christmas - Frozen Lake 35 EUR 99 FS min dep 35 GBP 99 FS min dep 500 MDL 99 FS min dep 155 PLN
+24 December Thursday Bonus Day 24 Dec WONDER https://tw-de.icu/casino?modal=deposit&promocode=WONDER 84 FS min dep 30 bet 0.20 Yeti Quest 30 EUR 84 FS min dep 30 GBP 84 FS min dep 450 MDL 84 FS min dep 135 PLN
+25 December Friday Bonus Day 25 Dec JEWEL https://tw-de.icu/casino?modal=deposit&promocode=JEWEL 101 FS min dep 35 bet 0.20 Christmas Carol Megaways 35 EUR 101 FS min dep 35 GBP 101 FS min dep 500 MDL 101 FS min dep 155 PLN
+26 December Saturday Bonus Day 26 Dec FLAME https://tw-de.icu/casino?modal=deposit&promocode=FLAME 53% up to 500 EUR min dep 25 25 EUR 53% up to 500 GBP min dep 25 GBP 53% up to 9.500 MDL min dep 350 MDL 53% up to 2,200 PLN min dep 110 PLN
 ---
 Side table (min dep EUR/GBP -> MDL): 22->300, 25->350, 28->400, 30->450, 35->500
 Known gaps: day 21 MDL cell empty. (Day 3 Bonus Name corrected by the client, read 2026-11-26.)

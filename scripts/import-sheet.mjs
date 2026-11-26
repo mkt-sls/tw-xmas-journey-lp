@@ -23,6 +23,8 @@ const MARKETS = [
   { id: 'NL', tab: 'NL', uiLang: 'NL', currency: 'EUR', uiCol: 2, locCol: 5 },
   { id: 'EN_GBP', tab: 'EN', uiLang: 'EN', currency: 'GBP', uiCol: 0, locCol: 3 },
   { id: 'RO_MDL', tab: 'RO', uiLang: 'RO_MD', currency: 'MDL', uiCol: 3, locCol: 2 },
+  // Poland (owner 2026-11-26): cards from tab PL; UI ELEMENT has no Polish column, so UI strings and place names are ours (PL_UI, PL_LOCATIONS).
+  { id: 'PL', tab: 'PL', uiLang: 'PL', currency: 'PLN', uiCol: null, locCol: null },
 ];
 
 // ---- explicit overrides of the sheets (owner decisions 2026-11-19). Each one is also listed in data/ISSUES.md. ------------
@@ -35,11 +37,63 @@ const STEP1_OVERRIDES = {
   DE: ['1. bis 25. Dezember', '1. bis 26. Dezember'],
   NL: ['1 t/m 25 december', '1 t/m 26 december'],
   RO_MD: ['între 1 și 25 decembrie', 'între 1 și 26 decembrie'],
+  PL: ['od 1 do 25 grudnia', 'od 1 do 26 grudnia'],
 };
+
+// ---- Poland: our wording where the texts sheet has none (UI ELEMENT has no PL column). Listed in ISSUES.md. ----------------
+const PL_UI = {
+  cta_primary: 'Wpłać i odbierz', // same words as the CTA in tab PL
+  processing: 'Przetwarzanie...',
+  terms_conditions: 'Regulamin',
+  how_it_works: 'Jak to działa',
+  step1_title: 'Wracaj codziennie',
+  step1_body: 'Każdego dnia, od 1 do 26 grudnia, odblokowuje się nowe miejsce.',
+  step2_title: 'Otwórz prezent',
+  step2_body: 'Dotknij świecącego prezentu dnia, aby odkryć swój bonus.',
+  step3_title: 'Wpłać i odbierz',
+};
+const PL_LOCATIONS = {
+  1: 'Bajkowa Wioska', 2: 'Wieża Księżycowego Blasku', 3: 'Domek Elfów', 4: 'Złoty Most', 5: 'Śnieżna Poczta',
+  6: 'Piernikowa Ulica', 7: 'Lodowy Most', 8: 'Zimowa Latarnia', 9: 'Labirynt Luster', 10: 'Świetlisty Tunel',
+  11: 'Chatka Krasnali', 12: 'Karmelowa Wyspa', 13: 'Wieża Zegarowa', 14: 'Piernikowy Pociąg', 15: 'Bajkowa Biblioteka',
+  16: 'Podziemny Labirynt', 17: 'Piekarnia Mikołaja', 18: 'Zamek w Chmurach', 19: 'Dolina Kwiatów', 20: 'Stacja Latających Sań',
+  21: 'Zimowa Przystań', 22: 'Wieża Świątecznych Melodii', 23: 'Zimowy Teatr', 24: 'Pałac Słodyczy', 25: 'Gwiezdna Brama',
+  26: 'Pałac Świętego Mikołaja',
+};
+
+// Tab PL is written differently from DE / NL / EN / RO. Brought to their layout here, the client's words kept (listed in ISSUES.md):
+// - "Min. depozyt 155 PLN", "Wymagany obrót x20", "Ważne do 23:59, 1 gru" get the colon the card needs to split label and value;
+// - free-spin cards get the game line the other tabs have ("na <game>", game name from tab EN);
+// - Polish plural after 2-4 (not 12-14): "83 DARMOWYCH SPINÓW" -> "83 DARMOWE SPINY" (the sheet has the genitive for every number).
+const plFsWords = (n) => (n % 10 >= 2 && n % 10 <= 4 && !(n % 100 >= 12 && n % 100 <= 14) ? 'DARMOWE SPINY' : 'DARMOWYCH SPINÓW');
+const plFixes = { colon: 0, game: 0, plural: [] };
+function normalisePl() {
+  const rows = tabs.PL;
+  for (let d = 1; d <= DAYS; d++) {
+    for (let i = 0; i < 3; i++) {
+      const l = String(rows[d][i] ?? '').split('\n');
+      const fix = (re, to) => l.forEach((x, k) => { if (re.test(x)) { l[k] = x.replace(re, to); plFixes.colon += 1; } });
+      fix(/^(Min\. depozyt) (?=\d)/, '$1: ');
+      fix(/^(Wymagany obrót) (?=x\d)/, '$1: ');
+      fix(/^(Ważne do) (?=\d{1,2}:\d{2},)/, '$1: ');
+      const fs = l[2].match(/^(\d+) DARMOWYCH SPINÓW$/);
+      if (fs) {
+        const want = `${fs[1]} ${plFsWords(Number(fs[1]))}`;
+        if (want !== l[2]) { if (i === 0) plFixes.plural.push(`${l[2]} -> ${want}`); l[2] = want; }
+        const enGame = String(tabs.EN[d][0]).split('\n').map((x) => x.trim()).filter(Boolean)[3];
+        if (!/^on /.test(enGame ?? '')) throw new Error(`EN day ${d}: expected a game line, got "${enGame}"`);
+        if (!/^na /.test(l[3])) { l.splice(3, 0, enGame.replace(/^on /, 'na ')); plFixes.game += 1; }
+      }
+      rows[d][i] = l.join('\n');
+    }
+  }
+}
+normalisePl();
 // Day 21 RO has no minimum-deposit line anywhere: see MDL_FOR_EUR below (22 -> 300 MDL).
 
 // Place names: UI ELEMENT, LOCATION title in A24, header in row 26, days 1-26 in rows 27-52.
 function readLocations(market) {
+  if (market.id === 'PL') return Object.fromEntries(Object.entries(PL_LOCATIONS).map(([k, v]) => [k, v]));
   const ui = tabs['UI ELEMENT'];
   if (!/LOCATION/i.test(ui[23]?.[0] ?? '')) throw new Error('UI ELEMENT A24 is not the LOCATION title');
   const out = {};
@@ -57,61 +111,61 @@ const issues = []; // sheet findings for the client, plain English
 const selfTranslated = []; // { lang, key, value }
 
 // ---- self-translated / skeleton UI strings -------------------------------------------------
-// Keys the texts sheet does not carry. English = text from Figma file s2CqwGqe0O0FcALhBNlTRe (canvas 58:332, nodes 58:511 / 58:808 / 58:875 / 58:672); DE/NL/RO are OUR translation (listed in ISSUES.md).
+// Keys the texts sheet does not carry. English = text from Figma file s2CqwGqe0O0FcALhBNlTRe (canvas 58:332, nodes 58:511 / 58:808 / 58:875 / 58:672); DE/NL/RO/PL are OUR translation (listed in ISSUES.md).
 const OWN = {
-  brand: { EN: 'Top Win', DE: 'Top Win', NL: 'Top Win', RO_MD: 'Top Win' },
-  login: { EN: 'Log in', DE: 'Anmelden', NL: 'Inloggen', RO_MD: 'Autentificare' },
-  register: { EN: 'Register', DE: 'Registrieren', NL: 'Registreren', RO_MD: 'Înregistrare' },
+  brand: { EN: 'Top Win', DE: 'Top Win', NL: 'Top Win', RO_MD: 'Top Win', PL: 'Top Win' },
+  login: { EN: 'Log in', DE: 'Anmelden', NL: 'Inloggen', RO_MD: 'Autentificare', PL: 'Zaloguj się' },
+  register: { EN: 'Register', DE: 'Registrieren', NL: 'Registreren', RO_MD: 'Înregistrare', PL: 'Zarejestruj się' },
   campaign_dates: {
     EN: '1–26 December · 26 gifts',
     DE: '1.–26. Dezember · 26 Geschenke',
     NL: '1–26 december · 26 cadeaus',
-    RO_MD: '1–26 decembrie · 26 cadouri',
+    RO_MD: '1–26 decembrie · 26 cadouri', PL: '1–26 grudnia · 26 prezentów',
   },
-  campaign_title: { EN: 'Christmas Journey', DE: 'Weihnachtsreise', NL: 'Kerstreis', RO_MD: 'Călătoria de Crăciun' },
+  campaign_title: { EN: 'Christmas Journey', DE: 'Weihnachtsreise', NL: 'Kerstreis', RO_MD: 'Călătoria de Crăciun', PL: 'Świąteczna podróż' },
   // title in two parts so each language picks its own break: part A white, part B orange gradient. title_join = '1': no gap between the parts on desktop (one word).
-  title_a: { EN: 'Christmas', DE: 'Weihnachts', NL: 'Kerst', RO_MD: 'Călătoria de' },
-  title_b: { EN: 'Journey', DE: 'reise', NL: 'reis', RO_MD: 'Crăciun' },
-  title_join: { EN: undefined, DE: '1', NL: '1', RO_MD: undefined },
+  title_a: { EN: 'Christmas', DE: 'Weihnachts', NL: 'Kerst', RO_MD: 'Călătoria de', PL: 'Świąteczna' },
+  title_b: { EN: 'Journey', DE: 'reise', NL: 'reis', RO_MD: 'Crăciun', PL: 'podróż' },
+  title_join: { EN: undefined, DE: '1', NL: '1', RO_MD: undefined, PL: undefined },
   subtitle: {
     EN: 'Follow Father Christmas through a snowy English village. A new gift unlocks every day — open it, claim your bonus.',
     DE: 'Folge dem Weihnachtsmann durch ein verschneites englisches Dorf. Jeden Tag wird ein neues Geschenk freigeschaltet – öffne es und sichere dir deinen Bonus.',
     NL: 'Volg de Kerstman door een besneeuwd Engels dorp. Elke dag wordt een nieuw cadeau ontgrendeld – open het en claim je bonus.',
-    RO_MD: 'Urmează-l pe Moș Crăciun printr-un sat englezesc acoperit de zăpadă. În fiecare zi se deblochează un cadou nou – deschide-l și revendică-ți bonusul.',
+    RO_MD: 'Urmează-l pe Moș Crăciun printr-un sat englezesc acoperit de zăpadă. În fiecare zi se deblochează un cadou nou – deschide-l și revendică-ți bonusul.', PL: 'Podążaj za Świętym Mikołajem przez zaśnieżoną angielską wioskę. Każdego dnia odblokowuje się nowy prezent – otwórz go i odbierz swój bonus.',
   },
-  today: { EN: 'TODAY', DE: 'HEUTE', NL: 'VANDAAG', RO_MD: 'AZI' },
-  yesterday: { EN: 'YESTERDAY · {date}', DE: 'GESTERN · {date}', NL: 'GISTEREN · {date}', RO_MD: 'IERI · {date}' },
+  today: { EN: 'TODAY', DE: 'HEUTE', NL: 'VANDAAG', RO_MD: 'AZI', PL: 'DZIŚ' },
+  yesterday: { EN: 'YESTERDAY · {date}', DE: 'GESTERN · {date}', NL: 'GISTEREN · {date}', RO_MD: 'IERI · {date}', PL: 'WCZORAJ · {date}' },
   todays_stop: {
     EN: 'TODAY’S STOP · {date}',
     DE: 'HEUTIGER HALT · {date}',
     NL: 'STOP VAN VANDAAG · {date}',
-    RO_MD: 'OPRIREA DE AZI · {date}',
+    RO_MD: 'OPRIREA DE AZI · {date}', PL: 'PRZYSTANEK DNIA · {date}',
   },
-  tomorrow: { EN: 'TOMORROW · {date}', DE: 'MORGEN · {date}', NL: 'MORGEN · {date}', RO_MD: 'MÂINE · {date}' },
-  in_two_days: { EN: 'IN 2 DAYS · {date}', DE: 'IN 2 TAGEN · {date}', NL: 'OVER 2 DAGEN · {date}', RO_MD: 'PESTE 2 ZILE · {date}' },
-  missed: { EN: 'MISSED · {date}', DE: 'VERPASST · {date}', NL: 'GEMIST · {date}', RO_MD: 'PIERDUT · {date}' },
+  tomorrow: { EN: 'TOMORROW · {date}', DE: 'MORGEN · {date}', NL: 'MORGEN · {date}', RO_MD: 'MÂINE · {date}', PL: 'JUTRO · {date}' },
+  in_two_days: { EN: 'IN 2 DAYS · {date}', DE: 'IN 2 TAGEN · {date}', NL: 'OVER 2 DAGEN · {date}', RO_MD: 'PESTE 2 ZILE · {date}', PL: 'ZA 2 DNI · {date}' },
+  missed: { EN: 'MISSED · {date}', DE: 'VERPASST · {date}', NL: 'GEMIST · {date}', RO_MD: 'PIERDUT · {date}', PL: 'PRZEGAPIONY · {date}' },
   // Locked card, gift 2 or more days away: the sheet's "Come back tomorrow" would be wrong there (owner 2026-11-26, option 2).
   come_back_on: {
     EN: 'Come back on {date} to unlock this gift',
     DE: 'Komm am {date} wieder und schalte dieses Geschenk frei',
     NL: 'Kom op {date} terug om dit cadeau te ontgrendelen',
-    RO_MD: 'Revino pe {date} pentru a debloca acest cadou',
+    RO_MD: 'Revino pe {date} pentru a debloca acest cadou', PL: 'Wróć {date}, aby odblokować ten prezent',
   },
-  open_gift: { EN: 'OPEN GIFT', DE: 'GESCHENK ÖFFNEN', NL: 'CADEAU OPENEN', RO_MD: 'DESCHIDE CADOUL' },
+  open_gift: { EN: 'OPEN GIFT', DE: 'GESCHENK ÖFFNEN', NL: 'CADEAU OPENEN', RO_MD: 'DESCHIDE CADOUL', PL: 'OTWÓRZ PREZENT' },
   unlocks_in: {
     EN: 'Unlocks in {time}',
     DE: 'Wird freigeschaltet in {time}',
     NL: 'Wordt ontgrendeld over {time}',
-    RO_MD: 'Se deblochează în {time}',
+    RO_MD: 'Se deblochează în {time}', PL: 'Odblokowanie za {time}',
   },
   responsible: {
     EN: '18+ · Play responsibly',
     DE: '18+ · Verantwortungsvoll spielen',
     NL: '18+ · Speel verantwoord',
-    RO_MD: '18+ · Joacă responsabil',
+    RO_MD: '18+ · Joacă responsabil', PL: '18+ · Graj odpowiedzialnie',
   },
-  legend_available: { EN: 'Available today', DE: 'Heute verfügbar', NL: 'Vandaag beschikbaar', RO_MD: 'Disponibil azi' },
-  legend_missed: { EN: 'Missed', DE: 'Verpasst', NL: 'Gemist', RO_MD: 'Pierdut' },
+  legend_available: { EN: 'Available today', DE: 'Heute verfügbar', NL: 'Vandaag beschikbaar', RO_MD: 'Disponibil azi', PL: 'Dostępny dziś' },
+  legend_missed: { EN: 'Missed', DE: 'Verpasst', NL: 'Gemist', RO_MD: 'Pierdut', PL: 'Przegapiony' },
 };
 
 // ---- helpers -------------------------------------------------------------------------------
@@ -119,7 +173,8 @@ const lines = (cell) => String(cell ?? '').split('\n').map((s) => s.trim()).filt
 const NUM = '(\\d[\\d.]*)';
 
 function parseAmount(line, currency) {
-  const pct = line.match(new RegExp(`^(\\d+)%.*?${NUM}\\s+([A-Z]{3})$`));
+  // PL writes thousands with a space ("2 000 PLN"): read the number without it.
+  const pct = line.replace(/(\d)[ \u00a0](?=\d{3}\b)/g, '$1').match(new RegExp(`^(\\d+)%.*?${NUM}\\s+([A-Z]{3})$`));
   if (pct) {
     return { kind: 'bonus', amount: { percent: Number(pct[1]), max: Number(pct[2].replace(/\./g, '')), currency: pct[3], text: line } };
   }
@@ -228,7 +283,7 @@ function buildUi(market, cards) {
   const lang = market.uiLang;
   const ui = tabs['UI ELEMENT'];
   const col = market.uiCol;
-  const sheetUi = {
+  const sheetUi = market.id === 'PL' ? { ...PL_UI } : {
     cta_primary: ui[1][col],
     processing: ui[2][col],
     terms_conditions: ui[3][col],
@@ -260,13 +315,14 @@ function buildUi(market, cards) {
     locked: locked[4].split(' · ')[0],
     full_terms: d1.active.at(-1),
     surprise_gift: locked[1],
-    opens_dec8: locked[2].replace(/:.*$/, '') + ' {date}',
+    opens_dec8: (locked[2].includes(':') ? locked[2].replace(/:.*$/, '') : locked[2].replace(/\s+\d.*$/, '')) + ' {date}',
     come_back_tomorrow: locked[3],
     legend_locked: locked[4].split(' · ')[0],
   };
   // No tracking system exists (owner 2026-11-19): step 3 of "How it works" has only its title (no step3_body key); the sheet's body
   // ("the gift turns green when the bonus is credited") is dropped on purpose.
   // Everything from OWN is our wording (English = skeleton text, other languages = our translation): list it for the client.
+  if (market.id === 'PL') for (const [k, v] of Object.entries(PL_UI)) selfTranslated.push({ lang, key: k, value: v });
   for (const k of Object.keys(OWN)) {
     if (k !== 'brand' && !k.startsWith('title_') && !NOT_SHOWN.has(k)) selfTranslated.push({ lang, key: k, value: OWN[k][lang] });
   }
@@ -297,6 +353,15 @@ for (const market of MARKETS) {
   console.log(`Wrote cards/${market.id}.json and ui/${market.uiLang}.json`);
 }
 
+if (plFixes.plural.length) {
+  issues.push(
+    `PL: Polish plural after 2, 3, 4 (not 12-14) is "darmowe spiny", not "darmowych spinów". The page shows: ${plFixes.plural.join('; ')}. Please correct tab PL.`,
+  );
+}
+issues.push(
+  'PL: tab PL has no colon after "Min. depozyt", "Wymagany obrót" and "Ważne do", and no game line on free-spin cards. ' +
+    'The page adds the colon and the game line ("na <game>", as in the other languages). Listed for the record.',
+);
 // Findings for ISSUES.md: handed to import-links.mjs, which writes the whole file.
 fs.writeFileSync(
   path.join(dataDir, 'source', 'sheet-findings.json'),

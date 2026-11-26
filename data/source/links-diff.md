@@ -1,7 +1,7 @@
 # Page vs links sheet
 
 Compared: card text (data/cards/*.json, from the texts sheet) vs tab "TW EUROPE" of links sheet 1qpxJhrKTPyaUyGmJRrwPQNbh4T8s7458HJCCi2QwiTo.
-Markets: DE, NL, EN_GBP, RO_MDL. Days 1-26. Values compared: 412.
+Markets: DE, NL, EN_GBP, PL, RO_MDL. Days 1-26. Values compared: 516.
 
 ## Differences: 0
 

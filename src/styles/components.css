@@ -786,6 +786,9 @@ html::-webkit-scrollbar-thumb:hover { background: rgba(138, 163, 214, 0.85); bac
    and box-decoration-break:clone gives every fragment its own full gradient (a block would stretch ONE gradient
    over all lines). The vertical padding only enlarges the painted area, so accents (Â, Ă) and descenders are
    not cut at the tight 1.05 line box; inline padding does not change line spacing. */
+/* An accent over a capital on line 2 (PL "DARMOWYCH / SPINÓW") came 1.4 px under line 1 at 1.05; 1.12 gives the 3 px
+   check-line-ink asks for. Only amounts with a mark get it (hasMarks in card.js), so EN / DE / NL keep the Figma spacing. */
+.card__amount[data-accent] { line-height: 1.12; }
 .card__amount-text {
   padding-block: 0.25em;
   background: linear-gradient(180deg, #ffe2b0, #ffae00 50%, #ff8c00);

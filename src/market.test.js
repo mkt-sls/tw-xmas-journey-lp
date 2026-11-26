@@ -8,7 +8,7 @@ const memory = (value) => ({ getItem: () => value, setItem: () => {} });
 describe('markets that are off', () => {
   it('RO_MDL is off (owner 2026-11-26)', () => {
     expect(off.map((m) => m.id)).toEqual(['RO_MDL']);
-    expect(MARKETS.map((m) => m.id)).toEqual(['DE', 'NL', 'EN_GBP']);
+    expect(MARKETS.map((m) => m.id)).toEqual(['DE', 'NL', 'EN_GBP', 'PL']);
   });
 
   it('are not reached by ?market=, a saved choice or the browser language', () => {
