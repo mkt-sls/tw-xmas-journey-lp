@@ -13,11 +13,14 @@ describe('card data', () => {
         expect(d.day).toBe(i + 1);
         expect(d.date).toBe(`2026-12-${String(i + 1).padStart(2, '0')}`);
         expect(d.location.trim(), `${m.id} day ${d.day} location`).not.toBe('');
-        expect(d.wagering).toBe('');
-        expect(d.validUntil).toBe('');
+        // texts sheet 2026-11-26: "Wagering: x20" and "Valid until: 23:59, <day> Dec" right after the min deposit, in every active card
+        expect(d.wagering).toMatch(/:\s*x20$/);
+        expect(d.validUntil).toMatch(new RegExp(`:\\s*23:59,\\s*${d.day}\\b`));
+        expect(d.raw.active.indexOf(d.wagering)).toBe(d.raw.active.indexOf(d.minDeposit.text) + 1);
+        expect(d.raw.active.indexOf(d.validUntil)).toBe(d.raw.active.indexOf(d.minDeposit.text) + 2);
         expect(d.minDeposit.currency).toBe(m.currency);
         expect(d.minDeposit.value).toBeGreaterThan(0);
-        const expectLines = d.type === 'fs' ? 7 : 6;
+        const expectLines = d.type === 'fs' ? 9 : 8;
         expect(d.raw.active).toHaveLength(expectLines);
         expect(d.raw.expired).toHaveLength(expectLines);
         expect(d.raw.locked).toHaveLength(6);

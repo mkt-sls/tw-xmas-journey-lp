@@ -159,26 +159,9 @@ for (const [key, mk] of diffGroups) {
   );
 }
 for (const i of issues) if (i !== roGap) item(i, '');
-item(
-  'No wagering requirement and no "valid until" in the texts',
-  'The cards show only the minimum deposit. We did not invent values. The rows are hidden until the client sends the corrected texts sheet with wagering and valid-until.',
-);
-item(
-  'Locked card always says "Come back tomorrow"',
-  'Also for gifts that are days away (day 20 seen on 1 December still says "Come back tomorrow to unlock this gift"). Suggest a text like "Opens on 20 December" for far-away days, or confirm it stays.',
-);
-item(
-  'Texts sheet, step 1 of "How it works" says "1-25 December"',
-  'The campaign runs 1-26 December. We show "1-26" in all four languages (only the number was changed from the sheet text). Please correct the sheet.',
-);
-item(
-  'Texts sheet, step 3 of "How it works" says "The gift turns green when the bonus is credited"',
-  'There is no tracking system, so there is no credited state. We dropped the body text of step 3; the step shows only its title "Deposit & claim".',
-);
-item(
-  'Header: no LOG IN / REGISTER',
-  `The header has only the logo and the market selector: LOG IN and REGISTER were removed (owner 2026-11-24). The deposit link of the day stays on the card. "Full terms & conditions" on the card opens https://top-win-uk.top/en/bonus-policy on every market and day (owner 2026-11-24). Please confirm.`,
-);
+// Closed 2026-11-26, no longer listed: wagering / valid-until (now in the texts sheet, shown on the cards); step 1 "1-25" (sheet now
+// says 1-26); step 3 body dropped (owner: stays as it is, the sheet need not change); header without LOG IN / REGISTER and the T&C link
+// (owner decision); the locked card "Come back tomorrow" text (owner: we change it on our side).
 item(
   'Translated by us — please check',
   'Strings the texts sheet does not have. English is the text from the Figma design; German / Dutch / Romanian are our own translation. The table is below.',

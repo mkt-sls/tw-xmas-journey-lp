@@ -1,19 +1,8 @@
 {
   "issues": [
-    "Day 12: the texts sheet says 75 free spins in all four languages, the links sheet says 78. Confirmed by the owner (2026-11-19): the page shows 78. Not a question: please correct the texts sheet to 78.",
-    "RO day 21: the texts sheet has no \"minimum deposit\" line (the MDL cell in the links sheet is empty too). The page shows \"Depunere minimă: 300 MDL\" (the links sheet side table says 22 EUR/GBP -> 300 MDL). Please confirm."
+    "RO day 21: the texts sheet has no \"minimum deposit\" line (the MDL cell in the links sheet is empty too). The page shows \"Depunere minimă: 300 MDL\" (the links sheet side table says 22 EUR/GBP -> 300 MDL). Confirmed by the owner (2026-11-26): not a question, listed for the record."
   ],
   "selfTranslated": [
-    {
-      "lang": "DE",
-      "key": "login",
-      "value": "Anmelden"
-    },
-    {
-      "lang": "DE",
-      "key": "register",
-      "value": "Registrieren"
-    },
     {
       "lang": "DE",
       "key": "campaign_dates",
@@ -73,26 +62,6 @@
       "lang": "DE",
       "key": "responsible",
       "value": "18+ · Verantwortungsvoll spielen"
-    },
-    {
-      "lang": "DE",
-      "key": "legend_available",
-      "value": "Heute verfügbar"
-    },
-    {
-      "lang": "DE",
-      "key": "legend_missed",
-      "value": "Verpasst"
-    },
-    {
-      "lang": "NL",
-      "key": "login",
-      "value": "Inloggen"
-    },
-    {
-      "lang": "NL",
-      "key": "register",
-      "value": "Registreren"
     },
     {
       "lang": "NL",
@@ -155,26 +124,6 @@
       "value": "18+ · Speel verantwoord"
     },
     {
-      "lang": "NL",
-      "key": "legend_available",
-      "value": "Vandaag beschikbaar"
-    },
-    {
-      "lang": "NL",
-      "key": "legend_missed",
-      "value": "Gemist"
-    },
-    {
-      "lang": "EN",
-      "key": "login",
-      "value": "Log in"
-    },
-    {
-      "lang": "EN",
-      "key": "register",
-      "value": "Register"
-    },
-    {
       "lang": "EN",
       "key": "campaign_dates",
       "value": "1–26 December · 26 gifts"
@@ -235,26 +184,6 @@
       "value": "18+ · Play responsibly"
     },
     {
-      "lang": "EN",
-      "key": "legend_available",
-      "value": "Available today"
-    },
-    {
-      "lang": "EN",
-      "key": "legend_missed",
-      "value": "Missed"
-    },
-    {
-      "lang": "RO_MD",
-      "key": "login",
-      "value": "Autentificare"
-    },
-    {
-      "lang": "RO_MD",
-      "key": "register",
-      "value": "Înregistrare"
-    },
-    {
       "lang": "RO_MD",
       "key": "campaign_dates",
       "value": "1–26 decembrie · 26 cadouri"
@@ -313,16 +242,6 @@
       "lang": "RO_MD",
       "key": "responsible",
       "value": "18+ · Joacă responsabil"
-    },
-    {
-      "lang": "RO_MD",
-      "key": "legend_available",
-      "value": "Disponibil azi"
-    },
-    {
-      "lang": "RO_MD",
-      "key": "legend_missed",
-      "value": "Pierdut"
     }
   ]
 }

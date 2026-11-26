@@ -32,7 +32,8 @@ describe('UI texts', () => {
       const texts = [...Object.values(ui.strings), ...Object.values(ui.locations)];
       for (const t of texts) expect(t, t).not.toMatch(FORBIDDEN);
       for (const d of cardFiles[`../data/cards/${m.id}.json`].days) {
-        for (const l of Object.values(d.raw).flat()) expect(l, `${m.id} day ${d.day}`).not.toMatch(FORBIDDEN);
+        // the client's valid-until row ("Valid until: 23:59, 1 Dec", texts sheet 2026-11-26) is the one place a 23:59 belongs
+        for (const l of Object.values(d.raw).flat().filter((x) => x !== d.validUntil)) expect(l, `${m.id} day ${d.day}`).not.toMatch(FORBIDDEN);
       }
     });
     it(`${m.id}: step 3 has a title and no body; legend has no "Collected" item`, () => {
