@@ -1,4 +1,4 @@
-# Top Win Christmas Journey — handoff 2026-11-26 (page code 2d3c896; later commits are docs only)
+# Top Win Christmas Journey — handoff 2026-11-26 (page code ac94285)
 
 For the next session (possibly on another PC). What is live, what is half done, what the owner still has to decide.
 
@@ -15,9 +15,11 @@ For the next session (possibly on another PC). What is live, what is half done, 
 - A baseline of `main` in a git worktree needs a real copy of `node_modules`, not a symlink: with a symlink Vite refuses the web fonts and every measurement runs on the fallback font (happened 2026-11-26, the first baseline was wrong).
 
 ## Live and repo state (2026-11-26)
-- Live page code = `2d3c896` (merge of `tw-card-dates`, items A and B). Later commits on main are docs only. GitHub Pages deploys on every push to `main` (run 45812489726 for 2d3c896).
+- Live page code = `ac94285` (merge of `tw-locked-text`). GitHub Pages deploys on every push to `main` (run 45830893254 for ac94285, success).
 - Live URL: https://mkt-sls.github.io/tw-xmas-journey-lp/ .
 - Recent deploys, newest first:
+  - `7b79036` / merge `ac94285` (2026-11-26, run 45830893254): locked card names the day for gifts 2+ days away. Details in the next section.
+  - `7b1d944` / merge `306eb7a` (2026-11-26, run 45829614578): cards show wagering and valid-until from the client's updated texts sheet. Details in the next section.
   - `86656b2` / merge `2d3c896` (2026-11-26): items A and B, details in the next section.
   - `efd79be` / `665fdc3`, run 45405161613: header logo centred on every layout and linked to https://top-win.global in a new tab (details in the Header section).
   - `5b7aaac`, run 45394740693: favicon is now `favicon.ico` (16, 32, 48 px).
@@ -25,6 +27,20 @@ For the next session (possibly on another PC). What is live, what is half done, 
   - `a9350f5`: merge `tw-nl-santa`, commit subject "keep Santa clear of the TODAY pill on the NL route". Earlier this was listed as an open issue; the commit subject says it is fixed.
   - Earlier on 2026-11-24: `128cb09` / merge `1ba8b72` (card "Full terms & conditions" opens https://top-win-uk.top/en/bonus-policy on every market and every day, in a new tab; the owner chose the `/en/` URL for all markets; de/nl/ro paths answer 200, their translation was not checked); `f32576c` / merge `67d68c2` (header like Jackpot, logo + market selector only); `322dcc1` (comment fix in the docs, header desktop padding comment now matches the CSS, Actions run 45370386402).
 - Earlier, live since 2026-11-23 (`9b43678`): layout width port (page width without the classic scrollbar), Santa shrinks further below f 0.738, route legend removed on desktop and mobile, "How it works" gap to the route, mobile route labels centred on their own gifts like JP, past labels (yesterday, campaign over) kept clear of Santa, new label check script.
+
+### Client texts sheet update: wagering and valid-until (`7b1d944` / `306eb7a`, 2026-11-26)
+- The client (sheet owner) edited the texts sheet on 2026-11-26 12:50 UTC. Compared cell by cell with the previous import: every card cell (26 days x 3 states x 4 languages) got two rows after the min deposit, "Wagering: x20" and "Valid until: 23:59, <day> Dec" (DE "Umsatzanforderung" / "Gültig bis", NL "Inzetvereiste" / "Geldig tot", RO "Cerință de rulaj" / "Valabil până la"); day 12 is now 78 free spins (was 75); "How it works" step 1 says 1–26 (was 1–25). Locked cards, step 3 and everything else unchanged. New tab PL (Polish): not our market, ignored.
+- Re-import: `texts-sheet.xlsx` -> `extract-sheet.mjs` -> `import-sheet.mjs` -> `import-links.mjs`. `import-sheet.mjs` now expects 9 / 8 active lines (free spins / bonus), checks the wagering row (ends in "x<n>") and that the valid-until row names the card's own day, and fills `wagering` / `validUntil`. The card already drew every row between the min deposit and the CTA from `raw`, so `card.js` did not change for this.
+- Day 21 RO still has no min-deposit line in the texts sheet: the importer still inserts "Depunere minimă: 300 MDL" (owner confirmed 300 on 2026-11-26). 81 free spins for MDL is now in the texts sheet.
+- Card height +72 px. At 390 x 844 and 1366 x 900 everything fits. At 320 x 568 the deposit button is cut in half at the bottom of the card (the card scrolls; before, only the T&C link was below the edge). Owner chose to keep it (option 2) over a shorter card art on short screens (option 3: art 190 -> 130 px below 700 px height, shown and rejected). Jackpot has the same 3 rows and the same card CSS.
+- Tests changed: `cards.test.js` expects the two rows, `texts.test.js` allows "23:59" only in the valid-until row. 104/104 then.
+- `data/ISSUES.md` now lists 3 items: day 21 RO 300 MDL (for the record, owner confirmed), day 3 "Bonus Day 2 Dec" in the links sheet, our translations. Removed as closed: wagering, step 1, step 3 (owner: stays title-only, the client need not change the sheet), header / T&C link (owner decision), locked card text (we changed it). login / register / legend strings are no longer listed (the page does not show them).
+- Not run on this change: check-texts, check-modal-jump.
+
+### Locked card "come back" line (`7b79036` / `ac94285`, 2026-11-26)
+- Tomorrow's locked card keeps the sheet line "Come back tomorrow to unlock this gift". A gift 2 or more days away says "Come back on 9 December to unlock this gift" / "Komm am 9. Dezember wieder und schalte dieses Geschenk frei" / "Kom op 9 december terug om dit cadeau te ontgrendelen" / "Revino pe 9 decembrie pentru a debloca acest cadou". Owner chose option 2 from pictures (option 3, drop the line, was recommended and not chosen).
+- `ui.come_back_on` (our wording, in `OWN` of `import-sheet.mjs`, listed in ISSUES.md); `comeBack()` in `src/render/card.js`, long month with a no-break space. Test: `src/card.test.js` ("locked card come-back line"). 108/108.
+- Where it shows: on phones only on Dec 1 (the Dec 3 gift; phones show 3 gifts); on desktop every day, on the gift 2 days away.
 
 ### Card dates and RO title (`86656b2` / `2d3c896`, 2026-11-26)
 Owner chose each part from before/after pictures.
@@ -56,7 +72,7 @@ Owner chose each part from before/after pictures.
 - `check-texts` on b4c589c (header before the logo was centred): widths 360/390/430/768/1024/1366/1920 gave 16 failures, all overlap-text on `.intro__title-a` (4 per market). On the merged-earlier code 322dcc1 (page code, not efd79be) 320 and 1440 were also run.
 - `check-texts` on the logo branch 665fdc3: only 390 `--mobile` (the 4 known title-a / title-b box overlaps; ink gap 4.3–6.7 px, 0 shared pixels) and 1366 (0 fails).
 - `check-texts` on the centred-logo page code (`efd79be`, 2026-11-24): 320/360/375/430/768 with `--mobile`, and 768/1024/1440/1920 desktop, 4 markets, days 1-26: 0 new fails. 4 known `.intro__title-a` box overlaps (one per market, day 1) at each width of 768 or less; 0 at 1024 or more. Glyph gap not re-measured. Stop rule used: stop when under 3 GB free RAM.
-- Figma mobile review of the parts not covered before, on live `efd79be` (2026-11-24): Figma has only EN Dec 7, so there is no frame for Dec 1, Dec 26, the ended state, DE/NL/RO or 320; no motion; JP at 320 not checked. Page scroll width equals the viewport in 15 of 15 runs; logo centred at 390 and 320. 4 differences: step 3 body absent and wagering / valid-until rows hidden (both decided before); short month on the cards vs long month in Figma; RO_MDL title on 3 lines (see open item B).
+- Figma mobile review of the parts not covered before, on live `efd79be` (2026-11-24): Figma has only EN Dec 7, so there is no frame for Dec 1, Dec 26, the ended state, DE/NL/RO or 320; no motion; JP at 320 not checked. Page scroll width equals the viewport in 15 of 15 runs; logo centred at 390 and 320. 4 differences: step 3 body absent and wagering / valid-until rows hidden (both decided before; wagering and valid-until shown since `306eb7a`); short month on the cards vs long month in Figma; RO_MDL title on 3 lines (see open item B).
 - `check-modal-jump`: 300/300 on `b4c589c` (EN_GBP and RO_MDL); 60/60 on the logo branch (4 markets x 5 widths).
 - Check runs were done per market and width. On this low-memory machine the full matrix crashes.
 
@@ -84,10 +100,19 @@ Owner chose each part from before/after pictures.
 
 ## Owner decisions closed
 - Route labels keep the short month ("IERI · 6 DEC.", "TODAY’S STOP · DEC 8"). Owner chose option 1 on 2026-11-26 from before/after pictures (4 markets, Dec 8 and Dec 24, 390 / 320 / 1366). The options shown were: 1 short month (live); 2 long month on every label; 3 long month, with today's mobile tag on 2 lines. What the pictures measured, in case the question comes back: with option 2 the NL today tag "STOP VAN VANDAAG · 24 DECEMBER" overflows its label at 390 and 320. With options 2 and 3 the NL desktop far label "OVER 2 DAGEN · 26 DECEMBER" overflows its 190 px max width (the far label was checked only on NL). Jackpot also uses the short month. Do not re-ask.
+- Day 21 RO min deposit 300 MDL: owner confirmed 2026-11-26.
+- Day 12 = 78 free spins: owner confirmed again 2026-11-26 (the texts sheet now says 78 too).
+- "How it works" step 3 stays title-only; the client need not change the sheet (owner 2026-11-26).
+- Header and T&C link: owner decision, not a client question (2026-11-26).
+- Our DE/NL/RO translations: owner OK to send them to the client for a check (2026-11-26).
+- Cards: wagering and valid-until shown, no smaller card art on short phones (option 2). Locked card: "Come back on <date>" for gifts 2+ days away (option 2).
+
+## Client message (2026-11-26, drafted in Russian, not sent by us)
+The owner sends it. Open points in it: (1) "Valid until 23:59": which time zone? The page opens gifts by the visitor's local day; (2) please check our DE/NL/RO translations, with links per market; (3) links sheet day 3 bonus name "Bonus Day 2 Dec". Point 3 could not be checked: the Drive connector cannot see the links sheet, and the Chrome account open on the Mac gets "Ai nevoie de acces" (no access request was sent).
 
 ## Next tasks
-1. Nothing started. Items A and B are done and live (`2d3c896`). The route label month question is closed (short month stays).
-2. Optional, for completeness: the checks listed as not run in the card-dates section.
+1. Nothing started. Wait for the client's answers (time zone of "Valid until", translations, day 3 name). If the texts sheet changes again, re-import as in docs/PLAN.md and compare cell by cell first.
+2. Optional, for completeness: check-texts and check-modal-jump on `ac94285` (the cards are 72 px taller since `306eb7a`), and the checks listed as not run in the card-dates section.
 
 ## Known non-issues (measured, do not re-chase)
 - Two-part title boxes overlap at 375–768 px but glyphs never touch (gap 5–12 px). At 390 the ink gap is 4.3–6.7 px, 0 shared pixels.
@@ -98,8 +123,8 @@ Owner chose each part from before/after pictures.
 - Pulse 1440 Dec 26 old fail was a threshold flake; fixed in check-pulse.
 - Jackpot also has Santa on today's label for long names Dec 2–25 (62 of 360 market-days, e.g. BG Dec 4) — owner: leave JP alone.
 
-## Sources (unchanged)
-- Texts and place names: Google Sheet `1OfbBN6d6mei4t0iReU_ZNNVelqjQwl3fBxh-aGpzwAY` (tabs DE, NL, EN, RO; UI ELEMENT with LOCATION table rows 27–52).
+## Sources
+- Texts and place names: Google Sheet `1OfbBN6d6mei4t0iReU_ZNNVelqjQwl3fBxh-aGpzwAY` (tabs DE, NL, EN, RO; UI ELEMENT with LOCATION table rows 27–52; tab PL not used). Last changed by the client 2026-11-26 12:50 UTC; imported in `7b1d944`.
 - Numbers and links: sheet `1qpxJhrKTPyaUyGmJRrwPQNbh4T8s7458HJCCi2QwiTo`, tab **TW EUROPE** only (tab JP = Jackpot, never).
 - Figma: file `s2CqwGqe0O0FcALhBNlTRe`, canvas `58:332`.
 - Markets: DE (EUR), NL (EUR), EN_GBP (GBP), RO_MDL (MDL). 26 days, 1–26 December 2026. One deposit link per day on `tw-de.icu` with the day code (on the card deposit button). T&C on the card = https://top-win-uk.top/en/bonus-policy on every market and day, new tab (owner 2026-11-24). Footer "18+ · Play responsibly". Only Figma and sheet text is shown.

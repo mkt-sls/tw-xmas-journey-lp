@@ -11,9 +11,9 @@ Skeleton copied from the Jackpot Christmas Journey LP and re-labelled for Top Wi
 - Footer: "18+ · Play responsibly", without BeGambleAware.
 
 ## Sources
-- Texts and place names: Google Sheet `1OfbBN6d6mei4t0iReU_ZNNVelqjQwl3fBxh-aGpzwAY`, title "Переводы EUTop-Win" (modified 2026-11-19 10:39 UTC). Tabs DE, NL, EN, RO (cards, A1:D27) and UI ELEMENT (A1:F52). UI ELEMENT holds the UI strings (A1:D19) and, new, the LOCATION table: title in A24, header in row 26 (`День | Русский (RU) | Română (RO) | English (EN) | Deutsch (DE) | Nederlands (NL)`), days 1–26 in rows 27–52; RU is not used. Each day's `location` (cards JSON, `ui/*.json` `locations`) is the place name of that language. Wagering and valid-until are still absent: those rows stay hidden.
+- Texts and place names: Google Sheet `1OfbBN6d6mei4t0iReU_ZNNVelqjQwl3fBxh-aGpzwAY`, title "Переводы EUTop-Win" (modified 2026-11-26 12:50 UTC, imported in `7b1d944`). Tabs DE, NL, EN, RO (cards, A1:D27) and UI ELEMENT (A1:F52). UI ELEMENT holds the UI strings (A1:D19) and, new, the LOCATION table: title in A24, header in row 26 (`День | Русский (RU) | Română (RO) | English (EN) | Deutsch (DE) | Nederlands (NL)`), days 1–26 in rows 27–52; RU is not used. Each day's `location` (cards JSON, `ui/*.json` `locations`) is the place name of that language. Since 2026-11-26 every card has "Wagering: x20" and "Valid until: 23:59, <day>"; the cards show them. Tab PL is not used.
 - Numbers and links: links sheet `1qpxJhrKTPyaUyGmJRrwPQNbh4T8s7458HJCCi2QwiTo`, tab "TW EUROPE" only. Tab "JP" is Jackpot: never use it. Where texts and links disagree the numbers follow TW EUROPE.
-- Overrides in the importer (`scripts/import-sheet.mjs`, all listed in `data/ISSUES.md`): day 12 free spins 75 -> 78 (links sheet; ask client 75 or 78); "How it works" step 1 "1–25 December" -> "1–26" in all four languages; day 21 RO minimum deposit missing -> 300 MDL (links side table 22 -> 300).
+- Overrides in the importer (`scripts/import-sheet.mjs`, all listed in `data/ISSUES.md`): day 12 free spins 75 -> 78 and "How it works" step 1 "1–25" -> "1–26" (both kept in the importer, no longer needed: the sheet was corrected on 2026-11-26); day 21 RO minimum deposit missing -> 300 MDL (links side table 22 -> 300).
 - Figma file `s2CqwGqe0O0FcALhBNlTRe`, canvas `58:332`.
 
 ## Current state
