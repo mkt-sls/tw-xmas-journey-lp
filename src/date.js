@@ -6,9 +6,11 @@ const DAY_MS = 86400000;
 /**
  * The "now" used by the page. `?date=2026-12-07` (noon local) or `?date=2026-12-07T23:59:50`
  * (local time) replaces the real clock for QA. Anything unparsable is ignored.
+ * `allowOverride=false` (client build, VITE_CLIENT=1) ignores `?date=` completely.
  * @returns {Date}
  */
-export function parseNow(search = '', realNow = new Date()) {
+export function parseNow(search = '', realNow = new Date(), allowOverride = true) {
+  if (!allowOverride) return realNow;
   const raw = new URLSearchParams(search).get('date');
   if (!raw) return realNow;
   const m = raw.trim().match(/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2})(?::(\d{2}))?)?$/);

@@ -45,6 +45,11 @@ describe('day states from ?date=', () => {
     expect(parseNow('?date=2026-02-31', real)).toBe(real);
     expect(parseNow('', real)).toBe(real);
   });
+  it('allowOverride=false ignores ?date= (client build)', () => {
+    const real = new Date(2026, 11, 5, 12);
+    expect(parseNow('?date=2026-12-24', real, false)).toBe(real);
+    expect(parseNow('?date=2026-12-24T10:00', real, false)).toBe(real);
+  });
   it('relative tags', () => {
     expect(relativeKey(5, 7)).toBe('missed');
     expect(relativeKey(6, 7)).toBe('yesterday');
