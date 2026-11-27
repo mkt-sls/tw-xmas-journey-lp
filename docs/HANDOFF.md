@@ -43,6 +43,12 @@ For the next session. What is live, how the page behaves, what the owner decided
 - Tab PL issues (`data/ISSUES.md` items 2 and 3: plural "DARMOWE SPINY" on 6 cards, missing colons and game lines) are fixed on our side in the importer. Not sent to the client; the owner decides whether to tell them. If the client corrects tab PL, the importer accepts both forms.
 - Last sheet reads 2026-11-26: texts sheet edited by the client 12:50 UTC, imported in `7b1d944`; links sheet tab TW EUROPE re-read in Chrome (via `/gviz/tq?tqx=out:html&gid=524100056` + get_page_text), only change was the day 3 bonus name (not shown on the page). Tab PL and the PLN column are used since 2026-11-26 (Poland added).
 
+## Zip for IT (they put the landing on the domain)
+- `node scripts/package.mjs` (Playwright + Chrome exports) -> `TopWin-ChristmasJourney.zip` in the repo root (gitignored). Ported from Jackpot (owner 2026-11-27, option 1): files at the zip root, `status.json` = `{ "available": "true" }`, `image.jpg` = 1920x930 desktop shot (EN_GBP, clock faked to 5 Dec 2026 12:00).
+- The zip is a `VITE_CLIENT=1` build: `?date=` is compiled out (`src/main.js`, `parseNow(..., allowOverride)` in `src/date.js`), so a visitor on the domain cannot open a future day. The script proves it (`?date=2026-12-24` still shows day 5). The GitHub Pages build keeps `?date=` for QA.
+- The script fails on unexpected file types (the asset notes moved from `public/assets/README.md` to `docs/assets-README.md`, as Jackpot `cf4d094`; they were on the live site before) and on files of a market that is off (RO_MDL). No link obfuscation (Jackpot has it; not asked for TW).
+- Delivered 2026-11-27 from the commit that added the script (see `git log`): markets DE, NL, EN_GBP, PL. Rebuild the zip after any change to the page.
+
 ## Next tasks
 1. Nothing started and nothing waiting on the client. If either sheet changes again, re-import as in docs/PLAN.md and compare cell by cell first. The links sheet dump now has the PLN column: copy it too.
 2. Optional, for completeness: check-texts and check-modal-jump on `654b77d`, all markets (PL never ran them); check-line-ink on PL at the other widths (360, 375, 414, 1024, 1440, 1920; only 320 and 390 ran).
@@ -61,7 +67,7 @@ For the next session. What is live, how the page behaves, what the owner decided
 ## Sources
 - Texts and place names: Google Sheet `1OfbBN6d6mei4t0iReU_ZNNVelqjQwl3fBxh-aGpzwAY` (tabs DE, NL, EN, RO, PL; UI ELEMENT with LOCATION table rows 27–52, no PL column).
 - Numbers and links: sheet `1qpxJhrKTPyaUyGmJRrwPQNbh4T8s7458HJCCi2QwiTo`, tab **TW EUROPE** only (tab JP = Jackpot, never).
-- Figma: file `s2CqwGqe0O0FcALhBNlTRe`, canvas `58:332`. Asset map: `public/assets/README.md`.
+- Figma: file `s2CqwGqe0O0FcALhBNlTRe`, canvas `58:332`. Asset map: `docs/assets-README.md`.
 - Markets: DE (EUR), NL (EUR), EN_GBP (GBP), PL (PLN), RO_MDL (MDL, off). 26 days, 1–26 December 2026. One deposit link per day on `tw-de.icu` with the day code (card deposit button). Footer "18+ · Play responsibly".
 
 ## How to run
